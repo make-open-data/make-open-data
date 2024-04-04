@@ -17,7 +17,7 @@ with open('./profiles.yml', 'r') as file:
     profiles = yaml.safe_load(file)
 
 # Get the login information
-profile = profiles['megadata']['outputs']['dev']
+profile = profiles['makeopendata']['outputs']['dev']
 host = profile['host']
 database = profile['dbname']
 user = profile['user']

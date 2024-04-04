@@ -8,6 +8,10 @@ codes_geographiques_communes :
   url: https://www.data.gouv.fr/fr/datasets/r/8262de72-138f-4596-ad2f-10079e5f4d7c
   source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
 
+codes_geographiques_communes_TOM : 
+  url: https://www.data.gouv.fr/fr/datasets/r/09f50ab9-f5b6-400a-b599-643e283d7268
+  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
+
 codes_geographiques_arrondissements : 
   url: https://www.data.gouv.fr/fr/datasets/r/21fdff26-33a9-4b8e-bfd9-ce6d2ed5659e
   source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/

@@ -21,6 +21,9 @@ if __name__ == "__main__":
     codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes"]["url"])
     upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes")
 
+    codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes_TOM"]["url"])
+    upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes_TOM")
+
     codes_geographiques_arrondissements = safe_read_csv(sources["codes_geographiques_arrondissements"]["url"])
     upload_dataframe_to_table(codes_geographiques_arrondissements, "codes_geographiques_arrondissements")
 
