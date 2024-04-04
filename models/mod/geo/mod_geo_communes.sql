@@ -23,7 +23,7 @@ with source_data as (
         CAST(SPLIT_PART(cp._geopoint, ',', 1) AS FLOAT) as commune_latitude,
         CAST(SPLIT_PART(cp._geopoint, ',', 2) AS FLOAT) as commune_longitude
     from codes_geographiques_communes cgc
-    left join code_postaux cp on cgc."COM" = cp.code_commune_insee 
+    left join codes_postaux cp on LPAD(CAST(cgc."COM" as TEXT), 5, '0') = LPAD(CAST(cp.code_commune_insee as TEXT), 5, '0')
     left join codes_geographiques_arrondissements cga on cgc."ARR" = cga."ARR"
     left join codes_geographiques_departements cgd on cgc."DEP" = cgd."DEP"
     left join codes_geographiques_regions cgr on cgc."REG" = cgr."REG"

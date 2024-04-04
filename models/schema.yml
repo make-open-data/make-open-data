@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+  - name: mod_geo_communes
+    description: This model describes the geographical codes for French communes.
