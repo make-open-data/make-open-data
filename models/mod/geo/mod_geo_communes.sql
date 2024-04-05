@@ -18,15 +18,12 @@ with source_data as (
         cgc."DEP" as code_departement,
         cgd."LIBELLE" as nom_departement,
         cgc."ARR" as code_arrondissement,
-        cga."LIBELLE" as nom_arrondissement,
-        LPAD(CAST(cp.code_postal AS TEXT), 5, '0') as code_postal,
-        CAST(SPLIT_PART(cp._geopoint, ',', 1) AS FLOAT) as commune_latitude,
-        CAST(SPLIT_PART(cp._geopoint, ',', 2) AS FLOAT) as commune_longitude
+        cga."LIBELLE" as nom_arrondissement
     from codes_geographiques_communes cgc
-    left join codes_postaux cp on LPAD(CAST(cgc."COM" as TEXT), 5, '0') = LPAD(CAST(cp.code_commune_insee as TEXT), 5, '0')
-    left join codes_geographiques_arrondissements cga on cgc."ARR" = cga."ARR"
+    left join codes_geographiques_arrondissements cga on cgc."ARR" = cga."ARR" and  cgc."TYPECOM" = 'COM'
     left join codes_geographiques_departements cgd on cgc."DEP" = cgd."DEP"
     left join codes_geographiques_regions cgr on cgc."REG" = cgr."REG"
+    
 
 )
 
