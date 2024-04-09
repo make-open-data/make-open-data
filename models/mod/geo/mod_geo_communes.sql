@@ -29,7 +29,17 @@ with filtered_codes_geographiques_communes as (
     left join codes_geographiques_arrondissements cga on f_cgc."ARR" = cga."ARR" 
     left join codes_geographiques_departements cgd on f_cgc."DEP" = cgd."DEP" 
     left join codes_geographiques_regions cgr on f_cgc."REG" = cgr."REG"     
+), geopoints as (
+    select DISTINCT
+        LPAD(CAST(cp.code_commune_insee AS TEXT), 5, '0') as code_commune_insee,
+        CAST(SPLIT_PART(cp._geopoint, ',', 1) AS FLOAT) as commune_latitude,
+        CAST(SPLIT_PART(cp._geopoint, ',', 2) AS FLOAT) as commune_longitude
+    from codes_postaux cp
 )
 
-select *
-from source_data
+select
+    sd.*,
+    gp.commune_latitude,
+    gp.commune_longitude
+from source_data sd
+left join geopoints gp on sd.code_commune_insee = gp.code_commune_insee
