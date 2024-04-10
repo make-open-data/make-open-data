@@ -14,7 +14,6 @@ if __name__ == "__main__":
     with open(Path(os.path.dirname(__file__)) / SOURCES_PATH, "r") as ymlfile:
         sources = yaml.safe_load(ymlfile)
 
-
     code_postaux = safe_read_csv(sources["codes_postaux"]["url"])
     upload_dataframe_to_table(code_postaux, "codes_postaux")
 
@@ -32,3 +31,6 @@ if __name__ == "__main__":
 
     codes_geographiques_regions = safe_read_csv(sources["codes_geographiques_regions"]["url"])
     upload_dataframe_to_table(codes_geographiques_regions, "codes_geographiques_regions")
+
+    dvf = safe_read_csv(sources["dvf_2023"]["url"])
+    upload_dataframe_to_table(dvf, "dvf")
