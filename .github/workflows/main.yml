@@ -16,7 +16,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgis/postgis:12-3.1
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -42,7 +42,7 @@ jobs:
         source dbt-env/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt
-        
+
     - name: Create profiles.yml
       run: |
         mkdir -p ~/.dbt
@@ -54,7 +54,7 @@ jobs:
         echo "      user: postgres" >> ~/.dbt/profiles.yml
         echo "      pass: postgres" >> ~/.dbt/profiles.yml
         echo "      port: 5432" >> ~/.dbt/profiles.yml
-        echo "      dbname: defaultdb" >> ~/.dbt/profiles.yml
+        echo "      dbname: test_db" >> ~/.dbt/profiles.yml
         echo "      schema: public" >> ~/.dbt/profiles.yml
         echo "      threads: 1" >> ~/.dbt/profiles.yml
         echo "  target: dev" >> ~/.dbt/profiles.yml
