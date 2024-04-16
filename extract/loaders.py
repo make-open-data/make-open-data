@@ -2,7 +2,7 @@
 This module host loaders to safely download sources files and upload csv to database
 """
 import gzip
-import yaml
+import os
 import requests
 from io import StringIO
 import certifi
@@ -12,17 +12,11 @@ from sqlalchemy import create_engine
 
 
 
-# Load the profiles.yml file
-with open('./profiles.yml', 'r') as file:
-    profiles = yaml.safe_load(file)
-
-# Get the login information
-profile = profiles['makeopendata']['outputs']['dev']
-host = profile['host']
-database = profile['dbname']
-user = profile['user']
-password = profile['pass']
-port = profile['port']
+user = os.getenv('POSTGRES_USER')
+password = os.getenv('POSTGRES_PASSWORD')
+host = os.getenv('POSTGRES_HOST')
+port = os.getenv('POSTGRES_PORT')
+database = os.getenv('POSTGRES_DB')
 
 # Create a connection to the database
 ENGINE = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')

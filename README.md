@@ -24,9 +24,7 @@ Welcome to your mega open data project!
 
 ### Instantiate connection to postgres
 
-> Profile-directory is specified so python can access and use DB infos in profile.yml file
-
-`dbt init --profiles-dir .`  
+`export DBT_PROFILES_DIR=.`
 `dbt debug`
 
 ### Extract data (cvs) from sources and upload it to DB
