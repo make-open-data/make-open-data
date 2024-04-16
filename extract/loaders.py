@@ -6,6 +6,7 @@ import os
 import requests
 from io import StringIO
 import certifi
+import gc
 
 import pandas as pd
 from sqlalchemy import create_engine
