@@ -43,23 +43,23 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Create profiles.yml
+    - name: Iverwritting profiles.yml
       run: |
         echo "makeopendata:" > ./profiles.yml
         echo "  outputs:" >> ./profiles.yml
         echo "    dev:" >> ./profiles.yml
         echo "      type: postgres" >> ./profiles.yml
-        echo "      host: localhost" >> ./profiles.yml
-        echo "      user: postgres" >> ./profiles.yml
-        echo "      pass: postgres" >> ./profiles.yml
-        echo "      port: 5432" >> ./profiles.yml
-        echo "      dbname: test_db" >> ./profiles.yml
+        echo "      host: ${{ secrets.TEST_POSTGRES_HOST }}" >> ./profiles.yml
+        echo "      user: ${{ secrets.TEST_POSTGRES_USER }}" >> ./profiles.yml
+        echo "      pass: ${{ secrets.TEST_POSTGRES_PASSWORD }}" >> ./profiles.yml
+        echo "      port: ${{ secrets.TEST_POSTGRES_PORT | as_number }}" >> ./profiles.yml
+        echo "      dbname: ${{ secrets.TEST_POSTGRES_DB }}" >> ./profiles.yml
         echo "      schema: public" >> ./profiles.yml
         echo "      threads: 1" >> ./profiles.yml
         echo "  target: dev" >> ./profiles.yml
 
     - name: Set DBT_PROFILES_DIR
-      run: echo "DBT_PROFILES_DIR=${{ github.workspace }}" >> $GITHUB_ENV
+      run: echo "DBT_PROFILES_DIR=. >> $GITHUB_ENV
 
     - name: check dbt project
       run: |
