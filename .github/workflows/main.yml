@@ -52,7 +52,7 @@ jobs:
         echo "      host: ${{ secrets.TEST_POSTGRES_HOST }}" >> ./profiles.yml
         echo "      user: ${{ secrets.TEST_POSTGRES_USER }}" >> ./profiles.yml
         echo "      pass: ${{ secrets.TEST_POSTGRES_PASSWORD }}" >> ./profiles.yml
-        echo "      port: ${{ secrets.TEST_POSTGRES_PORT | as_number }}" >> ./profiles.yml
+        echo "      port: ${{ secrets.TEST_POSTGRES_PORT }}" >> ./profiles.yml
         echo "      dbname: ${{ secrets.TEST_POSTGRES_DB }}" >> ./profiles.yml
         echo "      schema: public" >> ./profiles.yml
         echo "      threads: 1" >> ./profiles.yml
