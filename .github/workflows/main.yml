@@ -60,8 +60,8 @@ jobs:
     - name: Initialize dbt project
       run: |
         source dbt-env/bin/activate
-        dbt init --profiles-dir ~/.dbt
-
+        dbt init --adapter postgres --profiles-dir ~/.dbt
+        
     - name: check dbt project
       run: |
         source dbt-env/bin/activate
