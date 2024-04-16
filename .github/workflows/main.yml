@@ -44,13 +44,16 @@ jobs:
         pip install -r requirements.txt
 
     - name: Initialize dbt project
-      run: echo -e "postgres\nlocalhost\n5432\ntest_db\npostgres\npostgres\n" | dbt init --profiles-dir .
-
-    - name: Run dbt debug
-      run: dbt debug
-
+      run: |
+        source dbt-env/bin/activate
+        echo -e "postgres\nlocalhost\n5432\ntest_db\npostgres\npostgres\n" | dbt init --profiles-dir . | dbt debug
+        
     - name: Extract data and upload it to DB
-      run: python -m extract
+      run: |
+        source dbt-env/bin/activate
+        python -m extract
 
     - name: Run dbt run
-      run: dbt run
+      run: |
+        source dbt-env/bin/activate
+        dbt run
