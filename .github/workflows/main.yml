@@ -59,7 +59,7 @@ jobs:
         echo "  target: dev" >> ./profiles.yml
 
     - name: Set DBT_PROFILES_DIR
-      run: echo "DBT_PROFILES_DIR=. >> $GITHUB_ENV
+      run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
     - name: check dbt project
       run: |
