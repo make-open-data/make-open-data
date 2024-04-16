@@ -46,7 +46,7 @@ jobs:
     - name: Create profiles.yml
       run: |
         mkdir -p ~/.dbt
-        echo "default:" > ~/.dbt/profiles.yml
+        echo "makeopendata:" > ~/.dbt/profiles.yml
         echo "  target: dev" >> ~/.dbt/profiles.yml
         echo "  outputs:" >> ~/.dbt/profiles.yml
         echo "    dev:" >> ~/.dbt/profiles.yml
