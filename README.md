@@ -2,16 +2,12 @@ Welcome to your mega open data project!
 
 ### What do you need ?
 
-* PostgreSQL database with 10 GB min
+PostgreSQL database with 10 GB min
   * Local
   * Digital Ocean
   * Supabase
 
-* PostgreSQL PostGis extenstion
 
-`psql postgresql://{user}:{password}@{host}:{port}/{database}`  
-`CREATE EXTENSION postgis;`  
-`SELECT PostGIS_Version();`
 
 
 ### create the environment
@@ -22,18 +18,28 @@ Welcome to your mega open data project!
 `pip install --upgrade pip`  
 `pip install -r requirements.txt`  
 
+### Set database env variable (used by profile.yml and extract)
+
+`export POSTGRES_USER=<YOUR_POSTGRES_USER>`
+`export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD>`
+`export POSTGRES_HOST=<YOUR_POSTGRES_HOST>`
+`export POSTGRES_PORT=<YOUR_POSTGRES_PORT>`
+`export POSTGRES_DB=<YOUR_POSTGRES_DB>`
+
+## Set PostgreSQL PostGis extenstion
+
+`psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB`  
+`CREATE EXTENSION postgis;`  
+`SELECT PostGIS_Version();`
+
 ### Instantiate connection to postgres
-
-> Profile-directory is specified so python can access and use DB infos in profile.yml file
-
-`dbt init --profiles-dir .`  
+`export DBT_PROFILES_DIR=.`
 `dbt debug`
 
 ### Extract data (cvs) from sources and upload it to DB
-`pytbon -m extract`
+`pytnon -m extract`
 
-### Using the starter project
+### Run 
 
-Try running the following commands:
 `dbt run`  
 `dbt test`
