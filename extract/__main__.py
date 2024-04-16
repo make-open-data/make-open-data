@@ -15,10 +15,13 @@ if __name__ == "__main__":
         sources = yaml.safe_load(ymlfile)
 
     code_postaux = safe_read_csv(sources["codes_postaux"]["url"])
-    upload_dataframe_to_table(code_postaux, "code_postaux")
+    upload_dataframe_to_table(code_postaux, "codes_postaux")
 
     codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes"]["url"])
     upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes")
+
+    codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes_TOM"]["url"])
+    upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes_TOM")
 
     codes_geographiques_arrondissements = safe_read_csv(sources["codes_geographiques_arrondissements"]["url"])
     upload_dataframe_to_table(codes_geographiques_arrondissements, "codes_geographiques_arrondissements")
@@ -28,3 +31,6 @@ if __name__ == "__main__":
 
     codes_geographiques_regions = safe_read_csv(sources["codes_geographiques_regions"]["url"])
     upload_dataframe_to_table(codes_geographiques_regions, "codes_geographiques_regions")
+
+    dvf = safe_read_csv(sources["dvf_2023"]["url"])
+    upload_dataframe_to_table(dvf, "dvf")
