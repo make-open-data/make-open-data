@@ -43,20 +43,13 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Iverwritting profiles.yml
+    - name: Set environment variables
       run: |
-        echo "makeopendata:" > ./profiles.yml
-        echo "  outputs:" >> ./profiles.yml
-        echo "    dev:" >> ./profiles.yml
-        echo "      type: postgres" >> ./profiles.yml
-        echo "      host: ${{ secrets.TEST_POSTGRES_HOST }}" >> ./profiles.yml
-        echo "      user: ${{ secrets.TEST_POSTGRES_USER }}" >> ./profiles.yml
-        echo "      pass: ${{ secrets.TEST_POSTGRES_PASSWORD }}" >> ./profiles.yml
-        echo "      port: ${{ secrets.TEST_POSTGRES_PORT }}" >> ./profiles.yml
-        echo "      dbname: ${{ secrets.TEST_POSTGRES_DB }}" >> ./profiles.yml
-        echo "      schema: public" >> ./profiles.yml
-        echo "      threads: 1" >> ./profiles.yml
-        echo "  target: dev" >> ./profiles.yml
+        echo "POSTGRES_DB=${{ secrets.TEST_POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.TEST_POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.TEST_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.TEST_POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.TEST_POSTGRES_USER }}" >> $GITHUB_ENV
 
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
