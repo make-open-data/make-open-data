@@ -56,11 +56,6 @@ jobs:
         echo "      pass: postgres" >> ~/.dbt/profiles.yml
         echo "      port: 5432" >> ~/.dbt/profiles.yml
         echo "      dbname: test_db" >> ~/.dbt/profiles.yml
-
-    - name: Initialize dbt project
-      run: |
-        source dbt-env/bin/activate
-        dbt init --adapter postgres --profiles-dir ~/.dbt
         
     - name: check dbt project
       run: |
