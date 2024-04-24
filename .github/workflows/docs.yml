@@ -57,7 +57,9 @@ jobs:
         dbt debug
         
     - name: Generate dbt Documentation
-      run: dbt docs generate
+      run: |
+        source dbt-env/bin/activate
+        dbt docs generate
 
     - name: Save Documentation as Artifact
       uses: actions/upload-artifact@v2
