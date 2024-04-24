@@ -78,6 +78,10 @@ jobs:
       run: |
         cp -r target/* new-repo/
 
+    - name: Create timestamp file
+      run: |
+        echo "Documentation generated on: $(date)" > new-repo/timestamp.txt
+        
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
