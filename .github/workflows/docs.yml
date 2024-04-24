@@ -2,7 +2,7 @@ name: Generate docs and save as artifact
 
 on:
   workflow_run:
-    workflows: ["Name of your workflow in main.yml"]
+    workflows: ["CI/CD with dbt and PostgreSQL"]
     types:
       - completed
 
