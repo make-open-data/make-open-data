@@ -68,3 +68,8 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt run
+
+    - name: Run dbt test
+      run: |
+        source dbt-env/bin/activate
+        dbt test
