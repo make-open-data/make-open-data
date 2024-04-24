@@ -67,3 +67,23 @@ jobs:
         name: dbt-docs
         path: target/*
 
+    - name: Checkout new repository
+      uses: actions/checkout@v2
+      with:
+        repository: make-open-data/make-open-data-docs
+        token: ${{ secrets.PAT }} 
+        path: ./new-repo
+
+    - name: Copy dbt docs to new repository
+      run: |
+        cp -r target/* new-repo/
+
+    - name: Create timestamp file
+      run: |
+        echo "Documentation generated on: $(date)" > new-repo/timestamp.txt
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PAT }}
+        directory: ./new-repo
