@@ -1,18 +1,15 @@
-name: CI/CD with dbt and PostgreSQL
+name: Generate docs and save as artifact
 
 on:
-  push:
-    branches:
-      - main
-      - staging
-  pull_request:
-    branches:
-      - main
-      - staging
+  workflow_run:
+    workflows: ["Name of your workflow in main.yml"]
+    types:
+      - completed
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.ref == 'refs/heads/main' }}
 
     services:
       postgres:
@@ -59,17 +56,12 @@ jobs:
         source dbt-env/bin/activate
         dbt debug
         
-    - name: Extract data and upload it to DB
-      run: |
-        source dbt-env/bin/activate
-        python -m extract
+    - name: Generate dbt Documentation
+      run: dbt docs generate
 
-    - name: Run dbt run
-      run: |
-        source dbt-env/bin/activate
-        dbt run
+    - name: Save Documentation as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dbt-docs
+        path: target/*
 
-    - name: Run dbt test
-      run: |
-        source dbt-env/bin/activate
-        dbt test
