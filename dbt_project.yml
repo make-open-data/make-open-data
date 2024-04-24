@@ -28,6 +28,3 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
-  your_project_name:
-    timestamp:
-      description: "This documentation was last generated at {{ ref('timestamp') }}"
