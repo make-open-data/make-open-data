@@ -1,0 +1,67 @@
+name: Generate docs and save as artifact
+
+on:
+  workflow_run:
+    workflows: ["Name of your workflow in main.yml"]
+    types:
+      - completed
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.ref == 'refs/heads/main' }}
+
+    services:
+      postgres:
+        image: postgis/postgis:12-3.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11.5
+
+    - name: Create Python virtual environment
+      run: python3 -m venv dbt-env
+
+    - name: Activate virtual environment and install dependencies
+      run: |
+        source dbt-env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Set environment variables
+      run: |
+        echo "POSTGRES_DB=${{ secrets.TEST_POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.TEST_POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.TEST_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.TEST_POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.TEST_POSTGRES_USER }}" >> $GITHUB_ENV
+
+    - name: Set DBT_PROFILES_DIR
+      run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
+
+    - name: check dbt project
+      run: |
+        source dbt-env/bin/activate
+        dbt debug
+        
+    - name: Generate dbt Documentation
+      run: dbt docs generate
+
+    - name: Save Documentation as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dbt-docs
+        path: target/*
+
