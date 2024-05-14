@@ -15,6 +15,7 @@ if __name__ == "__main__":
     with open(Path(os.path.dirname(__file__)) / SOURCES_PATH, "r") as ymlfile:
         sources = yaml.safe_load(ymlfile)
 
+    """
     code_postaux = safe_read_csv(sources["codes_postaux"]["url"])
     upload_dataframe_to_table(code_postaux, "codes_postaux")
     del code_postaux
@@ -49,5 +50,9 @@ if __name__ == "__main__":
     upload_dataframe_to_table(dvf, "dvf")
     del dvf
     gc.collect()
-    
+    """
 
+    logement_2020 = safe_read_csv(sources["logement_2020"]["url"])
+    upload_dataframe_to_table(logement_2020, "logement_2020")
+    del logement_2020
+    gc.collect()

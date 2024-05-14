@@ -27,3 +27,7 @@ codes_geographiques_regions :
 dvf_2023:
   url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
   source: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
+
+logement_2020:
+  url: https://www.insee.fr/fr/statistiques/fichier/7705908/RP2020_LOGEMT_csv.zip
+  source : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
