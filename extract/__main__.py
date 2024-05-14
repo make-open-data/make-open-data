@@ -45,7 +45,7 @@ if __name__ == "__main__":
     del codes_geographiques_regions
     gc.collect()
 
-    dvf = safe_read_csv(sources["dvf_2023"]["url"])
+    dvf = safe_read_csv(sources["dvf_2003S1"]["url"])
     upload_dataframe_to_table(dvf, "dvf")
     del dvf
     gc.collect()
