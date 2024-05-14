@@ -15,39 +15,11 @@ if __name__ == "__main__":
     with open(Path(os.path.dirname(__file__)) / SOURCES_PATH, "r") as ymlfile:
         sources = yaml.safe_load(ymlfile)
 
-    code_postaux = safe_read_csv(sources["codes_postaux"]["url"])
-    upload_dataframe_to_table(code_postaux, "codes_postaux")
-    del code_postaux
-    gc.collect()
+    for source, source_data in sources.items():
+        print(f"Extracting data from {source}")
+        data = safe_read_csv(source_data["url"])
+        upload_dataframe_to_table(data, source)
+        del data
+        gc.collect()
 
-    codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes"]["url"])
-    upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes")
-    del codes_geographiques_communes
-    gc.collect()
-
-    codes_geographiques_communes = safe_read_csv(sources["codes_geographiques_communes_TOM"]["url"])
-    upload_dataframe_to_table(codes_geographiques_communes, "codes_geographiques_communes_TOM")
-    del codes_geographiques_communes
-    gc.collect()
-
-    codes_geographiques_arrondissements = safe_read_csv(sources["codes_geographiques_arrondissements"]["url"])
-    upload_dataframe_to_table(codes_geographiques_arrondissements, "codes_geographiques_arrondissements")
-    del codes_geographiques_arrondissements
-    gc.collect()
-
-    codes_geographiques_departements = safe_read_csv(sources["codes_geographiques_departements"]["url"])
-    upload_dataframe_to_table(codes_geographiques_departements, "codes_geographiques_departements")
-    del codes_geographiques_departements
-    gc.collect()
-    
-    codes_geographiques_regions = safe_read_csv(sources["codes_geographiques_regions"]["url"])
-    upload_dataframe_to_table(codes_geographiques_regions, "codes_geographiques_regions")
-    del codes_geographiques_regions
-    gc.collect()
-
-    dvf = safe_read_csv(sources["dvf_2003S1"]["url"])
-    upload_dataframe_to_table(dvf, "dvf")
-    del dvf
-    gc.collect()
-    
 

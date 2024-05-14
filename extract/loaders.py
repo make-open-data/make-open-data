@@ -21,7 +21,7 @@ host = os.getenv('POSTGRES_HOST')
 port = os.getenv('POSTGRES_PORT')
 database = os.getenv('POSTGRES_DB')
 
-extract_schema_name = 'BRUTE'
+extract_schema_name = 'sources'
 
 # Create a connection to the database
 ENGINE = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
@@ -37,20 +37,25 @@ HEADERS = {
 
 def safe_read_csv(path, rows_to_skip=None):
     """
-    Wrapper around pandas.read_csv to safely download the file from the given path without raisin ssl errors
+    Wrapper around pandas.read_csv and pandas.read_json to safely download the file from the given path without raisin ssl errors
     """
-    # Download the CSV file
+    # Download the file
     response = requests.get(path, headers=HEADERS, verify=certifi.where())
 
-    # Check if the file is gzipped
-    if path.endswith('.gz'):
+    # Check the file extension
+    if path.endswith('.csv'):
+        # Load the data from the downloaded CSV file
+        data = pd.read_csv(StringIO(response.text), skiprows=rows_to_skip)
+    elif path.endswith('.gz'):
         # Decompress the gzipped data
         decompressed_file = gzip.decompress(response.content)
         # Load the data from the decompressed file
         data = pd.read_csv(StringIO(decompressed_file.decode('utf-8')), low_memory=False, skiprows=rows_to_skip)
+    elif path.endswith('.json'):
+        # Load the data from the downloaded JSON file
+        data = pd.read_json(StringIO(response.text))
     else:
-        # Load the data from the downloaded file
-        data = pd.read_csv(StringIO(response.text), skiprows=rows_to_skip)
+        raise ValueError(f"Unsupported file extension in path: {path}")
 
     return data
 
