@@ -28,17 +28,17 @@ WITH filtered_dvf AS (
         LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
         code_commune
     FROM 
-        dvf
+        sources.dvf_2023
     WHERE 
         EXISTS (
             SELECT 1
-            FROM dvf d1
-            WHERE d1.id_mutation = dvf.id_mutation AND d1.type_local IN ('Appartement', 'Maison')
+            FROM sources.dvf_2023 d1
+            WHERE d1.id_mutation = sources.dvf_2023.id_mutation AND d1.type_local IN ('Appartement', 'Maison')
         ) AND
         NOT EXISTS (
             SELECT 1
-            FROM dvf d2
-            WHERE d2.id_mutation = dvf.id_mutation AND d2.nature_mutation != 'Vente'
+            FROM sources.dvf_2023 d2
+            WHERE d2.id_mutation = sources.dvf_2023.id_mutation AND d2.nature_mutation != 'Vente'
         )
 ),
 sums AS (

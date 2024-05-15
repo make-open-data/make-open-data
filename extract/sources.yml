@@ -1,28 +1,25 @@
 # This file contains the list of sources to be used by the application
 
-codes_postaux :
+cog_poste :
   url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
   source : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
 
-codes_geographiques_communes :
-  url: https://www.data.gouv.fr/fr/datasets/r/8262de72-138f-4596-ad2f-10079e5f4d7c
-  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
+cog_communes :
+  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
+  source : https://github.com/datagouv/decoupage-administratif
 
-codes_geographiques_communes_TOM : 
-  url: https://www.data.gouv.fr/fr/datasets/r/09f50ab9-f5b6-400a-b599-643e283d7268
-  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
 
-codes_geographiques_arrondissements : 
-  url: https://www.data.gouv.fr/fr/datasets/r/21fdff26-33a9-4b8e-bfd9-ce6d2ed5659e
-  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
+cog_arrondissements : 
+  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
+  source : https://github.com/datagouv/decoupage-administratif
 
-codes_geographiques_departements: 
-  url: https://www.data.gouv.fr/fr/datasets/r/e436f772-b05d-47f8-b246-265faab8679f
-  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
+cog_departements: 
+  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
+  source : https://github.com/datagouv/decoupage-administratif
 
-codes_geographiques_regions : 
-  url: https://www.data.gouv.fr/fr/datasets/r/53cb77ce-8a93-4924-9d5d-920bbe7c679f
-  source : https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/
+cog_regions : 
+  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
+  source : https://github.com/datagouv/decoupage-administratif
 
 dvf_2023:
   url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz

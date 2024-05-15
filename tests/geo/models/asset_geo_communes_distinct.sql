@@ -3,9 +3,9 @@
 {{ config(materialized='test') }}
 
 with counts as (
-    SELECT code_commune_insee, COUNT(*) as num_com
+    SELECT code_commune, COUNT(*) as num_com
     FROM {{ ref('geo_communes') }}
-    GROUP BY code_commune_insee
+    GROUP BY code_commune
 )
 
 select *
