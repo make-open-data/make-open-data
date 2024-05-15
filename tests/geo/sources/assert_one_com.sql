@@ -6,8 +6,8 @@ WITH counts as (
     select 
         sources.cog_communes.code,
         count(*) as num_com
-    from sources.cog_communes,
-    where sources.cog_communes.type = 'commune-actuelle',
+    from sources.cog_communes
+    where sources.cog_communes.type = 'commune-actuelle'
     group by sources.cog_communes.code
 )
 

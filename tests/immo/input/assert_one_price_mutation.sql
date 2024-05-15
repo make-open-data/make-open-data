@@ -9,7 +9,7 @@ WITH mutation_values AS (
         longitude,
         valeur_fonciere
     FROM 
-        dvf
+        sources.dvf_2023
 ),
 
 mutation_value_counts AS (

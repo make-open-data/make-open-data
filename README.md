@@ -3,7 +3,7 @@ Welcome to your mega open data project!
 ### What do you need ?
 
 PostgreSQL database with 10 GB min
-  * Local : https://postgresapp.com/
+  * Local : https://postgresapp.com/ (PostgreSQL 12 seems to work more efficiently)
   * Digital Ocean
   * Supabase
 
