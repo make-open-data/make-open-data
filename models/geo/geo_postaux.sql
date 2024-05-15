@@ -8,7 +8,7 @@
 
 {{ config(materialized='table') }}
 
-with source_data as (
+with format_cog_poste as (
     select DISTINCT
         LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
         CASE 
@@ -16,25 +16,25 @@ with source_data as (
             WHEN SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 1) = '2' THEN '2B'
             ELSE SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 2)
         END as code_departement
-    from codes_postaux
+    from sources.cog_poste
 ),
 
-joined_with_departement as (
+join_departements as (
     select 
-        sd.*,
-        cd."LIBELLE" as nom_departement,
-        cd."REG" as code_region
-    from source_data sd
-    left join codes_geographiques_departements cd on sd.code_departement = cd."DEP"
+        format_cog_poste.*,
+        sources.cog_departements.nom as nom_departement,
+        sources.cog_departements.region as code_region
+    from format_cog_poste
+    left join sources.cog_departements on format_cog_poste.code_departement = sources.cog_departements.code
 ),
 
-joined_with_region as (
+join_regions as (
     select 
-        jd.*,
-        cr."LIBELLE" as nom_region
-    from joined_with_departement jd
-    left join codes_geographiques_regions cr on jd.code_region = cr."REG"
+        join_departements.*,
+        sources.cog_regions.nom as nom_region
+    from join_departements
+    left join sources.cog_regions on join_departements.code_region = sources.cog_regions.code
 )
 
 select *
-from joined_with_region
+from join_regions

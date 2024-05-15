@@ -8,7 +8,7 @@ with unique_codes_communes_postaux as (
     select DISTINCT
         LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
         code_commune_insee
-    from codes_postaux
+    from sources.cog_poste
 )
 
 select *

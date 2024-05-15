@@ -2,10 +2,10 @@
 
 WITH counts as (
     select 
-        cgd."DEP",
+        sources.cog_departements.code,
         count(*) as num_dep
-    from codes_geographiques_departements as cgd
-    group by cgd."DEP"
+    from sources.cog_departements
+    group by sources.cog_departements.code
 )
 
 select *

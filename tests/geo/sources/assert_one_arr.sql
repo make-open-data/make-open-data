@@ -2,10 +2,10 @@
 
 WITH counts as (
     select 
-        cga."ARR",
+        sources.cog_arrondissements.code,
         count(*) as num_arr
-    from codes_geographiques_arrondissements as cga
-    group by cga."ARR"
+    from sources.cog_arrondissements 
+    group by sources.cog_arrondissements.code
 )
 
 select *

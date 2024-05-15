@@ -2,10 +2,10 @@
 
 WITH counts as (
     select 
-        cgr."REG",
+        sources.cog_regions.code,
         count(*) as num_reg
-    from codes_geographiques_regions as cgr
-    group by cgr."REG"
+    from sources.cog_regions
+    group by sources.cog_regions.code
 )
 
 select *
