@@ -1,53 +1,63 @@
-Welcome to your mega open data project!
+# Bienvenue sur Make Open Data.
 
-### What do you need ?
+Ici pour la [documentation complète](https://make-open-data.fr/).
 
-PostgreSQL database with 10 GB min
-  * Local : https://postgresapp.com/ (PostgreSQL 12 seems to work more efficiently)
-  * Digital Ocean
-  * Supabase
+## Intégrez les données libres en France à votre Base De Données.
+
+Make Open Data est un repo de code ouvert qui :
+- *Extrait* les fichiers sources (data.gouv, INSEE, Etalab, etc.) les plus adaptés et les récents ; 
+- *Transforme* ces données selon des règles transparentes et le moins irreversibles possibles ;
+- *Stocke* ces données dans une base de données PostgreSQL (avec PostGIS) ;
+- *Teste* des présuposés sur ces données. Un prix par transaction immobilières sur DVF par exemple.
+
+
+## Déploiement rapide :
+
+- Cloner le repo
+
+```
+git clone git@github.com:make-open-data/make-open-data.git
+``` 
+- Installer et activer un envirnoment virtuel
+
+
+```
+python3 -m venv dbt-env 
+source dbt-env/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+``` 
 
 
 
+- Exporter les clés d'une instance PostgreSQL avec l'extention PostGIS de 10 GB min
 
-### create the environment
-`python3 -m venv dbt-env`  
-### activate the environment for Mac and Linux OR
-`source dbt-env/bin/activate`  
-### install requirements
-`pip install --upgrade pip`  
-`pip install -r requirements.txt`  
+```
+export POSTGRES_USER=<YOUR_POSTGRES_USER>  
+export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD> 
+export POSTGRES_HOST=<YOUR_POSTGRES_HOST> 
+export POSTGRES_PORT=<YOUR_POSTGRES_PORT>  
+export POSTGRES_DB=<YOUR_POSTGRES_DB>
+``` 
 
-### Set database env variable (used by profile.yml and extract)
+- Connecter DBT à la base de données
 
-`export POSTGRES_USER=<YOUR_POSTGRES_USER>`
+```
+export DBT_PROFILES_DIR=.  
+dbt debug
+``` 
 
-`export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD>`
+- Extraire les données des sources à la base de données
 
-`export POSTGRES_HOST=<YOUR_POSTGRES_HOST>`
+```
+python -m extract
+```
 
-`export POSTGRES_PORT=<YOUR_POSTGRES_PORT>`
+- Réaliser et tester les transformations pour avoir obtenir les tables finales
 
-`export POSTGRES_DB=<YOUR_POSTGRES_DB>`
+```
+dbt run
+dbt test
+``` 
 
-## Set PostgreSQL PostGis extenstion
-
-`psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB`  
-`CREATE EXTENSION postgis;`  
-`SELECT PostGIS_Version();`
-
-## Optional : if you modify performance, shared_buffers initially at 128MB, restart and check new value using
-`psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB`  
-`SHOW shared_buffers`;
-
-### Instantiate connection to postgres
-`export DBT_PROFILES_DIR=.`
-`dbt debug`
-
-### Extract data (cvs) from sources and upload it to DB
-`pytnon -m extract`
-
-### Run 
-
-`dbt run`  
-`dbt test`
+- Utilisez les en production ou branchez votre outils d'analyse.
