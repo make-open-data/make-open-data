@@ -16,71 +16,30 @@
 
 {{ config(materialized='table') }}
 
-WITH filtered_dvf AS (
-    SELECT 
-        id_mutation,
-        valeur_fonciere,
-        longitude,
-        latitude,
-        nombre_pieces_principales,
-        surface_reelle_bati,
-        type_local,
-        LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
-        code_commune
-    FROM 
-        sources.dvf_2023
-    WHERE 
-        EXISTS (
-            SELECT 1
-            FROM sources.dvf_2023 d1
-            WHERE d1.id_mutation = sources.dvf_2023.id_mutation AND d1.type_local IN ('Appartement', 'Maison')
-        ) AND
-        NOT EXISTS (
-            SELECT 1
-            FROM sources.dvf_2023 d2
-            WHERE d2.id_mutation = sources.dvf_2023.id_mutation AND d2.nature_mutation != 'Vente'
-        )
+WITH source_dvf AS (
+    select * from sources.dvf_2023
 ),
-sums AS (
-    SELECT 
-        id_mutation,
-        SUM(surface_reelle_bati) AS total_surface,
-        SUM(nombre_pieces_principales) AS total_pieces
-    FROM 
-        filtered_dvf
-    GROUP BY 
-        id_mutation
+filtrer_dvf AS (
+    {{ filtrer_dvf(source_dvf) }}
 ),
-
-ranked_dvf AS (
-    SELECT 
-        *,
-        ROW_NUMBER() OVER (
-            PARTITION BY id_mutation
-            ORDER BY 
-                CASE WHEN type_local = 'Maison' THEN 1
-                     WHEN type_local = 'Appartement' THEN 2
-                     ELSE 3
-                END,
-                surface_reelle_bati DESC
-        ) AS rn
-    FROM 
-        filtered_dvf
+aggreger_dvf AS (
+    {{ aggreger_dvf(filtrer_dvf) }}
+),
+bien_dvf AS (
+    {{ bien_dvf(filtrer_dvf) }}
 )
 
 SELECT 
-    r.id_mutation,
-    r.valeur_fonciere,
-    r.longitude,
-    r.latitude,
-    s.total_pieces,
-    s.total_surface,
-    r.type_local,
-    r.code_postal,
-    r.code_commune
+    bien_dvf.id_mutation,
+    bien_dvf.valeur_fonciere,
+    bien_dvf.longitude,
+    bien_dvf.latitude,
+    aggreger_dvf.total_pieces,
+    aggreger_dvf.total_surface,
+    bien_dvf.type_local,
+    bien_dvf.code_postal,
+    bien_dvf.code_commune
 FROM 
-    ranked_dvf r
+    bien_dvf
 JOIN 
-    sums s ON r.id_mutation = s.id_mutation
-WHERE 
-    r.rn = 1
+    aggreger_dvf ON aggreger_dvf.id_mutation = bien_dvf.id_mutation

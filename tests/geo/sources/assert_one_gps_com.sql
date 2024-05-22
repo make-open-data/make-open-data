@@ -5,9 +5,9 @@
 {{ config(materialized='test') }}
 
 with source as (
-    SELECT commune, COUNT(DISTINCT _geopoint) as geopoint_count
-    FROM {{ ref('codes_postaux') }}
-    GROUP BY commune
+    SELECT code_commune_insee, COUNT(DISTINCT _geopoint) as geopoint_count
+    FROM sources.cog_poste
+    GROUP BY code_commune_insee
 )
 
 select *

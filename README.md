@@ -40,6 +40,14 @@ export POSTGRES_PORT=<YOUR_POSTGRES_PORT>
 export POSTGRES_DB=<YOUR_POSTGRES_DB>
 ``` 
 
+- A faire une fois : installer l'extension PostGis et vérifier
+
+```
+psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
+CREATE EXTENSION postgis;  
+SELECT PostGIS_Version();
+```
+
 - Connecter DBT à la base de données
 
 ```
