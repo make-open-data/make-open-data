@@ -1,26 +1,26 @@
 # This file contains the list of sources to be used by the application
 
 cog_poste :
-  url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
-  source : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
+  source_url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
 
 cog_communes :
-  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
-  source : https://github.com/datagouv/decoupage-administratif
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
 
 
 cog_arrondissements : 
-  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
-  source : https://github.com/datagouv/decoupage-administratif
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
 
 cog_departements: 
-  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
-  source : https://github.com/datagouv/decoupage-administratif
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
 
 cog_regions : 
-  url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
-  source : https://github.com/datagouv/decoupage-administratif
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
 
 dvf_2023:
-  url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
-  source: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
+  source_url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
+  source_reference: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/

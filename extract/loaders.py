@@ -4,22 +4,45 @@ This module host loaders to safely download sources files and upload csv to data
 import gzip
 import os
 import requests
-from io import StringIO
 import certifi
-import gc
+import subprocess
+from io import StringIO
+from tempfile import NamedTemporaryFile
 
+from botocore.client import Config
+import boto3
 import pandas as pd
-from sqlalchemy import create_engine, text, DDL
+from sqlalchemy import create_engine
 from sqlalchemy.schema import CreateSchema
-from psycopg2.extensions import quote_ident
+
+# Spaces connection parameters
+
+endpoint_url = os.environ.get('space_url')
+aws_access_key_id = os.environ.get('space_access')
+aws_secret_access_key = os.environ.get('space_key')
+space_bucket_name = os.environ.get('space_bucket_name')
 
 
+print(endpoint_url, aws_access_key_id, aws_secret_access_key, space_bucket_name)
 
+# Create a client for space
+
+session = boto3.session.Session() 
+CLIENT = session.client('s3', 
+                        region_name='fr1', 
+                        endpoint_url=endpoint_url,
+                        aws_access_key_id=aws_access_key_id, 
+                        aws_secret_access_key=aws_secret_access_key,
+                        config=Config(signature_version='s3v4'))
+
+
+# Database connection parameters
 user = os.getenv('POSTGRES_USER')
 password = os.getenv('POSTGRES_PASSWORD')
 host = os.getenv('POSTGRES_HOST')
 port = os.getenv('POSTGRES_PORT')
 database = os.getenv('POSTGRES_DB')
+
 
 extract_schema_name = 'sources'
 
@@ -35,7 +58,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 }
 
-def safe_read_csv(path, rows_to_skip=None):
+def read_from_source(path, rows_to_skip=None):
     """
     Wrapper around pandas.read_csv and pandas.read_json to safely download the file from the given path without raisin ssl errors
     """
@@ -72,3 +95,37 @@ def upload_dataframe_to_table(data, table_name):
         connection.rollback()
         connection.close()
         raise
+
+def upload_dataframe_to_storage(df, filename):
+    """
+    Upload a DataFrame to S3-compatible storage using s3cmd.
+    """
+    # Create a temporary file
+    with NamedTemporaryFile(suffix='.csv', delete=False) as tmpfile:
+        # Write the DataFrame to the temporary file
+        df.to_csv(tmpfile.name, index=False)
+
+        # Upload the DataFrame to storage using s3cmd
+        subprocess.run([
+            "s3cmd", 
+            "put", 
+            tmpfile.name, 
+            f"s3://{space_bucket_name}/{filename}",
+            "--access_key", aws_access_key_id,
+            "--secret_key", aws_secret_access_key,
+            "--host", endpoint_url,
+            "--host-bucket", space_bucket_name,
+            "--no-check-certificate"
+        ], check=True)
+
+def read_from_storage(filename):
+    """
+    Read a file from S3-compatible storage into a DataFrame.
+    """
+    # Get the file object
+    obj = CLIENT.get_object(Bucket=space_bucket_name, Key=filename)
+
+    # Read the file into a DataFrame
+    df = pd.read_csv(obj['Body'])
+
+    return df
