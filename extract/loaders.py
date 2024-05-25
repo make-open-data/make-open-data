@@ -23,8 +23,6 @@ aws_secret_access_key = os.environ.get('SPACE_KEY')
 space_bucket_name = os.environ.get('SPACE_BUCKET_NAME')
 
 
-print(endpoint_url, aws_access_key_id, aws_secret_access_key, space_bucket_name)
-
 # Create a client for space
 
 session = boto3.session.Session() 
