@@ -17,10 +17,10 @@ from sqlalchemy.schema import CreateSchema
 
 # Spaces connection parameters
 
-endpoint_url = os.environ.get('space_url')
-aws_access_key_id = os.environ.get('space_access')
-aws_secret_access_key = os.environ.get('space_key')
-space_bucket_name = os.environ.get('space_bucket_name')
+endpoint_url = os.environ.get('SPACE_URL')
+aws_access_key_id = os.environ.get('SPACE_ACCESS')
+aws_secret_access_key = os.environ.get('SPACE_KEY')
+space_bucket_name = os.environ.get('SPACE_BUCKET_NAME')
 
 
 print(endpoint_url, aws_access_key_id, aws_secret_access_key, space_bucket_name)
