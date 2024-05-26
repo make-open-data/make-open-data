@@ -115,7 +115,7 @@ def upload_dataframe_to_table(data, table_name):
 
             # Copy the data from the temporary file to the table
             with open(tmpfile.name, 'r') as f:
-                with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV HEADER") as copy:
+                with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV") as copy:
                     copy.write(f.read())
             connection.commit()
         
