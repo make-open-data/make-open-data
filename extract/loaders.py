@@ -1,38 +1,15 @@
 """
 This module host loaders to safely download sources files and upload csv to database
 """
-import gzip
 import os
-import requests
-import certifi
 import subprocess
 import zipfile
-from io import StringIO, BytesIO
 from tempfile import NamedTemporaryFile
 
-from botocore.client import Config
-import boto3
 import pandas as pd
 import psycopg
-import tempfile
-
-# Spaces connection parameters
-
-endpoint_url = os.environ.get('SPACE_URL')
-aws_access_key_id = os.environ.get('SPACE_ACCESS')
-aws_secret_access_key = os.environ.get('SPACE_KEY')
-space_bucket_name = os.environ.get('SPACE_BUCKET_NAME')
 
 
-# Create a client for space
-
-session = boto3.session.Session() 
-CLIENT = session.client('s3', 
-                        region_name='fr1', 
-                        endpoint_url=endpoint_url,
-                        aws_access_key_id=aws_access_key_id, 
-                        aws_secret_access_key=aws_secret_access_key,
-                        config=Config(signature_version='s3v4'))
 
 
 # Database connection parameters
@@ -45,48 +22,45 @@ database = os.getenv('POSTGRES_DB')
 
 extract_schema_name = 'sources'
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-}
+def read_from_source(tmpfile_csv_path, source_path):
+    if source_path.endswith('.csv'):
+        subprocess.run(['curl', '-o', tmpfile_csv_path, source_path], check=True)
 
-def read_from_source(path, rows_to_skip=None):
-    """
-    Wrapper around pandas.read_csv and pandas.read_json to safely download the file from the given path without raisin ssl errors
-    """
-    # Download the file
-    response = requests.get(path, headers=HEADERS, verify=certifi.where())
+    elif source_path.endswith('.json'):
+        with NamedTemporaryFile(suffix='.json', delete=True) as json_tmpfile:
+            subprocess.run(['curl', '-o', json_tmpfile.name, source_path], check=True)
+            data = pd.read_json(json_tmpfile.name)
+            data.to_csv(tmpfile_csv_path, index=False)
 
-    # Check the file extension
-    if path.endswith('.csv'):
-        # Load the data from the downloaded CSV file
-        data = pd.read_csv(StringIO(response.text), skiprows=rows_to_skip)
-    elif path.endswith('.gz'):
-        # Decompress the gzipped data
-        decompressed_file = gzip.decompress(response.content)
-        # Load the data from the decompressed file
-        data = pd.read_csv(StringIO(decompressed_file.decode('utf-8')), low_memory=False, skiprows=rows_to_skip)
-    elif path.endswith('.json'):
-        # Load the data from the downloaded JSON file
-        data = pd.read_json(StringIO(response.text))
-    elif path.endswith('.zip'):
-        # Open the zip file
-        with zipfile.ZipFile(BytesIO(response.content)) as z:
-            # Find the first CSV file in the zip file
-            csv_file = next((name for name in z.namelist() if name.endswith('.csv')), None)
-            if csv_file is None:
-                raise ValueError('No CSV file found in the zip file')
-            # Load the data from the CSV file
-            with z.open(csv_file) as f:
-                data = pd.read_csv(f, sep=';', skiprows=rows_to_skip, low_memory=True)
+    elif source_path.endswith('.gz'):
+        with NamedTemporaryFile(suffix='.gz', delete=True) as gz_tmpfile:
+            subprocess.run(['curl', '-o', gz_tmpfile.name, source_path], check=True)
+            with open(tmpfile_csv_path, 'w') as f:
+                subprocess.run(['gunzip', '-c', gz_tmpfile.name], stdout=f, check=True)
+
+    elif source_path.endswith('.zip'):
+        with NamedTemporaryFile(suffix='.zip', delete=True) as zip_tmpfile:
+            subprocess.run(['curl', '-o', zip_tmpfile.name, source_path], check=True)
+            with zipfile.ZipFile(zip_tmpfile.name, 'r') as z:
+                csv_file = next((name for name in z.namelist() if name.endswith('.csv')), None)
+                if csv_file is None:
+                    raise ValueError('No CSV file found in the zip file')
+                with z.open(csv_file) as f, open(tmpfile_csv_path, 'w') as out_f:
+                    out_f.write(f.read().decode('utf-8'))
+
     else:
-        raise ValueError(f"Unsupported file extension in path: {path}")
-    
-    print(f"data in {path} loaded from source")
+        raise ValueError(f"Unsupported file extension in path: {source_path}")
 
-    return data
+    return tmpfile_csv_path
+
+def get_columns_from_csv(file_path):
+    # Read only the first row of the CSV file
+    df = pd.read_csv(file_path, nrows=1)
+    # Return the column names
+    return df.columns.tolist()
 
 
-def upload_dataframe_to_table(data, table_name):
+def upload_dataframe_to_table(tmpfile_csv_path, table_name):
     """
     Upload a dataframe to a table in the database
     https://cboyer.github.io/developpement/postgres-parquet/
@@ -112,25 +86,22 @@ def upload_dataframe_to_table(data, table_name):
         """)
         connection.commit()
 
+        columns = get_columns_from_csv(tmpfile_csv_path)
+
         # Create the table
         cursor.execute(f"""
             CREATE TABLE "{extract_schema_name}"."{table_name}" (
-                {', '.join(f'"{col}" text' for col in data.columns)}
+                {', '.join(f'"{col}" text' for col in columns)}
             );
         """)
         connection.commit()
 
 
-        # Create a temporary file into postgre
-        with NamedTemporaryFile(suffix='.csv', delete=False) as tmpfile:
-            # Write the DataFrame to the temporary file
-            data.to_csv(tmpfile.name, index=False, header=False)
-
-            # Copy the data from the temporary file to the table
-            with open(tmpfile.name, 'r') as f:
-                with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV") as copy:
-                    copy.write(f.read())
-            connection.commit()
+        # Copy the data from the temporary file to the table
+        with open(tmpfile_csv_path, 'r') as f:
+            with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV") as copy:
+                copy.write(f.read())
+        connection.commit()
         
         cursor.close()
         connection.close()
@@ -141,42 +112,3 @@ def upload_dataframe_to_table(data, table_name):
             connection.rollback()
             connection.close()
         raise
-
-def upload_dataframe_to_storage(df, filename):
-    """
-    Upload a DataFrame to S3-compatible storage using s3cmd.
-    """
-    # Create a temporary file
-    with NamedTemporaryFile(suffix='.csv', delete=False) as tmpfile:
-        # Write the DataFrame to the temporary file
-        df.to_parquet(tmpfile.name)
-
-        # Upload the DataFrame to storage using s3cmd
-        subprocess.run([
-            "s3cmd", 
-            "put", 
-            tmpfile.name, 
-            f"s3://{space_bucket_name}/{filename}",
-            "--access_key", aws_access_key_id,
-            "--secret_key", aws_secret_access_key,
-            "--host", endpoint_url,
-            "--host-bucket", space_bucket_name,
-            "--no-check-certificate"
-        ], check=True)
-
-def read_from_storage(filename):
-    """
-    Read a file from S3-compatible storage into a DataFrame.
-    """
-    # Get the file object
-    obj = CLIENT.get_object(Bucket=space_bucket_name, Key=filename)
-
-    # Create a temporary file
-    with tempfile.NamedTemporaryFile(suffix=".parquet", delete=True) as tmpfile:
-        # Write the streaming body to the temporary file
-        tmpfile.write(obj['Body'].read())
-
-        # Read the temporary file into a DataFrame
-        df = pd.read_parquet(tmpfile.name)
-
-    return df
