@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 
-from extract.loaders import read_from_source, upload_dataframe_to_table, upload_dataframe_to_storage, read_from_storage
+from extract.loaders import read_from_source, upload_dataframe_to_table
 
 SOURCES_PATH = "sources.yml"
 
