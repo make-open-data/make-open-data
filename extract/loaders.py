@@ -6,7 +6,8 @@ import os
 import requests
 import certifi
 import subprocess
-from io import StringIO
+import zipfile
+from io import StringIO, BytesIO
 from tempfile import NamedTemporaryFile
 
 from botocore.client import Config
@@ -67,6 +68,16 @@ def read_from_source(path, rows_to_skip=None):
     elif path.endswith('.json'):
         # Load the data from the downloaded JSON file
         data = pd.read_json(StringIO(response.text))
+    elif path.endswith('.zip'):
+        # Open the zip file
+        with zipfile.ZipFile(BytesIO(response.content)) as z:
+            # Find the first CSV file in the zip file
+            csv_file = next((name for name in z.namelist() if name.endswith('.csv')), None)
+            if csv_file is None:
+                raise ValueError('No CSV file found in the zip file')
+            # Load the data from the CSV file
+            with z.open(csv_file) as f:
+                data = pd.read_csv(f, sep=';', skiprows=rows_to_skip, low_memory=True)
     else:
         raise ValueError(f"Unsupported file extension in path: {path}")
 
