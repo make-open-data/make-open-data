@@ -87,6 +87,12 @@ def upload_dataframe_to_table(data, table_name):
                                      password=password)
         cursor = connection.cursor()
 
+        # Create the schema if it doesn't exist
+        cursor.execute(f"""
+            CREATE SCHEMA IF NOT EXISTS "{extract_schema_name}";
+        """)
+        connection.commit()
+
         # Drop the table if it exists
         cursor.execute(f"""
             DROP TABLE IF EXISTS "{extract_schema_name}"."{table_name}";
