@@ -80,6 +80,8 @@ def read_from_source(path, rows_to_skip=None):
                 data = pd.read_csv(f, sep=';', skiprows=rows_to_skip, low_memory=True)
     else:
         raise ValueError(f"Unsupported file extension in path: {path}")
+    
+    print(f"data in {path} loaded from source")
 
     return data
 
