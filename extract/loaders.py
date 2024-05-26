@@ -12,8 +12,8 @@ from tempfile import NamedTemporaryFile
 from botocore.client import Config
 import boto3
 import pandas as pd
-from sqlalchemy import create_engine
-from sqlalchemy.schema import CreateSchema
+import psycopg
+import tempfile
 
 # Spaces connection parameters
 
@@ -43,14 +43,6 @@ database = os.getenv('POSTGRES_DB')
 
 
 extract_schema_name = 'sources'
-
-# Create a connection to the database
-ENGINE = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
-
-# Create schema if don't exist
-with ENGINE.connect() as connection:
-    connection.execute(CreateSchema(extract_schema_name, if_not_exists=True))
-    connection.commit()
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
@@ -84,14 +76,51 @@ def read_from_source(path, rows_to_skip=None):
 def upload_dataframe_to_table(data, table_name):
     """
     Upload a dataframe to a table in the database
+    https://cboyer.github.io/developpement/postgres-parquet/
     """
     try:
-        data.to_sql(table_name, ENGINE, if_exists='replace', index=False, schema=extract_schema_name)
+        # Connect to the PostgreSQL database
+        connection = psycopg.connect(host=host, 
+                                     port=port, 
+                                     dbname=database, 
+                                     user=user, 
+                                     password=password)
+        cursor = connection.cursor()
+
+        # Drop the table if it exists
+        cursor.execute(f"""
+            DROP TABLE IF EXISTS "{extract_schema_name}"."{table_name}";
+        """)
+        connection.commit()
+
+        # Create the table
+        cursor.execute(f"""
+            CREATE TABLE "{extract_schema_name}"."{table_name}" (
+                {', '.join(f'"{col}" text' for col in data.columns)}
+            );
+        """)
+        connection.commit()
+
+
+        # Create a temporary file into postgre
+        with NamedTemporaryFile(suffix='.csv', delete=False) as tmpfile:
+            # Write the DataFrame to the temporary file
+            data.to_csv(tmpfile.name, index=False, header=False)
+
+            # Copy the data from the temporary file to the table
+            with open(tmpfile.name, 'r') as f:
+                with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV HEADER") as copy:
+                    copy.write(f.read())
+            connection.commit()
+        
+        cursor.close()
+        connection.close()
+
     except Exception as e:
         print(e)
-        connection = ENGINE.connect()
-        connection.rollback()
-        connection.close()
+        if 'connection' in locals():
+            connection.rollback()
+            connection.close()
         raise
 
 def upload_dataframe_to_storage(df, filename):
@@ -101,7 +130,7 @@ def upload_dataframe_to_storage(df, filename):
     # Create a temporary file
     with NamedTemporaryFile(suffix='.csv', delete=False) as tmpfile:
         # Write the DataFrame to the temporary file
-        df.to_csv(tmpfile.name, index=False)
+        df.to_parquet(tmpfile.name)
 
         # Upload the DataFrame to storage using s3cmd
         subprocess.run([
@@ -123,7 +152,12 @@ def read_from_storage(filename):
     # Get the file object
     obj = CLIENT.get_object(Bucket=space_bucket_name, Key=filename)
 
-    # Read the file into a DataFrame
-    df = pd.read_csv(obj['Body'])
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(suffix=".parquet", delete=True) as tmpfile:
+        # Write the streaming body to the temporary file
+        tmpfile.write(obj['Body'].read())
+
+        # Read the temporary file into a DataFrame
+        df = pd.read_parquet(tmpfile.name)
 
     return df
