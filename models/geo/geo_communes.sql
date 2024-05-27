@@ -13,12 +13,12 @@ with filtre_cog_communes as (
 
 ),denomalise_cog as (
     select
-        filtre_cog_communes.code as code_commune,
+        LPAD(CAST(filtre_cog_communes.code as TEXT), 5, '0') as code_commune,
         filtre_cog_communes.nom as nom_commune,
         filtre_cog_communes.arrondissement as code_arrondissement,
         filtre_cog_communes.departement as code_departement,
         filtre_cog_communes.region as code_region,
-        filtre_cog_communes."codesPostaux" as codes_postaux,
+        LPAD(filtre_cog_communes."codesPostaux"::text, 5, '0') as codes_postaux,
         filtre_cog_communes.population as population,
         filtre_cog_communes.zone as code_zone,
         

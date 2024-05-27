@@ -1,74 +1,114 @@
 """
 This module host loaders to safely download sources files and upload csv to database
 """
-import gzip
 import os
-import requests
-from io import StringIO
-import certifi
-import gc
+import subprocess
+import zipfile
+from tempfile import NamedTemporaryFile
 
 import pandas as pd
-from sqlalchemy import create_engine, text, DDL
-from sqlalchemy.schema import CreateSchema
-from psycopg2.extensions import quote_ident
+import psycopg
 
 
 
+
+# Database connection parameters
 user = os.getenv('POSTGRES_USER')
 password = os.getenv('POSTGRES_PASSWORD')
 host = os.getenv('POSTGRES_HOST')
 port = os.getenv('POSTGRES_PORT')
 database = os.getenv('POSTGRES_DB')
 
+
 extract_schema_name = 'sources'
 
-# Create a connection to the database
-ENGINE = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
+def read_from_source(tmpfile_csv_path, source_path):
+    if source_path.endswith('.csv'):
+        subprocess.run(['curl', '-o', tmpfile_csv_path, source_path], check=True)
 
-# Create schema if don't exist
-with ENGINE.connect() as connection:
-    connection.execute(CreateSchema(extract_schema_name, if_not_exists=True))
-    connection.commit()
+    elif source_path.endswith('.json'):
+        with NamedTemporaryFile(suffix='.json', delete=True) as json_tmpfile:
+            subprocess.run(['curl', '-o', json_tmpfile.name, source_path], check=True)
+            data = pd.read_json(json_tmpfile.name)
+            data.to_csv(tmpfile_csv_path, index=False)
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-}
+    elif source_path.endswith('.gz'):
+        with NamedTemporaryFile(suffix='.gz', delete=True) as gz_tmpfile:
+            subprocess.run(['curl', '-o', gz_tmpfile.name, source_path], check=True)
+            with open(tmpfile_csv_path, 'w') as f:
+                subprocess.run(['gunzip', '-c', gz_tmpfile.name], stdout=f, check=True)
 
-def safe_read_csv(path, rows_to_skip=None):
-    """
-    Wrapper around pandas.read_csv and pandas.read_json to safely download the file from the given path without raisin ssl errors
-    """
-    # Download the file
-    response = requests.get(path, headers=HEADERS, verify=certifi.where())
+    elif source_path.endswith('.zip'):
+        with NamedTemporaryFile(suffix='.zip', delete=True) as zip_tmpfile:
+            subprocess.run(['curl', '-o', zip_tmpfile.name, source_path], check=True)
+            with zipfile.ZipFile(zip_tmpfile.name, 'r') as z:
+                csv_file = next((name for name in z.namelist() if name.endswith('.csv')), None)
+                if csv_file is None:
+                    raise ValueError('No CSV file found in the zip file')
+                with z.open(csv_file) as f, open(tmpfile_csv_path, 'w') as out_f:
+                    out_f.write(f.read().decode('utf-8'))
 
-    # Check the file extension
-    if path.endswith('.csv'):
-        # Load the data from the downloaded CSV file
-        data = pd.read_csv(StringIO(response.text), skiprows=rows_to_skip)
-    elif path.endswith('.gz'):
-        # Decompress the gzipped data
-        decompressed_file = gzip.decompress(response.content)
-        # Load the data from the decompressed file
-        data = pd.read_csv(StringIO(decompressed_file.decode('utf-8')), low_memory=False, skiprows=rows_to_skip)
-    elif path.endswith('.json'):
-        # Load the data from the downloaded JSON file
-        data = pd.read_json(StringIO(response.text))
     else:
-        raise ValueError(f"Unsupported file extension in path: {path}")
+        raise ValueError(f"Unsupported file extension in path: {source_path}")
 
-    return data
+    return tmpfile_csv_path
+
+def get_columns_from_csv(file_path):
+    # Read only the first row of the CSV file
+    df = pd.read_csv(file_path, nrows=1)
+    # Return the column names
+    return df.columns.tolist()
 
 
-def upload_dataframe_to_table(data, table_name):
+def upload_dataframe_to_table(tmpfile_csv_path, table_name):
     """
     Upload a dataframe to a table in the database
+    https://cboyer.github.io/developpement/postgres-parquet/
     """
     try:
-        data.to_sql(table_name, ENGINE, if_exists='replace', index=False, schema=extract_schema_name)
+        # Connect to the PostgreSQL database
+        connection = psycopg.connect(host=host, 
+                                     port=port, 
+                                     dbname=database, 
+                                     user=user, 
+                                     password=password)
+        cursor = connection.cursor()
+
+        # Create the schema if it doesn't exist
+        cursor.execute(f"""
+            CREATE SCHEMA IF NOT EXISTS "{extract_schema_name}";
+        """)
+        connection.commit()
+
+        # Drop the table if it exists
+        cursor.execute(f"""
+            DROP TABLE IF EXISTS "{extract_schema_name}"."{table_name}";
+        """)
+        connection.commit()
+
+        columns = get_columns_from_csv(tmpfile_csv_path)
+
+        # Create the table
+        cursor.execute(f"""
+            CREATE TABLE "{extract_schema_name}"."{table_name}" (
+                {', '.join(f'"{col}" text' for col in columns)}
+            );
+        """)
+        connection.commit()
+
+
+        # Copy the data from the temporary file to the table
+        with open(tmpfile_csv_path, 'r') as f:
+            with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV HEADER") as copy:
+                copy.write(f.read())
+        connection.commit()
+        
+        cursor.close()
+        connection.close()
+
     except Exception as e:
         print(e)
-        connection = ENGINE.connect()
-        connection.rollback()
-        connection.close()
+        if 'connection' in locals():
+            connection.rollback()
+            connection.close()
         raise
