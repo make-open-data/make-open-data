@@ -42,11 +42,11 @@ jobs:
 
     - name: Set environment variables
       run: |
-        echo "POSTGRES_DB="make_open_data" >> $GITHUB_ENV
-        echo "POSTGRES_HOST="localhost" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD="postgres" >> $GITHUB_ENV
-        echo "POSTGRES_PORT="5432" >> $GITHUB_ENV
-        echo "POSTGRES_USER="postgres" >> $GITHUB_ENV
+        echo "POSTGRES_DB=make_open_data" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
+        echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
 
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
