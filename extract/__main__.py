@@ -19,5 +19,5 @@ if __name__ == "__main__":
     for source_label, source_infos in sources.items():
         with NamedTemporaryFile(suffix='.csv', delete=True) as tmpfile:
             tmpfile_csv_path = tmpfile.name
-            read_from_source(tmpfile_csv_path, source_infos["source_url"])
-            upload_dataframe_to_table(tmpfile_csv_path, source_label)
+            read_from_source(tmpfile_csv_path, source_infos)
+            upload_dataframe_to_table(tmpfile_csv_path, source_label, source_infos)
