@@ -3,28 +3,43 @@
 cog_poste :
   source_url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
   source_reference : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
+  source_csv_delimiter : ','
 
 cog_communes :
   source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
   source_reference : https://github.com/datagouv/decoupage-administratif
+  source_csv_delimiter : ','
 
 
 cog_arrondissements : 
   source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
   source_reference : https://github.com/datagouv/decoupage-administratif
+  source_csv_delimiter : ','
+
 
 cog_departements: 
   source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
   source_reference : https://github.com/datagouv/decoupage-administratif
+  source_csv_delimiter : ','
 
 cog_regions : 
   source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
   source_reference : https://github.com/datagouv/decoupage-administratif
+  source_csv_delimiter : ','
 
 dvf_2023:
   source_url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
   source_reference: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
+  source_csv_delimiter : ','
 
 logement_2020:
   source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/RP2020_LOGEMT_csv.zip
   source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
+  source_csv_delimiter : ';'
+  source_columns :  ["COMMUNE", "ARM", "IRIS", "ACHL", "AEMM", "AEMMR", "AGEMEN8", "ANEM", "ANEMR", "ASCEN", 
+                    "BAIN", "BATI", "CATIRIS", "CATL", "CHAU", "CHFL", "CHOS", "CLIM", "CMBL", "CUIS", 
+                    "DEROU", "DIPLM", "EAU", "EGOUL", "ELEC", "EMPLM", "GARL", "HLML", 
+                    "ILETUDM", "ILTM", "IMMIM", "INAIM", "INEEM", "INP11M", "INP15M", "INP17M", "INP19M", "INP24M", 
+                    "INP3M", "INP60M", "INP65M", "INP5M", "INP75M", "INPAM", "INPER", "INPER1", "INPER2", "INPOM", "INPSM", 
+                    "IPONDL", "IRANM", "METRODOM", "NBPI", "RECHM", "REGION", "SANI", "SANIDOM", "SEXEM", "STAT_CONJM", "STOCD", 
+                    "SURF", "TACTM", "TPM", "TRANSM", "TRIRIS", "TYPC", "TYPL", "VOIT", "WC"]

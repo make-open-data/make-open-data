@@ -2,7 +2,7 @@ name: Generate docs and save as artifact
 
 on:
   workflow_run:
-    workflows: ["CI/CD with dbt and PostgreSQL"]
+    workflows: ["Integration Test"]
     types:
       - completed
 
@@ -42,11 +42,11 @@ jobs:
 
     - name: Set environment variables
       run: |
-        echo "POSTGRES_DB=${{ secrets.TEST_POSTGRES_DB }}" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=${{ secrets.TEST_POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=${{ secrets.TEST_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=${{ secrets.TEST_POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "POSTGRES_USER=${{ secrets.TEST_POSTGRES_USER }}" >> $GITHUB_ENV
+        echo "POSTGRES_DB=make_open_data" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
+        echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
 
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV

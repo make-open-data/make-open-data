@@ -1,4 +1,4 @@
-name: CI/CD with dbt and PostgreSQL
+name: Integration Test
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: test_db
+          POSTGRES_DB: make_open_data
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -49,15 +49,11 @@ jobs:
 
     - name: Set environment variables
       run: |
-        echo "POSTGRES_DB=${{ secrets.TEST_POSTGRES_DB }}" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=${{ secrets.TEST_POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=${{ secrets.TEST_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=${{ secrets.TEST_POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "POSTGRES_USER=${{ secrets.TEST_POSTGRES_USER }}" >> $GITHUB_ENV
-        echo "SPACE_URL=${{ secrets.SPACE_URL }}" >> $GITHUB_ENV
-        echo "SPACE_ACCESS=${{ secrets.SPACE_ACCESS }}" >> $GITHUB_ENV
-        echo "SPACE_KEY=${{ secrets.SPACE_KEY }}" >> $GITHUB_ENV
-        echo "SPACE_BUCKET_NAME=${{ secrets.SPACE_BUCKET_NAME }}" >> $GITHUB_ENV
+        echo "POSTGRES_DB=make_open_data" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
+        echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
 
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
