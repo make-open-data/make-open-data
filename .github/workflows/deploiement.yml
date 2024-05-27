@@ -37,7 +37,10 @@ jobs:
     - name: Install PostGIS extensions
       run: |
         source dbt-env/bin/activate
-        psql -h localhost -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_DB }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+        psql -h ${{ secrets.POSTGRES_USER }} -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_DB }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+
     
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
