@@ -49,16 +49,11 @@ jobs:
 
     - name: Set environment variables
       run: |
-        echo "POSTGRES_DB=${{ secrets.TEST_POSTGRES_DB }}" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=${{ secrets.TEST_POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=${{ secrets.TEST_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=${{ secrets.TEST_POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "POSTGRES_USER=${{ secrets.TEST_POSTGRES_USER }}" >> $GITHUB_ENV
-        echo "SPACE_URL=${{ secrets.SPACE_URL }}" >> $GITHUB_ENV
-        echo "SPACE_ACCESS=${{ secrets.SPACE_ACCESS }}" >> $GITHUB_ENV
-        echo "SPACE_KEY=${{ secrets.SPACE_KEY }}" >> $GITHUB_ENV
-        echo "SPACE_BUCKET_NAME=${{ secrets.SPACE_BUCKET_NAME }}" >> $GITHUB_ENV
-
+        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
