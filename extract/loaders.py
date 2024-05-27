@@ -22,7 +22,10 @@ database = os.getenv('POSTGRES_DB')
 
 extract_schema_name = 'sources'
 
-def read_from_source(tmpfile_csv_path, source_path):
+def read_from_source(tmpfile_csv_path,sources_infos ):
+
+    source_path = sources_infos["source_url"]
+    
     if source_path.endswith('.csv'):
         subprocess.run(['curl', '-o', tmpfile_csv_path, source_path], check=True)
 
@@ -60,7 +63,7 @@ def get_columns_from_csv(file_path):
     return df.columns.tolist()
 
 
-def upload_dataframe_to_table(tmpfile_csv_path, table_name):
+def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
     """
     Upload a dataframe to a table in the database
     https://cboyer.github.io/developpement/postgres-parquet/
@@ -86,7 +89,10 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name):
         """)
         connection.commit()
 
-        columns = get_columns_from_csv(tmpfile_csv_path)
+        if "source_columns" in source_infos.keys():
+            columns = source_infos["source_columns"]
+        else:
+            columns = get_columns_from_csv(tmpfile_csv_path)
 
         # Create the table
         cursor.execute(f"""
@@ -96,10 +102,11 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name):
         """)
         connection.commit()
 
-
+        columns_str = ', '.join(f'"{col}"' for col in columns)
+        delimiter = source_infos["source_csv_delimiter"]
         # Copy the data from the temporary file to the table
         with open(tmpfile_csv_path, 'r') as f:
-            with cursor.copy(f"COPY {extract_schema_name}.{table_name} FROM STDIN CSV HEADER") as copy:
+            with cursor.copy(f"COPY {extract_schema_name}.{table_name}({columns_str}) FROM STDIN CSV HEADER DELIMITER '{delimiter}' ") as copy:
                 copy.write(f.read())
         connection.commit()
         
