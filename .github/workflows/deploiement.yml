@@ -1,0 +1,63 @@
+name: Manually Deploy Data in a Postgres Database
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11.5
+
+    - name: Create Python virtual environment
+      run: python3 -m venv dbt-env
+
+    - name: Activate virtual environment and install dependencies
+      run: |
+        source dbt-env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Set environment variables
+      run: |
+        source dbt-env/bin/activate
+        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+
+    - name: Install PostGIS extensions
+      run: |
+        source dbt-env/bin/activate
+        psql -h localhost -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_DB }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+    
+    - name: Set DBT_PROFILES_DIR
+      run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
+
+    - name: check dbt project
+      run: |
+        source dbt-env/bin/activate
+        dbt debug
+        
+    - name: Extract data and upload it to DB
+      run: |
+        source dbt-env/bin/activate
+        python -m extract
+
+    - name: Run dbt run
+      run: |
+        source dbt-env/bin/activate
+        dbt run
+
+    - name: Run dbt test
+      run: |
+        source dbt-env/bin/activate
+        dbt test

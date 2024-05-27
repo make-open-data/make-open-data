@@ -1,4 +1,4 @@
-name: CI/CD with dbt and PostgreSQL
+name: 
 
 on:
   push:
@@ -16,11 +16,11 @@ jobs:
       postgres:
         image: postgis/postgis:12-3.1
         env:
-          POSTGRES_USER: ${{ secrets.POSTGRES_USER }} 
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }} 
-          POSTGRES_DB: ${{ secrets.POSTGRES_DB }} 
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: make_open_data
         ports:
-          - ${{ secrets.POSTGRES_PORT }}:${{ secrets.POSTGRES_PORT }} 
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -41,20 +41,20 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Install s3cmd
+      run: |
+        source dbt-env/bin/activate
+        sudo apt-get update
+        sudo apt-get install -y s3cmd
+
     - name: Set environment variables
       run: |
-        source dbt-env/bin/activate
-        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+        echo "POSTGRES_DB="make_open_data" >> $GITHUB_ENV
+        echo "POSTGRES_HOST="localhost" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD="postgres" >> $GITHUB_ENV
+        echo "POSTGRES_PORT="5432" >> $GITHUB_ENV
+        echo "POSTGRES_USER="postgres" >> $GITHUB_ENV
 
-    - name: Install PostGIS extensions
-      run: |
-        source dbt-env/bin/activate
-        psql -h localhost -U ${{ secrets.POSTGRES_USER }} -d ${{ secrets.POSTGRES_DB }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
-    
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
