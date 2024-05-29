@@ -36,10 +36,3 @@ logement_2020:
   source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/RP2020_LOGEMT_csv.zip
   source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
   source_csv_delimiter : ';'
-  source_columns :  ["COMMUNE", "ARM", "IRIS", "ACHL", "AEMM", "AEMMR", "AGEMEN8", "ANEM", "ANEMR", "ASCEN", 
-                    "BAIN", "BATI", "CATIRIS", "CATL", "CHAU", "CHFL", "CHOS", "CLIM", "CMBL", "CUIS", 
-                    "DEROU", "DIPLM", "EAU", "EGOUL", "ELEC", "EMPLM", "GARL", "HLML", 
-                    "ILETUDM", "ILTM", "IMMIM", "INAIM", "INEEM", "INP11M", "INP15M", "INP17M", "INP19M", "INP24M", 
-                    "INP3M", "INP60M", "INP65M", "INP5M", "INP75M", "INPAM", "INPER", "INPER1", "INPER2", "INPOM", "INPSM", 
-                    "IPONDL", "IRANM", "METRODOM", "NBPI", "RECHM", "REGION", "SANI", "SANIDOM", "SEXEM", "STAT_CONJM", "STOCD", 
-                    "SURF", "TACTM", "TPM", "TRANSM", "TRIRIS", "TYPC", "TYPL", "VOIT", "WC"]

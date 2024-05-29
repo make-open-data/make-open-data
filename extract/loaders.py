@@ -56,9 +56,9 @@ def read_from_source(tmpfile_csv_path,sources_infos ):
 
     return tmpfile_csv_path
 
-def get_columns_from_csv(file_path):
+def get_columns_from_csv(file_path, delimiter):
     # Read only the first row of the CSV file
-    df = pd.read_csv(file_path, nrows=1)
+    df = pd.read_csv(file_path, sep=delimiter, nrows=1)
     # Return the column names
     return df.columns.tolist()
 
@@ -89,10 +89,8 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
         """)
         connection.commit()
 
-        if "source_columns" in source_infos.keys():
-            columns = source_infos["source_columns"]
-        else:
-            columns = get_columns_from_csv(tmpfile_csv_path)
+        delimiter = source_infos["source_csv_delimiter"]
+        columns = get_columns_from_csv(tmpfile_csv_path, delimiter)
 
         # Create the table
         cursor.execute(f"""
@@ -103,7 +101,6 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
         connection.commit()
 
         columns_str = ', '.join(f'"{col}"' for col in columns)
-        delimiter = source_infos["source_csv_delimiter"]
         # Copy the data from the temporary file to the table
         with open(tmpfile_csv_path, 'r') as f:
             with cursor.copy(f"COPY {extract_schema_name}.{table_name}({columns_str}) FROM STDIN CSV HEADER DELIMITER '{delimiter}' ") as copy:
