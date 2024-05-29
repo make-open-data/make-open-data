@@ -20,8 +20,6 @@ port = os.getenv('POSTGRES_PORT')
 database = os.getenv('POSTGRES_DB')
 
 
-extract_schema_name = 'sources'
-
 def read_from_source(tmpfile_csv_path,sources_infos ):
 
     source_path = sources_infos["source_url"]
@@ -68,6 +66,13 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
     Upload a dataframe to a table in the database
     https://cboyer.github.io/developpement/postgres-parquet/
     """
+    source_db_schema = source_infos["source_db_schema"]
+    delimiter = source_infos["source_csv_delimiter"]
+
+    file_columns = get_columns_from_csv(tmpfile_csv_path, delimiter)
+    file_columns_str = ', '.join(f'"{col}"' for col in file_columns)
+
+
     try:
         # Connect to the PostgreSQL database
         connection = psycopg.connect(host=host, 
@@ -79,31 +84,28 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
 
         # Create the schema if it doesn't exist
         cursor.execute(f"""
-            CREATE SCHEMA IF NOT EXISTS "{extract_schema_name}";
+            CREATE SCHEMA IF NOT EXISTS "{source_db_schema}";
         """)
         connection.commit()
 
         # Drop the table if it exists
         cursor.execute(f"""
-            DROP TABLE IF EXISTS "{extract_schema_name}"."{table_name}";
+            DROP TABLE IF EXISTS "{source_db_schema}"."{table_name}";
         """)
         connection.commit()
 
-        delimiter = source_infos["source_csv_delimiter"]
-        columns = get_columns_from_csv(tmpfile_csv_path, delimiter)
 
         # Create the table
         cursor.execute(f"""
-            CREATE TABLE "{extract_schema_name}"."{table_name}" (
-                {', '.join(f'"{col}" text' for col in columns)}
+            CREATE TABLE "{source_db_schema}"."{table_name}" (
+                {', '.join(f'"{col}" text' for col in file_columns)}
             );
         """)
         connection.commit()
 
-        columns_str = ', '.join(f'"{col}"' for col in columns)
         # Copy the data from the temporary file to the table
         with open(tmpfile_csv_path, 'r') as f:
-            with cursor.copy(f"COPY {extract_schema_name}.{table_name}({columns_str}) FROM STDIN CSV HEADER DELIMITER '{delimiter}' ") as copy:
+            with cursor.copy(f"COPY {source_db_schema}.{table_name}({file_columns_str}) FROM STDIN CSV HEADER DELIMITER '{delimiter}' ") as copy:
                 copy.write(f.read())
         connection.commit()
         
