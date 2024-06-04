@@ -1,0 +1,13 @@
+code_col,lib_col,code_ou_libelle_valeurs
+COMMUNE,code_commune_insee,CODE
+ACHL,achevement_construction_logement,LIB
+AEMMR,annee_regroupe_ammenagement_logement,LIB
+AGEMEN8,age_regroupe_pr_menage,LIB
+ANEMR,aciennete_regroupe_ammenagement_logement,LIB
+ASCEN,desserte_ascensseur,LIB
+CATL,categorie_logement,LIB
+DIPLM,diplome_pr,LIB
+INPAM,personnes_actives_menage,CODE
+INPER,personnes_menage,CODE
+INPER1,personnes_masculin_menage,CODE
+INPER2,personnes_feminin_menage,CODE
