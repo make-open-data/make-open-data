@@ -15,7 +15,7 @@
       "COD_VAR", 
       "LIB_VAR", 
       "COD_MOD", 
-      "LIB_MOD"
+      REGEXP_REPLACE("LIB_MOD", '[^a-zA-Z0-9]', ' ', 'g') as "LIB_MOD"
     FROM meta.logement_2020_variables
   {% endset %}
 
