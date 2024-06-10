@@ -1,5 +1,5 @@
 
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 WITH logement AS (
     select * from sources.logement_2020
