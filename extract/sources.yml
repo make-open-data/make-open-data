@@ -49,3 +49,10 @@ logement_2020_variables:
   source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
   source_csv_delimiter : ';'
   source_db_schema : "meta"
+
+
+sirene_06_2024:
+  source_url: https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip
+  source_reference : https://www.insee.fr/fr/information/3591226
+  source_csv_delimiter : ','
+  source_db_schema : "sources"
