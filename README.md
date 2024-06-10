@@ -78,6 +78,7 @@ python -m extract
 - Réaliser et tester les transformations pour avoir obtenir les tables finales
 
 ```
+dbt seed
 dbt run
 dbt test
 ``` 
