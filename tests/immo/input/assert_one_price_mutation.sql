@@ -1,4 +1,6 @@
--- assert_value_for_mutation.sql
+-- Dans le fichier source de dvf, les mutations apparaissent sur plusieurs ligne
+-- Il s'agit des transactions multiventes (un appartement dans une ligne et une maison dans une autre)
+-- Il s'agit donc de vérifier que chaque mutation, donc dans les lignes où elle apparait, il n'a qu'une seule valeur foncière
 
 WITH mutation_values AS (
     SELECT 
@@ -9,7 +11,7 @@ WITH mutation_values AS (
         longitude,
         valeur_fonciere
     FROM 
-        sources.dvf_2023
+        {{ source('sources', 'dvf_2023')}} as dvf_2023
 ),
 
 mutation_value_counts AS (
