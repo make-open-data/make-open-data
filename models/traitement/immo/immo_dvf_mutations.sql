@@ -14,7 +14,7 @@
 -- Une mutation peut concerner plusieurs biens
 -- Le prix est le prix total de la mutation, il apparait sur les biens concernés
 
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 WITH source_dvf AS (
     select * from sources.dvf_2023
