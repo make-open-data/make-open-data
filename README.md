@@ -11,7 +11,21 @@ Make Open Data est un repo de code ouvert qui :
 - *Teste* des présuposés sur ces données. Un prix par transaction immobilières sur DVF par exemple.
 
 
-## Déploiement rapide :
+
+## Déploiement avec GitHub Actions
+
+- Foucher (*fork*) le projet dans un nouveau Repo [ici](https://github.com/make-open-data/make-open-data/fork)  
+
+- Renseigner les clés d'une BDD Postgres dans le Cloud 
+
+- Executer le workflow "Manually Deploy Data in a Postgres Database" 
+
+- Les tables sources et préparées sont disponibles dans la BDD
+
+
+## Dépoilement sur une machine
+
+Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébérgée dans le cloud.
 
 - Cloner le repo
 
@@ -64,8 +78,9 @@ python -m extract
 - Réaliser et tester les transformations pour avoir obtenir les tables finales
 
 ```
+dbt seed
 dbt run
 dbt test
 ``` 
 
-- Utilisez les en production ou branchez votre outils d'analyse.
+- Les tables sources et préparées sont disponibles dans la BDD
