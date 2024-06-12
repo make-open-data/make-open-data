@@ -2,7 +2,7 @@
 {{ config(materialized='view') }}
 
 WITH logement AS (
-    select * from sources.logement_2020
+    select * from {{ source('sources', 'logement_2020')}} as logement_2020
 ),
 decode_logement AS (
     {{ renommer_colonnes_logement(logement) }}

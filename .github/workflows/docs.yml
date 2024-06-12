@@ -3,13 +3,14 @@ name: Generate docs and save as artifact
 on:
   workflow_run:
     workflows: ["Integration Test"]
+    branches: [main]
     types:
       - completed
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     services:
       postgres:
