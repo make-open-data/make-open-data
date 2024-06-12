@@ -6,12 +6,11 @@ on:
     branches: [main]
     types:
       - completed
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     services:
       postgres:
@@ -57,11 +56,6 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt debug
-
-    - name: Run dbt seed
-      run: |
-        source dbt-env/bin/activate
-        dbt seed
         
     - name: Generate dbt Documentation
       run: |
