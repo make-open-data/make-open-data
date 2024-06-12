@@ -17,7 +17,7 @@
 {{ config(materialized='view') }}
 
 WITH source_dvf AS (
-    select * from sources.dvf_2023
+    select * from {{ source('sources', 'dvf_2023')}} as dvf_2023
 ),
 filtrer_dvf AS (
     {{ filtrer_dvf(source_dvf) }}
