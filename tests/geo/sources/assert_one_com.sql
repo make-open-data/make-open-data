@@ -4,11 +4,11 @@
 
 WITH counts as (
     select 
-        sources.cog_communes.code,
+        cog_communes.code,
         count(*) as num_com
-    from sources.cog_communes
-    where sources.cog_communes.type = 'commune-actuelle'
-    group by sources.cog_communes.code
+    from {{ source('sources', 'cog_communes')}}  as cog_communes
+    where cog_communes.type = 'commune-actuelle'
+    group by cog_communes.code
 )
 
 select *

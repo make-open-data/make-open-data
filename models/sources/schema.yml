@@ -1,0 +1,501 @@
+version: 2
+
+sources:
+  - name: sources
+    description: "Source tables for various datasets"
+    tables:
+      - name: cog_poste
+        description: "Base officielle des codes postaux"
+        columns:
+          - name: code_postal
+            description: "Postal code"
+            data_type: string
+          - name: commune
+            description: "Commune name"
+            data_type: string
+          - name: code_commune_insee
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: nom_de_la_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: libelle_d_acheminement
+            description: "Libellé d'acheminement"
+            data_type: text
+          - name: ligne_5
+            description: "Ligne 5"
+            data_type: text
+          - name: _geopoint
+            description: "Point géographique"
+            data_type: text
+
+      - name: cog_communes
+        description: "List of communes"
+        columns:
+          - name: code
+            description: "Code unique de la commune"
+            data_type: text
+          - name: nom
+            description: "Nom de la commune"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la commune"
+            data_type: text
+          - name: arrondissement
+            description: "Arrondissement de la commune"
+            data_type: text
+          - name: departement
+            description: "Département de la commune"
+            data_type: text
+          - name: region
+            description: "Région de la commune"
+            data_type: text
+          - name: type
+            description: "Type de commune"
+            data_type: text
+          - name: rangChefLieu
+            description: "Rang du chef-lieu"
+            data_type: text
+          - name: siren
+            description: "Code SIREN"
+            data_type: text
+          - name: codesPostaux
+            description: "Codes postaux associés à la commune"
+            data_type: text
+          - name: population
+            description: "Population de la commune"
+            data_type: text
+          - name: anciensCodes
+            description: "Anciens codes de la commune"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la commune"
+            data_type: text
+          - name: commune
+            description: "Commune"
+            data_type: text
+
+      - name: cog_arrondissements
+        description: "Informations sur les arrondissements"
+        columns:
+          - name: code
+            description: "Code de l'arrondissement"
+            data_type: text
+          - name: departement
+            description: "Département de l'arrondissement"
+            data_type: text
+          - name: region
+            description: "Région de l'arrondissement"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de l'arrondissement"
+            data_type: text
+          - name: nom
+            description: "Nom de l'arrondissement"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+
+      - name: cog_departements
+        description: "Informations sur les départements"
+        columns:
+          - name: code
+            description: "Code du département"
+            data_type: text
+          - name: region
+            description: "Région du département"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu du département"
+            data_type: text
+          - name: nom
+            description: "Nom du département"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone du département"
+            data_type: text
+
+      - name: cog_regions
+        description: "Informations sur les régions"
+        columns:
+          - name: code
+            description: "Code de la région"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la région"
+            data_type: text
+          - name: nom
+            description: "Nom de la région"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la région"
+            data_type: text
+
+      - name: dvf_2023
+        description: "Demandes de valeurs foncières géolocalisées pour 2023"
+        columns:
+          - name: id_mutation
+            description: "Identifiant de la mutation"
+            data_type: text
+          - name: date_mutation
+            description: "Date de la mutation"
+            data_type: text
+          - name: numero_disposition
+            description: "Numéro de disposition"
+            data_type: text
+          - name: nature_mutation
+            description: "Nature de la mutation"
+            data_type: text
+          - name: valeur_fonciere
+            description: "Valeur foncière"
+            data_type: text
+          - name: adresse_numero
+            description: "Numéro de l'adresse"
+            data_type: text
+          - name: adresse_suffixe
+            description: "Suffixe de l'adresse"
+            data_type: text
+          - name: adresse_nom_voie
+            description: "Nom de la voie"
+            data_type: text
+          - name: adresse_code_voie
+            description: "Code de la voie"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: code_commune
+            description: "Code de la commune"
+            data_type: text
+          - name: nom_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_departement
+            description: "Code du département"
+            data_type: text
+          - name: ancien_code_commune
+            description: "Ancien code de la commune"
+            data_type: text
+          - name: ancien_nom_commune
+            description: "Ancien nom de la commune"
+            data_type: text
+          - name: id_parcelle
+            description: "Identifiant de la parcelle"
+            data_type: text
+          - name: ancien_id_parcelle
+            description: "Ancien identifiant de la parcelle"
+            data_type: text
+          - name: numero_volume
+            description: "Numéro de volume"
+            data_type: text
+          - name: lot1_numero
+            description: "Numéro du lot 1"
+            data_type: text
+          - name: lot1_surface_carrez
+            description: "Surface Carrez du lot 1"
+            data_type: text
+          - name: lot2_numero
+            description: "Numéro du lot 2"
+            data_type: text
+          - name: lot2_surface_carrez
+            description: "Surface Carrez du lot 2"
+            data_type: text
+          - name: lot3_numero
+            description: "Numéro du lot 3"
+            data_type: text
+          - name: lot3_surface_carrez
+            description: "Surface Carrez du lot 3"
+            data_type: text
+          - name: lot4_numero
+            description: "Numéro du lot 4"
+            data_type: text
+          - name: lot4_surface_carrez
+            description: "Surface Carrez du lot 4"
+            data_type: text
+          - name: lot5_numero
+            description: "Numéro du lot 5"
+            data_type: text
+          - name: lot5_surface_carrez
+            description: "Surface Carrez du lot 5"
+            data_type: text
+          - name: nombre_lots
+            description: "Nombre de lots"
+            data_type: text
+          - name: code_type_local
+            description: "Code du type de local"
+            data_type: text
+          - name: type_local
+            description: "Type de local"
+            data_type: text
+          - name: surface_reelle_bati
+            description: "Surface réelle du bâti"
+            data_type: text
+          - name: nombre_pieces_principales
+            description: "Nombre de pièces principales"
+            data_type: text
+          - name: code_nature_culture
+            description: "Code de la nature de la culture"
+            data_type: text
+          - name: nature_culture
+            description: "Nature de la culture"
+            data_type: text
+          - name: code_nature_culture_speciale
+            description: "Code de la nature de la culture spéciale"
+            data_type: text
+          - name: nature_culture_speciale
+            description: "Nature de la culture spéciale"
+            data_type: text
+          - name: surface_terrain
+            description: "Surface du terrain"
+            data_type: text
+          - name: longitude
+            description: "Longitude"
+            data_type: text
+          - name: latitude
+            description: "Latitude"
+            data_type: text
+
+
+      - name: logement_2020
+        description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
+Recensement de la population - Fichier détail"
+        columns:
+          - name: COMMUNE
+            description: "Commune"
+            data_type: text
+          - name: ARM
+            description: "Année de référence des matériaux"
+            data_type: text
+          - name: IRIS
+            description: "Identifiant d'un IRIS (Ilots Regroupés pour l'Information Statistique)"
+            data_type: text
+          - name: ACHL
+            description: "Année de construction de l'habitation légère"
+            data_type: text
+          - name: AEMM
+            description: "Année d'entrée dans le ménage"
+            data_type: text
+          - name: AEMMR
+            description: "Année d'entrée du ménage dans la résidence"
+            data_type: text
+          - name: AGEMEN8
+            description: "Âge du ménage (tranche)"
+            data_type: text
+          - name: ANEM
+            description: "Année de naissance de l'enquêté majeur"
+            data_type: text
+          - name: ANEMR
+            description: "Année de naissance du répondant majeur"
+            data_type: text
+          - name: ASCEN
+            description: "Ascendance"
+            data_type: text
+          - name: BAIN
+            description: "Salle de bain"
+            data_type: text
+          - name: BATI
+            description: "Type de bâtiment"
+            data_type: text
+          - name: CATIRIS
+            description: "Catégorie IRIS"
+            data_type: text
+          - name: CATL
+            description: "Catégorie de logement"
+            data_type: text
+          - name: CHAU
+            description: "Chauffage"
+            data_type: text
+          - name: CHFL
+            description: "Chauffage au sol"
+            data_type: text
+          - name: CHOS
+            description: "Choix"
+            data_type: text
+          - name: CLIM
+            description: "Climatisation"
+            data_type: text
+          - name: CMBL
+            description: "Combles"
+            data_type: text
+          - name: CUIS
+            description: "Cuisine"
+            data_type: text
+          - name: DEROU
+            description: "Dernier ouvrage"
+            data_type: text
+          - name: DIPLM
+            description: "Diplôme le plus élevé"
+            data_type: text
+          - name: EAU
+            description: "Eau"
+            data_type: text
+          - name: EGOUL
+            description: "Égout"
+            data_type: text
+          - name: ELEC
+            description: "Électricité"
+            data_type: text
+          - name: EMPLM
+            description: "Emploi"
+            data_type: text
+          - name: GARL
+            description: "Garage"
+            data_type: text
+          - name: HLML
+            description: "Habitation légère de loisirs"
+            data_type: text
+          - name: ILETUDM
+            description: "Illettrisme"
+            data_type: text
+          - name: ILTM
+            description: "Immigration"
+            data_type: text
+          - name: IMMIM
+            description: "Immigration"
+            data_type: text
+          - name: INAIM
+            description: "Inactivité"
+            data_type: text
+          - name: INEEM
+            description: "Inégalité"
+            data_type: text
+          - name: INP11M
+            description: "Inscription pôle emploi 1 à 1 mois"
+            data_type: text
+          - name: INP15M
+            description: "Inscription pôle emploi 1 à 5 mois"
+            data_type: text
+          - name: INP17M
+            description: "Inscription pôle emploi 1 à 7 mois"
+            data_type: text
+          - name: INP19M
+            description: "Inscription pôle emploi 1 à 9 mois"
+            data_type: text
+          - name: INP24M
+            description: "Inscription pôle emploi 2 à 4 mois"
+            data_type: text
+          - name: INP3M
+            description: "Inscription pôle emploi 3 mois"
+            data_type: text
+          - name: INP60M
+            description: "Inscription pôle emploi 6 à 0 mois"
+            data_type: text
+          - name: INP65M
+            description: "Inscription pôle emploi 6 à 5 mois"
+            data_type: text
+          - name: INP5M
+            description: "Inscription pôle emploi 5 mois"
+            data_type: text
+          - name: INP75M
+            description: "Inscription pôle emploi 7 à 5 mois"
+            data_type: text
+          - name: INPAM
+            description: "Inscription pôle emploi Année Mois"
+            data_type: text
+          - name: INPER
+            description: "Inscription pôle emploi Erreur"
+            data_type: text
+          - name: INPER1
+            description: "Inscription pôle emploi Erreur 1"
+            data_type: text
+          - name: INPER2
+            description: "Inscription pôle emploi Erreur 2"
+            data_type: text
+          - name: INPOM
+            description: "Inscription pôle emploi Outre-Mer"
+            data_type: text
+          - name: INPSM
+            description: "Inscription pôle emploi Sans Mois"
+            data_type: text
+          - name: IPONDL
+            description: "Pondération"
+            data_type: text
+          - name: IRANM
+            description: "Iranien"
+            data_type: text
+          - name: METRODOM
+            description: "Métropole/DOM"
+            data_type: text
+          - name: NBPI
+            description: "Nombre de pièces"
+            data_type: text
+          - name: RECHM
+            description: "Recherche d'emploi"
+            data_type: text
+          - name: REGION
+            description: "Région"
+            data_type: text
+          - name: SANI
+            description: "Sanitaire"
+            data_type: text
+          - name: SANIDOM
+            description: "Sanitaire DOM"
+            data_type: text
+          - name: SEXEM
+            description: "Sexe"
+            data_type: text
+          - name: STAT_CONJM
+            description: "Statut conjugal"
+            data_type: text
+          - name: STOCD
+            description: "Stockage"
+            data_type: text
+          - name: SURF
+            description: "Surface"
+            data_type: text
+          - name: TACTM
+            description: "Activité"
+            data_type: text
+          - name: TPM
+            description: "Temps partiel"
+            data_type: text
+          - name: TRANSM
+            description: "Transport"
+            data_type: text
+          - name: TRIRIS
+            description: "Tri IRIS"
+            data_type: text
+          - name: TYPC
+            description: "Type de chauffage central"
+            data_type: text
+          - name: TYPL
+            description: "Type de logement"
+            data_type: text
+
+  - name: meta
+    description: "Metadata tables"
+    tables:
+      - name: logement_2020_variables
+        description: "Dictionnaire des variables pour la table logement_2020"
+        columns:
+          - name: COD_VAR
+            description: "Nom de la variable"
+            data_type: string
+          - name: LIB_VAR
+            description: "Libellé de la variable"
+            data_type: string
+          - name: COD_MOD
+            description: "Nom de le modalité"
+            data_type: string
+          - name: LIB_MOD
+            description: "Libellé de la modalité"
+            data_type: string
+          - name: TYPE_VAR
+            description: "Type de la variable (pas applicable en import CSV car tout en text)"
+            data_type: string
+          - name: LONG_VAR
+            description: "Longueur de la variable (pas applicable en import CSV car tout en text)"
+            data_type: string

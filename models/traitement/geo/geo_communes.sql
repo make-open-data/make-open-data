@@ -8,8 +8,8 @@
 with filtre_cog_communes as (
     -- Filter out non-commune rows here to avoid confusion of filtering in the main query
     select * 
-    from sources.cog_communes     
-    where sources.cog_communes.type = 'commune-actuelle' 
+    from {{ source('sources', 'cog_communes')}} as cog_communes     
+    where cog_communes.type = 'commune-actuelle' 
 
 ),denomalise_cog as (
     select
@@ -22,21 +22,21 @@ with filtre_cog_communes as (
         filtre_cog_communes.population as population,
         filtre_cog_communes.zone as code_zone,
         
-        sources.cog_arrondissements.nom as nom_arrondissement,
-        sources.cog_departements.nom as nom_departement,
-        sources.cog_regions.nom as nom_region
+        cog_arrondissements.nom as nom_arrondissement,
+        cog_departements.nom as nom_departement,
+        cog_regions.nom as nom_region
 
     from filtre_cog_communes
-    left join sources.cog_arrondissements on sources.cog_arrondissements.code = filtre_cog_communes.arrondissement
-    left join sources.cog_departements on sources.cog_departements.code = filtre_cog_communes.departement
-    left join sources.cog_regions on sources.cog_regions.code = filtre_cog_communes.region  
+    left join {{ source('sources', 'cog_arrondissements')}}  cog_arrondissements on cog_arrondissements.code = filtre_cog_communes.arrondissement
+    left join {{ source('sources', 'cog_departements')}}  cog_departements on cog_departements.code = filtre_cog_communes.departement
+    left join {{ source('sources', 'cog_regions')}}  cog_regions on cog_regions.code = filtre_cog_communes.region  
     
 ), geopoints as (
     select DISTINCT
-        LPAD(CAST(sources.cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
-        CAST(SPLIT_PART(sources.cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
-        CAST(SPLIT_PART(sources.cog_poste._geopoint, ',', 2) AS FLOAT) as commune_longitude
-    from sources.cog_poste
+        LPAD(CAST(cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
+        CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
+        CAST(SPLIT_PART(cog_poste._geopoint, ',', 2) AS FLOAT) as commune_longitude
+    from {{ source('sources', 'cog_poste')}}  as cog_poste
 )
 
 select

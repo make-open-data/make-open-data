@@ -2,10 +2,10 @@
 
 WITH counts as (
     select 
-        sources.cog_departements.code,
+        cog_departements.code,
         count(*) as num_dep
-    from sources.cog_departements
-    group by sources.cog_departements.code
+    from {{ source('sources', 'cog_departements')}} as cog_departements
+    group by cog_departements.code
 )
 
 select *
