@@ -56,6 +56,11 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt debug
+
+    - name: Run dbt seed
+      run: |
+        source dbt-env/bin/activate
+        dbt seed
         
     - name: Generate dbt Documentation
       run: |
