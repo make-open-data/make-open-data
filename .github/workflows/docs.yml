@@ -57,11 +57,21 @@ jobs:
         source dbt-env/bin/activate
         dbt debug
 
+    - name: Extract data and upload it to DB
+      run: |
+        source dbt-env/bin/activate
+        python -m extract
+  
     - name: Run dbt seed
       run: |
         source dbt-env/bin/activate
         dbt seed
-        
+
+    - name: Run dbt run
+      run: |
+        source dbt-env/bin/activate
+        dbt run
+      
     - name: Generate dbt Documentation
       run: |
         source dbt-env/bin/activate
