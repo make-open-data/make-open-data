@@ -40,6 +40,11 @@ jobs:
         echo "S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}" >> $GITHUB_ENV
         echo "S3_SPACE_NAME=${{ secrets.S3_SPACE_NAME }}" >> $GITHUB_ENV
 
+    - name: Install s3cmd
+      run: |
+        source dbt-env/bin/activate
+        sudo apt-get update
+        sudo apt-get install -y s3cmd
 
     - name: Copy from Postgres and upload to S3 for multiple files
       run: |
