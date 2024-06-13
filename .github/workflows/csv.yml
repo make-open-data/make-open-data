@@ -49,7 +49,7 @@ jobs:
     - name: Copy from Postgres and upload to S3 for multiple files
       run: |
         source dbt-env/bin/activate
-        entities=("geo_communes" "geo_postaux" "geo_postaux_communes" "decoder_logement" "immo_dvf_mutations")
+        entities=("geo_communes" "geo_postaux" "geo_postaux_communes")
         for entity in "${entities[@]}"
         do
           # Determine if the entity is a view or a table
