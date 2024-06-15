@@ -13,3 +13,5 @@ SELECT
     *
 FROM 
     decode_logement
+LIMIT
+    100000

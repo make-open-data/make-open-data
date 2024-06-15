@@ -15,12 +15,7 @@
       "COD_VAR", 
       "LIB_VAR", 
       "COD_MOD", 
-      CASE -- A simplifier et refactorer au cas où unnacent n'est pas possible
-        WHEN right(lower(regexp_replace(regexp_replace(unaccent("LIB_MOD"), 'm²', '', 'g'), '[ ''()]+', '_', 'g')), 1) = '_' THEN
-          left(lower(regexp_replace(regexp_replace(unaccent("LIB_MOD"), 'm²', '', 'g'), '[ ''()]+', '_', 'g')), -1)
-        ELSE
-          lower(regexp_replace(regexp_replace(unaccent("LIB_MOD"), 'm²', '', 'g'), '[ ''()]+', '_', 'g'))
-      END AS "LIB_MOD"
+      {{ nettoyer_modalite('"LIB_MOD"') }} AS "LIB_MOD"
       FROM {{ source("meta", "logement_2020_variables" ) }}
   {% endset %}
 
