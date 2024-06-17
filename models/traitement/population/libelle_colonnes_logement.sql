@@ -1,8 +1,9 @@
-
+  -- depends_on: {{ ref('logement_2020_codes') }}
+  
 {{ config(materialized='view') }}
 
 WITH logement AS (
-    select * from {{ source('sources', 'logement_2020')}} as logement_2020
+    select * from {{ source('sources', 'logement_2020')}}
 ),
 decode_logement AS (
     {{ renommer_colonnes_logement(logement) }}
@@ -13,5 +14,5 @@ SELECT
     *
 FROM 
     decode_logement
-LIMIT
-    100000
+WHERE
+    region_residence = '76'
