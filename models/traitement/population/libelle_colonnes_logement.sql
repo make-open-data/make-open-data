@@ -16,3 +16,4 @@ FROM
     decode_logement
 WHERE
     region_residence = '76'
+    
