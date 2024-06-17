@@ -74,7 +74,12 @@ jobs:
       run: |
         source dbt-env/bin/activate
         python -m extract
-    
+
+    - name: Run dbt deps
+      run: |
+        source dbt-env/bin/activate
+        dbt deps
+        
     - name: Run dbt seed
       run: |
         source dbt-env/bin/activate

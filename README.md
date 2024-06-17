@@ -69,6 +69,7 @@ CREATE EXTENSION unaccent;
 ```
 export DBT_PROFILES_DIR=.  
 dbt debug
+dbt deps
 ``` 
 
 - Extraire les données des sources à la base de données
