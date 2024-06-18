@@ -15,5 +15,4 @@ SELECT
 FROM 
     decode_logement
 WHERE
-    region_residence = '76'
-    
+    region_residence = 'occitanie'
