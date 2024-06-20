@@ -1,12 +1,4 @@
-
-/*
-    Merge all data to commune level
-
-
-    Try changing "table" to "view" below
-*/
-
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 with format_cog_poste as (
     select DISTINCT

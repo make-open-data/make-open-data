@@ -1,0 +1,76 @@
+name: Manually Dump Data from Postgres Database to S3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11.5
+
+    - name: Create Python virtual environment
+      run: python3 -m venv dbt-env
+
+    - name: Activate virtual environment and install dependencies
+      run: |
+        source dbt-env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Set environment variables
+      run: |
+        source dbt-env/bin/activate
+        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+        
+        echo "S3_SECRET_KEY=${{ secrets.S3_SECRET_KEY }}" >> $GITHUB_ENV
+        echo "S3_ACCESS_KEY=${{ secrets.S3_ACCESS_KEY }}" >> $GITHUB_ENV
+        echo "S3_URL=${{ secrets.S3_URL }}" >> $GITHUB_ENV
+        echo "S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}" >> $GITHUB_ENV
+        echo "S3_SPACE_NAME=${{ secrets.S3_SPACE_NAME }}" >> $GITHUB_ENV
+
+    - name: Install s3cmd
+      run: |
+        source dbt-env/bin/activate
+        sudo apt-get update
+        sudo apt-get install -y s3cmd
+
+    - name: Copy from Postgres and upload to S3 for multiple files
+      run: |
+        source dbt-env/bin/activate
+        entities=("geo_communes" "geo_postaux" "geo_postaux_communes")
+        for entity in "${entities[@]}"
+        do
+          # Determine if the entity is a view or a table
+          entity_type=$(PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h ${{ secrets.POSTGRES_HOST }} -U ${{ secrets.POSTGRES_USER }} -p ${{ secrets.POSTGRES_PORT }} -d ${{ secrets.POSTGRES_DB }} -tAc "SELECT CASE WHEN EXISTS (SELECT FROM pg_views WHERE viewname = '$entity') THEN 'view' WHEN EXISTS (SELECT FROM pg_tables WHERE tablename = '$entity') THEN 'table' ELSE 'unknown' END")
+            
+          filepath="${GITHUB_WORKSPACE}/${entity}.csv"
+            
+          # Handle based on entity type
+          if [ "$entity_type" == "view" ]; then
+            # Copy from a view using SELECT
+            PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h ${{ secrets.POSTGRES_HOST }} -U ${{ secrets.POSTGRES_USER }} -p ${{ secrets.POSTGRES_PORT }} -d ${{ secrets.POSTGRES_DB }} -c "\copy (SELECT * FROM prep.$entity) TO '$filepath' WITH CSV HEADER"
+          elif [ "$entity_type" == "table" ]; then
+            # Directly copy from a table
+            PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h ${{ secrets.POSTGRES_HOST }} -U ${{ secrets.POSTGRES_USER }} -p ${{ secrets.POSTGRES_PORT }} -d ${{ secrets.POSTGRES_DB }} -c "\copy prep.$entity TO '$filepath' WITH CSV HEADER"
+          else
+            echo "Unknown entity type for $entity"
+          fi
+            
+          # Upload to S3 and remove the local file
+          s3cmd put $filepath s3://${{ secrets.S3_SPACE_NAME }}/$entity.csv --access_key ${{ secrets.S3_ACCESS_KEY }} --secret_key ${{ secrets.S3_SECRET_KEY }} --host ${{ secrets.S3_URL }} --host-bucket ${{ secrets.S3_BUCKET_NAME }} --no-check-certificate --acl-public
+          rm $filepath
+        done
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
