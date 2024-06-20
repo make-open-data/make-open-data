@@ -1,8 +1,3 @@
-
-/*
-    Fournit une tables des communes avec les informations dénormalisées
-*/
-
 {{ config(materialized='table') }}
 
 with filtre_cog_communes as (
