@@ -1,5 +1,3 @@
-  -- depends_on: {{ ref('eclater_logement_communes') }}
-  
 {{ config(materialized='table') }}
 
 {% set colonnes_logement_query %}
@@ -25,17 +23,17 @@ with communes as (
   ),
   aggregated as (
 
-     SELECT * 
-     FROM communes
+    SELECT * 
+    FROM communes
 
-      {% for colonne_a_aggreger in colonnes_a_aggreger_list %}
-      
-        LEFT JOIN ( {{ pivoter_logement(colonne_a_aggreger, loop.index) }}) pivoter_logement_{{ loop.index }} 
-        ON communes.code_commune_insee = pivoter_logement_{{ loop.index }}.code_commune_insee_{{ loop.index }} 
-      
-      {% endfor %}
+    {% for colonne_a_aggreger in colonnes_a_aggreger_list %}
+    
+      LEFT JOIN ( {{ aggreger_logement_par_colonne(colonnes_a_aggreger_list, loop.index, colonne_a_aggreger) }} ) pivoter_logement_{{ loop.index }} 
+      ON communes.code_commune_insee = pivoter_logement_{{ loop.index }}.code_commune_insee_{{ loop.index }} 
+
+    {% endfor %}
+
   )
-
 
 SELECT 
     *  
