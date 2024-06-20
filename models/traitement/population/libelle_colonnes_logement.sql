@@ -14,5 +14,3 @@ SELECT
     *
 FROM 
     decode_logement
-WHERE
-    region_residence = 'occitanie'
