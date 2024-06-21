@@ -5,7 +5,7 @@ sources:
     description: "Source tables for various datasets"
     tables:
       - name: cog_poste
-        description: "Base officielle des codes postaux"
+        description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
         columns:
           - name: code_postal
             description: "Postal code"
@@ -33,7 +33,7 @@ sources:
             data_type: text
 
       - name: cog_communes
-        description: "List of communes"
+        description: "List of communes. Producteur des donnees: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
         columns:
           - name: code
             description: "Code unique de la commune"
@@ -82,7 +82,7 @@ sources:
             data_type: text
 
       - name: cog_arrondissements
-        description: "Informations sur les arrondissements"
+        description: "Informations sur les arrondissements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
         columns:
           - name: code
             description: "Code de l'arrondissement"
@@ -104,7 +104,7 @@ sources:
             data_type: text
 
       - name: cog_departements
-        description: "Informations sur les départements"
+        description: "Informations sur les départements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
         columns:
           - name: code
             description: "Code du département"
@@ -126,7 +126,7 @@ sources:
             data_type: text
 
       - name: cog_regions
-        description: "Informations sur les régions"
+        description: "Informations sur les régions.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
         columns:
           - name: code
             description: "Code de la région"
@@ -145,7 +145,7 @@ sources:
             data_type: text
 
       - name: dvf_2023
-        description: "Demandes de valeurs foncières géolocalisées pour 2023"
+        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
         columns:
           - name: id_mutation
             description: "Identifiant de la mutation"
@@ -271,7 +271,7 @@ sources:
 
       - name: logement_2020
         description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
-Recensement de la population - Fichier détail"
+Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
         columns:
           - name: COMMUNE
             description: "Commune"
@@ -474,28 +474,3 @@ Recensement de la population - Fichier détail"
           - name: TYPL
             description: "Type de logement"
             data_type: text
-
-  - name: meta
-    description: "Metadata tables"
-    tables:
-      - name: logement_2020_variables
-        description: "Dictionnaire des variables pour la table logement_2020"
-        columns:
-          - name: COD_VAR
-            description: "Nom de la variable"
-            data_type: string
-          - name: LIB_VAR
-            description: "Libellé de la variable"
-            data_type: string
-          - name: COD_MOD
-            description: "Nom de le modalité"
-            data_type: string
-          - name: LIB_MOD
-            description: "Libellé de la modalité"
-            data_type: string
-          - name: TYPE_VAR
-            description: "Type de la variable (pas applicable en import CSV car tout en text)"
-            data_type: string
-          - name: LONG_VAR
-            description: "Longueur de la variable (pas applicable en import CSV car tout en text)"
-            data_type: string
