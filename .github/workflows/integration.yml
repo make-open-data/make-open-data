@@ -14,7 +14,7 @@ jobs:
 
     services:
       postgres:
-        image: postgis/postgis:16-3.4
+        image: postgres/postgres:16-3
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -70,6 +70,10 @@ jobs:
         source dbt-env/bin/activate
         psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
 
+    - name: Install postgis extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
 
     - name: check dbt project
