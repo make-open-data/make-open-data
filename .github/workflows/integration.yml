@@ -10,7 +10,7 @@ on:
 
 jobs:
   dbt:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-m
 
     services:
       postgres:
