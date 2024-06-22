@@ -1,5 +1,3 @@
-  -- depends_on: {{ ref('logement_2020_codes') }}
-  
 {{ config(materialized='view') }}
 
 WITH logement AS (

@@ -1,4 +1,4 @@
-{% macro aggreger_logement_par_colonne(colonnes_a_aggreger_list, colonne_index, colonne_a_aggreger) %}    
+{% macro aggreger_logement_par_colonne(colonnes_a_aggreger_list, colonne_index, colonne_a_aggreger, colonne_a_aggreger_values_list) %}    
 
 
 with unpivoted as (
@@ -11,7 +11,7 @@ deduplicated as (
     {{ dedupliquer_logement(concatenated) }}
 ),
 pivoted as (
-    {{ pivoter_logement(deduplicated, colonne_a_aggreger, colonne_index) }}
+    {{ pivoter_logement(deduplicated, colonne_a_aggreger_values_list, colonne_index) }}
 )
 
 select * from pivoted
