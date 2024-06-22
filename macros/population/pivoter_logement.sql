@@ -1,8 +1,12 @@
-{% macro pivoter_logement(deduplicated, colonne_a_aggreger_values_list, colonne_index) %}    
+{% macro pivoter_logement(deduplicated, colonne_a_aggreger) %}    
+
+
+
+{% set colonne_a_aggreger_values_list = lister_colonne_a_aggrger_valeurs(colonne_a_aggreger) %}
 
     select 
 
-    code_commune_insee as code_commune_insee_{{ colonne_index }},
+    code_commune_insee,
     {{ dbt_utils.pivot(
         'champs__valeur',
         colonne_a_aggreger_values_list,
