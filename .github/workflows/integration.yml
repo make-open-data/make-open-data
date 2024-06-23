@@ -1,34 +1,11 @@
-name: Integration Test
+name: Manually Deploy Data in a Postgres Database
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - staging
+  workflow_dispatch:
 
 jobs:
   dbt:
-    runs-on: ubuntu-latest-m
-
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: make_open_data
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-          --shm-size=8gb 
-          --ulimit memlock=-1:-1 
-          --ulimit nofile=65535:65535 
+    runs-on: ubuntu-latest
 
     steps:
     - name: Check out repository code
@@ -50,25 +27,36 @@ jobs:
 
     - name: Set environment variables
       run: |
-        echo "POSTGRES_DB=make_open_data" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
-        echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
+        source dbt-env/bin/activate
+        echo "CI_POSTGRES_DB=${{ secrets.CI_POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "CI_POSTGRES_HOST=${{ secrets.CI_POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "CI_POSTGRES_PASSWORD=${{ secrets.CI_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "CI_POSTGRES_PORT=${{ secrets.CI_POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "CI_POSTGRES_USER=${{ secrets.CI_POSTGRES_USER }}" >> $GITHUB_ENV
+
+    - name: Install PostGIS extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+
+    - name: Install unnaccent extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
+
+    - name: delete "prep" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS prep CASCADE;"
+    
+    - name: delete "sources" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS sources CASCADE;"
+    
 
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
-
-    - name: Install unnacent extensions
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
-
-    - name: Install postgis extensions
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS postgis;"
-
 
     - name: check dbt project
       run: |
@@ -84,7 +72,7 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt deps
-        
+
     - name: Run dbt seed
       run: |
         source dbt-env/bin/activate
@@ -99,3 +87,14 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt test
+
+    - name: delete "prep" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS prep CASCADE;"
+    
+    - name: delete "sources" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS sources CASCADE;"
+    
