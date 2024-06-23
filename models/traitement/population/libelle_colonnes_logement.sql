@@ -7,7 +7,6 @@ decode_logement AS (
     {{ renommer_colonnes_logement(logement) }}
 )
 
-
 SELECT 
     *
 FROM 

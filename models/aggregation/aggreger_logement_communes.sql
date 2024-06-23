@@ -1,5 +1,8 @@
 {{ config(materialized='table') }}
 
+--- Agrège les données de la base logement par commune
+--- Colonne par colonne pour ne pas saturer la mémoire
+--- L'agrégration est faite par univot/pivot.
 
 {% set colonnes_a_aggreger_list = lister_colonnes_a_aggreger() %}
 
