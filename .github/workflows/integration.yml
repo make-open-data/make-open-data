@@ -1,7 +1,12 @@
-name: Manually Deploy Data in a Postgres Database
+name: Integration Test
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - staging
 
 jobs:
   dbt:
