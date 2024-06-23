@@ -33,11 +33,11 @@ jobs:
     - name: Set environment variables
       run: |
         source dbt-env/bin/activate
-        echo "CI_POSTGRES_DB=${{ secrets.CI_POSTGRES_DB }}" >> $GITHUB_ENV
-        echo "CI_POSTGRES_HOST=${{ secrets.CI_POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "CI_POSTGRES_PASSWORD=${{ secrets.CI_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "CI_POSTGRES_PORT=${{ secrets.CI_POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "CI_POSTGRES_USER=${{ secrets.CI_POSTGRES_USER }}" >> $GITHUB_ENV
+        echo "POSTGRES_DB=${{ secrets.CI_POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.CI_POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.CI_POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.CI_POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.CI_POSTGRES_USER }}" >> $GITHUB_ENV
 
     - name: Install PostGIS extensions
       run: |
@@ -52,12 +52,12 @@ jobs:
     - name: delete "prep" schemas if exists
       run: |
         source dbt-env/bin/activate
-        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS prep CASCADE;"
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
     
     - name: delete "sources" schemas if exists
       run: |
         source dbt-env/bin/activate
-        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS sources CASCADE;"
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS sources CASCADE;"
     
 
     - name: Set DBT_PROFILES_DIR
@@ -93,13 +93,15 @@ jobs:
         source dbt-env/bin/activate
         dbt test
 
+
     - name: delete "prep" schemas if exists
       run: |
         source dbt-env/bin/activate
-        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS prep CASCADE;"
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
     
+
     - name: delete "sources" schemas if exists
       run: |
         source dbt-env/bin/activate
-        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE; DROP SCHEMA IF EXISTS sources CASCADE;"
+        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS sources CASCADE;"
     
