@@ -52,6 +52,12 @@ jobs:
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
+        
+    - name: Install unnacent extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
+
     - name: check dbt project
       run: |
         source dbt-env/bin/activate
@@ -61,6 +67,12 @@ jobs:
       run: |
         source dbt-env/bin/activate
         python -m extract
+
+    - name: Run dbt deps
+      run: |
+        source dbt-env/bin/activate
+        dbt deps
+
   
     - name: Run dbt seed
       run: |

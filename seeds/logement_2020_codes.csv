@@ -39,7 +39,7 @@ RECHM,anciennete_recherche_emploi_pr,LIB
 REGION,region_residence,LIB
 SEXEM,sexe_pr,LIB
 STAT_CONJM,status_conjugal_pr,LIB
-STOCD,status_occupation_logement,LIB
+STOCD,status,LIB
 SURF,superficie_logement,LIB
 TACTM,type_activite_pr,LIB
 TPM,temps_travail_pr,LIB

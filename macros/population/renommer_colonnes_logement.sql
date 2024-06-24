@@ -15,8 +15,8 @@
       "COD_VAR", 
       "LIB_VAR", 
       "COD_MOD", 
-      REGEXP_REPLACE("LIB_MOD", '[^a-zA-Z0-9]', ' ', 'g') as "LIB_MOD"
-    FROM {{ source("meta", "logement_2020_variables" ) }}
+      {{ nettoyer_modalite_logement('"LIB_MOD"') }} AS "LIB_MOD"
+      FROM {{ source("meta", "logement_2020_variables" ) }}
   {% endset %}
 
   {% set metadata_results = run_query(metadata_query) %}

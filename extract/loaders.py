@@ -90,7 +90,7 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
 
         # Drop the table if it exists
         cursor.execute(f"""
-            DROP TABLE IF EXISTS "{source_db_schema}"."{table_name}";
+            DROP TABLE IF EXISTS "{source_db_schema}"."{table_name}" CASCADE;
         """)
         connection.commit()
 
