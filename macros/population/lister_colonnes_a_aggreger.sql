@@ -1,11 +1,11 @@
-{% macro lister_colonnes_a_aggreger() %}    
+{% macro lister_colonnes_a_aggreger(variante_logement) %}    
 
 
 {% set colonnes_logement_query %}
 
   SELECT DISTINCT 
   lib_col
-  FROM {{ ref('logement_2020_codes') }}
+  FROM {{ ref(variante_logement) }}
 {% endset %}
 {% set colonnes_logement_resultat = run_query(colonnes_logement_query) %}
 

@@ -1,4 +1,4 @@
-{% macro unpivot_logement(colonnes_a_aggreger_list, colonne_a_aggreger) %}  
+{% macro unpivot_logement(variante_logement, colonnes_a_aggreger_list, colonne_a_aggreger) %}  
 
 -- Prends toutes les colonnes sauf la colonne à considérer, pour donne en paramètre à unpivot
   {% set colonnes_a_ignorer = ['region_residence'] %}
@@ -9,7 +9,7 @@
   {% endfor %}
 
     {{ dbt_utils.unpivot(
-        relation=ref('libelle_colonnes_logement'),
+        relation=ref(variante_logement),
         exclude=['code_commune_insee', 'poids_du_logement'],
         remove=colonnes_a_ignorer,
         field_name='champs',
