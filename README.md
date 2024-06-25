@@ -54,12 +54,14 @@ export POSTGRES_PORT=<YOUR_POSTGRES_PORT>
 export POSTGRES_DB=<YOUR_POSTGRES_DB>
 ``` 
 
-- A faire une fois : installer l'extension PostGis et vérifier
+- A faire une fois : installer les extensions PostGis et unaccent et vérifier
 
 ```
 psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
 CREATE EXTENSION postgis;  
 SELECT PostGIS_Version();
+CREATE EXTENSION unaccent;
+
 ```
 
 - Connecter DBT à la base de données
@@ -67,6 +69,7 @@ SELECT PostGIS_Version();
 ```
 export DBT_PROFILES_DIR=.  
 dbt debug
+dbt deps
 ``` 
 
 - Extraire les données des sources à la base de données
