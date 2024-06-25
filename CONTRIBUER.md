@@ -157,7 +157,7 @@ Le `footer` est optionnel. The [Commit Message Footer](#commit-footer) format de
 ```
 <type>(<scope>): <short summary>
  │       │             │
- │       │             └─⫸ Résumé au présent. Pas de majuscule. Pas de point final.
+ │       │             └─⫸ Résumé au présent. Pas de majuscule. Pas de point final
  │       │
  │       └─⫸ Commit Scope: workflow|dbt
  │
