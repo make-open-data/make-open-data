@@ -11,6 +11,7 @@ on:
 jobs:
   dbt:
     runs-on: ubuntu-latest
+    environment: integration_test
 
     steps:
     - name: Check out repository code
