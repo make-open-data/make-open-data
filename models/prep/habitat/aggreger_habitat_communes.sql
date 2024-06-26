@@ -8,7 +8,13 @@
 
 
 with communes as (
-    SELECT DISTINCT code_commune_insee from {{ ref('decoder_habitat') }}
+    SELECT 
+      code_commune_insee,
+      SUM(CAST(poids_du_logement AS numeric)) AS nombre_de_logements
+    FROM 
+      {{ ref('decoder_habitat') }}
+    GROUP BY
+      code_commune_insee
   ),
   aggregated as (
 

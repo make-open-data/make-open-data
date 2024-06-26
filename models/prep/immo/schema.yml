@@ -16,49 +16,40 @@ models:
   - name: valeur_fonciere	
     data_type: text
     description: Valeur foncière, en euros, de la mutation
-    tests:
-          - not_null
 
   - name: longitude	
     data_type: text
     description: Cordonnées gps, Longitude, ou du bien principal (voir description) en cas de mutation multivente
-    tests:
-          - not_null
+
 
   - name: latitude	
     data_type: text
     description: Cordonnées gps, Latitude, ou du bien principal (voir description) en cas de mutation multivente
-    tests:
-          - not_null
+  
 
   - name: total_pieces	
     data_type: numeric
     description: Nombre de pièces du bien, ou des biens en cas de mutation multiventes
-    tests:
-          - not_null
+  
 
   - name: total_surface	
     data_type: numeric
     description: Surface du bien, ou des biens en cas de mutation multiventes
-    tests:
-          - not_null
+
 
   - name: type_local	
     data_type: text
     description: Type de bien, ou du bien principal (voir description) de la mutation 
-    tests:
-          - not_null
+ 
 
   - name: code_postal	
     data_type: text
     description: Code postal du bien, ou du bien principal (voir description) en cas de mutation multivente
-    tests:
-          - not_null
+
 
 
   - name: code_commune	
     data_type: text
     description: Code commune du bien, ou du bien principal (voir description) en cas de mutation multivente
-    tests:
-          - not_null
+
 
