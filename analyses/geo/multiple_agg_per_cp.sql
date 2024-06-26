@@ -6,10 +6,10 @@ with merged_data as (
     select
         LPAD(CAST(cp.code_postal AS TEXT), 5, '0') as code_postal,
         -- cc."ARR" as code_arrondissement,
-        cc."DEP" as code_departement,
-        cc."REG" as code_region
-    from codes_postaux cp
-    inner join codes_geographiques_communes cc on cp.code_commune_insee = cc."COM" and cc."TYPECOM" = 'COM'
+        cc.departement as code_departement,
+        cc.region as code_region
+    from {{ source('sources', 'cog_poste')}} cp
+    inner join {{ source('sources', 'cog_communes')}} cc on cp.code_commune_insee = cc."COM" and cc."TYPECOM" = 'COM'
     -- Remplacer par left join à l'inclusions des territoire d'outre mer TOM 
     -- Puisque les codes communes ne sont pas renseignés pour ces territoires dans codes_geographiques_communes
     -- La Réunion est une region d'outre, mais pas un territoire d'outre mer, dès lors elle est incluse dans les codes_geographiques_communes

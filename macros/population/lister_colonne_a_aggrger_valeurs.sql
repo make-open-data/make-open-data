@@ -1,10 +1,10 @@
-{% macro lister_colonne_a_aggrger_valeurs(colonne_a_aggreger) %}    
+{% macro lister_colonne_a_aggrger_valeurs(variante_logement, colonne_a_aggreger) %}    
 
 
       {% set colonne_a_aggreger_values_query %}
         SELECT DISTINCT 
         {{ colonne_a_aggreger }}
-        FROM {{ ref("libelle_colonnes_logement" ) }}
+        FROM {{ ref(variante_logement) }}
       {% endset %}
 
       {% set colonne_a_aggreger_values = run_query(colonne_a_aggreger_values_query) %}

@@ -13,7 +13,7 @@ with filtre_cog_communes as (
         filtre_cog_communes.arrondissement as code_arrondissement,
         filtre_cog_communes.departement as code_departement,
         filtre_cog_communes.region as code_region,
-        LPAD(filtre_cog_communes."codesPostaux"::text, 5, '0') as codes_postaux,
+        "codesPostaux" as codes_postaux,
         filtre_cog_communes.population as population,
         filtre_cog_communes.zone as code_zone,
         

@@ -1,11 +1,11 @@
-{% macro renommer_colonnes_logement(logement) %}
+{% macro renommer_colonnes_valeurs_logement(logement, codes_variante_logement) %}
   
   {% set seed_query %}
     SELECT DISTINCT 
       code_col, 
       lib_col, 
       code_ou_libelle_valeurs
-    FROM {{ ref('logement_2020_codes') }} as logement_2020_codes
+    FROM {{ ref(codes_variante_logement) }} as logement_2020_codes
   {% endset %}
 
   {% set seed_results = run_query(seed_query) %}

@@ -1,4 +1,4 @@
-{% macro bien_dvf(filtrer_dvf) %}
+{% macro selectionner_bien_principal_dvf(filtrer_dvf) %}
     SELECT *
     FROM (
         SELECT 
