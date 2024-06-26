@@ -1,0 +1,55 @@
+version: 2
+
+models:
+
+- name: grouper_mutations
+  description: Fournit les informations sur les transactions immobilières (Maison ou appartement) groupées par mutation. En cas de mutation mutltivente, la localisation (GPS, code postal, code commune) sera celui du bien principal. Maison si Maison et appartement. Si même type, on retiendra le plus grand des deux. Toujours en cas de mutivente, le tableau reporte la suface totale et le nombre de pièce total des ventes. 
+  columns:
+
+  - name: id_mutation	
+    data_type: text
+    description: Identifiant de la mutation
+    tests:
+          - unique
+          - not_null
+
+  - name: valeur_fonciere	
+    data_type: numeric
+    description: Valeur foncière, en euros, de la mutation
+
+  - name: longitude	
+    data_type: numeric
+    description: Cordonnées gps, Longitude, ou du bien principal (voir description) en cas de mutation multivente
+
+
+  - name: latitude	
+    data_type: numeric
+    description: Cordonnées gps, Latitude, ou du bien principal (voir description) en cas de mutation multivente
+  
+
+  - name: total_pieces	
+    data_type: numeric
+    description: Nombre de pièces du bien, ou des biens en cas de mutation multiventes
+  
+
+  - name: total_surface	
+    data_type: numeric
+    description: Surface du bien, ou des biens en cas de mutation multiventes
+
+
+  - name: type_local	
+    data_type: text
+    description: Type de bien, ou du bien principal (voir description) de la mutation 
+ 
+
+  - name: code_postal	
+    data_type: text
+    description: Code postal du bien, ou du bien principal (voir description) en cas de mutation multivente
+
+
+
+  - name: code_commune	
+    data_type: text
+    description: Code commune du bien, ou du bien principal (voir description) en cas de mutation multivente
+
+

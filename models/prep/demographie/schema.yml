@@ -1,0 +1,1962 @@
+version: 2
+
+models:
+
+- name: decoder_demographie
+  description: Fournit les réponses concernant la démographie du recenssement des logements, donc 25 millions de logements, avec colonnes et valeurs décodées pour une meilleur lisibilité (au prix de taille). Utile pour trouver des corrélations à l'échelle des ménages 
+  columns:
+
+  - name: poids_du_logement
+    data_type: text
+    description: "Variable codée IPONDL et décrite comme Poids du logement dans le fichier source"
+
+  - name: code_commune_insee
+    data_type: text
+    description: "Variable codée COMMUNE et décrite comme Département et commune du lieu de résidence dans le fichier source"
+
+  - name: region_residence
+    data_type: text
+    description: "Variable codée REGION et décrite comme Région du lieu de résidence dans le fichier source"
+
+  - name: age_regroupe_pr_menage
+    data_type: text
+    description: "Variable codée AGEMEN8 et décrite comme Âge regroupé de la personne de référence du ménage en 8 lasses d'âge dans le fichier source"
+
+  - name: diplome_pr
+    data_type: text
+    description: "Variable codée DIPLM et décrite comme Diplôme le plus élevé obtenu (personne de référence duménage) dans le fichier source"
+
+  - name: personnes_actives_menage
+    data_type: text
+    description: "Variable codée INPAM et décrite comme Nombre de personnes actives du ménage dans le fichier source"
+
+  - name: personnes_menage
+    data_type: text
+    description: "Variable codée INPER et décrite comme Nombre de personnes du ménage dans le fichier source"
+
+  - name: personnes_masculin_menage
+    data_type: text
+    description: "Variable codée INPER1 et décrite comme Nombre de personnes du ménage, de sexe masculin dans le fichier source"
+
+  - name: personnes_feminin_menage
+    data_type: text
+    description: "Variable codée INPER2 et décrite comme Nombre de personnes du ménage, de sexe féminin dans le fichier source"
+
+  - name: personnes_actives_ayant_emploi_menage
+    data_type: text
+    description: "Variable codée INPOM et décrite comme Nombre de personnes actives ayant un emploi du ménage dans le fichier source"
+
+  - name: personnes_scolarisees_menage
+    data_type: text
+    description: "Variable codée INPSM et décrite comme Nombre de personnes scolarisées du ménage dans le fichier source"
+
+  - name: condition_empoi_pr
+    data_type: text
+    description: "Variable codée EMPLM et décrite comme Condition d'emploi (personne de référence du ménage) dans le fichier source"
+
+  - name: lieu_etudes_pr
+    data_type: text
+    description: "Variable codée ILETUDM et décrite comme Indicateur du lieu d'études (personne de référence du méage) dans le fichier source"
+
+  - name: lieu_travail_pr
+    data_type: text
+    description: "Variable codée ILTM et décrite comme Indicateur de lieu de travail (personne de référence du ménage) dans le fichier source"
+
+  - name: situation_immigration_pr
+    data_type: text
+    description: "Variable codée IMMIM et décrite comme Situation quant à l'immigration (personne de référence du ménage) dans le fichier source"
+
+  - name: lieu_naissance_pr
+    data_type: text
+    description: "Variable codée INAIM et décrite comme Indicateur du lieu de naissance (personne de référence du ménage) dans le fichier source"
+
+  - name: personnes_scolarise_plus_14_menage
+    data_type: text
+    description: "Variable codée INEEM et décrite comme Nombre d'élèves, étudiants ou stagiaires âgés de 14 an ou plus dans le ménage dans le fichier source"
+
+  - name: personnes_moins_11_ans_menage
+    data_type: text
+    description: "Variable codée INP11M et décrite comme Nombre de personnes âgées de 11 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_15_ans_menage
+    data_type: text
+    description: "Variable codée INP15M et décrite comme Nombre de personnes âgées de 15 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_17_ans_menage
+    data_type: text
+    description: "Variable codée INP17M et décrite comme Nombre de personnes âgées de 17 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_19_ans_menage
+    data_type: text
+    description: "Variable codée INP19M et décrite comme Nombre de personnes âgées de 19 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_24_ans_menage
+    data_type: text
+    description: "Variable codée INP24M et décrite comme Nombre de personnes âgées de 24 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_3_ans_menage
+    data_type: text
+    description: "Variable codée INP3M et décrite comme Nombre de personnes âgées de 3 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_5_ans_menage
+    data_type: text
+    description: "Variable codée INP5M et décrite comme Nombre de personnes âgées de 5 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_plus_60_ans_menage
+    data_type: text
+    description: "Variable codée INP60M et décrite comme Nombre de personnes âgées de 60 ans ou plus du ménage dans le fichier source"
+
+  - name: personnes_plus_65_ans_menage
+    data_type: text
+    description: "Variable codée INP65M et décrite comme Nombre de personnes âgées de 65 ans ou plus du ménage dans le fichier source"
+
+  - name: personnes_plus_75_ans_menage
+    data_type: text
+    description: "Variable codée INP75M et décrite comme Nombre de personnes âgées de 75 ans ou plus du ménage dans le fichier source"
+
+  - name: residence_annee_avant_pr
+    data_type: text
+    description: "Variable codée IRANM et décrite comme Indicateur du lieu de résidence antérieure au 1er janver de l'année précédente de la personne de référence du ménage dans le fichier source"
+
+
+  - name: type_activite_pr
+    data_type: text
+    description: "Variable codée TACTM et décrite comme Type d'activité de la personne de référence du ménage dans le fichier source"
+
+  - name: temps_travail_pr
+    data_type: text
+    description: "Variable codée TPM et décrite comme Temps de travail (personne de référence du ménage) dans le fichier source"
+
+  - name: nombre_voitures_menage
+    data_type: text
+    description: "Variable codée VOIT et décrite comme Nombre de voitures du ménage dans le fichier source"
+
+  - name: mode_transport_plus_utilise_travail_pr
+    data_type: text
+    description: "Variable codée TRANSM et décrite comme Mode de transport principal le plus souvent utilisé pou aller travailler (personne de référence du ménage) dans le fichier source"
+
+  - name: sexe_pr
+    data_type: text
+    description: "Variable codée SEXEM et décrite comme Sexe de la personne de référence du ménage dans le fichier source"
+
+  - name: status_conjugal_pr
+    data_type: text
+    description: "Variable codée STAT_CONJM et décrite comme Statut conjugal de la personne de référence du ménage dans le fichier source"
+
+  - name: anciennete_recherche_emploi_pr
+    data_type: text
+    description: "Variable codée RECHM et décrite comme Ancienneté de recherche d'emploi (personne de référenc du ménage) dans le fichier source"
+
+  - name: status
+    data_type: text
+    description: "Variable codée STOCD et décrite comme Statut d'occupation détaillé du logement dans le fichier source"
+
+
+
+
+- name: aggreger_demographie_communes
+  description: 'Fournit une tables avec les informations démographiques agrégées par commune'
+  columns:
+
+  - name: code_commune_insee
+    description: "code commune. Clé primaire de la table"
+    tests:
+              - unique
+              - not_null
+    data_type: string
+  
+  - name: personnes_moins_3_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 0"
+
+  - name: personnes_moins_3_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 1"
+
+  - name: personnes_moins_3_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 2"
+
+  - name: personnes_moins_3_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 3"
+
+  - name: personnes_moins_3_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 4"
+
+  - name: personnes_moins_3_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 5"
+
+  - name: personnes_moins_3_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 6"
+
+  - name: personnes_moins_3_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 7"
+
+  - name: personnes_moins_3_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage égale à 8"
+
+  - name: personnes_moins_3_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_3_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_moins_11_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 0"
+
+  - name: personnes_moins_11_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 1"
+
+  - name: personnes_moins_11_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 10"
+
+  - name: personnes_moins_11_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 11"
+
+  - name: personnes_moins_11_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 12"
+
+  - name: personnes_moins_11_ans_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 13"
+
+  - name: personnes_moins_11_ans_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 14"
+
+  - name: personnes_moins_11_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 2"
+
+  - name: personnes_moins_11_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 3"
+
+  - name: personnes_moins_11_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 4"
+
+  - name: personnes_moins_11_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 5"
+
+  - name: personnes_moins_11_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 6"
+
+  - name: personnes_moins_11_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 7"
+
+  - name: personnes_moins_11_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 8"
+
+  - name: personnes_moins_11_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage égale à 9"
+
+  - name: personnes_moins_11_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_11_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: residence_annee_avant_pr__a_l_etranger_hors_union_europeenne	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à a_l_etranger_"hors_union_europeenne"
+
+  - name: residence_annee_avant_pr__a_l_etranger_l_union_europeenne_28_pa	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à a_l_etranger_"l_union_europeenne_28_pa"
+
+  - name: residence_annee_avant_pr__dans_autre_commdepartement	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à dans_autre_co"mmdepartement"
+
+  - name: residence_annee_avant_pr__dans_autre_departement_region	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à dans_autre_de"partement_region"
+
+  - name: residence_annee_avant_pr__dans_autre_logement_meme_commune	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à dans_autre_lo"gement_meme_commune"
+
+  - name: residence_annee_avant_pr__dans_le_meme_logement	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à dans_le_meme_"logement"
+
+  - name: residence_annee_avant_pr__hors_region_residence_actuelle_dom	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à hors_region_r"esidence_actuelle_dom"
+
+  - name: residence_annee_avant_pr__hors_region_residence_actuelle_en_met	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à hors_region_r"esidence_actuelle_en_met"
+
+  - name: residence_annee_avant_pr__hors_region_residence_actuelle_tom_co	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à hors_region_r"esidence_actuelle_tom_co"
+
+  - name: residence_annee_avant_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique residence_annee_avant_pr égale à hors_residenc"e_principale"
+
+  - name: status_conjugal_pr__celibataire	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à celibataire"
+
+  - name: status_conjugal_pr__divorce_e	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à divorce_e"
+
+  - name: status_conjugal_pr__en_concubinage_ou_union_libre	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à en_concubinag"e_ou_union_libre"
+
+  - name: status_conjugal_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à hors_residenc"e_principale"
+
+  - name: status_conjugal_pr__marie_e	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à marie_e"
+
+  - name: status_conjugal_pr__pacse_e	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à pacse_e"
+
+  - name: status_conjugal_pr__veuf_veuve	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status_conjugal_pr égale à veuf_veuve"
+
+  - name: sexe_pr__femmes	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique sexe_pr égale à femmes"
+
+  - name: sexe_pr__hommes	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique sexe_pr égale à hommes"
+
+  - name: sexe_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique sexe_pr égale à hors_residence_principale"
+
+  - name: nombre_voitures_menage__aucvoiture	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique nombre_voitures_menage égale à aucvoiture"
+
+  - name: nombre_voitures_menage__deux_voitures	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique nombre_voitures_menage égale à deux_voitures"
+
+  - name: nombre_voitures_menage__logement_ordinaire_inoccupe	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique nombre_voitures_menage égale à logement_ordi"naire_inoccupe"
+
+  - name: nombre_voitures_menage__trois_voitures_ou_plus	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique nombre_voitures_menage égale à trois_voiture"s_ou_plus"
+
+  - name: nombre_voitures_menage__une_seule_voiture	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique nombre_voitures_menage égale à une_seule_voiture"
+
+  - name: personnes_moins_17_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 0"
+
+  - name: personnes_moins_17_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 1"
+
+  - name: personnes_moins_17_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 10"
+
+  - name: personnes_moins_17_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 11"
+
+  - name: personnes_moins_17_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 12"
+
+  - name: personnes_moins_17_ans_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 13"
+
+  - name: personnes_moins_17_ans_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 14"
+
+  - name: personnes_moins_17_ans_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 15"
+
+  - name: personnes_moins_17_ans_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 16"
+
+  - name: personnes_moins_17_ans_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 17"
+
+  - name: personnes_moins_17_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 2"
+
+  - name: personnes_moins_17_ans_menage__24	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 24"
+
+  - name: personnes_moins_17_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 3"
+
+  - name: personnes_moins_17_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 4"
+
+  - name: personnes_moins_17_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 5"
+
+  - name: personnes_moins_17_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 6"
+
+  - name: personnes_moins_17_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 7"
+
+  - name: personnes_moins_17_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 8"
+
+  - name: personnes_moins_17_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage égale à 9"
+
+  - name: personnes_moins_17_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_17_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_actives_ayant_emploi_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 0"
+
+  - name: personnes_actives_ayant_emploi_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 1"
+
+  - name: personnes_actives_ayant_emploi_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 10"
+
+  - name: personnes_actives_ayant_emploi_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 11"
+
+  - name: personnes_actives_ayant_emploi_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 12"
+
+  - name: personnes_actives_ayant_emploi_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 13"
+
+  - name: personnes_actives_ayant_emploi_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 14"
+
+  - name: personnes_actives_ayant_emploi_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 15"
+
+  - name: personnes_actives_ayant_emploi_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 16"
+
+  - name: personnes_actives_ayant_emploi_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 17"
+
+  - name: personnes_actives_ayant_emploi_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 18"
+
+  - name: personnes_actives_ayant_emploi_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 19"
+
+  - name: personnes_actives_ayant_emploi_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 2"
+
+  - name: personnes_actives_ayant_emploi_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 20"
+
+  - name: personnes_actives_ayant_emploi_menage__26	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 26"
+
+  - name: personnes_actives_ayant_emploi_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 3"
+
+  - name: personnes_actives_ayant_emploi_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 4"
+
+  - name: personnes_actives_ayant_emploi_menage__41	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 41"
+
+  - name: personnes_actives_ayant_emploi_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 5"
+
+  - name: personnes_actives_ayant_emploi_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 6"
+
+  - name: personnes_actives_ayant_emploi_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 7"
+
+  - name: personnes_actives_ayant_emploi_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 8"
+
+  - name: personnes_actives_ayant_emploi_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage égale à 9"
+
+  - name: personnes_actives_ayant_emploi_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_ayant_emploi_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: anciennete_recherche_emploi_pr__cherche_emploi_depuis_moins_an	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à cherche_emplo"i_depuis_moins_an"
+
+  - name: anciennete_recherche_emploi_pr__cherche_emploi_depuis_plus_an	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à cherche_emplo"i_depuis_plus_an"
+
+  - name: anciennete_recherche_emploi_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à hors_residenc"e_principale"
+
+  - name: anciennete_recherche_emploi_pr__ne_recherche_pas_d_emploi	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à ne_recherche_"pas_d_emploi"
+
+  - name: anciennete_recherche_emploi_pr__non_declare_inactif	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à non_declare_i"nactif"
+
+  - name: anciennete_recherche_emploi_pr__sans_objet_en_emploi	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique anciennete_recherche_emploi_pr égale à sans_objet_en"_emploi"
+
+  - name: personnes_masculin_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 0"
+
+  - name: personnes_masculin_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 1"
+
+  - name: personnes_masculin_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 10"
+
+  - name: personnes_masculin_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 11"
+
+  - name: personnes_masculin_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 12"
+
+  - name: personnes_masculin_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 13"
+
+  - name: personnes_masculin_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 14"
+
+  - name: personnes_masculin_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 15"
+
+  - name: personnes_masculin_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 16"
+
+  - name: personnes_masculin_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 17"
+
+  - name: personnes_masculin_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 18"
+
+  - name: personnes_masculin_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 19"
+
+  - name: personnes_masculin_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 2"
+
+  - name: personnes_masculin_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 20"
+
+  - name: personnes_masculin_menage__22	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 22"
+
+  - name: personnes_masculin_menage__26	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 26"
+
+  - name: personnes_masculin_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 3"
+
+  - name: personnes_masculin_menage__38	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 38"
+
+  - name: personnes_masculin_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 4"
+
+  - name: personnes_masculin_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 5"
+
+  - name: personnes_masculin_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 6"
+
+  - name: personnes_masculin_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 7"
+
+  - name: personnes_masculin_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 8"
+
+  - name: personnes_masculin_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage égale à 9"
+
+  - name: personnes_masculin_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_masculin_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_moins_24_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 0"
+
+  - name: personnes_moins_24_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 1"
+
+  - name: personnes_moins_24_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 10"
+
+  - name: personnes_moins_24_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 11"
+
+  - name: personnes_moins_24_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 12"
+
+  - name: personnes_moins_24_ans_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 13"
+
+  - name: personnes_moins_24_ans_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 14"
+
+  - name: personnes_moins_24_ans_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 15"
+
+  - name: personnes_moins_24_ans_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 16"
+
+  - name: personnes_moins_24_ans_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 17"
+
+  - name: personnes_moins_24_ans_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 18"
+
+  - name: personnes_moins_24_ans_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 19"
+
+  - name: personnes_moins_24_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 2"
+
+  - name: personnes_moins_24_ans_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 20"
+
+  - name: personnes_moins_24_ans_menage__21	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 21"
+
+  - name: personnes_moins_24_ans_menage__25	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 25"
+
+  - name: personnes_moins_24_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 3"
+
+  - name: personnes_moins_24_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 4"
+
+  - name: personnes_moins_24_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 5"
+
+  - name: personnes_moins_24_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 6"
+
+  - name: personnes_moins_24_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 7"
+
+  - name: personnes_moins_24_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 8"
+
+  - name: personnes_moins_24_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage égale à 9"
+
+  - name: personnes_moins_24_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_24_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_scolarisees_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 0"
+
+  - name: personnes_scolarisees_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 1"
+
+  - name: personnes_scolarisees_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 10"
+
+  - name: personnes_scolarisees_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 11"
+
+  - name: personnes_scolarisees_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 12"
+
+  - name: personnes_scolarisees_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 13"
+
+  - name: personnes_scolarisees_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 14"
+
+  - name: personnes_scolarisees_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 15"
+
+  - name: personnes_scolarisees_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 16"
+
+  - name: personnes_scolarisees_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 2"
+
+  - name: personnes_scolarisees_menage__25	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 25"
+
+  - name: personnes_scolarisees_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 3"
+
+  - name: personnes_scolarisees_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 4"
+
+  - name: personnes_scolarisees_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 5"
+
+  - name: personnes_scolarisees_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 6"
+
+  - name: personnes_scolarisees_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 7"
+
+  - name: personnes_scolarisees_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 8"
+
+  - name: personnes_scolarisees_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage égale à 9"
+
+  - name: personnes_scolarisees_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarisees_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: status__locataire_ou_sous_locataire_logement_loue_meuble_ou_d_c	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique status égale à locataire_ou_"sous_locataire_logement_loue_meuble_ou_d_c"
+
+  - name: status__locataire_ou_sous_locataire_logement_loue_vihlm	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique status égale à locataire_ou_"sous_locataire_logement_loue_vihlm"
+
+  - name: status__locataire_ou_sous_locataire_logement_loue_vinon_hlm	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique status égale à locataire_ou_"sous_locataire_logement_loue_vinon_hlm"
+
+  - name: status__loge_gratuitement	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status égale à loge_gratuitement"
+
+  - name: status__logement_ordinaire_inoccupe	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status égale à logement_ordinaire_inoccupe"
+
+  - name: status__proprietaire	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique status égale à proprietaire"
+
+  - name: personnes_plus_75_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 0"
+
+  - name: personnes_plus_75_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 1"
+
+  - name: personnes_plus_75_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 11"
+
+  - name: personnes_plus_75_ans_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 18"
+
+  - name: personnes_plus_75_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 2"
+
+  - name: personnes_plus_75_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 3"
+
+  - name: personnes_plus_75_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 4"
+
+  - name: personnes_plus_75_ans_menage__48	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 48"
+
+  - name: personnes_plus_75_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 5"
+
+  - name: personnes_plus_75_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 6"
+
+  - name: personnes_plus_75_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 7"
+
+  - name: personnes_plus_75_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 8"
+
+  - name: personnes_plus_75_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage égale à 9"
+
+  - name: personnes_plus_75_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_75_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_plus_60_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 0"
+
+  - name: personnes_plus_60_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 1"
+
+  - name: personnes_plus_60_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 10"
+
+  - name: personnes_plus_60_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 11"
+
+  - name: personnes_plus_60_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 12"
+
+  - name: personnes_plus_60_ans_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 17"
+
+  - name: personnes_plus_60_ans_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 19"
+
+  - name: personnes_plus_60_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 2"
+
+  - name: personnes_plus_60_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 3"
+
+  - name: personnes_plus_60_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 4"
+
+  - name: personnes_plus_60_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 5"
+
+  - name: personnes_plus_60_ans_menage__55	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 55"
+
+  - name: personnes_plus_60_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 6"
+
+  - name: personnes_plus_60_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 7"
+
+  - name: personnes_plus_60_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage égale à 8"
+
+  - name: personnes_plus_60_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_60_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_moins_19_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 0"
+
+  - name: personnes_moins_19_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 1"
+
+  - name: personnes_moins_19_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 10"
+
+  - name: personnes_moins_19_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 11"
+
+  - name: personnes_moins_19_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 12"
+
+  - name: personnes_moins_19_ans_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 13"
+
+  - name: personnes_moins_19_ans_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 14"
+
+  - name: personnes_moins_19_ans_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 15"
+
+  - name: personnes_moins_19_ans_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 16"
+
+  - name: personnes_moins_19_ans_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 17"
+
+  - name: personnes_moins_19_ans_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 18"
+
+  - name: personnes_moins_19_ans_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 19"
+
+  - name: personnes_moins_19_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 2"
+
+  - name: personnes_moins_19_ans_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 20"
+
+  - name: personnes_moins_19_ans_menage__21	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 21"
+
+  - name: personnes_moins_19_ans_menage__22	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 22"
+
+  - name: personnes_moins_19_ans_menage__23	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 23"
+
+  - name: personnes_moins_19_ans_menage__25	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 25"
+
+  - name: personnes_moins_19_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 3"
+
+  - name: personnes_moins_19_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 4"
+
+  - name: personnes_moins_19_ans_menage__41	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 41"
+
+  - name: personnes_moins_19_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 5"
+
+  - name: personnes_moins_19_ans_menage__55	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 55"
+
+  - name: personnes_moins_19_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 6"
+
+  - name: personnes_moins_19_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 7"
+
+  - name: personnes_moins_19_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 8"
+
+  - name: personnes_moins_19_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage égale à 9"
+
+  - name: personnes_moins_19_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_19_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: condition_empoi_pr__autres_emplois_a_duree_limitee	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à autres_emploi"s_a_duree_limitee"
+
+  - name: condition_empoi_pr__emplois_aides_contrat_unique_d_insertion	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à emplois_aides"_contrat_unique_d_insertion"
+
+  - name: condition_empoi_pr__emplois_sans_limite_duree	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à emplois_sans_"limite_duree"
+
+  - name: condition_empoi_pr__en_contrat_d_apprentissage_ou_professionnal	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à en_contrat_d_"apprentissage_ou_professionnal"
+
+  - name: condition_empoi_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à hors_residenc"e_principale"
+
+  - name: condition_empoi_pr__non_salaries_aides_familiaux	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à non_salaries_"aides_familiaux"
+
+  - name: condition_empoi_pr__non_salaries_employeurs	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à non_salaries_employeurs"
+
+  - name: condition_empoi_pr__non_salaries_independants	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à non_salaries_"independants"
+
+  - name: condition_empoi_pr__places_par_agence_d_interim	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à places_par_ag"ence_d_interim"
+
+  - name: condition_empoi_pr__sans_objet_sans_emploi	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à sans_objet_sans_emploi"
+
+  - name: condition_empoi_pr__stagiaires_remuneres_en_entreprise	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique condition_empoi_pr égale à stagiaires_re"muneres_en_entreprise"
+
+  - name: personnes_moins_5_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 0"
+
+  - name: personnes_moins_5_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 1"
+
+  - name: personnes_moins_5_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 10"
+
+  - name: personnes_moins_5_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 2"
+
+  - name: personnes_moins_5_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 3"
+
+  - name: personnes_moins_5_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 4"
+
+  - name: personnes_moins_5_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 5"
+
+  - name: personnes_moins_5_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 6"
+
+  - name: personnes_moins_5_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 7"
+
+  - name: personnes_moins_5_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 8"
+
+  - name: personnes_moins_5_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage égale à 9"
+
+  - name: personnes_moins_5_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_5_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_scolarise_plus_14_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 0"
+
+  - name: personnes_scolarise_plus_14_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 1"
+
+  - name: personnes_scolarise_plus_14_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 10"
+
+  - name: personnes_scolarise_plus_14_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 11"
+
+  - name: personnes_scolarise_plus_14_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 12"
+
+  - name: personnes_scolarise_plus_14_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 2"
+
+  - name: personnes_scolarise_plus_14_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 3"
+
+  - name: personnes_scolarise_plus_14_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 4"
+
+  - name: personnes_scolarise_plus_14_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 5"
+
+  - name: personnes_scolarise_plus_14_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 6"
+
+  - name: personnes_scolarise_plus_14_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 7"
+
+  - name: personnes_scolarise_plus_14_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 8"
+
+  - name: personnes_scolarise_plus_14_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage égale à 9"
+
+  - name: personnes_scolarise_plus_14_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_scolarise_plus_14_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: personnes_actives_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 0"
+
+  - name: personnes_actives_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 1"
+
+  - name: personnes_actives_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 10"
+
+  - name: personnes_actives_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 11"
+
+  - name: personnes_actives_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 12"
+
+  - name: personnes_actives_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 13"
+
+  - name: personnes_actives_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 14"
+
+  - name: personnes_actives_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 15"
+
+  - name: personnes_actives_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 16"
+
+  - name: personnes_actives_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 17"
+
+  - name: personnes_actives_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 18"
+
+  - name: personnes_actives_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 19"
+
+  - name: personnes_actives_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 2"
+
+  - name: personnes_actives_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 20"
+
+  - name: personnes_actives_menage__26	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 26"
+
+  - name: personnes_actives_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 3"
+
+  - name: personnes_actives_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 4"
+
+  - name: personnes_actives_menage__41	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 41"
+
+  - name: personnes_actives_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 5"
+
+  - name: personnes_actives_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 6"
+
+  - name: personnes_actives_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 7"
+
+  - name: personnes_actives_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 8"
+
+  - name: personnes_actives_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage égale à 9"
+
+  - name: personnes_actives_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_actives_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: mode_transport_plus_utilise_travail_pr__deux_roues_motorise	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à deux_roues_mo"torise"
+
+  - name: mode_transport_plus_utilise_travail_pr__hors_residence_principa	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à hors_residenc"e_principa"
+
+  - name: mode_transport_plus_utilise_travail_pr__marche_a_pied_ou_roller	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à marche_a_pied"_ou_roller"
+
+  - name: mode_transport_plus_utilise_travail_pr__pas_transport	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à pas_transport"
+
+  - name: mode_transport_plus_utilise_travail_pr__sans_objet	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à sans_objet"
+
+  - name: mode_transport_plus_utilise_travail_pr__transports_en_commun	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à transports_en_commun"
+
+  - name: mode_transport_plus_utilise_travail_pr__velo_y_compris_a_assist	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à velo_y_compris_a_assist"
+
+  - name: mode_transport_plus_utilise_travail_pr__voiture_camion_fourgonn	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique mode_transport_plus_utilise_travail_pr égale à voiture_camion_fourgonn"
+
+  - name: age_regroupe_pr_menage__15_a_19_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 15_a_19_ans"
+
+  - name: age_regroupe_pr_menage__20_a_24_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 20_a_24_ans"
+
+  - name: age_regroupe_pr_menage__25_a_39_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 25_a_39_ans"
+
+  - name: age_regroupe_pr_menage__40_a_54_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 40_a_54_ans"
+
+  - name: age_regroupe_pr_menage__55_a_64_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 55_a_64_ans"
+
+  - name: age_regroupe_pr_menage__65_a_79_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 65_a_79_ans"
+
+  - name: age_regroupe_pr_menage__80_ans_ou_plus	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à 80_ans_ou_plus"
+
+  - name: age_regroupe_pr_menage__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à hors_residenc"e_principale"
+
+  - name: age_regroupe_pr_menage__moins_15_ans	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique age_regroupe_pr_menage égale à moins_15_ans"
+
+  - name: type_activite_pr__actifs_ayant_emploi	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à actifs_ayant_emploi"
+
+  - name: type_activite_pr__autres_inactifs	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à autres_inactifs"
+
+  - name: type_activite_pr__chomeurs	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à chomeurs"
+
+  - name: type_activite_pr__eleves	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à eleves"
+
+  - name: type_activite_pr__femmes_ou_hommes_au_foyer	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à femmes_ou_hommes_au_foyer"
+
+  - name: type_activite_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à hors_residence_principale"
+
+  - name: type_activite_pr__retraites_ou_preretraites	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique type_activite_pr égale à retraites_ou_preretraites"
+
+  - name: personnes_moins_15_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 0"
+
+  - name: personnes_moins_15_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 1"
+
+  - name: personnes_moins_15_ans_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 10"
+
+  - name: personnes_moins_15_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 11"
+
+  - name: personnes_moins_15_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 12"
+
+  - name: personnes_moins_15_ans_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 13"
+
+  - name: personnes_moins_15_ans_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 14"
+
+  - name: personnes_moins_15_ans_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 15"
+
+  - name: personnes_moins_15_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 2"
+
+  - name: personnes_moins_15_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 3"
+
+  - name: personnes_moins_15_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 4"
+
+  - name: personnes_moins_15_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 5"
+
+  - name: personnes_moins_15_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 6"
+
+  - name: personnes_moins_15_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 7"
+
+  - name: personnes_moins_15_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 8"
+
+  - name: personnes_moins_15_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage égale à 9"
+
+  - name: personnes_moins_15_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_moins_15_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: situation_immigration_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique situation_immigration_pr égale à hors_residenc"e_principale"
+
+  - name: situation_immigration_pr__immigres	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique situation_immigration_pr égale à immigres"
+
+  - name: situation_immigration_pr__non_immigres	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique situation_immigration_pr égale à non_immigres"
+
+  - name: personnes_feminin_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 0"
+
+  - name: personnes_feminin_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 1"
+
+  - name: personnes_feminin_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 10"
+
+  - name: personnes_feminin_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 11"
+
+  - name: personnes_feminin_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 12"
+
+  - name: personnes_feminin_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 13"
+
+  - name: personnes_feminin_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 14"
+
+  - name: personnes_feminin_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 15"
+
+  - name: personnes_feminin_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 16"
+
+  - name: personnes_feminin_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 17"
+
+  - name: personnes_feminin_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 19"
+
+  - name: personnes_feminin_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 2"
+
+  - name: personnes_feminin_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 20"
+
+  - name: personnes_feminin_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 3"
+
+  - name: personnes_feminin_menage__39	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 39"
+
+  - name: personnes_feminin_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 4"
+
+  - name: personnes_feminin_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 5"
+
+  - name: personnes_feminin_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 6"
+
+  - name: personnes_feminin_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 7"
+
+  - name: personnes_feminin_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 8"
+
+  - name: personnes_feminin_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage égale à 9"
+
+  - name: personnes_feminin_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_feminin_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: diplome_pr__aucdiplome_et_scolarite_interrompue_a_fin_primaire_	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à aucdiplome_et"_scolarite_interrompue_a_fin_primaire_"
+
+  - name: diplome_pr__aucdiplome_et_scolarite_jusqu_a_fin_college_ou_au_d	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à aucdiplome_et"_scolarite_jusqu_a_fin_college_ou_au_d"
+
+  - name: diplome_pr__baccalaureat_general_ou_technologique_brevet_superi	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à baccalaureat_"general_ou_technologique_brevet_superi"
+
+  - name: diplome_pr__baccalaureat_professionnel_brevet_professionnel_tec	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à baccalaureat_"professionnel_brevet_professionnel_tec"
+
+  - name: diplome_pr__bepc_brevet_elementaire_brevet_des_colleges_dnb	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à bepc_brevet_e"lementaire_brevet_des_colleges_dnb"
+
+  - name: diplome_pr__bts_dut_deug_deust_diplome_sante_ou_social_niveau_b	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à bts_dut_deug_"deust_diplome_sante_ou_social_niveau_b"
+
+  - name: diplome_pr__cap_bep_ou_diplome_niveau_equivalent	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à cap_bep_ou_di"plome_niveau_equivalent"
+
+  - name: diplome_pr__cep_certificat_d_etudes_primaires	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à cep_certifica"t_d_etudes_primaires"
+
+  - name: diplome_pr__doctorat_recherche_hors_sante	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à doctorat_recherche_hors_sante"
+
+  - name: diplome_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à hors_residence_principale"
+
+  - name: diplome_pr__licence_licence_pro_maitrise_diplome_equivalent_niv	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à licence_licen"ce_pro_maitrise_diplome_equivalent_niv"
+
+  - name: diplome_pr__master_dea_dess_diplome_granecole_niveau_bac+5_doct	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à master_dea_de"ss_diplome_granecole_niveau_bac+5_doct"
+
+  - name: diplome_pr__pas_scolarite_ou_arret_avant_fin_primaire	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique diplome_pr égale à pas_scolarite"_ou_arret_avant_fin_primaire"
+
+  - name: lieu_etudes_pr__a_l_etranger	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à a_l_etranger"
+
+  - name: lieu_etudes_pr__dans_autre_commdepartement_residence	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à dans_autre_co"mmdepartement_residence"
+
+  - name: lieu_etudes_pr__dans_autre_departement_region_residence	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à dans_autre_de"partement_region_residence"
+
+  - name: lieu_etudes_pr__dans_commresidence_actuelle	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à dans_commresidence_actuelle"
+
+  - name: lieu_etudes_pr__hors_region_residence_actuelle_com	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à hors_region_r"esidence_actuelle_com"
+
+  - name: lieu_etudes_pr__hors_region_residence_actuelle_dom	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à hors_region_r"esidence_actuelle_dom"
+
+  - name: lieu_etudes_pr__hors_region_residence_actuelle_en_metropole	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à hors_region_r"esidence_actuelle_en_metropole"
+
+  - name: lieu_etudes_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à hors_residence_principale"
+
+  - name: lieu_etudes_pr__sans_objet_pas_d_inscription_etablissement_d_en	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_etudes_pr égale à sans_objet_pa"s_d_inscription_etablissement_d_en"
+
+  - name: lieu_naissance_pr__a_l_etranger	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à a_l_etranger"
+
+  - name: lieu_naissance_pr__dans_autre_departement_region_residence_actu	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à dans_autre_de"partement_region_residence_actu"
+
+  - name: lieu_naissance_pr__dans_le_departement_residence_actuelle	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à dans_le_depar"tement_residence_actuelle"
+
+  - name: lieu_naissance_pr__hors_region_residence_actuelle_dom	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à hors_region_r"esidence_actuelle_dom"
+
+  - name: lieu_naissance_pr__hors_region_residence_actuelle_en_metropole	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à hors_region_r"esidence_actuelle_en_metropole"
+
+  - name: lieu_naissance_pr__hors_region_residence_actuelle_tom_com	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à hors_region_r"esidence_actuelle_tom_com"
+
+  - name: lieu_naissance_pr__hors_residence_principale	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_naissance_pr égale à hors_residenc"e_principale"
+
+  - name: lieu_travail_pr__a_l_etranger	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à a_l_etranger"
+
+  - name: lieu_travail_pr__dans_autre_commdepartement_residence	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à dans_autre_co"mmdepartement_residence"
+
+  - name: lieu_travail_pr__dans_autre_departement_region_residence	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à dans_autre_de"partement_region_residence"
+
+  - name: lieu_travail_pr__dans_commresidence_actuelle	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à dans_commresi"dence_actuelle"
+
+  - name: lieu_travail_pr__hors_region_residence_actuelle_com	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à hors_region_r"esidence_actuelle_com"
+
+  - name: lieu_travail_pr__hors_region_residence_actuelle_dom	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à hors_region_r"esidence_actuelle_dom"
+
+  - name: lieu_travail_pr__hors_region_residence_actuelle_en_metropole	
+    data_type: numeric
+    description: Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à hors_region_r"esidence_actuelle_en_metropole"
+
+  - name: lieu_travail_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à hors_residence_principale"
+
+  - name: lieu_travail_pr__sans_objet_sans_emploi	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique lieu_travail_pr égale à sans_objet_sans_emploi"
+
+  - name: personnes_plus_65_ans_menage__0	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 0"
+
+  - name: personnes_plus_65_ans_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 1"
+
+  - name: personnes_plus_65_ans_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 11"
+
+  - name: personnes_plus_65_ans_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 12"
+
+  - name: personnes_plus_65_ans_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 16"
+
+  - name: personnes_plus_65_ans_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 18"
+
+  - name: personnes_plus_65_ans_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 2"
+
+  - name: personnes_plus_65_ans_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 3"
+
+  - name: personnes_plus_65_ans_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 4"
+
+  - name: personnes_plus_65_ans_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 5"
+
+  - name: personnes_plus_65_ans_menage__55	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 55"
+
+  - name: personnes_plus_65_ans_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 6"
+
+  - name: personnes_plus_65_ans_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 7"
+
+  - name: personnes_plus_65_ans_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 8"
+
+  - name: personnes_plus_65_ans_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage égale à 9"
+
+  - name: personnes_plus_65_ans_menage__Y	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_plus_65_ans_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+
+  - name: temps_travail_pr__hors_residence_principale	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique temps_travail_pr égale à hors_residence_principale"
+
+  - name: temps_travail_pr__sans_objet_sans_emploi	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique temps_travail_pr égale à sans_objet_sans_emploi"
+
+  - name: temps_travail_pr__temps_complet	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique temps_travail_pr égale à temps_complet"
+
+  - name: temps_travail_pr__temps_partiel	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique temps_travail_pr égale à temps_partiel"
+
+  - name: personnes_menage__1	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 1"
+
+  - name: personnes_menage__10	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 10"
+
+  - name: personnes_menage__11	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 11"
+
+  - name: personnes_menage__12	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 12"
+
+  - name: personnes_menage__13	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 13"
+
+  - name: personnes_menage__14	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 14"
+
+  - name: personnes_menage__15	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 15"
+
+  - name: personnes_menage__16	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 16"
+
+  - name: personnes_menage__17	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 17"
+
+  - name: personnes_menage__18	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 18"
+
+  - name: personnes_menage__19	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 19"
+
+  - name: personnes_menage__2	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 2"
+
+  - name: personnes_menage__20	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 20"
+
+  - name: personnes_menage__21	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 21"
+
+  - name: personnes_menage__22	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 22"
+
+  - name: personnes_menage__23	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 23"
+
+  - name: personnes_menage__24	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 24"
+
+  - name: personnes_menage__25	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 25"
+
+  - name: personnes_menage__26	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 26"
+
+  - name: personnes_menage__28	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 28"
+
+  - name: personnes_menage__3	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 3"
+
+  - name: personnes_menage__34	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 34"
+
+  - name: personnes_menage__4	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 4"
+
+  - name: personnes_menage__41	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 41"
+
+  - name: personnes_menage__5	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 5"
+
+  - name: personnes_menage__55	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 55"
+
+  - name: personnes_menage__6	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 6"
+
+  - name: personnes_menage__7	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 7"
+
+  - name: personnes_menage__8	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 8"
+
+  - name: personnes_menage__9	
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéristique personnes_menage égale à 9"
+  
+  - name: personnes_menage__Y
+    data_type: numeric
+    description: "Nombres de ménages dans la communes avec la caractéistique personnes_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
