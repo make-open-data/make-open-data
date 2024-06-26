@@ -14,16 +14,16 @@ models:
           - not_null
 
   - name: valeur_fonciere	
-    data_type: text
+    data_type: numeric
     description: Valeur foncière, en euros, de la mutation
 
   - name: longitude	
-    data_type: text
+    data_type: numeric
     description: Cordonnées gps, Longitude, ou du bien principal (voir description) en cas de mutation multivente
 
 
   - name: latitude	
-    data_type: text
+    data_type: numeric
     description: Cordonnées gps, Latitude, ou du bien principal (voir description) en cas de mutation multivente
   
 
