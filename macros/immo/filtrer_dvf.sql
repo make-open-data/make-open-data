@@ -1,11 +1,11 @@
 {% macro filtrer_dvf(source_dvf) %}
     SELECT 
         id_mutation,
-        valeur_fonciere,
-        longitude,
-        latitude,
-        nombre_pieces_principales,
-        surface_reelle_bati,
+        CAST(valeur_fonciere AS FLOAT) as valeur_fonciere,
+        CAST(longitude AS FLOAT) as longitude,
+        CAST(latitude AS FLOAT) as latitude,
+        CAST(nombre_pieces_principales AS NUMERIC) as nombre_pieces_principales,
+        CAST(surface_reelle_bati AS NUMERIC) as surface_reelle_bati,
         type_local,
         LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
         code_commune

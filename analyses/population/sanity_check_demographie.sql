@@ -8,7 +8,7 @@ select
 	status_conjugal_pr__marie_e / (nombre_de_logements - status_conjugal_pr__hors_residence_principale) as proportions_marie,
 	status_conjugal_pr__pacse_e / (nombre_de_logements - status_conjugal_pr__hors_residence_principale) as proportions_pacse,
 	status_conjugal_pr__veuf_veuve / (nombre_de_logements - status_conjugal_pr__hors_residence_principale) as proportions_veuf
-from {{ ref('aggreger_demograohie_communes') }}
+from {{ ref('aggreger_demographie_communes') }}
 where code_commune_insee = '34172'
 
 -- proportions_celibataires, proportions_divorce, proportions_concubinage_union_libre, proportions_marie, proportions_pacse, proportions_veuf
