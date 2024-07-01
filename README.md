@@ -23,7 +23,7 @@ Make Open Data est un repo de code ouvert qui :
 - Les tables sources et préparées sont disponibles dans la BDD
 
 
-## Dépoilement sur une machine
+## Déploiement sur une machine
 
 Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébérgée dans le cloud.
 
