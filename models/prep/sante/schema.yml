@@ -1,0 +1,138 @@
+version: 2
+
+models:
+
+- name: aggeger_effectifs_sante_departement_2022
+  description: Fournit les effectifs des professionnels de santé (tout sexe, age) par spécialité et département pour l'année 2022
+  columns:
+  
+  - name: region
+    data_type: text
+    description: Code région
+
+  - name: libelle_region
+    data_type: text
+    description: Libellé région
+
+  - name: departement
+    data_type: text
+    description: Code département
+
+  - name: libelle_departement
+    data_type: text
+    description: Libellé département
+
+  - name: Stomatologues
+    data_type: numeric
+    description: Nombre de Stomatologues dans le département en 2022
+
+  - name: Anesthésistes-réanimateurs
+    data_type: numeric
+    description: Nombre de Anesthésistes-réanimateurs dans le département en 2022
+
+  - name: Autres médecins
+    data_type: numeric
+    description: Nombre de Autres médecins dans le département en 2022
+
+  - name: Cardiologues
+    data_type: numeric
+    description: Nombre de Cardiologues dans le département en 2022
+
+  - name: Chirurgiens
+    data_type: numeric
+    description: Nombre de Chirurgiens dans le département en 2022
+
+  - name: Chirurgiens-dentistes (hors spécialistes d'orthopédie dento-f
+    data_type: numeric
+    description: Nombre de Chirurgiens-dentistes (hors spécialistes d'orthopédie dento-f dans le département en 2022
+
+  - name: Chirurgiens-dentistes spécialistes d'orthopédie dento-faciale
+    data_type: numeric
+    description: Nombre de Chirurgiens-dentistes spécialistes d'orthopédie dento-faciale dans le département en 2022
+
+  - name: Dermatologues
+    data_type: numeric
+    description: Nombre de Dermatologues dans le département en 2022
+
+  - name: Endocrinologues
+    data_type: numeric
+    description: Nombre de Endocrinologues dans le département en 2022
+
+  - name: Ensemble des auxiliaires médicaux
+    data_type: numeric
+    description: Nombre de Ensemble des auxiliaires médicaux dans le département en 2022
+
+  - name: Ensemble des chirurgiens-dentistes
+    data_type: numeric
+    description: Nombre de Ensemble des chirurgiens-dentistes dans le département en 2022
+
+  - name: Ensemble des médecins
+    data_type: numeric
+    description: Nombre de Ensemble des médecins dans le département en 2022
+
+  - name: Ensemble des médecins généralistes
+    data_type: numeric
+    description: Nombre de Ensemble des médecins généralistes dans le département en 2022
+
+  - name: Ensemble des médecins spécialistes (hors généralistes)
+    data_type: numeric
+    description: Nombre de Ensemble des médecins spécialistes (hors généralistes) dans le département en 2022
+
+  - name: Gynécologues médicaux et obstétriciens
+    data_type: numeric
+    description: Nombre de Gynécologues médicaux et obstétriciens dans le département en 2022
+
+  - name: Hépato-gastro-entérologues
+    data_type: numeric
+    description: Nombre de Hépato-gastro-entérologues dans le département en 2022
+
+  - name: Infirmiers
+    data_type: numeric
+    description: Nombre de Infirmiers dans le département en 2022
+
+  - name: Masseurs-kinésithérapeutes
+    data_type: numeric
+    description: Nombre de Masseurs-kinésithérapeutes dans le département en 2022
+
+  - name: Médecins généralistes (hors médecins à expertise particuli
+    data_type: numeric
+    description: Nombre de Médecins généralistes (hors médecins à expertise particuli dans le département en 2022
+
+  - name: Médecins généralistes à expertise particulière (MEP)
+    data_type: numeric
+    description: Nombre de Médecins généralistes à expertise particulière (MEP) dans le département en 2022
+
+  - name: Médecins nucléaires
+    data_type: numeric
+    description: Nombre de Médecins nucléaires dans le département en 2022
+
+  - name: Médecins pathologistes
+    data_type: numeric
+    description: Nombre de Médecins pathologistes dans le département en 2022
+
+  - name: Rhumatologues
+    data_type: numeric
+    description: Nombre de Rhumatologues dans le département en 2022
+
+  - name: Sages-femmes
+    data_type: numeric
+    description: Nombre de Sages-femmes dans le département en 2022
+
+  - name: Néphrologues
+    data_type: numeric
+    description: Nombre de Néphrologues dans le département en 2022
+
+  - name: Neurologues
+    data_type: numeric
+    description: Nombre de Neurologues dans le département en 2022
+
+  - name: Ophtalmologues
+    data_type: numeric
+    description: Nombre de Ophtalmologues dans le département en 2022
+
+  - name: Orthophonistes
+    data_type: numeric
+    description: Nombre de Orthophonistes dans le département en 2022
+  
+
+
