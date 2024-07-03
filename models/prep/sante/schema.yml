@@ -134,5 +134,14 @@ models:
     data_type: numeric
     description: Nombre de Orthophonistes dans le département en 2022
   
+  - name: population_departement
+    data_type: numeric
+    description: Population du département en 2022
 
+  - name: latitiude_centre_departement
+    data_type: numeric
+    description: Moyenne des latitudes des communes du département
 
+  - name: longitude_centre_departement
+    data_type: numeric
+    description: Moyenne des longitudes des communes du département
