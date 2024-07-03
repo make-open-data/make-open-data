@@ -474,3 +474,49 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: TYPL
             description: "Type de logement"
             data_type: text
+
+      - name: professionels_sante
+        description: "Ce jeu de données fournit des informations sur les effectifs des professionnels de santé libéraux par département/région, âge, sexe et spécialité. Origine: https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources"
+        columns:
+          - name: annee
+            data_type: text
+            description: "Année"
+          - name: profession_sante
+            data_type: text
+            description: "32 professions de santé"
+          - name: region
+            data_type: text
+            description: "Code région"
+          - name: libelle_region	
+            data_type: text
+            description: "Libellé de la région"
+          - name: departement	
+            data_type: text
+            description: "Code département"
+          - name: libelle_departement
+            data_type: text
+            description: "Libellé département"
+          - name: classe_age
+            data_type: text
+            description: "Code classe d'âge"
+          - name: libelle_classe_age
+            data_type: text
+            description: "Libellé classe d'âge"
+          - name: libelle_sexe
+            data_type: text
+            description: "Sexe des professionnels"
+          - name: effectif	
+            data_type: text
+            description: "Nombre de professionnels"
+          - name: densite	
+            data_type: text
+            description: "?"
+          - name: vision_generale_all	
+            data_type: text
+            description: "?"
+          - name: vision_generale_prescriptions	
+            data_type: text
+            description: "?"
+          - name: vision_profession_territoire	
+            data_type: text
+            description: "?"

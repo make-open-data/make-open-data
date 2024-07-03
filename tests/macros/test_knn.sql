@@ -1,3 +1,5 @@
+-- depends_on: {{ ref('fake_knn_data') }}
+
 -- Define expected values
 WITH expected AS (
     SELECT 1 AS id, 250 AS expected_valeur UNION ALL
