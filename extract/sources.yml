@@ -1,51 +1,13 @@
 # This file contains the list of sources to be used by the application
 
-cog_poste :
-  source_url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
-  source_reference : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-cog_communes :
-  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
-  source_reference : https://github.com/datagouv/decoupage-administratif
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-
-cog_arrondissements : 
-  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
-  source_reference : https://github.com/datagouv/decoupage-administratif
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-
-cog_departements: 
-  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
-  source_reference : https://github.com/datagouv/decoupage-administratif
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-cog_regions : 
-  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
-  source_reference : https://github.com/datagouv/decoupage-administratif
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-dvf_2023:
-  source_url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
-  source_reference: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
-  source_csv_delimiter : ','
-  source_db_schema : "sources"
-
-logement_2020:
-  source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/RP2020_LOGEMT_csv.zip
-  source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
+professionels_sante:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/demographie-effectifs-et-les-densites/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources
   source_csv_delimiter : ';'
   source_db_schema : "sources"
-
-logement_2020_variables:
-  source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/Dictionnaire%20variables_logemt_2020.csv
-  source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
+  
+effectif_pathologie:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/effectifs/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/pathologies-effectif-de-patients-par-pathologie-sexe-classe-dage-et-territoire-departement-region/
   source_csv_delimiter : ';'
-  source_db_schema : "meta"
+  source_db_schema : "sources"
