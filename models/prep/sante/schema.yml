@@ -9,18 +9,29 @@ models:
   - name: region
     data_type: text
     description: Code région
+    tests:
+      - not_null
 
   - name: libelle_region
     data_type: text
     description: Libellé région
+    tests:
+      - not_null
+
 
   - name: departement
     data_type: text
     description: Code département
+    tests:
+      - unique
+      - not_null
 
   - name: libelle_departement
     data_type: text
     description: Libellé département
+    tests:
+      - unique
+      - not_null
 
   - name: Stomatologues
     data_type: numeric
