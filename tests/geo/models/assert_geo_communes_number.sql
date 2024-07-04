@@ -4,6 +4,7 @@
 --- https://www.collectivites-locales.gouv.fr/bulletin-dinformation-statistique-bis-de-la-dgcl
 --- PLUS zone = com  est 94 
 --- i.e. collectivité d'outre mer
+--- Plus 45 communes municipales (Paris, Lyon, Marseille)
 
 {{ config(materialized='test') }}
 
@@ -14,4 +15,4 @@ with source as (
 
 select *
 from source
-where commune_count != 35029
+where commune_count != 35074
