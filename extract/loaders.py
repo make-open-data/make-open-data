@@ -24,7 +24,7 @@ def read_from_source(tmpfile_csv_path,sources_infos ):
 
     source_path = sources_infos["source_url"]
     
-    if source_path.endswith('.csv'):
+    if source_path.endswith('.csv') or source_path.endswith('/csv'):
         subprocess.run(['curl', '-o', tmpfile_csv_path, source_path], check=True)
 
     elif source_path.endswith('.json'):

@@ -4,7 +4,7 @@ with filtre_cog_communes as (
     -- Filter out non-commune rows here to avoid confusion of filtering in the main query
     select * 
     from {{ source('sources', 'cog_communes')}} as cog_communes     
-    where cog_communes.type = 'commune-actuelle' 
+    where cog_communes.type in ('commune-actuelle', 'arrondissement-municipal')
 
 ),denomalise_cog as (
     select
