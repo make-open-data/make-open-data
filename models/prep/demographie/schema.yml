@@ -1960,3 +1960,42 @@ models:
   - name: personnes_menage__Y
     data_type: numeric
     description: "Nombres de ménages dans la communes avec la caractéistique personnes_menage inapplicable (hors logement secondaire). Colonnes gardées pour tester les aggrégations"
+  - name: code_commune
+    description: "code commune. Primary key of the table"
+    data_type: string
+  - name: nom_commune
+    description: "nom de la commune"
+    data_type: string
+  - name: code_arrondissement
+    description: "code arrondissement"
+    data_type: string
+  - name: code_departement
+    description: "code departement"
+    data_type: string
+  - name: code_region
+    description: "code region"
+    data_type: string
+  - name: codes_postaux
+    description: "codes postaux"
+    data_type: string
+  - name: population
+    description: "population"
+    data_type: string
+  - name: code_zone
+    description: "Départements ou Régions français d'Outre-Mer (DROM), Collectivités d'Outre-Mer (COM) ou Métropole"
+    data_type: string
+  - name: nom_arrondissement
+    description: "nom arrondissement"
+    data_type: string
+  - name: nom_departement
+    description: "nom departement"
+    data_type: string
+  - name: nom_region
+    description: "nom region"
+    data_type: string
+  - name: commune_latitude
+    description: "latitude de la commune"
+    data_type: string
+  - name: commune_longitude
+    description: "longitude de la commune"
+    data_type: string

@@ -29,9 +29,19 @@ with communes as (
 
     {% endfor %}
 
+  ),
+  aggregated_with_cog as (
+    SELECT
+      *
+    FROM
+      aggregated
+    JOIN
+	    {{ ref('geo_communes') }} as cog
+    ON
+      aggregated.code_commune_insee = cog.code_commune
   )
 
 SELECT 
     *  
 FROM
-    aggregated
+    aggregated_with_cog
