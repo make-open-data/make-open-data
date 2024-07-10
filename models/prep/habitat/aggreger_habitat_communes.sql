@@ -10,7 +10,7 @@
 with communes as (
     SELECT 
       code_commune_insee,
-      SUM(CAST(poids_du_logement AS numeric)) AS nombre_de_logements
+      CAST( SUM(CAST(poids_du_logement AS numeric)) AS INT) AS nombre_de_logements
     FROM 
       {{ ref('decoder_habitat') }}
     GROUP BY
