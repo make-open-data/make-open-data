@@ -3,27 +3,28 @@ This module runs extraction of data from the sources defined in the sources.yml 
 """
 import yaml
 import os
+import argparse
 from pathlib import Path
 from tempfile import NamedTemporaryFile
-
 
 from extract.loaders import read_from_source, upload_dataframe_to_table
 
 SOURCES_PATH = "sources.yml"
 
+def load_sources(file_path):
+    with open(file_path, "r") as ymlfile:
+        return yaml.safe_load(ymlfile)
+
 def filter_sources_by_tag(sources, tag):
-    return {label: info for label, info in sources['sources'].items() if tag in info.get('tags', [])}
+    return {label: info for label, info in sources.items() if tag in info.get('tags', [])}
 
-
-if __name__ == "__main__":
-
-  # Load sources from YAML file
-    with open(Path(os.path.dirname(__file__)) / SOURCES_PATH, "r") as ymlfile:
-        sources = yaml.safe_load(ymlfile)
-
+def main():
     parser = argparse.ArgumentParser(description="Run extraction of data from sources.")
     parser.add_argument('--tag', help="Extract only sources tagged with the specified tag")
     args = parser.parse_args()
+
+    # Load sources from YAML file
+    sources = load_sources(Path(os.path.dirname(__file__)) / SOURCES_PATH)
 
     if args.tag:
         # Filter sources by the specified tag
@@ -34,3 +35,6 @@ if __name__ == "__main__":
             tmpfile_csv_path = tmpfile.name
             read_from_source(tmpfile_csv_path, source_infos)
             upload_dataframe_to_table(tmpfile_csv_path, source_label, source_infos)
+
+if __name__ == "__main__":
+    main()
