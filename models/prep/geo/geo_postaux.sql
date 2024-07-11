@@ -12,8 +12,6 @@ with format_cog_poste as (
 			WHEN SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') FROM 1 FOR 5) = '98799' THEN '989' -- Île de Clipperton, code postal 97150, code dept insee 978
 			WHEN SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 2) IN ('97', '98') THEN SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 3)
             ELSE SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 2)
-
-            ELSE SUBSTRING(LPAD(CAST(code_postal AS TEXT), 5, '0') for 2)
         END as code_departement
     from {{ source('sources', 'cog_poste')}} as cog_poste
 ),
