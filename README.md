@@ -39,6 +39,7 @@ git clone git@github.com:make-open-data/make-open-data.git
 python3 -m venv dbt-env 
 source dbt-env/bin/activate
 pip install --upgrade pip
+pip install dbt-core
 pip install -r requirements.txt
 ``` 
 
