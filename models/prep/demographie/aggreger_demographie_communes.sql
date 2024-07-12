@@ -10,7 +10,7 @@
 with communes as (
     SELECT 
       code_commune_insee,
-      SUM(CAST(poids_du_logement AS numeric)) AS nombre_de_logements
+      CAST( SUM(CAST(poids_du_logement AS numeric)) AS INT) AS nombre_de_logements
     FROM 
       {{ ref('decoder_demographie') }}
     GROUP BY
@@ -29,9 +29,19 @@ with communes as (
 
     {% endfor %}
 
+  ),
+  aggregated_with_cog as (
+    SELECT
+      *
+    FROM
+      aggregated
+    JOIN
+	    {{ ref('geo_communes') }} as cog
+    ON
+      aggregated.code_commune_insee = cog.code_commune
   )
 
 SELECT 
     *  
 FROM
-    aggregated
+    aggregated_with_cog
