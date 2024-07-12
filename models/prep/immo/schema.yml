@@ -52,4 +52,8 @@ models:
     data_type: text
     description: Code commune du bien, ou du bien principal (voir description) en cas de mutation multivente
 
+  - name: geopoint	
+    data_type: GEOMETRY
+    description: Champ de type geometry contenant les coordonnées GPS du bien
+
 
