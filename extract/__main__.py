@@ -7,7 +7,7 @@ import argparse
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
-from extract.loaders import read_from_source, upload_dataframe_to_table
+from extract.loaders import read_from_source, upload_dataframe_to_table, check_if_source_exists
 
 SOURCES_PATH = "sources.yml"
 
@@ -31,6 +31,11 @@ def main():
         sources = filter_sources_by_tag(sources, args.tag)
 
     for source_label, source_infos in sources.items():
+         # Check if the source already exists
+        if check_if_source_exists(source_label):
+            print(f"Source {source_label} already exists. Skipping...")
+            continue
+
         with NamedTemporaryFile(suffix='.csv', delete=True) as tmpfile:
             tmpfile_csv_path = tmpfile.name
             read_from_source(tmpfile_csv_path, source_infos)

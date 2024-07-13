@@ -72,11 +72,18 @@ dbt debug
 dbt deps
 ``` 
 
-- Extraire les données des sources à la base de données
+- Extraire toutes les données des sources à la base de données
 
 ```
 python -m extract
 ```
+
+- Extraire uniquement les données des sources avec un certain tag à la base de données. Exemple: immo
+
+```
+python -m extract --tag immo
+```
+
 
 - Réaliser et tester les transformations pour avoir obtenir les tables finales
 
