@@ -14,7 +14,14 @@
 -- Une mutation peut concerner plusieurs biens
 -- Le prix est le prix total de la mutation, il apparait sur les biens concernés
 
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='table',
+        post_hook=[
+            "CREATE INDEX IF NOT EXISTS geopoint_index ON {{ this }} USING GIST(geopoint);",
+        ]
+    ) 
+}}
 
 WITH source_dvf AS (
     select * from {{ source('sources', 'dvf_2023')}} as dvf_2023
@@ -38,7 +45,8 @@ SELECT
     aggreger_dvf.total_surface,
     bien_principal_dvf.type_local,
     bien_principal_dvf.code_postal,
-    bien_principal_dvf.code_commune
+    bien_principal_dvf.code_commune,
+    ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint
 FROM 
     bien_principal_dvf
 JOIN 

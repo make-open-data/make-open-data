@@ -57,3 +57,15 @@ logement_2020_variables:
   source_csv_delimiter : ';'
   source_db_schema : "meta"
   tags: [habitat]
+
+professionels_sante:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/demographie-effectifs-et-les-densites/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources
+  source_csv_delimiter : ';'
+  source_db_schema : "sources"
+  
+effectif_pathologie:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/effectifs/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/pathologies-effectif-de-patients-par-pathologie-sexe-classe-dage-et-territoire-departement-region/
+  source_csv_delimiter : ';'
+  source_db_schema : "sources"

@@ -1,3 +1,5 @@
+-- depends_on: {{ ref('fake_knn_data') }}
+
 -- Define expected values
 WITH expected AS (
     SELECT 1 AS id, 250 AS expected_valeur UNION ALL
@@ -9,7 +11,7 @@ WITH expected AS (
 
 -- Calculate knn for each row in the fake table
 computed AS (
-    {{ calculate_geo_knn('fake_knn_data', 'id', 'latitude', 'longitude', 'valeur', 2) }}
+    {{ calculate_geo_knn('fake_knn_data', 'id', 'geopoint', 'valeur', 2) }}
 )
 
 -- Compare computed and expected values
