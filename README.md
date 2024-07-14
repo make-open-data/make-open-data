@@ -72,20 +72,14 @@ dbt debug
 dbt deps
 ``` 
 
-- Extraire toutes les données des sources à la base de données
+- Option 1: Extraire et transformer toutes les donnees
+    - Extraire toutes les données des sources à la base de données
 
 ```
 python -m extract
 ```
 
-- Extraire uniquement les données des sources avec un certain tag à la base de données. Exemple: immo
-
-```
-python -m extract --tag immo
-```
-
-
-- Réaliser et tester les transformations pour avoir obtenir les tables finales
+    - Réaliser et tester les transformations pour avoir obtenir les tables finales
 
 ```
 dbt seed
@@ -93,4 +87,20 @@ dbt run
 dbt test
 ``` 
 
-- Les tables sources et préparées sont disponibles dans la BDD
+    - Les tables sources et préparées sont disponibles dans la BDD.
+
+- Option 2: Extraire et transformer uniquement les donnees avec un certain tag
+
+    - Extraire uniquement les données des sources avec un certain tag à la base de données. Exemple: immo
+
+```
+python -m extract --tag immo
+```
+    - Réaliser et tester les transformations avec un certain tag pour avoir obtenir les tables finales. Exemple: immo
+
+```
+dbt seed --select tag:immo
+dbt run --select tag:immo
+dbt test --select tag:immo
+``` 
+    - Les tables sources et préparées avec le tag immo sont disponibles dans la BDD.
