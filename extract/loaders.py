@@ -8,6 +8,8 @@ from tempfile import NamedTemporaryFile
 
 import pandas as pd
 import psycopg
+import sqlalchemy
+from sqlalchemy.sql import text
 
 
 
@@ -118,3 +120,26 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
             connection.rollback()
             connection.close()
         raise
+
+# Create the DATABASE_URI
+DATABASE_URI = f'postgresql://{user}:{password}@{host}:{port}/{database}'
+
+def check_if_source_exists(table_name):
+    try:
+        engine = sqlalchemy.create_engine(DATABASE_URI)
+        
+        # Check if source table exist using query information schema
+        with engine.connect() as connection:
+            print("Using direct query to information schema to check for table existence.")
+            query = text("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = :table_name)")
+            result = connection.execute(query, {'table_name': table_name})
+            exists = result.scalar()
+            if exists:
+                print(f"Source '{table_name}' exists (checked via direct query).")
+            else:
+                print(f"Source '{table_name}' does not exist (checked via direct query).")
+            return exists
+
+    except Exception as e:
+        print(f"Failed to check source '{table_name}' due to error: {e}")
+        return False
