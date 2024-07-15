@@ -1,8 +1,8 @@
 -- Filtres nature transaction et nature bien :
--- Il convient aussi de garder que les vente (explure les VEFA et les échanges)
+-- Il convient aussi de garder que les vente (exclure les VEFA et les échanges)
 -- Et que les transactions qui concernent au moins un appartement et les maisons
 
--- Filtres sur les surfaces et trautement des pièces :
+-- Filtres sur les surfaces et traitement des pièces :
 -- Il convient de garder que les transactions qui concernent des biens de plus de 9m2 
 -- Le nombre de pièces est souvent mal renseigné, il convient de le corriger en fonction de la surface
 

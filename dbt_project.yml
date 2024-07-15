@@ -16,3 +16,13 @@ clean-targets:
   - "dbt_packages"
 
 models:
+  makeopendata:
+    prep:
+      demographie:
+        +tags: "demographie"
+      geo:
+        +tags: "geo"
+      habitat:
+        +tags: "habitat"
+      immo:
+        +tags: "immo"
