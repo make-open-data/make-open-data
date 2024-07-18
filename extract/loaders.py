@@ -20,7 +20,7 @@ port = os.getenv('POSTGRES_PORT')
 database = os.getenv('POSTGRES_DB')
 
 
-def read_from_source(tmpfile_csv_path,sources_infos ):
+def read_csv_from_source(tmpfile_csv_path,sources_infos ):
 
     source_path = sources_infos["source_url"]
     
@@ -61,7 +61,7 @@ def get_columns_from_csv(file_path, delimiter):
     return df.columns.tolist()
 
 
-def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
+def upload_csv_to_table(tmpfile_csv_path, table_name, source_infos):
     """
     Upload a dataframe to a table in the database
     https://cboyer.github.io/developpement/postgres-parquet/
@@ -118,3 +118,38 @@ def upload_dataframe_to_table(tmpfile_csv_path, table_name, source_infos):
             connection.rollback()
             connection.close()
         raise
+
+
+
+def read_pg_dump_from_source(tmpfile_sql_path,sources_infos ):
+
+    source_path = sources_infos["source_url"]
+    
+    if source_path.endswith('.zip'):
+        with NamedTemporaryFile(suffix='.zip', delete=True) as zip_tmpfile:
+            subprocess.run(['curl', '-o', zip_tmpfile.name, source_path], check=True)
+            with zipfile.ZipFile(zip_tmpfile.name, 'r') as z:
+                sql_file = next((name for name in z.namelist() if name.endswith('.sql')), None)
+                if sql_file is None:
+                    raise ValueError('No SQL file found in the zip file')
+                with z.open(sql_file) as f, open(tmpfile_sql_path, 'w') as out_f:
+                    out_f.write(f.read().decode('utf-8'))
+
+
+
+def upload_pg_dump_to_table(tmpfile_sql_path):
+    """
+    Upload a pg dump to a table in the database
+    """
+    # Construct the psql command
+    psql_command = [
+        'psql',
+        f'postgresql://{user}:{password}@{host}:{port}/{database}',
+        '-f', tmpfile_sql_path
+    ]
+    # Run the psql command
+    import time
+    t0 = time.time()
+    subprocess.run(psql_command)
+    t1 = time.time()
+    print(f"Time to upload pg_dump: {t1-t0}")
