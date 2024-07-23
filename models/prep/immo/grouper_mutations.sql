@@ -34,8 +34,7 @@ aggreger_dvf AS (
 ),
 bien_principal_dvf AS (
     {{ selectionner_bien_principal_dvf(filtrer_dvf) }}
-)
-
+) 
 SELECT 
     bien_principal_dvf.id_mutation,
     bien_principal_dvf.valeur_fonciere,
@@ -46,8 +45,11 @@ SELECT
     bien_principal_dvf.type_local,
     bien_principal_dvf.code_postal,
     bien_principal_dvf.code_commune,
-    ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint
+    ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint,
+    bien_principal_dvf.valeur_fonciere / aggreger_dvf.total_surface as prix_m2
 FROM 
     bien_principal_dvf
 JOIN 
     aggreger_dvf ON aggreger_dvf.id_mutation = bien_principal_dvf.id_mutation
+LEFT JOIN
+    {{ ref('geo_communes') }} as cog_communes on cog_communes.code_commune = bien_principal_dvf.code_commune
