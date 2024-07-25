@@ -17,10 +17,10 @@ computed AS (
 -- Compare computed and expected values
 SELECT 
     computed.id, 
-    computed.mean_knn_value AS computed_valeur, 
+    computed.prix_m2_knn_2 AS computed_valeur, 
     expected.expected_valeur
 FROM 
     computed
     JOIN expected ON computed.id = expected.id
 WHERE
-    computed.mean_knn_value != expected.expected_valeur
+    computed.prix_m2_knn_2 != expected.expected_valeur

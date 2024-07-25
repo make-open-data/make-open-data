@@ -5,23 +5,20 @@
 WITH knn AS (
     SELECT 
         a.{{ id_column }} AS id,
-        AVG(b.{{ value_column }}) AS mean_knn_value
+        AVG(b.{{ value_column }}) AS prix_m2_knn_{{ k }}
     FROM 
         {{ ref(source_table) }} a
         JOIN LATERAL (
             SELECT {{ value_column }}
             FROM {{ ref(source_table) }}
-            WHERE {{ id_column }} != a.{{ id_column }}
+            WHERE ({{ id_column }} != a.{{ id_column }})
             ORDER BY a.{{ geopoint_column }} <-> {{ geopoint_column }}
             LIMIT {{ k }}
         ) b ON TRUE
     GROUP BY a.{{ id_column }}
 )
 
-SELECT 
-    a.*,
-    b.mean_knn_value
-FROM 
-    {{ ref(source_table) }} a
-    JOIN knn b ON a.{{ id_column }} = b.id
+SELECT * FROM knn
+
+
 {% endmacro %}
