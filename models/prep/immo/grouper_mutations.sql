@@ -46,7 +46,14 @@ SELECT
     bien_principal_dvf.code_postal,
     bien_principal_dvf.code_commune,
     ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint,
-    bien_principal_dvf.valeur_fonciere / aggreger_dvf.total_surface as prix_m2
+    bien_principal_dvf.valeur_fonciere / aggreger_dvf.total_surface as prix_m2,
+    cog_communes.nom_commune,
+    cog_communes.code_arrondissement,
+    cog_communes.code_departement,
+    cog_communes.code_region,
+    cog_communes.nom_arrondissement,
+    cog_communes.nom_departement,
+    cog_communes.nom_region
 FROM 
     bien_principal_dvf
 JOIN 
