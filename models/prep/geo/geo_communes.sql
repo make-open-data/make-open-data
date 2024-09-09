@@ -29,8 +29,14 @@ with filtre_cog_communes as (
 ), geopoints as (
     select DISTINCT
         LPAD(CAST(cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
-        CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
-        CAST(SPLIT_PART(cog_poste._geopoint, ',', 2) AS FLOAT) as commune_longitude
+        CASE 
+            WHEN SPLIT_PART(cog_poste._geopoint, ',', 1) = '' THEN NULL
+            ELSE CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT)
+        END AS commune_latitude,
+        CASE 
+            WHEN SPLIT_PART(cog_poste._geopoint, ',', 2) = '' THEN NULL
+            ELSE CAST(SPLIT_PART(cog_poste._geopoint, ',', 2) AS FLOAT)
+        END AS commune_longitude
     from {{ source('sources', 'cog_poste')}}  as cog_poste
 )
 

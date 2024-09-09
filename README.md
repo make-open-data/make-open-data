@@ -32,27 +32,21 @@ Idéal pour déployer les nouvelles tables de données publiques sans tracas une
 ```
 git clone git@github.com:make-open-data/make-open-data.git
 ``` 
-- Installer et activer un envirnoment virtuel
+- Installer et activer un envirnoment virtuel (pip3 install important)
 
 
 ```
-python3 -m venv dbt-env 
+python3.11 -m venv dbt-env 
 source dbt-env/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+python3 -m pip install --upgrade pip wheel setuptools
+pip3 install -r requirements.txt
 ``` 
 
-
-
-- Exporter les clés d'une instance PostgreSQL avec l'extention PostGIS de 10 GB min
+-- Vérifier que dbt-duckdb est bien installé
 
 ```
-export POSTGRES_USER=<YOUR_POSTGRES_USER>  
-export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD> 
-export POSTGRES_HOST=<YOUR_POSTGRES_HOST> 
-export POSTGRES_PORT=<YOUR_POSTGRES_PORT>  
-export POSTGRES_DB=<YOUR_POSTGRES_DB>
-``` 
+dbt --version
+```
 
 - A faire une fois : installer les extensions PostGis et unaccent et vérifier
 

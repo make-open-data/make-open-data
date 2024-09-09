@@ -10,7 +10,7 @@
                     regexp_replace(
                       regexp_replace(
                         regexp_replace(
-                          unaccent({{ nom_colonne }}), 
+                          strip_accents({{ nom_colonne }}), 
                           'm²', '', 'g'
                         ), 
                         '[ ''(),\-:]+', '_', 'g'
@@ -41,7 +41,7 @@
                     regexp_replace(
                       regexp_replace(
                         regexp_replace(
-                          unaccent({{ nom_colonne }}), 
+                          strip_accents({{ nom_colonne }}), 
                           'm²', '', 'g'
                         ), 
                         '[ ''(),\-:]+', '_', 'g'
@@ -73,7 +73,7 @@
                     regexp_replace(
                       regexp_replace(
                         regexp_replace(
-                          unaccent({{ nom_colonne }}), 
+                          strip_accents({{ nom_colonne }}), 
                           'm²', '', 'g'
                         ), 
                         '[ ''(),\-:]+', '_', 'g'

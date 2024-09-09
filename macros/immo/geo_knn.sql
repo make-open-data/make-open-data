@@ -12,7 +12,7 @@ WITH knn AS (
             SELECT {{ value_column }}
             FROM {{ ref(source_table) }}
             WHERE ({{ id_column }} != a.{{ id_column }})
-            ORDER BY a.{{ geopoint_column }} <-> {{ geopoint_column }}
+            ORDER BY ST_Distance(a.{{ geopoint_column }}, {{ geopoint_column }})
             LIMIT {{ k }}
         ) b ON TRUE
     GROUP BY a.{{ id_column }}

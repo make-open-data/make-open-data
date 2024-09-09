@@ -16,7 +16,7 @@
       "LIB_VAR", 
       "COD_MOD", 
       {{ nettoyer_modalite_logement('"LIB_MOD"') }} AS "LIB_MOD"
-      FROM {{ source("meta", "logement_2020_variables" ) }}
+      FROM {{ source("sources", "logement_2020_variables" ) }}
   {% endset %}
 
   {% set metadata_results = run_query(metadata_query) %}

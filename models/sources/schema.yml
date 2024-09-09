@@ -6,6 +6,8 @@ sources:
     tables:
       - name: cog_poste
         description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
+        config:
+          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_poste/base-officielle-codes-postaux.csv')"
         columns:
           - name: code_postal
             description: "Postal code"
@@ -34,6 +36,8 @@ sources:
 
       - name: cog_communes
         description: "List of communes. Producteur des donnees: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        config:
+          external_location : "read_json_auto('https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_communes/communes.json')"
         columns:
           - name: code
             description: "Code unique de la commune"
@@ -83,6 +87,8 @@ sources:
 
       - name: cog_arrondissements
         description: "Informations sur les arrondissements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        config:
+          external_location : "read_json_auto('https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_arrondissements/arrondissements.json')"
         columns:
           - name: code
             description: "Code de l'arrondissement"
@@ -105,6 +111,8 @@ sources:
 
       - name: cog_departements
         description: "Informations sur les départements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        config:
+          external_location : "read_json_auto('https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json')"
         columns:
           - name: code
             description: "Code du département"
@@ -127,6 +135,8 @@ sources:
 
       - name: cog_regions
         description: "Informations sur les régions.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        config:
+          external_location : "read_json_auto('https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json')"
         columns:
           - name: code
             description: "Code de la région"
@@ -146,6 +156,8 @@ sources:
 
       - name: dvf_2023
         description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
+        config:
+          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.csv')"
         columns:
           - name: id_mutation
             description: "Identifiant de la mutation"
@@ -272,6 +284,8 @@ sources:
       - name: logement_2020
         description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
 Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
+        config:
+          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020/FD_LOGEMT_2020.csv')"
         columns:
           - name: COMMUNE
             description: "Commune"
@@ -477,6 +491,8 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: professionels_sante
         description: "Ce jeu de données fournit des informations sur les effectifs des professionnels de santé libéraux par département/région, âge, sexe et spécialité. Origine: https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources"
+        config:
+          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/professionels_sante/demographie-effectifs-et-les-densites.csv')"
         columns:
           - name: annee
             data_type: text
@@ -520,3 +536,31 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: vision_profession_territoire	
             data_type: text
             description: "?"
+
+      - name: effectif_pathologie
+        config:
+          external_location: "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/effectif_pathologie/effectifs.csv')"
+
+      - name: logement_2020_variables
+        config:
+          external_location: "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020_variables/Dictionnaire%20variables_logemt_2020.csv')"
+        description: "Dictionnaire des variables pour la table logement_2020. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
+        columns:
+          - name: COD_VAR
+            description: "Nom de la variable"
+            data_type: string
+          - name: LIB_VAR
+            description: "Libellé de la variable"
+            data_type: string
+          - name: COD_MOD
+            description: "Nom de le modalité"
+            data_type: string
+          - name: LIB_MOD
+            description: "Libellé de la modalité"
+            data_type: string
+          - name: TYPE_VAR
+            description: "Type de la variable (pas applicable en import CSV car tout en text)"
+            data_type: string
+          - name: LONG_VAR
+            description: "Longueur de la variable (pas applicable en import CSV car tout en text)"
+            data_type: string

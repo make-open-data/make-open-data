@@ -1,4 +1,16 @@
 {{ config(materialized='table') }}
+      
+	  {% set professionels_sante_liste_query %}
+        SELECT DISTINCT profession_sante
+        FROM {{ source('sources', 'professionels_sante') }}
+      {% endset %}
+
+      {% set professionels_sante_result = run_query(professionels_sante_liste_query) %}
+
+	  {% set professionels_sante_list = [] %}
+      {% for row in professionels_sante_result %}
+          {% do professionels_sante_list.append(row[0]) %}
+      {% endfor %}
 
 with aggreger_effectif_sante_unpivot as (
 	select 
@@ -20,7 +32,7 @@ aggreger_effectif_sante_departements as (
 		libelle_departement,
 		{{ dbt_utils.pivot(
 			'profession_sante',
-			dbt_utils.get_column_values(source('sources', 'professionels_sante') , 'profession_sante'),
+			professionels_sante_list,
 			agg='sum',
 			then_value='effectif'
 		) }}
