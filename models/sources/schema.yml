@@ -155,9 +155,9 @@ sources:
             data_type: text
 
       - name: dvf_2023
-        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
+        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: data.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
         config:
-          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.csv')"
+          external_location : "read_parquet('https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.parquet')"
         columns:
           - name: id_mutation
             description: "Identifiant de la mutation"
@@ -285,7 +285,7 @@ sources:
         description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
 Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
         config:
-          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020/FD_LOGEMT_2020.csv')"
+          external_location : "read_parquet('https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020/FD_LOGEMT_2020.parquet')"
         columns:
           - name: COMMUNE
             description: "Commune"
@@ -492,7 +492,7 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
       - name: professionels_sante
         description: "Ce jeu de données fournit des informations sur les effectifs des professionnels de santé libéraux par département/région, âge, sexe et spécialité. Origine: https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources"
         config:
-          external_location : "READ_CSV_AUTO('https://make-open-data-s3.fra1.digitaloceanspaces.com/professionels_sante/demographie-effectifs-et-les-densites.csv')"
+          external_location : "read_parquet('https://make-open-data-s3.fra1.digitaloceanspaces.com/professionels_sante/demographie-effectifs-et-les-densites.parquet')"
         columns:
           - name: annee
             data_type: text
