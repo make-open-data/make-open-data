@@ -36,7 +36,7 @@ git clone git@github.com:make-open-data/make-open-data.git
 
 
 ```
-python3 -m venv dbt-env 
+python3.11 -m venv dbt-env 
 source dbt-env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -59,10 +59,15 @@ export POSTGRES_DB=<YOUR_POSTGRES_DB>
 ```
 psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
 CREATE EXTENSION postgis;  
-SELECT PostGIS_Version();
 CREATE EXTENSION unaccent;
-
 ```
+
+- Insérer manuellement (avec pgAdmin) les tables suivantes dans le schema `sources`:
+
+
+Etape temporaire : 
+* Une extraction automatique a été essayée et 
+
 
 - Connecter DBT à la base de données
 
