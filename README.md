@@ -66,7 +66,8 @@ CREATE EXTENSION unaccent;
 
 
 Etape temporaire : 
-* Une extraction automatique a été essayée et 
+* Une extraction automatique a été essayée et ne vaut pas le coup étant donné la diversité des fichiers sources (zip, csv, json, 7z, etc) ;
+* Une solution du type lakehouse est en cours de mise en place (`SELECT * FROM "red_parquet(<URL>.parquet)"`)
 
 
 - Connecter DBT à la base de données
@@ -77,11 +78,6 @@ dbt debug
 dbt deps
 ``` 
 
-- Extraire les données des sources à la base de données
-
-```
-python -m extract
-```
 
 - Réaliser et tester les transformations pour avoir obtenir les tables finales
 
