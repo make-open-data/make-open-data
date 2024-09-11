@@ -36,9 +36,9 @@ with communes as (
     FROM
       aggregated
     JOIN
-	    {{ ref('geo_communes') }} as cog
+	    {{ ref('infos_communes') }} as infos_communes
     ON
-      aggregated.code_commune_insee = cog.code_commune
+      aggregated.code_commune_insee = infos_communes.code_commune
   )
 
 SELECT 

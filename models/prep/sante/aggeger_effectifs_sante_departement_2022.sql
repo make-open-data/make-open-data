@@ -33,7 +33,7 @@ infos_par_departement as (
 		sum(cast(population as numeric)) as population_departement,
 		avg(commune_latitude) as latitude_centre_departement,
 		avg(commune_longitude) as longitude_centre_departement
-	from {{ ref('geo_communes') }}
+	from {{ ref('infos_communes') }}
 	group by code_departement
 )
 

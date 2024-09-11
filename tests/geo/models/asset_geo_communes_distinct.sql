@@ -4,7 +4,7 @@
 
 with counts as (
     SELECT code_commune, COUNT(*) as num_com
-    FROM {{ ref('geo_communes') }}
+    FROM {{ ref('infos_communes') }}
     GROUP BY code_commune
 )
 

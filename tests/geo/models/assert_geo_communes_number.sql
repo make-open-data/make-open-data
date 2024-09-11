@@ -10,7 +10,7 @@
 
 with source as (
     SELECT COUNT(DISTINCT code_commune) as commune_count
-    FROM {{ ref('geo_communes') }}
+    FROM {{ ref('infos_communes') }}
 )
 
 select *

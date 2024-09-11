@@ -1,8 +1,8 @@
 version: 2
 
 models:
-- name: geo_communes
-  description: 'Fournit une tables des communes avec les informations dénormalisées'
+- name: infos_communes
+  description: 'Fournit une tables des communes avec les informations basiques'
   columns:
   - name: code_commune
     description: "code commune. Primary key of the table"
@@ -47,8 +47,8 @@ models:
     description: "longitude de la commune"
     data_type: string
 
-- name: geo_postaux
-  description: 'Déduplique les codes postaux et ajoute le nom des departements et regions associés'
+- name: infos_postes
+  description: 'Tables avec codes postaux uniques et leurs informations basiques.'
   columns:
     - name: code_postal
       description: "code postal. Primary key of the table"
@@ -69,12 +69,5 @@ models:
       description: "nom region"
       data_type: string
 
-- name: geo_postaux_communes
+- name: commune_centroid_poste
   description: 'Table de passage pour avoir une relation unique entre les codes postaux et les codes communes insee. Un code postal peut appartenir à plusieurs communes et une code commune insee peut appartenir plusieurs codes postaux.'
-  columns:
-    - name: code_postal
-      description: "code postal. Non-unique"
-      data_type: string
-    - name: code_commune_insee
-      description: "code commune. Non-unique"
-      data_type: string

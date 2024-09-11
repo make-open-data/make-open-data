@@ -4,7 +4,7 @@
 
 with counts as (
     SELECT code_postal, COUNT(*) as num_cp
-    FROM {{ ref('geo_postaux') }}
+    FROM {{ ref('infos_postes') }}
     GROUP BY code_postal
 )
 

@@ -3,11 +3,11 @@
 WITH coordonnee_moyenne_par_code_postal AS (
     SELECT 
         cog_poste.code_postal as code_postal,
-        AVG(geo_communes.commune_latitude) AS avg_lat,
-        AVG(geo_communes.commune_longitude) AS avg_lon
+        AVG(infos_communes.commune_latitude) AS avg_lat,
+        AVG(infos_communes.commune_longitude) AS avg_lon
     FROM {{ source('sources', 'cog_poste')}} cog_poste
-    LEFT JOIN {{ ref('geo_communes')}} geo_communes 
-    ON geo_communes.code_commune = cog_poste.code_commune_insee
+    LEFT JOIN {{ ref('infos_communes')}} infos_communes 
+    ON infos_communes.code_commune = cog_poste.code_commune_insee
     GROUP BY cog_poste.code_postal
 ),
 distinct_code_postal AS (
@@ -28,11 +28,11 @@ cog_postal_et_distance_moyenne AS (
 code_postal_et_commune_et_distance AS (
     SELECT 
         cog_postal_et_distance_moyenne.*,
-        geo_communes.*,
-        SQRT(POWER(geo_communes.commune_latitude - cog_postal_et_distance_moyenne.avg_lat, 2) + POWER(geo_communes.commune_longitude - cog_postal_et_distance_moyenne.avg_lon, 2)) AS distance
+        infos_communes.*,
+        SQRT(POWER(infos_communes.commune_latitude - cog_postal_et_distance_moyenne.avg_lat, 2) + POWER(infos_communes.commune_longitude - cog_postal_et_distance_moyenne.avg_lon, 2)) AS distance
     FROM cog_postal_et_distance_moyenne 
-    LEFT JOIN {{ ref('geo_communes')}} geo_communes
-    ON cog_postal_et_distance_moyenne.code_commune_insee = geo_communes.code_commune
+    LEFT JOIN {{ ref('infos_communes')}} infos_communes
+    ON cog_postal_et_distance_moyenne.code_commune_insee = infos_communes.code_commune
 ),
 code_postal_et_commune_et_rang_distance_centre AS (
     SELECT 
