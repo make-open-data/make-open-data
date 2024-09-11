@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 --- Agrège les données de la base logement par commune
 --- Colonne par colonne pour ne pas saturer la mémoire

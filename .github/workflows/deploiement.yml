@@ -48,12 +48,7 @@ jobs:
       run: |
         source dbt-env/bin/activate
         psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
-    
-    - name: delete "sources" schemas if exists
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS sources CASCADE;"
-    
+     
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
@@ -61,11 +56,6 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt debug
-        
-    - name: Extract data and upload it to DB
-      run: |
-        source dbt-env/bin/activate
-        python -m extract
 
     - name: Run dbt deps
       run: |
