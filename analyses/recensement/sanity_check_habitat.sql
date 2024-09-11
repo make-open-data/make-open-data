@@ -5,7 +5,7 @@ select
 	nombre_de_logements,
 	type_logement__appartement,
 	type_logement__maison
-from {{ ref('aggreger_habitat_communes') }}
+from {{ ref('habitat_communes') }}
 where code_commune_insee = '34172'
 
 -- Nombre_de_logements, type_logement__appartement,type_logement__maison

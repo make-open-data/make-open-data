@@ -1,4 +1,9 @@
-{{ config(materialized='view') }}
+{{ 
+    config(
+        materialized='view',
+        schema='intermediaires'
+    ) 
+}}
 
 WITH logement AS (
     select * from {{ source('sources', 'logement_2020')}}

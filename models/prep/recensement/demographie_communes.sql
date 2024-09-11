@@ -12,7 +12,7 @@ with communes as (
       code_commune_insee,
       CAST( SUM(CAST(poids_du_logement AS numeric)) AS INT) AS nombre_de_logements
     FROM 
-      {{ ref('decoder_demographie') }}
+      {{ ref('decoder_demographie_communes') }}
     GROUP BY
       code_commune_insee
   ),
@@ -24,7 +24,7 @@ with communes as (
 
     {% for colonne_a_aggreger in colonnes_a_aggreger_list %}
 
-      LEFT JOIN ( {{ aggreger_logement_par_colonne('decoder_demographie', colonnes_a_aggreger_list, colonne_a_aggreger) }} )
+      LEFT JOIN ( {{ aggreger_logement_par_colonne('decoder_demographie_communes', colonnes_a_aggreger_list, colonne_a_aggreger) }} )
       USING (code_commune_insee)
 
     {% endfor %}
