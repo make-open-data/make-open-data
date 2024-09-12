@@ -4,12 +4,12 @@ config-version: 2
 
 profile: 'makeopendata'
 
-model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
-seed-paths: ["seeds"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
+model-paths: ["1_data"]
+analysis-paths: ["2_analyses"]
+test-paths: ["3_tests"]
+seed-paths: ["4_seeds"]
+macro-paths: ["5_macros"]
+snapshot-paths: ["6_snapshots"]
 
 clean-targets:         
   - "target"
