@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='view',
+        schema='intermediaires'
+    ) 
+}}
 
 with unique_codes_communes_postaux as (
     select DISTINCT
