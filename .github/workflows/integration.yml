@@ -63,6 +63,18 @@ jobs:
         psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS prep CASCADE;"
 
 
+    - name: delete "prepare" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS prepare CASCADE;"
+
+    
+    - name: delete "intermediaires" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS intermediaires CASCADE;"
+
+
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 

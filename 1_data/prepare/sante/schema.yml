@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-- name: aggeger_effectifs_sante_departement_2022
+- name: professionels_sante_departement
   description: Fournit les effectifs des professionnels de santé (tout sexe, age) par spécialité et département pour l'année 2022
   columns:
   

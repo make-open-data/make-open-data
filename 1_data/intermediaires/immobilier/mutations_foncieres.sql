@@ -17,6 +17,7 @@
 {{ 
     config(
         materialized='table',
+        schema='intermediaires',
         post_hook=[
             "CREATE INDEX IF NOT EXISTS geopoint_index ON {{ this }} USING GIST(geopoint);",
         ]

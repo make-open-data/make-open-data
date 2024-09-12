@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-- name: grouper_mutations
+- name: mutations_foncieres
   description: Fournit les informations sur les transactions immobilières (Maison ou appartement) groupées par mutation. En cas de mutation mutltivente, la localisation (GPS, code postal, code commune) sera celui du bien principal. Maison si Maison et appartement. Si même type, on retiendra le plus grand des deux. Toujours en cas de mutivente, le tableau reporte la suface totale et le nombre de pièce total des ventes. 
   columns:
 
