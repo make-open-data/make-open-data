@@ -1,0 +1,73 @@
+version: 2
+
+models:
+- name: infos_communes
+  description: 'Fournit une tables des communes avec les informations basiques'
+  columns:
+  - name: code_commune
+    description: "code commune. Primary key of the table"
+    tests:
+              - unique
+              - not_null
+    data_type: string
+  - name: nom_commune
+    description: "nom de la commune"
+    data_type: string
+  - name: code_arrondissement
+    description: "code arrondissement"
+    data_type: string
+  - name: code_departement
+    description: "code departement"
+    data_type: string
+  - name: code_region
+    description: "code region"
+    data_type: string
+  - name: codes_postaux
+    description: "codes postaux"
+    data_type: string
+  - name: population
+    description: "population"
+    data_type: string
+  - name: code_zone
+    description: "Départements ou Régions français d'Outre-Mer (DROM), Collectivités d'Outre-Mer (COM) ou Métropole"
+    data_type: string
+  - name: nom_arrondissement
+    description: "nom arrondissement"
+    data_type: string
+  - name: nom_departement
+    description: "nom departement"
+    data_type: string
+  - name: nom_region
+    description: "nom region"
+    data_type: string
+  - name: commune_latitude
+    description: "latitude de la commune"
+    data_type: string
+  - name: commune_longitude
+    description: "longitude de la commune"
+    data_type: string
+
+- name: infos_postes
+  description: 'Tables avec codes postaux uniques et leurs informations basiques.'
+  columns:
+    - name: code_postal
+      description: "code postal. Primary key of the table"
+      data_type: string
+      tests:
+          - unique
+          - not_null
+    - name: code_departement
+      description: "code departement"
+      data_type: string
+    - name: nom_departement
+      description: "nom departement"
+      data_type: string
+    - name: code_region
+      description: "code region"
+      data_type: string
+    - name: nom_region
+      description: "nom region"
+      data_type: string
+
+- name: commune_centroid_poste
+  description: 'Table de passage pour avoir une relation unique entre les codes postaux et les codes communes insee. Un code postal peut appartenir à plusieurs communes et une code commune insee peut appartenir plusieurs codes postaux.'

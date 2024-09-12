@@ -1,0 +1,278 @@
+version: 2
+
+models:
+
+- name: decoder_demographie_communes
+  description: Fournit les réponses concernant la démographie du recenssement des logements, donc 25 millions de logements, avec colonnes et valeurs décodées pour une meilleur lisibilité (au prix de taille). Utile pour trouver des corrélations à l'échelle des ménages 
+  columns:
+
+  - name: poids_du_logement
+    data_type: text
+    description: "Variable codée IPONDL et décrite comme Poids du logement dans le fichier source"
+
+  - name: code_commune_insee
+    data_type: text
+    description: "Variable codée COMMUNE et décrite comme Département et commune du lieu de résidence dans le fichier source"
+
+  - name: region_residence
+    data_type: text
+    description: "Variable codée REGION et décrite comme Région du lieu de résidence dans le fichier source"
+
+  - name: age_regroupe_pr_menage
+    data_type: text
+    description: "Variable codée AGEMEN8 et décrite comme Âge regroupé de la personne de référence du ménage en 8 lasses d'âge dans le fichier source"
+
+  - name: diplome_pr
+    data_type: text
+    description: "Variable codée DIPLM et décrite comme Diplôme le plus élevé obtenu (personne de référence duménage) dans le fichier source"
+
+  - name: personnes_actives_menage
+    data_type: text
+    description: "Variable codée INPAM et décrite comme Nombre de personnes actives du ménage dans le fichier source"
+
+  - name: personnes_menage
+    data_type: text
+    description: "Variable codée INPER et décrite comme Nombre de personnes du ménage dans le fichier source"
+
+  - name: personnes_masculin_menage
+    data_type: text
+    description: "Variable codée INPER1 et décrite comme Nombre de personnes du ménage, de sexe masculin dans le fichier source"
+
+  - name: personnes_feminin_menage
+    data_type: text
+    description: "Variable codée INPER2 et décrite comme Nombre de personnes du ménage, de sexe féminin dans le fichier source"
+
+  - name: personnes_actives_ayant_emploi_menage
+    data_type: text
+    description: "Variable codée INPOM et décrite comme Nombre de personnes actives ayant un emploi du ménage dans le fichier source"
+
+  - name: personnes_scolarisees_menage
+    data_type: text
+    description: "Variable codée INPSM et décrite comme Nombre de personnes scolarisées du ménage dans le fichier source"
+
+  - name: condition_empoi_pr
+    data_type: text
+    description: "Variable codée EMPLM et décrite comme Condition d'emploi (personne de référence du ménage) dans le fichier source"
+
+  - name: lieu_etudes_pr
+    data_type: text
+    description: "Variable codée ILETUDM et décrite comme Indicateur du lieu d'études (personne de référence du méage) dans le fichier source"
+
+  - name: lieu_travail_pr
+    data_type: text
+    description: "Variable codée ILTM et décrite comme Indicateur de lieu de travail (personne de référence du ménage) dans le fichier source"
+
+  - name: situation_immigration_pr
+    data_type: text
+    description: "Variable codée IMMIM et décrite comme Situation quant à l'immigration (personne de référence du ménage) dans le fichier source"
+
+  - name: lieu_naissance_pr
+    data_type: text
+    description: "Variable codée INAIM et décrite comme Indicateur du lieu de naissance (personne de référence du ménage) dans le fichier source"
+
+  - name: personnes_scolarise_plus_14_menage
+    data_type: text
+    description: "Variable codée INEEM et décrite comme Nombre d'élèves, étudiants ou stagiaires âgés de 14 an ou plus dans le ménage dans le fichier source"
+
+  - name: personnes_moins_11_ans_menage
+    data_type: text
+    description: "Variable codée INP11M et décrite comme Nombre de personnes âgées de 11 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_15_ans_menage
+    data_type: text
+    description: "Variable codée INP15M et décrite comme Nombre de personnes âgées de 15 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_17_ans_menage
+    data_type: text
+    description: "Variable codée INP17M et décrite comme Nombre de personnes âgées de 17 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_19_ans_menage
+    data_type: text
+    description: "Variable codée INP19M et décrite comme Nombre de personnes âgées de 19 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_24_ans_menage
+    data_type: text
+    description: "Variable codée INP24M et décrite comme Nombre de personnes âgées de 24 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_3_ans_menage
+    data_type: text
+    description: "Variable codée INP3M et décrite comme Nombre de personnes âgées de 3 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_moins_5_ans_menage
+    data_type: text
+    description: "Variable codée INP5M et décrite comme Nombre de personnes âgées de 5 ans ou moins du ménage dans le fichier source"
+
+  - name: personnes_plus_60_ans_menage
+    data_type: text
+    description: "Variable codée INP60M et décrite comme Nombre de personnes âgées de 60 ans ou plus du ménage dans le fichier source"
+
+  - name: personnes_plus_65_ans_menage
+    data_type: text
+    description: "Variable codée INP65M et décrite comme Nombre de personnes âgées de 65 ans ou plus du ménage dans le fichier source"
+
+  - name: personnes_plus_75_ans_menage
+    data_type: text
+    description: "Variable codée INP75M et décrite comme Nombre de personnes âgées de 75 ans ou plus du ménage dans le fichier source"
+
+  - name: residence_annee_avant_pr
+    data_type: text
+    description: "Variable codée IRANM et décrite comme Indicateur du lieu de résidence antérieure au 1er janver de l'année précédente de la personne de référence du ménage dans le fichier source"
+
+
+  - name: type_activite_pr
+    data_type: text
+    description: "Variable codée TACTM et décrite comme Type d'activité de la personne de référence du ménage dans le fichier source"
+
+  - name: temps_travail_pr
+    data_type: text
+    description: "Variable codée TPM et décrite comme Temps de travail (personne de référence du ménage) dans le fichier source"
+
+  - name: nombre_voitures_menage
+    data_type: text
+    description: "Variable codée VOIT et décrite comme Nombre de voitures du ménage dans le fichier source"
+
+  - name: mode_transport_plus_utilise_travail_pr
+    data_type: text
+    description: "Variable codée TRANSM et décrite comme Mode de transport principal le plus souvent utilisé pou aller travailler (personne de référence du ménage) dans le fichier source"
+
+  - name: sexe_pr
+    data_type: text
+    description: "Variable codée SEXEM et décrite comme Sexe de la personne de référence du ménage dans le fichier source"
+
+  - name: status_conjugal_pr
+    data_type: text
+    description: "Variable codée STAT_CONJM et décrite comme Statut conjugal de la personne de référence du ménage dans le fichier source"
+
+  - name: anciennete_recherche_emploi_pr
+    data_type: text
+    description: "Variable codée RECHM et décrite comme Ancienneté de recherche d'emploi (personne de référenc du ménage) dans le fichier source"
+
+  - name: status
+    data_type: text
+    description: "Variable codée STOCD et décrite comme Statut d'occupation détaillé du logement dans le fichier source"
+
+
+
+- name: decoder_habitat_communes
+  description: Fournit les réponses concernant l'habitat du recenssement des logements, donc 25 millions de logements, avec colonnes et valeurs décodées pour une meilleur lisibilité (au prix de taille). Utile pour trouver des corrélations à l'échelle des ménages 
+  columns:
+
+  - name: poids_du_logement
+    data_type: text
+    description: "Variable codée IPONDL et décrite comme Poids du logement dans le fichier source"
+
+  - name: code_commune_insee
+    data_type: text
+    description: "Variable codée COMMUNE et décrite comme Département et commune du lieu de résidence dans le fichier source"
+
+  - name: achevement_construction_logement	
+    data_type: text
+    description: "Variable codée ACHL et décrite comme Période d'achèvement de la construction de la maison ou de l'immeuble dans le fichier source"
+
+  - name: annee_regroupe_ammenagement_logement
+    data_type: text
+    description: "Variable codée AEMMR et décrite comme Année d'emménagement dans le logement (regroupée) dans le fichier source"
+
+  - name: aciennete_regroupe_ammenagement_logement	
+    data_type: text
+    description: "Variable codée ANEMR et décrite comme Ancienneté d'emménagement dans le logement (regroupée) dans le fichier source"
+
+  - name: desserte_ascensseur
+    data_type: text
+    description: "Variable codée ASCEN et décrite comme Desserte par un ascenseur dans le fichier source"
+
+  - name: categorie_logement
+    data_type: text
+    description: "Variable codée CATL et décrite comme Catégorie de logement dans le fichier source"
+
+  - name: emplacement_stationnement_reserve
+    data_type: text
+    description: "Variable codée GARL et décrite comme Emplacement réservé de stationnement dans le fichier source"
+
+  - name: logement_hml
+    data_type: text
+    description: "Variable codée HLML et décrite comme Appartenance du logement à un organisme HLM dans le fichier source"
+
+  - name: residence_metropole_ou_dom	
+    data_type: text
+    description: "Variable codée METRODOM et décrite comme Indicateur Métropole ou DOM du lieu de résidence dans le fichier source"
+
+  - name: nombre_pieces_logement
+    data_type: text
+    description: "Variable codée NBPI et décrite comme Nombre de pièces du logement dans le fichier source"
+
+  - name: region_residence
+    data_type: text
+    description: "Variable codée REGION et décrite comme Région du lieu de résidence dans le fichier source"
+
+  - name: superficie_logement
+    data_type: text
+    description: "Variable codée SURF et décrite comme Superficie du logement dans le fichier source"
+
+  - name: type_construction
+    data_type: text
+    description: "Variable codée TYPC et décrite comme Type de construction dans le fichier source"
+
+  - name: type_logement
+    data_type: text
+    description: "Variable codée TYPL et décrite comme Type de logement dans le fichier source"
+
+  - name: presence_wc_interieur_logement__dom
+    data_type: text
+    description: "Variable codée WC et décrite comme Présence de W.-C. à l'intérieur du logement (DOM) dans le fichier source"
+
+  - name: chauffage_central_logement__metro
+    data_type: text
+    description: "Variablecodée CHFL et décrite comme Chauffage central du logement (France métropolitaine) dans le fichier source"
+
+  - name: combustible_principal_logement__metro
+    data_type: text
+    description: "Variable codée CMBL et décrite comme Combustible principal du logement (France métropolitaine) dans le fichier source"
+
+  - name: baignoire_ou_douche__dom
+    data_type: text
+    description: "Variable codée BAIN et décrite comme Baignoire ou douche (DOM) dans le fichier source"
+
+  - name: aspect_bati__dom
+    data_type: text
+    description: "Variable codée BATI et décrite comme Aspect du bâti (DOM) dans le fichier source"
+
+  - name: chauffage_logement__dom
+    data_type: text
+    description: "Variable codée CHAU et décrite comme Moyen de chauffage du logement (DOM) dans le fichier source"
+
+  - name: chauffe_eau_solaire__dom
+    data_type: text
+    description: "Variable codée CHOS et décrite comme Chauffe-eau solaire (DOM) dans le fichier source"
+
+  - name: min_une_piece_climatise__dom
+    data_type: text
+    description: "Variable codée CLIM et décrite comme Existence d'au moins une pièce climatisée (DOM) dans le fichier source"
+
+  - name: cuisine_interieur_avec_evier__dom
+    data_type: text
+    description: "Variable codée CUIS et décrite comme Cuisine intérieure avec évier (DOM) dans le fichier source"
+
+  - name: nombre_deux_roues_menage__dom
+    data_type: text
+    description: "Variable codée DEROU et décrite comme Nombre de deux-roues à moteur du ménage (DOM) dans le fichier source"
+
+  - name: eau_potabke_interieur_logement__dom
+    data_type: text
+    description: "Variable codée EAU et décrite comme Point d'eau potable à l'intérieur du logement (DOM) dans le fichier source"
+
+  - name: mode_evacuation_eaux_usagers__dom
+    data_type: text
+    description: "Variable codée EGOUL et décrite comme Mode d'évacuation des eaux usées (DOM) dans le fichier source"
+
+  - name: electricite_logement__dom
+    data_type: text
+    description: "Variable codée ELEC et décrite comme Électricité dans le logement (DOM) dans le fichier source"
+
+  - name: installation_sanitaires__metro
+    data_type: text
+    description: "Variable codée SANI et décrite comme Installations sanitaires (France métropolitaine) dans le fichier source"
+
+  - name: installation_sanitaires__dom
+    data_type: text
+    description: "Variable codée SANIDOM et décrite comme Installations sanitaires (DOM) dans le fichier source"

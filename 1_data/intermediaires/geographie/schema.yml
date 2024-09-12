@@ -1,0 +1,6 @@
+version: 2
+
+models:
+
+- name: postes_communes
+  description: 'Table N codes postaux à N communes.'
