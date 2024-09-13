@@ -1,4 +1,4 @@
-{% macro pivoter_logement(variante_logement, deduplicated, colonne_a_aggreger) %}    
+{% macro pivoter_logement(variante_logement, deduplicated, colonne_a_aggreger, champs_geo) %}    
 
 
 
@@ -6,16 +6,16 @@
 
     select 
 
-    code_commune_insee,
+    {{ champs_geo }},
     {{ dbt_utils.pivot(
         'champs__valeur',
         colonne_a_aggreger_values_list,
         agg='sum',
-        then_value='population_par_commune_champs_valeur',
+        then_value='population_par_champs_valeur',
     ) }}
     from 
         deduplicated
     group by
-        code_commune_insee
+        {{ champs_geo }}
 
 {% endmacro %}

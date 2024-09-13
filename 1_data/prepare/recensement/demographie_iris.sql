@@ -7,41 +7,30 @@
 {% set colonnes_a_aggreger_list = lister_colonnes_a_aggreger('logement_2020_demographie_codes') %}
 
 
-with communes as (
+with iris as (
     SELECT 
-      code_commune_insee,
+      code_iris,
       CAST( SUM(CAST(poids_du_logement AS numeric)) AS INT) AS nombre_de_logements
     FROM 
       {{ ref('decoder_demographie') }}
     GROUP BY
-      code_commune_insee
+      code_iris
   ),
   aggregated as (
 
     SELECT * 
 
-    FROM communes
+    FROM iris
 
     {% for colonne_a_aggreger in colonnes_a_aggreger_list %}
 
-      LEFT JOIN ( {{ aggreger_logement_par_colonne('decoder_demographie', colonnes_a_aggreger_list, colonne_a_aggreger, 'code_commune_insee') }} )
-      USING (code_commune_insee)
+      LEFT JOIN ( {{ aggreger_logement_par_colonne('decoder_demographie', colonnes_a_aggreger_list, colonne_a_aggreger, 'code_iris') }} )
+      USING (code_iris)
 
     {% endfor %}
 
-  ),
-  aggregated_with_cog as (
-    SELECT
-      *
-    FROM
-      aggregated
-    JOIN
-	    {{ ref('infos_communes') }} as infos_communes
-    ON
-      aggregated.code_commune_insee = infos_communes.code_commune
   )
-
 SELECT 
     *  
 FROM
-    aggregated_with_cog
+    aggregated
