@@ -9,7 +9,7 @@
 {% endset %}
 {% set colonnes_logement_resultat = run_query(colonnes_logement_query) %}
 
-{% set colonnes_cles = ['code_commune_insee', 'poids_du_logement', 'region_residence'] %}
+{% set colonnes_cles = ['code_commune_insee', 'poids_du_logement', 'region_residence', 'code_iris', 'code_iris_incomplet'] %}
 {% if execute %}
   {% set colonnes_a_aggreger_list = [] %}
   {% for row in colonnes_logement_resultat %}

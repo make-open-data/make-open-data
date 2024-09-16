@@ -1,6 +1,6 @@
-{% macro concatener_logement(unpivoted) %}    
+{% macro concatener_logement(unpivoted, champs_geo) %}    
     SELECT
-        code_commune_insee,
+        {{ champs_geo }},
         poids_du_logement,
         champs,
         valeur,

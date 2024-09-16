@@ -10,7 +10,7 @@
 
     {{ dbt_utils.unpivot(
         relation=ref(variante_logement),
-        exclude=['code_commune_insee', 'poids_du_logement'],
+        exclude=['code_commune_insee', 'poids_du_logement', 'code_iris'],
         remove=colonnes_a_ignorer,
         field_name='champs',
         value_name='valeur'
