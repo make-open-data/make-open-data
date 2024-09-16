@@ -1,6 +1,7 @@
 code_col,lib_col,code_ou_libelle_valeurs
 IPONDL,poids_du_logement,CODE
 COMMUNE,code_commune_insee,CODE
+IRIS,code_iris_incomplet,CODE
 REGION,region_residence,LIB
 AGEMEN8,age_regroupe_pr_menage,LIB
 DIPLM,diplome_pr,LIB

@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-- name: decoder_demographie_communes
+- name: decoder_demographie
   description: Fournit les réponses concernant la démographie du recenssement des logements, donc 25 millions de logements, avec colonnes et valeurs décodées pour une meilleur lisibilité (au prix de taille). Utile pour trouver des corrélations à l'échelle des ménages 
   columns:
 
@@ -153,7 +153,7 @@ models:
 
 
 
-- name: decoder_habitat_communes
+- name: decoder_habitat
   description: Fournit les réponses concernant l'habitat du recenssement des logements, donc 25 millions de logements, avec colonnes et valeurs décodées pour une meilleur lisibilité (au prix de taille). Utile pour trouver des corrélations à l'échelle des ménages 
   columns:
 
