@@ -1,18 +1,25 @@
-{{ config(materialized='view') }}
+--- depends_on: {{ ref('logement_2020_valeurs') }}
 
 --- Agrège les données de la base logement par commune
 --- Colonne par colonne pour ne pas saturer la mémoire
 --- L'agrégration est faite par univot/pivot.
 
-{% set colonnes_a_aggreger_list = lister_colonnes_a_aggreger('logement_2020_habitat_codes') %}
+{{ config(materialized='table') }}
+
+
+
+
+{% set colonnes_a_aggreger_liste = lister_colonnes_par_theme('habitat') %}
+
+{% set colonnes_cles_liste = lister_colonnes_par_theme('CLE') %}
 
 
 with communes as (
     SELECT 
-      code_commune_insee,
-      CAST( SUM(CAST(poids_du_logement AS numeric)) AS INT) AS nombre_de_logements
+      "COMMUNE" as code_commune_insee,
+      CAST( SUM(CAST("IPONDL" AS numeric)) AS INT) AS nombre_de_logements
     FROM 
-      {{ ref('decoder_habitat') }}
+      {{ source('sources', 'logement_2020')}}
     GROUP BY
       code_commune_insee
   ),
@@ -22,26 +29,16 @@ with communes as (
 
     FROM communes
 
-    {% for colonne_a_aggreger in colonnes_a_aggreger_list %}
+    {% for colonne_a_aggreger in colonnes_a_aggreger_liste %}
 
-      LEFT JOIN ( {{ aggreger_logement_par_colonne('decoder_habitat', colonnes_a_aggreger_list, colonne_a_aggreger, 'code_commune_insee') }} )
+      LEFT JOIN ( {{ aggreger_logement_par_colonne(colonnes_a_aggreger_liste, colonnes_cles_liste, colonne_a_aggreger, "COMMUNE", "code_commune_insee") }} )
       USING (code_commune_insee)
 
     {% endfor %}
 
-  ),
-  aggregated_with_cog as (
-    SELECT
-      *
-    FROM
-      aggregated
-    JOIN
-	    {{ ref('infos_communes') }} as infos_communes
-    ON
-      aggregated.code_commune_insee = infos_communes.code_commune
   )
 
 SELECT 
     *  
 FROM
-    aggregated_with_cog
+    aggregated

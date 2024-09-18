@@ -1,12 +1,12 @@
-{% macro pivoter_logement(variante_logement, deduplicated, colonne_a_aggreger, champs_geo) %}    
+{% macro pivoter_logement(deduplicated, colonne_a_aggreger, champs_geo_arrivee) %}    
 
 
 
-{% set colonne_a_aggreger_values_list = lister_colonne_a_aggrger_valeurs(variante_logement, colonne_a_aggreger) %}
+{% set colonne_a_aggreger_values_list = lister_colonne_a_aggrger_valeurs(colonne_a_aggreger) %}
 
     select 
 
-    {{ champs_geo }},
+    {{ champs_geo_arrivee }},
     {{ dbt_utils.pivot(
         'champs__valeur',
         colonne_a_aggreger_values_list,
@@ -16,6 +16,6 @@
     from 
         deduplicated
     group by
-        {{ champs_geo }}
+        {{ champs_geo_arrivee }}
 
 {% endmacro %}

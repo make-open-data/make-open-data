@@ -1,0 +1,893 @@
+COD_VAR,LIB_VAR,COD_MOD,LIB_MOD,TYPE_VAR,LONG_VAR,libelle_a_afficher_apres_aggregation,theme
+COMMUNE,Département et commune du lieu de résidence,1001,L'Abergement-Clémenciat (01001),CHAR,5,code_commune,CLE
+COMMUNE,Département et commune du lieu de résidence,...,...,CHAR,5,,IGNORE
+ARM,"Arrondissement municipal de résidence (Paris,Lyon et Marseille)",13201,Marseille 1er Arrondissement (13201),CHAR,5,code_arrondissement_municipal,IGNORE
+ARM,"Arrondissement municipal de résidence (Paris,Lyon et Marseille)",...,...,CHAR,5,,IGNORE
+ARM,"Arrondissement municipal de résidence (Paris,Lyon et Marseille)",ZZZZZ,Sans objet,CHAR,5,,IGNORE
+IRIS,Code IRIS du lieu de résidence,10040101,Les Pérouses-Triangle d'Activités (010040101),CHAR,9,code_iris_incomplet,CLE
+IRIS,Code IRIS du lieu de résidence,...,...,CHAR,9,,IGNORE
+IRIS,Code IRIS du lieu de résidence,ZZZZZZZZZ,Commune non découpée en IRIS,CHAR,9,,IGNORE
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,A11,Avant 1919,CHAR,5,construction_avant_1919,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,A12,De 1919 à 1945,CHAR,5,construction_1919_1945,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,B11,De 1946 à 1970,CHAR,5,construction_1916_1970,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,B12,De 1971 à 1990,CHAR,5,construction_1971_1990,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C100,De 1991 à 2005,CHAR,5,construction_1991_2025,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C106,En 2006,CHAR,5,construction_2006,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C107,En 2007,CHAR,5,construction_2007,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C108,En 2008,CHAR,5,construction_2008,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C109,En 2009,CHAR,5,construction_2009,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C110,En 2010,CHAR,5,construction_2010,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C111,En 2011,CHAR,5,construction_2011,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C112,En 2012,CHAR,5,construction_2012,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C113,En 2013,CHAR,5,construction_2013,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C114,En 2014,CHAR,5,construction_2014,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C115,En 2015,CHAR,5,construction_2015,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C116,En 2016,CHAR,5,construction_2016,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C117,En 2017,CHAR,5,construction_2017,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C2018,En 2018 (partiel),CHAR,5,construction_2018,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C2019,En 2019 (partiel),CHAR,5,construction_2019,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C2020,En 2020 (partiel),CHAR,5,construction_2020,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C2021,En 2021(partiel),CHAR,5,construction_2021,habitat
+ACHL,Période d'achèvement de la construction de la maison ou de l'immeuble,C2022,En 2022(partiel),CHAR,5,construction_2022,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),0,Logement ordinaire inoccupé,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1900,Année 1900,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1902,Année 1902,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1904,Année 1904,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1905,Année 1905,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1907,Année 1907,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1909,Année 1909,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1910,Année 1910,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1911,Année 1911,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1912,Année 1912,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1913,Année 1913,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1914,Année 1914,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1915,Année 1915,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1916,Année 1916,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1917,Année 1917,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1918,Année 1918,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1919,Année 1919,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1920,Année 1920,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1921,Année 1921,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1922,Année 1922,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1923,Année 1923,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1924,Année 1924,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1925,Année 1925,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1926,Année 1926,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1927,Année 1927,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1928,Année 1928,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1929,Année 1929,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1930,Année 1930,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1931,Année 1931,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1932,Année 1932,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1933,Année 1933,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1934,Année 1934,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1935,Année 1935,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1936,Année 1936,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1937,Année 1937,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1938,Année 1938,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1939,Année 1939,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1940,Année 1940,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1941,Année 1941,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1942,Année 1942,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1943,Année 1943,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1944,Année 1944,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1945,Année 1945,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1946,Année 1946,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1947,Année 1947,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1948,Année 1948,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1949,Année 1949,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1950,Année 1950,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1951,Année 1951,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1952,Année 1952,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1953,Année 1953,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1954,Année 1954,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1955,Année 1955,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1956,Année 1956,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1957,Année 1957,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1958,Année 1958,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1959,Année 1959,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1960,Année 1960,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1961,Année 1961,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1962,Année 1962,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1963,Année 1963,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1964,Année 1964,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1965,Année 1965,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1966,Année 1966,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1967,Année 1967,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1968,Année 1968,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1969,Année 1969,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1970,Année 1970,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1971,Année 1971,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1972,Année 1972,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1973,Année 1973,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1974,Année 1974,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1975,Année 1975,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1976,Année 1976,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1977,Année 1977,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1978,Année 1978,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1979,Année 1979,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1980,Année 1980,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1981,Année 1981,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1982,Année 1982,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1983,Année 1983,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1984,Année 1984,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1985,Année 1985,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1986,Année 1986,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1987,Année 1987,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1988,Année 1988,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1989,Année 1989,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1990,Année 1990,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1991,Année 1991,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1992,Année 1992,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1993,Année 1993,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1994,Année 1994,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1995,Année 1995,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1996,Année 1996,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1997,Année 1997,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1998,Année 1998,CHAR,4,,IGNORE
+AEMM,Année d'emménagement dans le logement (détaillée),1999,Année 1999,CHAR,4,emmenagement_1999,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2000,Année 2000,CHAR,4,emmenagement_2000,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2001,Année 2001,CHAR,4,emmenagement_2001,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2002,Année 2002,CHAR,4,emmenagement_2002,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2003,Année 2003,CHAR,4,emmenagement_2003,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2004,Année 2004,CHAR,4,emmenagement_2004,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2005,Année 2005,CHAR,4,emmenagement_2005,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2006,Année 2006,CHAR,4,emmenagement_2006,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2007,Année 2007,CHAR,4,emmenagement_2007,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2008,Année 2008,CHAR,4,emmenagement_2008,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2009,Année 2009,CHAR,4,emmenagement_2009,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2010,Année 2010,CHAR,4,emmenagement_2010,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2011,Année 2011,CHAR,4,emmenagement_2011,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2012,Année 2012,CHAR,4,emmenagement_2012,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2013,Année 2013,CHAR,4,emmenagement_2013,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2014,Année 2014,CHAR,4,emmenagement_2014,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2015,Année 2015,CHAR,4,emmenagement_2015,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2016,Année 2016,CHAR,4,emmenagement_2016,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2017,Année 2017,CHAR,4,emmenagement_2017,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2018,Année 2018 (partiel),CHAR,4,emmenagement_2018,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2019,Année 2019 (partiel),CHAR,4,emmenagement_2019,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2020,Année 2020 (partiel),CHAR,4,emmenagement_2020,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2021,Année 2021 (partiel),CHAR,4,emmenagement_2021,habitat
+AEMM,Année d'emménagement dans le logement (détaillée),2022,Année 2022 (partiel),CHAR,4,emmenagement_2022,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),0,Logement ordinaire inoccupé,CHAR,1,,IGNORE
+AEMMR,Année d'emménagement dans le logement (regroupée),2,Emménagement entre 1900 et 1919,CHAR,1,emmenagement_1900_1919,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),3,Emménagement entre 1920 et 1939,CHAR,1,emmenagement_1920_1939,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),4,Emménagement entre 1940 et 1959,CHAR,1,emmenagement_1940_1959,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),5,Emménagement entre 1960 et 1969,CHAR,1,emmenagement_1940_1969,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),6,Emménagement entre 1970 et 1979,CHAR,1,emmenagement_1970_1979,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),7,Emménagement entre 1980 et 1989,CHAR,1,emmenagement_1980_1989,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),8,Emménagement entre 1990 et 1999,CHAR,1,emmenagement_1990_1999,habitat
+AEMMR,Année d'emménagement dans le logement (regroupée),9,Emménagement après 1999,CHAR,1,emmenagement_apres_1999,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,0,Moins de 15 ans,CHAR,2,pr_moins_15,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,15,15 à 19 ans,CHAR,2,pr_15_19,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,20,20 à 24 ans,CHAR,2,pr_20_24,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,25,25 à 39 ans,CHAR,2,pr_25_39,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,40,40 à 54 ans,CHAR,2,pr_40_54,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,55,55 à 64 ans,CHAR,2,pr_55_64,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,65,65 à 79 ans,CHAR,2,pr_64_79,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,80,80 ans ou plus,CHAR,2,pr_plus_80,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,YY,Hors résidence principale,CHAR,2,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),0,Depuis 0 an,CHAR,3,emmenagement_0_an,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),1,Depuis 1 an,CHAR,3,emmenagement_1_an,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),2,Depuis 2 ans,CHAR,3,emmenagement_2_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),3,Depuis 3 ans,CHAR,3,emmenagement_3_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),4,Depuis 4 ans,CHAR,3,emmenagement_4_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),5,Depuis 5 ans,CHAR,3,emmenagement_5_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),6,Depuis 6 ans,CHAR,3,emmenagement_6_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),7,Depuis 7 ans,CHAR,3,emmenagement_7_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),8,Depuis 8 ans,CHAR,3,emmenagement_8_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),9,Depuis 9 ans,CHAR,3,emmenagement_9_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),10,Depuis 10 ans,CHAR,3,emmenagement_10_ans,habitat
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),11,Depuis 11 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),12,Depuis 12 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),13,Depuis 13 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),14,Depuis 14 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),15,Depuis 15 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),16,Depuis 16 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),17,Depuis 17 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),18,Depuis 18 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),19,Depuis 19 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),20,Depuis 20 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),21,Depuis 21 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),22,Depuis 22 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),23,Depuis 23 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),24,Depuis 24 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),25,Depuis 25 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),26,Depuis 26 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),27,Depuis 27 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),28,Depuis 28 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),29,Depuis 29 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),30,Depuis 30 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),31,Depuis 31 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),32,Depuis 32 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),33,Depuis 33 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),34,Depuis 34 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),35,Depuis 35 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),36,Depuis 36 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),37,Depuis 37 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),38,Depuis 38 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),39,Depuis 39 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),40,Depuis 40 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),41,Depuis 41 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),42,Depuis 42 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),43,Depuis 43 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),44,Depuis 44 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),45,Depuis 45 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),46,Depuis 46 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),47,Depuis 47 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),48,Depuis 48 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),49,Depuis 49 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),50,Depuis 50 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),51,Depuis 51 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),52,Depuis 52 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),53,Depuis 53 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),54,Depuis 54 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),55,Depuis 55 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),56,Depuis 56 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),57,Depuis 57 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),58,Depuis 58 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),59,Depuis 59 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),60,Depuis 60 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),61,Depuis 61 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),62,Depuis 62 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),63,Depuis 63 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),64,Depuis 64 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),65,Depuis 65 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),66,Depuis 66 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),67,Depuis 67 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),68,Depuis 68 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),69,Depuis 69 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),70,Depuis 70 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),71,Depuis 71 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),72,Depuis 72 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),73,Depuis 73 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),74,Depuis 74 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),75,Depuis 75 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),76,Depuis 76 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),77,Depuis 77 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),78,Depuis 78 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),79,Depuis 79 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),80,Depuis 80 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),81,Depuis 81 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),82,Depuis 82 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),83,Depuis 83 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),84,Depuis 84 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),85,Depuis 85 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),86,Depuis 86 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),87,Depuis 87 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),88,Depuis 88 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),89,Depuis 89 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),90,Depuis 90 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),91,Depuis 91 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),92,Depuis 92 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),93,Depuis 93 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),94,Depuis 94 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),95,Depuis 95 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),96,Depuis 96 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),97,Depuis 97 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),98,Depuis 98 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),99,Depuis 99 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),100,Depuis 100 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),101,Depuis 101 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),102,Depuis 102 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),103,Depuis 103 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),104,Depuis 104 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),105,Depuis 105 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),106,Depuis 106 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),107,Depuis 107 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),108,Depuis 108 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),109,Depuis 109 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),111,Depuis 111 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),113,Depuis 113 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),117,Depuis 117 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),118,Depuis 118 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),120,Depuis 120 ans,CHAR,3,,IGNORE
+ANEM,Ancienneté d'emménagement dans le logement (détaillée),999,Logement ordinaire inoccupé,CHAR,3,,IGNORE
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),0,Moins de 2 ans,CHAR,2,emmenagement_moins_2_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),1,De 2 à 4 ans,CHAR,2,emmenagement_2_4_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),2,De 5 à 9 ans,CHAR,2,emmenagement_5_9_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),3,De 10 à 19 ans,CHAR,2,emmenagement_10_19_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),4,De 20 à 29 ans,CHAR,2,emmenagement_20_29_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),5,De 30 à 39 ans,CHAR,2,emmenagement_30_39_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),6,De 40 à 49 ans,CHAR,2,emmenagement_40_49_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),7,De 50 à 59 ans,CHAR,2,emmenagement_50_59_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),8,De 60 à 69 ans,CHAR,2,emmenagement_60_69_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),9,70 ans ou plus,CHAR,2,emmenagement_plus_70_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),99,Logement ordinaire inoccupé,CHAR,2,,IGNORE
+ASCEN,Desserte par un ascenseur,1,Avec ascenseur,CHAR,1,avec_ascensseur,habitat
+ASCEN,Desserte par un ascenseur,2,Sans ascenseur,CHAR,1,sans_ascensseur,habitat
+ASCEN,Desserte par un ascenseur,Y,Hors résidence principale,CHAR,1,,IGNORE
+BAIN,Baignoire ou douche (DOM),1,Avec baignoire ou douche,CHAR,1,dom__beignoire_ou_douche,habitat
+BAIN,Baignoire ou douche (DOM),2,Sans baignoire ni douche,CHAR,1,dom__ni_beignoire_ni_douche,habitat
+BAIN,Baignoire ou douche (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+BAIN,Baignoire ou douche (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+BATI,Aspect du bâti (DOM),1,Habitations de fortune,CHAR,1,dom__habitation_de_fortune,habitat
+BATI,Aspect du bâti (DOM),2,Cases traditionnelles,CHAR,1,dom__cases_traditionnelles,habitat
+BATI,Aspect du bâti (DOM),3,Maisons ou immeubles en bois,CHAR,1,dom__habitation_en_bois,habitat
+BATI,Aspect du bâti (DOM),4,Maisons ou immeubles en dur,CHAR,1,dom__habitation_en_dur,habitat
+BATI,Aspect du bâti (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+BATI,Aspect du bâti (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+CATIRIS,Catégorie de l'IRIS,A,Activité,CHAR,1,,IGNORE
+CATIRIS,Catégorie de l'IRIS,D,Divers,CHAR,1,,IGNORE
+CATIRIS,Catégorie de l'IRIS,H,Habitat,CHAR,1,,IGNORE
+CATIRIS,Catégorie de l'IRIS,Z,Commune non découpée en IRIS,CHAR,1,,IGNORE
+CATL,Catégorie de logement,1,Résidences principales,CHAR,1,residence_principale,habitat
+CATL,Catégorie de logement,2,Logements occasionnels,CHAR,1,logement_occasionnel,habitat
+CATL,Catégorie de logement,3,Résidences secondaires,CHAR,1,residence_secondaire,habitat
+CATL,Catégorie de logement,4,Logements vacants,CHAR,1,logement_vacant,habitat
+CHAU,Moyen de chauffage du logement (DOM),1,Présence de moyen de chauffage,CHAR,1,dom__presence_chauffage,habitat
+CHAU,Moyen de chauffage du logement (DOM),2,Absence de moyen de chauffage,CHAR,1,dom__abscence_chauffage,habitat
+CHAU,Moyen de chauffage du logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+CHAU,Moyen de chauffage du logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),1,Chauffage central collectif (y compris chauffage urbain),CHAR,1,metro__chauffage_central_collectif,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),2,Chauffage central individuel avec une chaudière propre au logement,CHAR,1,metro__chauffage_central_individuel,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),3,Chauffage tout électrique,CHAR,1,metro__chauffage_tout_electrique,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),4,Autre moyen de chauffage,CHAR,1,metro__autre_chauffage,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),Y,Hors résidence principale,CHAR,1,,IGNORE
+CHFL,Chauffage central du logement (France métropolitaine),Z,Logement ordinaire DOM,CHAR,1,,IGNORE
+CHOS,Chauffe-eau solaire (DOM),1,Présence de chauffe-eau solaire,CHAR,1,dom__presence_chauffe_eau_solaire,habitat
+CHOS,Chauffe-eau solaire (DOM),2,Absence de chauffe-eau solaire,CHAR,1,dom__abscence_chauffe_eau_solaire,habitat
+CHOS,Chauffe-eau solaire (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+CHOS,Chauffe-eau solaire (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+CLIM,Existence d'au moins une pièce climatisée (DOM),1,Avec pièce climatisée,CHAR,1,,IGNORE
+CLIM,Existence d'au moins une pièce climatisée (DOM),2,Sans pièce climatisée,CHAR,1,,IGNORE
+CLIM,Existence d'au moins une pièce climatisée (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+CLIM,Existence d'au moins une pièce climatisée (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),1,Chauffage urbain,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),2,Gaz de ville ou de réseau,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),3,Fioul (mazout),CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),4,Électricité,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),5,Gaz en bouteilles ou en citerne,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),6,Autre,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),Y,Hors résidence principale,CHAR,1,,IGNORE
+CMBL,Combustible principal du logement (France métropolitaine),Z,Logement ordinaire DOM,CHAR,1,,IGNORE
+CUIS,Cuisine intérieure avec évier (DOM),1,Présence de cuisine intérieure avec évier,CHAR,1,,IGNORE
+CUIS,Cuisine intérieure avec évier (DOM),2,Absence de cuisine intérieure avec évier,CHAR,1,,IGNORE
+CUIS,Cuisine intérieure avec évier (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+CUIS,Cuisine intérieure avec évier (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),0,Aucun deux-roues à moteur,CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),1,Un seul deux-roues à moteur,CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),2,Deux deux-roues à moteur,CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),3,Trois deux-roues à moteur ou plus,CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),X,Logement ordinaire inoccupé (DOM),CHAR,1,,IGNORE
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),1,Pas de scolarité ou arrêt avant la fin du primaire,CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),2,Aucun diplôme et scolarité interrompue à la fin du primaire ou avant la fin du collège,CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),3,Aucun diplôme et scolarité jusqu’à la fin du collège ou au-delà,CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),11,CEP (certificat d’études primaires),CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),12,"BEPC, brevet élémentaire, brevet des collèges, DNB",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),13,"CAP, BEP ou diplôme de niveau équivalent",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),14,"Baccalauréat général ou technologique, brevet supérieur, capacité en droit, DAEU, ESEU",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),15,"Baccalauréat professionnel, brevet professionnel, de technicien ou d’enseignement, diplôme équivalent",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),16,"BTS, DUT, Deug, Deust, diplôme de la santé ou du social de niveau bac+2, diplôme équivalent",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),17,"Licence, licence pro, maîtrise, diplôme équivalent de niveau bac+3 ou bac+4",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),18,"Master, DEA, DESS, diplôme grande école niveau bac+5, doctorat de santé",CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),19,Doctorat de recherche (hors santé),CHAR,2,,IGNORE
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),YY,Hors résidence principale,CHAR,2,,IGNORE
+EAU,Point d'eau potable à l'intérieur du logement (DOM),1,Eau froide seulement,CHAR,1,,IGNORE
+EAU,Point d'eau potable à l'intérieur du logement (DOM),2,Eau froide et chaude,CHAR,1,,IGNORE
+EAU,Point d'eau potable à l'intérieur du logement (DOM),3,Aucun point d'eau à l'intérieur du logement,CHAR,1,,IGNORE
+EAU,Point d'eau potable à l'intérieur du logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+EAU,Point d'eau potable à l'intérieur du logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),1,Raccordement au réseau d'égouts,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),2,Raccordement à une fosse septique,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),3,Raccordement à un puisard,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),4,Évacuation des eaux usées à même le sol,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+EGOUL,Mode d'évacuation des eaux usées (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+ELEC,Électricité dans le logement (DOM),1,Avec électricité,CHAR,1,,IGNORE
+ELEC,Électricité dans le logement (DOM),2,Sans électricité,CHAR,1,,IGNORE
+ELEC,Électricité dans le logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+ELEC,Électricité dans le logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),11,En contrat d'apprentissage ou de professionnalisation,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),12,Placés par une agence d'intérim,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),13,Emplois aidés (contrat unique d'insertion,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),14,Stagiaires rémunérés en entreprise,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),15,Autres emplois à durée limitée,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),16,Emplois sans limite de durée,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),21,Non salariés : Indépendants,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),22,Non salariés : Employeurs,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),23,Non salariés : Aides familiaux,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),YY,Hors résidence principale,CHAR,2,,IGNORE
+EMPLM,Condition d'emploi (personne de référence du ménage),ZZ,Sans objet (sans emploi),CHAR,2,,IGNORE
+GARL,Emplacement réservé de stationnement,1,Avec emplacement(s) de stationnement,CHAR,1,,IGNORE
+GARL,Emplacement réservé de stationnement,2,Sans emplacement de stationnement,CHAR,1,,IGNORE
+GARL,Emplacement réservé de stationnement,Y,Hors résidence principale,CHAR,1,,IGNORE
+HLML,Appartenance du logement à un organisme HLM,1,Logement appartenant à un organisme HLM,CHAR,1,,IGNORE
+HLML,Appartenance du logement à un organisme HLM,2,Logement n'appartenant pas à un organisme HLM,CHAR,1,,IGNORE
+HLML,Appartenance du logement à un organisme HLM,Y,Hors résidence principale,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),1,Dans la commune de résidence actuelle,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),2,Dans une autre commune du département de résidence,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),3,Dans un autre département de la région de résidence,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),4,Hors de la région de résidence actuelle : en métropole,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),5,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),6,Hors de la région de résidence actuelle : dans une COM,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),7,À l'étranger,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+ILETUDM,Indicateur du lieu d'études (personne de référence du ménage),Z,Sans objet (pas d'inscription dans un établissement d'enseignement),CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),1,Dans la commune de résidence actuelle,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),2,Dans une autre commune du département de résidence,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),3,Dans un autre département de la région de résidence,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),4,Hors de la région de résidence actuelle : en métropole,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),5,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),6,Hors de la région de résidence actuelle : dans une COM,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),7,À l'étranger,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+ILTM,Indicateur de lieu de travail (personne de référence du ménage),Z,Sans objet (sans emploi),CHAR,1,,IGNORE
+IMMIM,Situation quant à l'immigration (personne de référence du ménage),1,Immigrés,CHAR,1,,IGNORE
+IMMIM,Situation quant à l'immigration (personne de référence du ménage),2,Non immigrés,CHAR,1,,IGNORE
+IMMIM,Situation quant à l'immigration (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),1,Dans le département de résidence actuelle,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),2,Dans un autre département de la région de résidence actuelle,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),3,Hors de la région de résidence actuelle : en métropole,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),4,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),5,Hors de la région de résidence actuelle : dans un TOM-COM,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),6,À l'étranger,CHAR,1,,IGNORE
+INAIM,Indicateur du lieu de naissance (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",0,0 personne,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",1,1 personne,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",10,10 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",11,11 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",12,12 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",2,2 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",3,3 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",4,4 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",5,5 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",6,6 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",7,7 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",8,8 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",9,9 personnes,CHAR,2,,IGNORE
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",Y,Hors résidence principale,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,13,13 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,14,14 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,13,13 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,14,14 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,15,15 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP15M,Nombre de personnes âgées de 15 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,13,13 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,14,14 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,15,15 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,16,16 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,17,17 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,24,24 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP17M,Nombre de personnes âgées de 17 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,13,13 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,14,14 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,15,15 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,16,16 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,17,17 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,18,18 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,19,19 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,20,20 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,21,21 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,22,22 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,23,23 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,25,25 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,41,41 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,55,55 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP19M,Nombre de personnes âgées de 19 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,13,13 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,14,14 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,15,15 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,16,16 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,17,17 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,18,18 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,19,19 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,20,20 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,21,21 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,25,25 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP24M,Nombre de personnes âgées de 24 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,0,0 personne,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,1,1 personne,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,2,2 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,3,3 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,4,4 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,5,5 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,6,6 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,7,7 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,8,8 personnes,CHAR,1,,IGNORE
+INP3M,Nombre de personnes âgées de 3 ans ou moins du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,0,0 personne,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,1,1 personne,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP5M,Nombre de personnes âgées de 5 ans ou moins du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,0,0 personne,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,1,1 personne,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,10,10 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,17,17 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,19,19 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,55,55 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP60M,Nombre de personnes âgées de 60 ans ou plus du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,0,0 personne,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,1,1 personne,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,12,12 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,16,16 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,18,18 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,55,55 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,0,0 personne,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,1,1 personne,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,11,11 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,18,18 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,2,2 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,3,3 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,4,4 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,48,48 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,5,5 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,6,6 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,7,7 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,8,8 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,0,0 personne,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,1,1 personne,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,10,10 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,11,11 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,12,12 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,13,13 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,14,14 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,15,15 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,16,16 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,17,17 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,18,18 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,19,19 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,2,2 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,20,20 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,26,26 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,3,3 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,4,4 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,41,41 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,5,5 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,6,6 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,7,7 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,8,8 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,1,1 personne,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,10,10 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,11,11 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,12,12 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,13,13 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,14,14 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,15,15 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,16,16 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,17,17 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,18,18 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,19,19 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,2,2 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,20,20 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,21,21 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,22,22 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,23,23 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,24,24 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,25,25 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,26,26 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,28,28 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,3,3 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,34,34 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,4,4 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,41,41 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,5,5 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,55,55 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,6,6 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,7,7 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,8,8 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",0,0 personne,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",1,1 personne,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",10,10 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",11,11 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",12,12 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",13,13 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",14,14 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",15,15 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",16,16 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",17,17 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",18,18 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",19,19 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",2,2 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",20,20 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",22,22 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",26,26 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",3,3 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",38,38 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",4,4 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",5,5 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",6,6 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",7,7 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",8,8 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",9,9 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",Y,Hors résidence principale,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",0,0 personne,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",1,1 personne,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",10,10 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",11,11 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",12,12 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",13,13 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",14,14 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",15,15 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",16,16 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",17,17 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",19,19 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",2,2 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",20,20 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",3,3 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",39,39 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",4,4 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",5,5 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",6,6 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",7,7 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",8,8 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",9,9 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",Y,Hors résidence principale,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,0,0 personne,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,1,1 personne,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,10,10 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,11,11 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,12,12 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,13,13 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,14,14 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,15,15 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,16,16 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,17,17 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,18,18 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,19,19 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,2,2 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,20,20 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,26,26 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,3,3 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,4,4 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,41,41 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,5,5 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,6,6 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,7,7 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,8,8 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,0,0 personne,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,1,1 personne,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,10,10 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,11,11 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,12,12 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,13,13 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,14,14 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,15,15 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,16,16 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,2,2 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,25,25 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,3,3 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,4,4 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,5,5 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,6,6 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,7,7 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,8,8 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
+IPONDL,Poids du logement,,,NUM,17.15,,CLE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,1,Dans le même logement,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,2,Dans un autre logement de la même commune,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,3,Dans une autre commune du département,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,4,Dans un autre département de la région,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,5,Hors de la région de résidence actuelle : en métropole,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,6,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,7,Hors de la région de résidence actuelle : dans un TOM-COM,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,8,À l'étranger dans l'Union Européenne (28 pays membres),CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,9,À l'étranger hors Union Européenne,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
+METRODOM,Indicateur Métropole ou DOM du lieu de résidence,D,DOM,CHAR,1,,IGNORE
+METRODOM,Indicateur Métropole ou DOM du lieu de résidence,M,France métropolitaine,CHAR,1,,IGNORE
+NBPI,Nombre de pièces du logement,1,1 pièce,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,2,2 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,3,3 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,4,4 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,5,5 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,6,6 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,7,7 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,8,8 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,9,9 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,10,10 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,11,11 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,12,12 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,13,13 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,14,14 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,15,15 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,16,16 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,17,17 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,18,18 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,19,19 pièces,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,20,20 pièces et plus,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,YY,Hors résidence principale,CHAR,2,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),0,Ne recherche pas d'emploi,CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),1,Cherche un emploi depuis moins d'un an,CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),2,Cherche un emploi depuis plus d'un an,CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),9,Non déclaré (inactif),CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),Z,Sans objet (en emploi),CHAR,1,,IGNORE
+REGION,Région du lieu de résidence,1,Guadeloupe,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,2,Martinique,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,3,Guyane,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,4,La Réunion,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,11,Île-de-France,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,24,Centre-Val de Loire,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,27,Bourgogne-Franche-Comté,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,28,Normandie,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,32,Hauts-de-France,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,44,Grand Est,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,52,Pays de la Loire,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,53,Bretagne,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,75,Nouvelle-Aquitaine,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,76,Occitanie,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,84,Auvergne-Rhône-Alpes,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,93,Provence-Alpes-Côte d'Azur,CHAR,2,,IGNORE
+REGION,Région du lieu de résidence,94,Corse,CHAR,2,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),0,Ni baignoire,CHAR,1,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),1,Baignoire ou douche hors pièce réservée,CHAR,1,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),2,Salle(s) de bains (avec douche ou baignoire),CHAR,1,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),Y,Hors résidence principale,CHAR,1,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),Z,Logement ordinaire DOM,CHAR,1,,IGNORE
+SANIDOM,Installations sanitaires (DOM),11,Avec baignoire ou douche et avec WC à l'intérieur,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),12,Avec baignoire ou douche mais sans WC à l'intérieur,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),21,Sans baignoire ni douche mais avec WC à l'intérieur,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),22,Sans baignoire ni douche,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),YY,Hors résidence principale,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),ZZ,Logement ordinaire France métropolitaine,CHAR,2,,IGNORE
+SEXEM,Sexe de la personne de référence du ménage,1,Hommes,CHAR,1,,IGNORE
+SEXEM,Sexe de la personne de référence du ménage,2,Femmes,CHAR,1,,IGNORE
+SEXEM,Sexe de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,1,Marié(e),CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,2,Pacsé(e),CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,3,En concubinage ou union libre,CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,4,"Veuf, veuve",CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,5,Divorcé(e),CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,6,Célibataire,CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,0,Logement ordinaire inoccupé,CHAR,2,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,10,Propriétaire,CHAR,2,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,21,Locataire ou sous-locataire d'un logement loué vide non HLM,CHAR,2,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,22,Locataire ou sous-locataire d'un logement loué vide HLM,CHAR,2,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,23,Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel,CHAR,2,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,30,Logé gratuitement,CHAR,2,,IGNORE
+SURF,Superficie du logement,1,Moins de 30 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,2,De 30 à moins de 40 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,3,De 40 à moins de 60 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,4,De 60 à moins de 80 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,5,De 80 à moins de 100 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,6,De 100 à moins de 120 m²,CHAR,1,,IGNORE
+SURF,Superficie du logement,7,120 m² ou plus,CHAR,1,,IGNORE
+SURF,Superficie du logement,Y,Hors résidence principale,CHAR,1,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,11,Actifs ayant un emploi,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,12,Chômeurs,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,21,Retraités ou préretraités,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,22,Élèves,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,24,Femmes ou hommes au foyer,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,25,Autres inactifs,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,YY,Hors résidence principale,CHAR,2,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),1,Temps complet,CHAR,1,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),2,Temps partiel,CHAR,1,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),Z,Sans objet (sans emploi),CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),1,Pas de transport,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),2,"Marche à pied (ou rollers, patinette)",CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),3,Vélo (y compris à assistance électrique),CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),4,Deux-roues motorisé,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),5,"Voiture, camion, fourgonnette",CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),6,Transports en commun,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Z,Sans objet,CHAR,1,,IGNORE
+TRIRIS,Code TRIRIS du lieu de résidence,10011,TRIRIS 010011 (010011),CHAR,6,,IGNORE
+TRIRIS,Code TRIRIS du lieu de résidence,...,... (010021),CHAR,6,,IGNORE
+TRIRIS,Code TRIRIS du lieu de résidence,ZZZZZZ,Commune non découpée en IRIS,CHAR,6,,IGNORE
+TYPC,Type de construction,1,Bâtiment d'habitation d'un seul logement isolé,CHAR,1,,IGNORE
+TYPC,Type de construction,2,Bâtiment d'habitation d'un seul logement jumelé ou groupé de toute autre façon,CHAR,1,,IGNORE
+TYPC,Type de construction,3,Bâtiment d'habitation de 2 logements ou plus,CHAR,1,,IGNORE
+TYPC,Type de construction,4,Bâtiment à usage autre qu'habitation,CHAR,1,,IGNORE
+TYPC,Type de construction,5,Construction provisoire,CHAR,1,,IGNORE
+TYPC,Type de construction,Y,Hors résidence principale,CHAR,1,,IGNORE
+TYPL,Type de logement,1,Maison,CHAR,1,,IGNORE
+TYPL,Type de logement,2,Appartement,CHAR,1,,IGNORE
+TYPL,Type de logement,3,Logement-foyer,CHAR,1,,IGNORE
+TYPL,Type de logement,4,Chambre d'hôtel,CHAR,1,,IGNORE
+TYPL,Type de logement,5,Habitation de fortune,CHAR,1,,IGNORE
+TYPL,Type de logement,6,Pièce indépendante (ayant sa propre entrée),CHAR,1,,IGNORE
+VOIT,Nombre de voitures du ménage,0,Aucune voiture,CHAR,1,,IGNORE
+VOIT,Nombre de voitures du ménage,1,Une seule voiture,CHAR,1,,IGNORE
+VOIT,Nombre de voitures du ménage,2,Deux voitures,CHAR,1,,IGNORE
+VOIT,Nombre de voitures du ménage,3,Trois voitures ou plus,CHAR,1,,IGNORE
+VOIT,Nombre de voitures du ménage,X,Logement ordinaire inoccupé,CHAR,1,,IGNORE
+WC,Présence de W.-C. à l'intérieur du logement (DOM),1,Avec W.-C. à l'intérieur du logement,CHAR,1,,IGNORE
+WC,Présence de W.-C. à l'intérieur du logement (DOM),2,Sans W.-C. à l'intérieur du logement,CHAR,1,,IGNORE
+WC,Présence de W.-C. à l'intérieur du logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
+WC,Présence de W.-C. à l'intérieur du logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
