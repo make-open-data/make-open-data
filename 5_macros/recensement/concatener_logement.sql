@@ -4,7 +4,7 @@
         CAST("IPONDL" as NUMERIC) as poids_du_logement,
         champs,
         valeur,
-        champs || '__' || valeur AS champs__valeur
+        champs || '_' || valeur AS champs_valeur
     FROM
         unpivoted
 {% endmacro %}

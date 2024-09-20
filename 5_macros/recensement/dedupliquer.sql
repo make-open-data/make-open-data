@@ -2,12 +2,12 @@
     SELECT
         {{ champs_geo_arrivee }},
         champs,
-        champs__valeur,
+        champs_valeur,
         CAST(SUM(CAST(poids_du_logement as NUMERIC)) AS INT) as population_par_champs_valeur
     FROM
         concatenated
     GROUP BY
         {{ champs_geo_arrivee }},
-        champs__valeur,
+        champs_valeur,
         champs
 {% endmacro %}
