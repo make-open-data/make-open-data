@@ -10,7 +10,7 @@
 
 {% set toutes_colonnes_liste = lister_toutes_colonnes() %}
 
-{% set colonnes_a_aggreger_liste = lister_colonnes_par_theme('habitat') %}
+{% set colonnes_a_aggreger_liste = lister_colonnes_par_theme('demographie') %}
 
 {% set colonnes_cles_liste = lister_colonnes_par_theme('CLE') %}
 

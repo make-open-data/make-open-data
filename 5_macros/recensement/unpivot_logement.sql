@@ -1,16 +1,10 @@
-{% macro unpivot_logement(colonnes_a_aggreger_liste, colonnes_cles_liste, colonne_a_aggreger) %}  
+{% macro unpivot_logement(toutes_colonnes_liste, colonnes_cles_liste, colonne_a_aggreger) %}  
 
 
 -- Prends toutes les colonnes sauf la colonne à considérer, pour donne en paramètre à unpivot
   {% set colonnes_a_ignorer = [] %}
 
-  {% for row in lister_colonnes_par_theme('IGNORE') %}
-    {% if row not in colonnes_cles_liste + colonnes_a_aggreger_liste %}
-      {% do colonnes_a_ignorer.append(row) %}
-    {% endif %}
-  {% endfor %}
-
-  {% for row in colonnes_a_aggreger_liste %}
+  {% for row in toutes_colonnes_liste %}
     {% if row != colonne_a_aggreger %}
       {% do colonnes_a_ignorer.append(row) %}
     {% endif %}
