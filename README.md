@@ -6,9 +6,9 @@ Ici pour la [documentation complète](https://make-open-data.fr/).
 
 Make Open Data est un repo de code ouvert qui :
 - *Extrait* les fichiers sources (data.gouv, INSEE, Etalab, etc.) les plus adaptés et les récents ; 
-- *Transforme* ces données selon des règles transparentes et le moins irreversibles possibles ;
+- *Transforme* ces données selon des règles transparentes et le moins irréversibles possibles ;
 - *Stocke* ces données dans une base de données PostgreSQL (avec PostGIS) ;
-- *Teste* des présuposés sur ces données. Un prix par transaction immobilières sur DVF par exemple.
+- *Teste* des présupposés sur ces données. Un prix par transaction immobilière sur DVF par exemple.
 
 
 
@@ -18,12 +18,12 @@ Make Open Data est un repo de code ouvert qui :
 
 - Renseigner les clés d'une BDD Postgres dans le Cloud 
 
-- Executer le workflow "Manually Deploy Data in a Postgres Database" 
+- Exécuter le workflow "Manually Deploy Data in a Postgres Database" 
 
 - Les tables sources et préparées sont disponibles dans la BDD
 
 
-## Dépoilement sur une machine
+## Déploiement sur une machine
 
 Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébérgée dans le cloud.
 
@@ -32,7 +32,7 @@ Idéal pour déployer les nouvelles tables de données publiques sans tracas une
 ```
 git clone git@github.com:make-open-data/make-open-data.git
 ``` 
-- Installer et activer un envirnoment virtuel
+- Installer et activer un environnement virtuel
 
 
 ```
@@ -79,7 +79,7 @@ dbt deps
 ``` 
 
 
-- Réaliser et tester les transformations pour avoir obtenir les tables finales
+- Réaliser et tester les transformations pour obtenir les tables finales
 
 ```
 dbt seed
