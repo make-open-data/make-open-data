@@ -389,7 +389,7 @@ EMPLM,Condition d'emploi (personne de référence du ménage),21,Non salariés :
 EMPLM,Condition d'emploi (personne de référence du ménage),22,Non salariés : Employeurs,CHAR,2,pr_emploi_employeur,activite
 EMPLM,Condition d'emploi (personne de référence du ménage),23,Non salariés : Aides familiaux,CHAR,2,pr_emploi_aides_familiaux,activite
 EMPLM,Condition d'emploi (personne de référence du ménage),YY,Hors résidence principale,CHAR,2,,IGNORE
-EMPLM,Condition d'emploi (personne de référence du ménage),ZZ,Sans objet (sans emploi),CHAR,2,pr_emploi_sans_objet,demographie
+EMPLM,Condition d'emploi (personne de référence du ménage),ZZ,Sans objet (sans emploi),CHAR,2,pr_emploi_sans_objet,activite
 GARL,Emplacement réservé de stationnement,1,Avec emplacement(s) de stationnement,CHAR,1,avec_emplacement_stationnement,habitat
 GARL,Emplacement réservé de stationnement,2,Sans emplacement de stationnement,CHAR,1,sans_emplacement_stationnement,habitat
 GARL,Emplacement réservé de stationnement,Y,Hors résidence principale,CHAR,1,,IGNORE
@@ -424,19 +424,19 @@ INAIM,Indicateur du lieu de naissance (personne de référence du ménage),4,Hor
 INAIM,Indicateur du lieu de naissance (personne de référence du ménage),5,Hors de la région de résidence actuelle : dans un TOM-COM,CHAR,1,pr_naissance_hors_region_actuelle_com,mobilite
 INAIM,Indicateur du lieu de naissance (personne de référence du ménage),6,À l'étranger,CHAR,1,pr_naissance_etranger,mobilite
 INAIM,Indicateur du lieu de naissance (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",0,0 personne,CHAR,2,menages_avec_0_eleve_etudiant_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",1,1 personne,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",10,10 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",11,11 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",12,12 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",2,2 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",3,3 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",4,4 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",5,5 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",6,6 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",7,7 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",8,8 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
-INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",9,9 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,demographie
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",0,0 personne,CHAR,2,menages_avec_0_eleve_etudiant_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",1,1 personne,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",10,10 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",11,11 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",12,12 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",2,2 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",3,3 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",4,4 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",5,5 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",6,6 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",7,7 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",8,8 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
+INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",9,9 personnes,CHAR,2,menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus,activite
 INEEM,"Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage",Y,Hors résidence principale,CHAR,2,,IGNORE
 INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,0,0 personne,CHAR,2,menages_avec_0_personne_11_ans_et_moins,demographie
 INP11M,Nombre de personnes âgées de 11 ans ou moins du ménage,1,1 personne,CHAR,2,menages_avec_1_et_plus_personnes_11_ans_et_moins,demographie
@@ -869,7 +869,7 @@ TRANSM,Mode de transport principal le plus souvent utilisé pour aller travaille
 TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Z,Sans objet,CHAR,1,menages_pr_transport_travail_sans_objet_sans_travail,IGNORE
 TRIRIS,Code TRIRIS du lieu de résidence,10011,TRIRIS 010011 (010011),CHAR,6,,IGNORE
 TRIRIS,Code TRIRIS du lieu de résidence,...,... (010021),CHAR,6,,IGNORE
-TRIRIS,Code TRIRIS du lieu de résidence,ZZZZZZ,Commune non découpée en IRIS,CHAR,6,,habitat
+TRIRIS,Code TRIRIS du lieu de résidence,ZZZZZZ,Commune non découpée en IRIS,CHAR,6,,IGNORE
 TYPC,Type de construction,1,Bâtiment d'habitation d'un seul logement isolé,CHAR,1,logement_type_contruction_un_logement_isole,habitat
 TYPC,Type de construction,2,Bâtiment d'habitation d'un seul logement jumelé ou groupé de toute autre façon,CHAR,1,logement_type_contruction_un_logement_groupe,habitat
 TYPC,Type de construction,3,Bâtiment d'habitation de 2 logements ou plus,CHAR,1,logement_type_contruction_plusieurs_logements,habitat
