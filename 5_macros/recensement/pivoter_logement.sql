@@ -1,21 +1,24 @@
-{% macro pivoter_logement(variante_logement, deduplicated, colonne_a_aggreger, champs_geo) %}    
+{% macro pivoter_logement(renommee, libelle_liste, champs_geo_arrivee) %}    
 
-
-
-{% set colonne_a_aggreger_values_list = lister_colonne_a_aggrger_valeurs(variante_logement, colonne_a_aggreger) %}
+    {% set libelle_uniques_liste = [] %}
+    {% for libelle in libelle_liste %}
+        {% if libelle not in  libelle_uniques_liste %}
+            {% do libelle_uniques_liste.append(libelle) %}
+        {% endif %}
+      {% endfor %}
 
     select 
 
-    {{ champs_geo }},
+    {{ champs_geo_arrivee }},
     {{ dbt_utils.pivot(
-        'champs__valeur',
-        colonne_a_aggreger_values_list,
+        'champs_valeur_renomme',
+        libelle_uniques_liste,
         agg='sum',
         then_value='population_par_champs_valeur',
     ) }}
     from 
-        deduplicated
+        renommee
     group by
-        {{ champs_geo }}
+        {{ champs_geo_arrivee }}
 
 {% endmacro %}

@@ -1,0 +1,431 @@
+version: 2
+
+models:
+
+- name: activite_communes
+  description: Rapporte les réponses sur l'activité du recensement agrégées à l'échelle de la commune.
+  columns:
+
+  - name: code_commune_insee
+    data_type: text
+    description: Code INSEE de la commune
+    tests:
+          - unique
+          - not_null
+
+  - name: menages_avec_0_eleve_etudiant_14_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '0 personne' et plus (valeur: 0  et plus) à la question 'Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage' (code: INEEM)"
+   
+  - name: menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage' (code: INEEM)"
+   
+  - name: pr_scolarite_avant_primaire
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Pas de scolarité ou arrêt avant la fin du primaire' (valeur: 1 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_avant_college
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Aucun diplôme et scolarité interrompue à la fin du primaire ou avant la fin du collège' (valeur: 2 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_fin_college
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Aucun diplôme et scolarité jusqu’à la fin du collège ou au-delà' (valeur: 3 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_CEP
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'CEP (certificat d’études primaires)' (valeur: 11 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_BEPC
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'BEPC, brevet élémentaire, brevet des collèges, DNB' (valeur: 12 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_CAP_BEP
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'CAP, BEP ou diplôme de niveau équivalent' (valeur: 13 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_general_techno
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Baccalauréat général ou technologique, brevet supérieur, capacité en droit, DAEU, ESEU' (valeur: 14 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bar_pr
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Baccalauréat professionnel, brevet professionnel, de technicien ou d’enseignement, diplôme équivalent' (valeur: 15 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_2
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'BTS, DUT, Deug, Deust, diplôme de la santé ou du social de niveau bac+2, diplôme équivalent' (valeur: 16 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_3_ou_4
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Licence, licence pro, maîtrise, diplôme équivalent de niveau bac+3 ou bac+4' (valeur: 17 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_5
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Master, DEA, DESS, diplôme grande école niveau bac+5, doctorat de santé' (valeur: 18 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_8
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Doctorat de recherche (hors santé)' (valeur: 19 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_emploi_apprentissage
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'En contrat d'apprentissage ou de professionnalisation' (valeur: 11 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_interim
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Placés par une agence d'intérim' (valeur: 12 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_contrat_aide
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Emplois aidés (contrat unique d'insertion' (valeur: 13 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_stage_entreprise
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Stagiaires rémunérés en entreprise' (valeur: 14 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_duree_limite
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Autres emplois à durée limitée' (valeur: 15 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_sans_duree_limite
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Emplois sans limite de durée' (valeur: 16 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_independant
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Non salariés : Indépendants' (valeur: 21 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_employeur
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Non salariés : Employeurs' (valeur: 22 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_aides_familiaux
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Non salariés : Aides familiaux' (valeur: 23 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_sans_objet
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Sans objet (sans emploi)' (valeur: ZZ ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: menages_avec_0_personne_active
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_1_personne_active
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_2_et_plus_personnes_actives
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '2 personnes' et plus (valeur: 2  et plus) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_0_personne_active_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_1_personne_active_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_2_et_plus_personnes_actives_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_0_personne_scolarisee
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_avec_1_personne_scolarisee
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_avec_2_et_plus_personnes_scolarisees
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_pr_pas_de_recherche_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Ne recherche pas d'emploi' (valeur: 0 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_moins_un_an
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Cherche un emploi depuis moins d'un an' (valeur: 1 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_plus_un_an
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Cherche un emploi depuis plus d'un an' (valeur: 2 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_non_declaree
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Non déclaré (inactif)' (valeur: 9 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_sans_objet_en_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Sans objet (en emploi)' (valeur: Z ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_activite_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Actifs ayant un emploi' (valeur: 11 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_chomeurs
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Chômeurs' (valeur: 12 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_retraite_pre_retraite
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Retraités ou préretraités' (valeur: 21 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_eleve
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Élèves' (valeur: 22 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_au_foyer
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Femmes ou hommes au foyer' (valeur: 24 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_autre
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Autres inactifs' (valeur: 25 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_travail_temps_complet
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Temps complet' (valeur: 1 ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+   
+  - name: menages_pr_travail_temps_partiel
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Temps partiel' (valeur: 2 ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+   
+  - name: menages_pr_travail_temps_sans_objet_sans_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Sans objet (sans emploi)' (valeur: Z ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+    
+  - name: code_commune
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: nom_commune
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: code_arrondissement
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: code_departement
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: code_region
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: codes_postaux
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: population
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: code_zone
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: nom_arrondissement
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: nom_departement
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: nom_region
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: commune_latitude
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: commune_longitude
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+  - name: commune_centre_geopoint
+    description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
+- name: activite_iris
+  description: Rapporte les réponses sur l'activité du recensement agrégées à l'échelle de l'IRIS.
+  columns:
+
+  - name: code_iris
+    data_type: text
+    description: Code INSEE de l'IRIS
+    tests:
+          - unique
+          - not_null
+
+
+  - name: menages_avec_0_eleve_etudiant_14_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '0 personne' et plus (valeur: 0  et plus) à la question 'Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage' (code: INEEM)"
+   
+  - name: menages_avec_1_et_plus_eleves_etudiants_14_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage' (code: INEEM)"
+   
+  - name: pr_scolarite_avant_primaire
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Pas de scolarité ou arrêt avant la fin du primaire' (valeur: 1 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_avant_college
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Aucun diplôme et scolarité interrompue à la fin du primaire ou avant la fin du collège' (valeur: 2 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_fin_college
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Aucun diplôme et scolarité jusqu’à la fin du collège ou au-delà' (valeur: 3 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_CEP
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'CEP (certificat d’études primaires)' (valeur: 11 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_BEPC
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'BEPC, brevet élémentaire, brevet des collèges, DNB' (valeur: 12 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_CAP_BEP
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'CAP, BEP ou diplôme de niveau équivalent' (valeur: 13 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_general_techno
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Baccalauréat général ou technologique, brevet supérieur, capacité en droit, DAEU, ESEU' (valeur: 14 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bar_pr
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Baccalauréat professionnel, brevet professionnel, de technicien ou d’enseignement, diplôme équivalent' (valeur: 15 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_2
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'BTS, DUT, Deug, Deust, diplôme de la santé ou du social de niveau bac+2, diplôme équivalent' (valeur: 16 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_3_ou_4
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Licence, licence pro, maîtrise, diplôme équivalent de niveau bac+3 ou bac+4' (valeur: 17 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_5
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Master, DEA, DESS, diplôme grande école niveau bac+5, doctorat de santé' (valeur: 18 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_scolarite_bac_plus_8
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Doctorat de recherche (hors santé)' (valeur: 19 ) à la question 'Diplôme le plus élevé obtenu (personne de référence du ménage)' (code: DIPLM)"
+   
+  - name: pr_emploi_apprentissage
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'En contrat d'apprentissage ou de professionnalisation' (valeur: 11 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_interim
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Placés par une agence d'intérim' (valeur: 12 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_contrat_aide
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Emplois aidés (contrat unique d'insertion' (valeur: 13 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_stage_entreprise
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Stagiaires rémunérés en entreprise' (valeur: 14 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_duree_limite
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Autres emplois à durée limitée' (valeur: 15 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_sans_duree_limite
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Emplois sans limite de durée' (valeur: 16 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_independant
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Non salariés : Indépendants' (valeur: 21 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_employeur
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Non salariés : Employeurs' (valeur: 22 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_aides_familiaux
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Non salariés : Aides familiaux' (valeur: 23 ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: pr_emploi_sans_objet
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Sans objet (sans emploi)' (valeur: ZZ ) à la question 'Condition d'emploi (personne de référence du ménage)' (code: EMPLM)"
+   
+  - name: menages_avec_0_personne_active
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_1_personne_active
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_2_et_plus_personnes_actives
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '2 personnes' et plus (valeur: 2  et plus) à la question 'Nombre de personnes actives du ménage' (code: INPAM)"
+   
+  - name: menages_avec_0_personne_active_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_1_personne_active_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_2_et_plus_personnes_actives_avec_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes actives ayant un emploi du ménage' (code: INPOM)"
+   
+  - name: menages_avec_0_personne_scolarisee
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_avec_1_personne_scolarisee
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_avec_2_et_plus_personnes_scolarisees
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes scolarisées du ménage' (code: INPSM)"
+   
+  - name: menages_pr_pas_de_recherche_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Ne recherche pas d'emploi' (valeur: 0 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_moins_un_an
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Cherche un emploi depuis moins d'un an' (valeur: 1 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_plus_un_an
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Cherche un emploi depuis plus d'un an' (valeur: 2 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_non_declaree
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Non déclaré (inactif)' (valeur: 9 ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_recherche_emploi_sans_objet_en_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Sans objet (en emploi)' (valeur: Z ) à la question 'Ancienneté de recherche d'emploi (personne de référence du ménage)' (code: RECHM)"
+   
+  - name: menages_pr_activite_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Actifs ayant un emploi' (valeur: 11 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_chomeurs
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Chômeurs' (valeur: 12 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_retraite_pre_retraite
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Retraités ou préretraités' (valeur: 21 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_eleve
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Élèves' (valeur: 22 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_au_foyer
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Femmes ou hommes au foyer' (valeur: 24 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_activite_autre
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Autres inactifs' (valeur: 25 ) à la question 'Type d'activité de la personne de référence du ménage' (code: TACTM)"
+   
+  - name: menages_pr_travail_temps_complet
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Temps complet' (valeur: 1 ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+   
+  - name: menages_pr_travail_temps_partiel
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Temps partiel' (valeur: 2 ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+   
+  - name: menages_pr_travail_temps_sans_objet_sans_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Sans objet (sans emploi)' (valeur: Z ) à la question 'Temps de travail (personne de référence du ménage)' (code: TPM)"
+   
