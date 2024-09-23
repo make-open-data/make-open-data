@@ -62,12 +62,15 @@ CREATE EXTENSION postgis;
 CREATE EXTENSION unaccent;
 ```
 
-- Insérer manuellement (avec pgAdmin) les tables suivantes dans le schema `sources`:
+- Extraire les données sources dans le schema `sources`:
 
+```
+python -m extract
+```
 
 Etape temporaire : 
-* Une extraction automatique a été essayée et ne vaut pas le coup étant donné la diversité des fichiers sources (zip, csv, json, 7z, etc) ;
-* Une solution du type lakehouse est en cours de mise en place (`SELECT * FROM "red_parquet(<URL>.parquet)"`)
+    - Une extraction automatique ne vaut pas le coup étant donné la diversité des fichiers sources (zip, csv, json, 7z, etc) et la mise à jour non fréquente des sources ;
+    - Une solution du type Lakehouse est en cours d'analyse (`SELECT * FROM "red_parquet(<URL>.parquet)"`)
 
 
 - Connecter DBT à la base de données

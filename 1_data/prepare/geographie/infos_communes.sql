@@ -26,7 +26,7 @@ with filtre_cog_communes as (
     left join {{ source('sources', 'cog_departements')}}  cog_departements on cog_departements.code = filtre_cog_communes.departement
     left join {{ source('sources', 'cog_regions')}}  cog_regions on cog_regions.code = filtre_cog_communes.region  
     
-), geopoints as (
+), gps as (
     select DISTINCT
         LPAD(CAST(cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
         CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
@@ -36,7 +36,8 @@ with filtre_cog_communes as (
 
 select
     denomalise_cog.*,
-    geopoints.commune_latitude,
-    geopoints.commune_longitude
+    gps.commune_latitude,
+    gps.commune_longitude,
+    ST_SetSRID(ST_MakePoint(gps.commune_latitude, gps.commune_longitude), 4326) as commune_centre_geopoint
 from denomalise_cog
-left join geopoints on denomalise_cog.code_commune = geopoints.code_commune
+left join gps on denomalise_cog.code_commune = gps.code_commune
