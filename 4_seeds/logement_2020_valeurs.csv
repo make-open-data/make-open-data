@@ -345,24 +345,24 @@ CUIS,Cuisine intérieure avec évier (DOM),1,Présence de cuisine intérieure av
 CUIS,Cuisine intérieure avec évier (DOM),2,Absence de cuisine intérieure avec évier,CHAR,1,dom__sans_cuisine_interieure_evier,habitat
 CUIS,Cuisine intérieure avec évier (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
 CUIS,Cuisine intérieure avec évier (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
-DEROU,Nombre de deux-roues à moteur du ménage (DOM),0,Aucun deux-roues à moteur,CHAR,1,dom__aucun_deux_roues,demographie
-DEROU,Nombre de deux-roues à moteur du ménage (DOM),1,Un seul deux-roues à moteur,CHAR,1,dom__un_deux_roues,demographie
-DEROU,Nombre de deux-roues à moteur du ménage (DOM),2,Deux deux-roues à moteur,CHAR,1,dom__deux_deux_roues,demographie
-DEROU,Nombre de deux-roues à moteur du ménage (DOM),3,Trois deux-roues à moteur ou plus,CHAR,1,dom__trois_ou_plus_deux_roues,demographie
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),0,Aucun deux-roues à moteur,CHAR,1,dom__aucun_deux_roues,mobilite
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),1,Un seul deux-roues à moteur,CHAR,1,dom__un_deux_roues,mobilite
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),2,Deux deux-roues à moteur,CHAR,1,dom__deux_deux_roues,mobilite
+DEROU,Nombre de deux-roues à moteur du ménage (DOM),3,Trois deux-roues à moteur ou plus,CHAR,1,dom__trois_ou_plus_deux_roues,mobilite
 DEROU,Nombre de deux-roues à moteur du ménage (DOM),X,Logement ordinaire inoccupé (DOM),CHAR,1,,IGNORE
 DEROU,Nombre de deux-roues à moteur du ménage (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),1,Pas de scolarité ou arrêt avant la fin du primaire,CHAR,2,pr_scolarite_avant_primaire,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),2,Aucun diplôme et scolarité interrompue à la fin du primaire ou avant la fin du collège,CHAR,2,pr_scolarite_avant_college,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),3,Aucun diplôme et scolarité jusqu’à la fin du collège ou au-delà,CHAR,2,pr_scolarite_fin_college,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),11,CEP (certificat d’études primaires),CHAR,2,pr_scolarite_CEP,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),12,"BEPC, brevet élémentaire, brevet des collèges, DNB",CHAR,2,pr_scolarite_BEPC,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),13,"CAP, BEP ou diplôme de niveau équivalent",CHAR,2,pr_scolarite_CAP_BEP,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),14,"Baccalauréat général ou technologique, brevet supérieur, capacité en droit, DAEU, ESEU",CHAR,2,pr_scolarite_bac_general_techno,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),15,"Baccalauréat professionnel, brevet professionnel, de technicien ou d’enseignement, diplôme équivalent",CHAR,2,pr_scolarite_bar_pr,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),16,"BTS, DUT, Deug, Deust, diplôme de la santé ou du social de niveau bac+2, diplôme équivalent",CHAR,2,pr_scolarite_bac_plus_2,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),17,"Licence, licence pro, maîtrise, diplôme équivalent de niveau bac+3 ou bac+4",CHAR,2,pr_scolarite_bac_plus_3_ou_4,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),18,"Master, DEA, DESS, diplôme grande école niveau bac+5, doctorat de santé",CHAR,2,pr_scolarite_bac_plus_5,demographie
-DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),19,Doctorat de recherche (hors santé),CHAR,2,pr_scolarite_bac_plus_8,demographie
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),1,Pas de scolarité ou arrêt avant la fin du primaire,CHAR,2,pr_scolarite_avant_primaire,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),2,Aucun diplôme et scolarité interrompue à la fin du primaire ou avant la fin du collège,CHAR,2,pr_scolarite_avant_college,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),3,Aucun diplôme et scolarité jusqu’à la fin du collège ou au-delà,CHAR,2,pr_scolarite_fin_college,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),11,CEP (certificat d’études primaires),CHAR,2,pr_scolarite_CEP,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),12,"BEPC, brevet élémentaire, brevet des collèges, DNB",CHAR,2,pr_scolarite_BEPC,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),13,"CAP, BEP ou diplôme de niveau équivalent",CHAR,2,pr_scolarite_CAP_BEP,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),14,"Baccalauréat général ou technologique, brevet supérieur, capacité en droit, DAEU, ESEU",CHAR,2,pr_scolarite_bac_general_techno,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),15,"Baccalauréat professionnel, brevet professionnel, de technicien ou d’enseignement, diplôme équivalent",CHAR,2,pr_scolarite_bar_pr,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),16,"BTS, DUT, Deug, Deust, diplôme de la santé ou du social de niveau bac+2, diplôme équivalent",CHAR,2,pr_scolarite_bac_plus_2,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),17,"Licence, licence pro, maîtrise, diplôme équivalent de niveau bac+3 ou bac+4",CHAR,2,pr_scolarite_bac_plus_3_ou_4,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),18,"Master, DEA, DESS, diplôme grande école niveau bac+5, doctorat de santé",CHAR,2,pr_scolarite_bac_plus_5,activite
+DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),19,Doctorat de recherche (hors santé),CHAR,2,pr_scolarite_bac_plus_8,activite
 DIPLM,Diplôme le plus élevé obtenu (personne de référence du ménage),YY,Hors résidence principale,CHAR,2,,IGNORE
 EAU,Point d'eau potable à l'intérieur du logement (DOM),1,Eau froide seulement,CHAR,1,dom__eau_froide_seulement,habitat
 EAU,Point d'eau potable à l'intérieur du logement (DOM),2,Eau froide et chaude,CHAR,1,dom__eau_froide_et_chaude,habitat
@@ -379,15 +379,15 @@ ELEC,Électricité dans le logement (DOM),1,Avec électricité,CHAR,1,dom__avec_
 ELEC,Électricité dans le logement (DOM),2,Sans électricité,CHAR,1,dom__sans_electricite,habitat
 ELEC,Électricité dans le logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
 ELEC,Électricité dans le logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
-EMPLM,Condition d'emploi (personne de référence du ménage),11,En contrat d'apprentissage ou de professionnalisation,CHAR,2,pr_emploi_apprentissage,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),12,Placés par une agence d'intérim,CHAR,2,pr_emploi_interim,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),13,Emplois aidés (contrat unique d'insertion,CHAR,2,pr_emploi_contrat_aide,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),14,Stagiaires rémunérés en entreprise,CHAR,2,pr_emploi_stage_entreprise,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),15,Autres emplois à durée limitée,CHAR,2,pr_emploi_duree_limite,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),16,Emplois sans limite de durée,CHAR,2,pr_emploi_sans_duree_limite,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),21,Non salariés : Indépendants,CHAR,2,pr_emploi_independant,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),22,Non salariés : Employeurs,CHAR,2,pr_emploi_employeur,demographie
-EMPLM,Condition d'emploi (personne de référence du ménage),23,Non salariés : Aides familiaux,CHAR,2,pr_emploi_aides_familiaux,demographie
+EMPLM,Condition d'emploi (personne de référence du ménage),11,En contrat d'apprentissage ou de professionnalisation,CHAR,2,pr_emploi_apprentissage,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),12,Placés par une agence d'intérim,CHAR,2,pr_emploi_interim,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),13,Emplois aidés (contrat unique d'insertion,CHAR,2,pr_emploi_contrat_aide,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),14,Stagiaires rémunérés en entreprise,CHAR,2,pr_emploi_stage_entreprise,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),15,Autres emplois à durée limitée,CHAR,2,pr_emploi_duree_limite,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),16,Emplois sans limite de durée,CHAR,2,pr_emploi_sans_duree_limite,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),21,Non salariés : Indépendants,CHAR,2,pr_emploi_independant,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),22,Non salariés : Employeurs,CHAR,2,pr_emploi_employeur,activite
+EMPLM,Condition d'emploi (personne de référence du ménage),23,Non salariés : Aides familiaux,CHAR,2,pr_emploi_aides_familiaux,activite
 EMPLM,Condition d'emploi (personne de référence du ménage),YY,Hors résidence principale,CHAR,2,,IGNORE
 EMPLM,Condition d'emploi (personne de référence du ménage),ZZ,Sans objet (sans emploi),CHAR,2,pr_emploi_sans_objet,demographie
 GARL,Emplacement réservé de stationnement,1,Avec emplacement(s) de stationnement,CHAR,1,avec_emplacement_stationnement,habitat
@@ -597,205 +597,205 @@ INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,7,7 personnes,CH
 INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,8,8 personnes,CHAR,2,menages_avec_1_et_plus_personnes_65_ans_et_plus,demographie
 INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,9,9 personnes,CHAR,2,menages_avec_1_et_plus_personnes_65_ans_et_plus,demographie
 INP65M,Nombre de personnes âgées de 65 ans ou plus du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,0,0 personne,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,1,1 personne,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,11,11 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,18,18 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,2,2 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,3,3 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,4,4 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,48,48 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,5,5 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,6,6 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,7,7 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,8,8 personnes,CHAR,2,,IGNORE
-INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,9,9 personnes,CHAR,2,,IGNORE
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,0,0 personne,CHAR,2,menages_avec_0_personne_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,1,1 personne,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,11,11 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,18,18 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,2,2 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,3,3 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,4,4 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,48,48 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,5,5 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,6,6 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,7,7 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,8,8 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
+INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,9,9 personnes,CHAR,2,menages_avec_1_et_plus_personnes_75_ans_et_plus,demographie
 INP75M,Nombre de personnes âgées de 75 ans ou plus du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,0,0 personne,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,1,1 personne,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,10,10 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,11,11 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,12,12 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,13,13 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,14,14 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,15,15 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,16,16 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,17,17 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,18,18 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,19,19 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,2,2 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,20,20 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,26,26 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,3,3 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,4,4 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,41,41 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,5,5 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,6,6 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,7,7 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,8,8 personnes,CHAR,2,,IGNORE
-INPAM,Nombre de personnes actives du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPAM,Nombre de personnes actives du ménage,0,0 personne,CHAR,2,menages_avec_0_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,1,1 personne,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,10,10 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,11,11 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,12,12 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,13,13 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,14,14 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,15,15 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,16,16 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,17,17 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,18,18 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,19,19 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,2,2 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives,activite
+INPAM,Nombre de personnes actives du ménage,20,20 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,26,26 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,3,3 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,4,4 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,41,41 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,5,5 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,6,6 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,7,7 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,8,8 personnes,CHAR,2,menages_avec_1_personne_active,activite
+INPAM,Nombre de personnes actives du ménage,9,9 personnes,CHAR,2,menages_avec_1_personne_active,activite
 INPAM,Nombre de personnes actives du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,1,1 personne,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,10,10 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,11,11 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,12,12 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,13,13 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,14,14 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,15,15 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,16,16 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,17,17 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,18,18 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,19,19 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,2,2 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,20,20 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,21,21 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,22,22 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,23,23 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,24,24 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,25,25 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,26,26 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,28,28 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,3,3 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,34,34 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,4,4 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,41,41 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,5,5 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,55,55 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,6,6 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,7,7 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,8,8 personnes,CHAR,2,,IGNORE
-INPER,Nombre de personnes du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPER,Nombre de personnes du ménage,1,1 personne,CHAR,2,menages_avec_1_personne,demographie
+INPER,Nombre de personnes du ménage,10,10 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,11,11 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,12,12 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,13,13 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,14,14 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,15,15 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,16,16 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,17,17 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,18,18 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,19,19 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,2,2 personnes,CHAR,2,menages_avec_2_personnes,demographie
+INPER,Nombre de personnes du ménage,20,20 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,21,21 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,22,22 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,23,23 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,24,24 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,25,25 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,26,26 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,28,28 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,3,3 personnes,CHAR,2,menages_avec_3_personnes,demographie
+INPER,Nombre de personnes du ménage,34,34 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,4,4 personnes,CHAR,2,menages_avec_4_personnes,demographie
+INPER,Nombre de personnes du ménage,41,41 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,5,5 personnes,CHAR,2,menages_avec_5_personnes,demographie
+INPER,Nombre de personnes du ménage,55,55 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,6,6 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,7,7 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,8,8 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
+INPER,Nombre de personnes du ménage,9,9 personnes,CHAR,2,menages_avec_6_et_plus_personnes,demographie
 INPER,Nombre de personnes du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",0,0 personne,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",1,1 personne,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",10,10 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",11,11 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",12,12 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",13,13 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",14,14 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",15,15 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",16,16 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",17,17 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",18,18 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",19,19 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",2,2 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",20,20 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",22,22 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",26,26 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",3,3 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",38,38 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",4,4 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",5,5 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",6,6 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",7,7 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",8,8 personnes,CHAR,2,,IGNORE
-INPER1,"Nombre de personnes du ménage, de sexe masculin",9,9 personnes,CHAR,2,,IGNORE
+INPER1,"Nombre de personnes du ménage, de sexe masculin",0,0 personne,CHAR,2,menages_avec_0_personne_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",1,1 personne,CHAR,2,menages_avec_1_personne_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",10,10 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",11,11 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",12,12 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",13,13 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",14,14 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",15,15 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",16,16 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",17,17 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",18,18 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",19,19 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",2,2 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",20,20 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",22,22 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",26,26 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",3,3 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",38,38 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",4,4 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",5,5 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",6,6 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",7,7 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",8,8 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
+INPER1,"Nombre de personnes du ménage, de sexe masculin",9,9 personnes,CHAR,2,menages_avec_2_et_plus_personnes_masculin,demographie
 INPER1,"Nombre de personnes du ménage, de sexe masculin",Y,Hors résidence principale,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",0,0 personne,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",1,1 personne,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",10,10 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",11,11 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",12,12 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",13,13 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",14,14 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",15,15 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",16,16 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",17,17 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",19,19 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",2,2 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",20,20 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",3,3 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",39,39 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",4,4 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",5,5 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",6,6 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",7,7 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",8,8 personnes,CHAR,2,,IGNORE
-INPER2,"Nombre de personnes du ménage, de sexe féminin",9,9 personnes,CHAR,2,,IGNORE
+INPER2,"Nombre de personnes du ménage, de sexe féminin",0,0 personne,CHAR,2,menages_avec_0_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",1,1 personne,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",10,10 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",11,11 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",12,12 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",13,13 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",14,14 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",15,15 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",16,16 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",17,17 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",19,19 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",2,2 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",20,20 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",3,3 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",39,39 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",4,4 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",5,5 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",6,6 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",7,7 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",8,8 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
+INPER2,"Nombre de personnes du ménage, de sexe féminin",9,9 personnes,CHAR,2,menages_avec_1_personne_feminin,demographie
 INPER2,"Nombre de personnes du ménage, de sexe féminin",Y,Hors résidence principale,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,0,0 personne,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,1,1 personne,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,10,10 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,11,11 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,12,12 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,13,13 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,14,14 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,15,15 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,16,16 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,17,17 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,18,18 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,19,19 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,2,2 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,20,20 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,26,26 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,3,3 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,4,4 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,41,41 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,5,5 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,6,6 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,7,7 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,8,8 personnes,CHAR,2,,IGNORE
-INPOM,Nombre de personnes actives ayant un emploi du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPOM,Nombre de personnes actives ayant un emploi du ménage,0,0 personne,CHAR,2,menages_avec_0_personne_active_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,1,1 personne,CHAR,2,menages_avec_1_personne_active_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,10,10 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,11,11 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,12,12 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,13,13 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,14,14 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,15,15 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,16,16 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,17,17 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,18,18 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,19,19 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,2,2 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,20,20 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,26,26 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,3,3 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,4,4 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,41,41 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,5,5 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,6,6 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,7,7 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,8,8 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
+INPOM,Nombre de personnes actives ayant un emploi du ménage,9,9 personnes,CHAR,2,menages_avec_2_et_plus_personnes_actives_avec_emploi,activite
 INPOM,Nombre de personnes actives ayant un emploi du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,0,0 personne,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,1,1 personne,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,10,10 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,11,11 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,12,12 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,13,13 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,14,14 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,15,15 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,16,16 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,2,2 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,25,25 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,3,3 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,4,4 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,5,5 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,6,6 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,7,7 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,8,8 personnes,CHAR,2,,IGNORE
-INPSM,Nombre de personnes scolarisées du ménage,9,9 personnes,CHAR,2,,IGNORE
+INPSM,Nombre de personnes scolarisées du ménage,0,0 personne,CHAR,2,menages_avec_0_personne_scolarisee,activite
+INPSM,Nombre de personnes scolarisées du ménage,1,1 personne,CHAR,2,menages_avec_1_personne_scolarisee,activite
+INPSM,Nombre de personnes scolarisées du ménage,10,10 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,11,11 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,12,12 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,13,13 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,14,14 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,15,15 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,16,16 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,2,2 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,25,25 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,3,3 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,4,4 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,5,5 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,6,6 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,7,7 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,8,8 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
+INPSM,Nombre de personnes scolarisées du ménage,9,9 personnes,CHAR,2,menages_avec_2_et_plus_personnes_scolarisees,activite
 INPSM,Nombre de personnes scolarisées du ménage,Y,Hors résidence principale,CHAR,2,,IGNORE
 IPONDL,Poids du logement,,,NUM,17.15,,CLE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,1,Dans le même logement,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,2,Dans un autre logement de la même commune,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,3,Dans une autre commune du département,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,4,Dans un autre département de la région,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,5,Hors de la région de résidence actuelle : en métropole,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,6,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,7,Hors de la région de résidence actuelle : dans un TOM-COM,CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,8,À l'étranger dans l'Union Européenne (28 pays membres),CHAR,1,,IGNORE
-IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,9,À l'étranger hors Union Européenne,CHAR,1,,IGNORE
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,1,Dans le même logement,CHAR,1,menages_avec_pr_annee_avant_meme_logement,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,2,Dans un autre logement de la même commune,CHAR,1,menages_avec_pr_annee_avant_meme_commune,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,3,Dans une autre commune du département,CHAR,1,menages_avec_pr_annee_avant_meme_departement,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,4,Dans un autre département de la région,CHAR,1,menages_avec_pr_annee_avant_meme_region,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,5,Hors de la région de résidence actuelle : en métropole,CHAR,1,menages_avec_pr_annee_avant_autre_region_metro,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,6,Hors de la région de résidence actuelle : dans un DOM,CHAR,1,menages_avec_pr_annee_avant_autre_region_dom,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,7,Hors de la région de résidence actuelle : dans un TOM-COM,CHAR,1,menages_avec_pr_annee_avant_autre_region_com,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,8,À l'étranger dans l'Union Européenne (28 pays membres),CHAR,1,menages_avec_pr_annee_avant_union_europeenne,mobilite
+IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,9,À l'étranger hors Union Européenne,CHAR,1,menages_avec_pr_annee_avant_etranger,mobilite
 IRANM,Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
 METRODOM,Indicateur Métropole ou DOM du lieu de résidence,D,DOM,CHAR,1,,IGNORE
 METRODOM,Indicateur Métropole ou DOM du lieu de résidence,M,France métropolitaine,CHAR,1,,IGNORE
-NBPI,Nombre de pièces du logement,1,1 pièce,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,2,2 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,3,3 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,4,4 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,5,5 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,6,6 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,7,7 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,8,8 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,9,9 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,10,10 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,11,11 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,12,12 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,13,13 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,14,14 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,15,15 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,16,16 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,17,17 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,18,18 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,19,19 pièces,CHAR,2,,IGNORE
-NBPI,Nombre de pièces du logement,20,20 pièces et plus,CHAR,2,,IGNORE
+NBPI,Nombre de pièces du logement,1,1 pièce,CHAR,2,logements_avec_1_piece,habitat
+NBPI,Nombre de pièces du logement,2,2 pièces,CHAR,2,logements_avec_2_pieces,habitat
+NBPI,Nombre de pièces du logement,3,3 pièces,CHAR,2,logements_avec_3_pieces,habitat
+NBPI,Nombre de pièces du logement,4,4 pièces,CHAR,2,logements_avec_4_pieces,habitat
+NBPI,Nombre de pièces du logement,5,5 pièces,CHAR,2,logements_avec_5_pieces,habitat
+NBPI,Nombre de pièces du logement,6,6 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,7,7 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,8,8 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,9,9 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,10,10 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,11,11 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,12,12 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,13,13 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,14,14 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,15,15 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,16,16 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,17,17 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,18,18 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,19,19 pièces,CHAR,2,logements_avec_6_et_plus_pieces,habitat
+NBPI,Nombre de pièces du logement,20,20 pièces et plus,CHAR,2,logements_avec_6_et_plus_pieces,habitat
 NBPI,Nombre de pièces du logement,YY,Hors résidence principale,CHAR,2,,IGNORE
-RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),0,Ne recherche pas d'emploi,CHAR,1,,IGNORE
-RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),1,Cherche un emploi depuis moins d'un an,CHAR,1,,IGNORE
-RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),2,Cherche un emploi depuis plus d'un an,CHAR,1,,IGNORE
-RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),9,Non déclaré (inactif),CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),0,Ne recherche pas d'emploi,CHAR,1,menages_pr_pas_de_recherche_emploi,activite
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),1,Cherche un emploi depuis moins d'un an,CHAR,1,menages_pr_recherche_emploi_moins_un_an,activite
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),2,Cherche un emploi depuis plus d'un an,CHAR,1,menages_pr_recherche_emploi_plus_un_an,activite
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),9,Non déclaré (inactif),CHAR,1,menages_pr_recherche_emploi_non_declaree,activite
 RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
-RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),Z,Sans objet (en emploi),CHAR,1,,IGNORE
+RECHM,Ancienneté de recherche d'emploi (personne de référence du ménage),Z,Sans objet (en emploi),CHAR,1,menages_pr_recherche_emploi_sans_objet_en_emploi,activite
 REGION,Région du lieu de résidence,1,Guadeloupe,CHAR,2,,IGNORE
 REGION,Région du lieu de résidence,2,Martinique,CHAR,2,,IGNORE
 REGION,Région du lieu de résidence,3,Guyane,CHAR,2,,IGNORE
@@ -813,81 +813,81 @@ REGION,Région du lieu de résidence,76,Occitanie,CHAR,2,,IGNORE
 REGION,Région du lieu de résidence,84,Auvergne-Rhône-Alpes,CHAR,2,,IGNORE
 REGION,Région du lieu de résidence,93,Provence-Alpes-Côte d'Azur,CHAR,2,,IGNORE
 REGION,Région du lieu de résidence,94,Corse,CHAR,2,,IGNORE
-SANI,Installations sanitaires (France métropolitaine),0,Ni baignoire,CHAR,1,,IGNORE
-SANI,Installations sanitaires (France métropolitaine),1,Baignoire ou douche hors pièce réservée,CHAR,1,,IGNORE
-SANI,Installations sanitaires (France métropolitaine),2,Salle(s) de bains (avec douche ou baignoire),CHAR,1,,IGNORE
+SANI,Installations sanitaires (France métropolitaine),0,Ni baignoire,CHAR,1,metro__logement_ni_baignoire_ni_douche,habitat
+SANI,Installations sanitaires (France métropolitaine),1,Baignoire ou douche hors pièce réservée,CHAR,1,metro__logement_avec_baignoire_ou_douche_hors_piece_reservee,habitat
+SANI,Installations sanitaires (France métropolitaine),2,Salle(s) de bains (avec douche ou baignoire),CHAR,1,metro__logement_salle_de_bain,habitat
 SANI,Installations sanitaires (France métropolitaine),Y,Hors résidence principale,CHAR,1,,IGNORE
 SANI,Installations sanitaires (France métropolitaine),Z,Logement ordinaire DOM,CHAR,1,,IGNORE
-SANIDOM,Installations sanitaires (DOM),11,Avec baignoire ou douche et avec WC à l'intérieur,CHAR,2,,IGNORE
-SANIDOM,Installations sanitaires (DOM),12,Avec baignoire ou douche mais sans WC à l'intérieur,CHAR,2,,IGNORE
-SANIDOM,Installations sanitaires (DOM),21,Sans baignoire ni douche mais avec WC à l'intérieur,CHAR,2,,IGNORE
-SANIDOM,Installations sanitaires (DOM),22,Sans baignoire ni douche,CHAR,2,,IGNORE
+SANIDOM,Installations sanitaires (DOM),11,Avec baignoire ou douche et avec WC à l'intérieur,CHAR,2,dom__logement_avec_baignoire_ou_douche_avec_toilettes_interieures,habitat
+SANIDOM,Installations sanitaires (DOM),12,Avec baignoire ou douche mais sans WC à l'intérieur,CHAR,2,dom__logement_avec_baignoire_ou_douche_sans_toilettes_interieures,habitat
+SANIDOM,Installations sanitaires (DOM),21,Sans baignoire ni douche mais avec WC à l'intérieur,CHAR,2,dom__logement_ni_baignoire_ni_douche_avec_toilettes_interieures,habitat
+SANIDOM,Installations sanitaires (DOM),22,Sans baignoire ni douche,CHAR,2,dom__logement_ni_baignoire_ni_douche,habitat
 SANIDOM,Installations sanitaires (DOM),YY,Hors résidence principale,CHAR,2,,IGNORE
 SANIDOM,Installations sanitaires (DOM),ZZ,Logement ordinaire France métropolitaine,CHAR,2,,IGNORE
-SEXEM,Sexe de la personne de référence du ménage,1,Hommes,CHAR,1,,IGNORE
-SEXEM,Sexe de la personne de référence du ménage,2,Femmes,CHAR,1,,IGNORE
+SEXEM,Sexe de la personne de référence du ménage,1,Hommes,CHAR,1,menages_pr_homme,demographie
+SEXEM,Sexe de la personne de référence du ménage,2,Femmes,CHAR,1,menages_pr_femmes,demographie
 SEXEM,Sexe de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,1,Marié(e),CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,2,Pacsé(e),CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,3,En concubinage ou union libre,CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,4,"Veuf, veuve",CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,5,Divorcé(e),CHAR,1,,IGNORE
-STAT_CONJM,Statut conjugal de la personne de référence du ménage,6,Célibataire,CHAR,1,,IGNORE
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,1,Marié(e),CHAR,1,menages_pr_mariee,demographie
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,2,Pacsé(e),CHAR,1,menages_pr_pacsee,demographie
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,3,En concubinage ou union libre,CHAR,1,menages_pr_concubinage_union_libre,demographie
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,4,"Veuf, veuve",CHAR,1,menages_pr_veuve,demographie
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,5,Divorcé(e),CHAR,1,menages_pr_divorcee,demographie
+STAT_CONJM,Statut conjugal de la personne de référence du ménage,6,Célibataire,CHAR,1,menages_pr_celibataire,demographie
 STAT_CONJM,Statut conjugal de la personne de référence du ménage,Y,Hors résidence principale,CHAR,1,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,0,Logement ordinaire inoccupé,CHAR,2,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,10,Propriétaire,CHAR,2,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,21,Locataire ou sous-locataire d'un logement loué vide non HLM,CHAR,2,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,22,Locataire ou sous-locataire d'un logement loué vide HLM,CHAR,2,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,23,Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel,CHAR,2,,IGNORE
-STOCD,Statut d'occupation détaillé du logement,30,Logé gratuitement,CHAR,2,,IGNORE
-SURF,Superficie du logement,1,Moins de 30 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,2,De 30 à moins de 40 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,3,De 40 à moins de 60 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,4,De 60 à moins de 80 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,5,De 80 à moins de 100 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,6,De 100 à moins de 120 m²,CHAR,1,,IGNORE
-SURF,Superficie du logement,7,120 m² ou plus,CHAR,1,,IGNORE
+STOCD,Statut d'occupation détaillé du logement,0,Logement ordinaire inoccupé,CHAR,2,logements_inoccupes,IGNORE
+STOCD,Statut d'occupation détaillé du logement,10,Propriétaire,CHAR,2,logements_occupes_par_proprietaires,habitat
+STOCD,Statut d'occupation détaillé du logement,21,Locataire ou sous-locataire d'un logement loué vide non HLM,CHAR,2,logements_occupes_par_locataire_sous_locataire_vide_non_hlm,habitat
+STOCD,Statut d'occupation détaillé du logement,22,Locataire ou sous-locataire d'un logement loué vide HLM,CHAR,2,logements_occupes_par_locataire_sous_locataire_vide_hlm,habitat
+STOCD,Statut d'occupation détaillé du logement,23,Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel,CHAR,2,logements_occupes_par_locataire_meuble_hotel,habitat
+STOCD,Statut d'occupation détaillé du logement,30,Logé gratuitement,CHAR,2,logements_occupes_par_loge_gratuitemenent,habitat
+SURF,Superficie du logement,1,Moins de 30 m²,CHAR,1,logements_moins_30_mc,habitat
+SURF,Superficie du logement,2,De 30 à moins de 40 m²,CHAR,1,logements_30_40_mc,habitat
+SURF,Superficie du logement,3,De 40 à moins de 60 m²,CHAR,1,logements_40_60_mc,habitat
+SURF,Superficie du logement,4,De 60 à moins de 80 m²,CHAR,1,logements_60_80_mc,habitat
+SURF,Superficie du logement,5,De 80 à moins de 100 m²,CHAR,1,logements_80_100_mc,habitat
+SURF,Superficie du logement,6,De 100 à moins de 120 m²,CHAR,1,logements_100_120_mc,habitat
+SURF,Superficie du logement,7,120 m² ou plus,CHAR,1,logements_plus_120_mc,habitat
 SURF,Superficie du logement,Y,Hors résidence principale,CHAR,1,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,11,Actifs ayant un emploi,CHAR,2,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,12,Chômeurs,CHAR,2,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,21,Retraités ou préretraités,CHAR,2,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,22,Élèves,CHAR,2,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,24,Femmes ou hommes au foyer,CHAR,2,,IGNORE
-TACTM,Type d'activité de la personne de référence du ménage,25,Autres inactifs,CHAR,2,,IGNORE
+TACTM,Type d'activité de la personne de référence du ménage,11,Actifs ayant un emploi,CHAR,2,menages_pr_activite_emploi,activite
+TACTM,Type d'activité de la personne de référence du ménage,12,Chômeurs,CHAR,2,menages_pr_activite_chomeurs,activite
+TACTM,Type d'activité de la personne de référence du ménage,21,Retraités ou préretraités,CHAR,2,menages_pr_activite_retraite_pre_retraite,activite
+TACTM,Type d'activité de la personne de référence du ménage,22,Élèves,CHAR,2,menages_pr_activite_eleve,activite
+TACTM,Type d'activité de la personne de référence du ménage,24,Femmes ou hommes au foyer,CHAR,2,menages_pr_activite_au_foyer,activite
+TACTM,Type d'activité de la personne de référence du ménage,25,Autres inactifs,CHAR,2,menages_pr_activite_autre,activite
 TACTM,Type d'activité de la personne de référence du ménage,YY,Hors résidence principale,CHAR,2,,IGNORE
-TPM,Temps de travail (personne de référence du ménage),1,Temps complet,CHAR,1,,IGNORE
-TPM,Temps de travail (personne de référence du ménage),2,Temps partiel,CHAR,1,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),1,Temps complet,CHAR,1,menages_pr_travail_temps_complet,activite
+TPM,Temps de travail (personne de référence du ménage),2,Temps partiel,CHAR,1,menages_pr_travail_temps_partiel,activite
 TPM,Temps de travail (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
-TPM,Temps de travail (personne de référence du ménage),Z,Sans objet (sans emploi),CHAR,1,,IGNORE
+TPM,Temps de travail (personne de référence du ménage),Z,Sans objet (sans emploi),CHAR,1,menages_pr_travail_temps_sans_objet_sans_emploi,activite
 TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),1,Pas de transport,CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),2,"Marche à pied (ou rollers, patinette)",CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),3,Vélo (y compris à assistance électrique),CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),4,Deux-roues motorisé,CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),5,"Voiture, camion, fourgonnette",CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),6,Transports en commun,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),2,"Marche à pied (ou rollers, patinette)",CHAR,1,menages_pr_transport_travail_pieds,mobilite
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),3,Vélo (y compris à assistance électrique),CHAR,1,menages_pr_transport_travail_velo,mobilite
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),4,Deux-roues motorisé,CHAR,1,menages_pr_transport_travail_deux_roues,mobilite
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),5,"Voiture, camion, fourgonnette",CHAR,1,menages_pr_transport_travail_voiture,mobilite
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),6,Transports en commun,CHAR,1,menages_pr_transport_travail_transport_commune,mobilite
 TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Y,Hors résidence principale,CHAR,1,,IGNORE
-TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Z,Sans objet,CHAR,1,,IGNORE
+TRANSM,Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage),Z,Sans objet,CHAR,1,menages_pr_transport_travail_sans_objet_sans_travail,IGNORE
 TRIRIS,Code TRIRIS du lieu de résidence,10011,TRIRIS 010011 (010011),CHAR,6,,IGNORE
 TRIRIS,Code TRIRIS du lieu de résidence,...,... (010021),CHAR,6,,IGNORE
-TRIRIS,Code TRIRIS du lieu de résidence,ZZZZZZ,Commune non découpée en IRIS,CHAR,6,,IGNORE
-TYPC,Type de construction,1,Bâtiment d'habitation d'un seul logement isolé,CHAR,1,,IGNORE
-TYPC,Type de construction,2,Bâtiment d'habitation d'un seul logement jumelé ou groupé de toute autre façon,CHAR,1,,IGNORE
-TYPC,Type de construction,3,Bâtiment d'habitation de 2 logements ou plus,CHAR,1,,IGNORE
-TYPC,Type de construction,4,Bâtiment à usage autre qu'habitation,CHAR,1,,IGNORE
-TYPC,Type de construction,5,Construction provisoire,CHAR,1,,IGNORE
+TRIRIS,Code TRIRIS du lieu de résidence,ZZZZZZ,Commune non découpée en IRIS,CHAR,6,,habitat
+TYPC,Type de construction,1,Bâtiment d'habitation d'un seul logement isolé,CHAR,1,logement_type_contruction_un_logement_isole,habitat
+TYPC,Type de construction,2,Bâtiment d'habitation d'un seul logement jumelé ou groupé de toute autre façon,CHAR,1,logement_type_contruction_un_logement_groupe,habitat
+TYPC,Type de construction,3,Bâtiment d'habitation de 2 logements ou plus,CHAR,1,logement_type_contruction_plusieurs_logements,habitat
+TYPC,Type de construction,4,Bâtiment à usage autre qu'habitation,CHAR,1,logement_type_contruction_autre_logement,habitat
+TYPC,Type de construction,5,Construction provisoire,CHAR,1,logement_type_construction_provisoire,habitat
 TYPC,Type de construction,Y,Hors résidence principale,CHAR,1,,IGNORE
-TYPL,Type de logement,1,Maison,CHAR,1,,IGNORE
-TYPL,Type de logement,2,Appartement,CHAR,1,,IGNORE
-TYPL,Type de logement,3,Logement-foyer,CHAR,1,,IGNORE
-TYPL,Type de logement,4,Chambre d'hôtel,CHAR,1,,IGNORE
-TYPL,Type de logement,5,Habitation de fortune,CHAR,1,,IGNORE
-TYPL,Type de logement,6,Pièce indépendante (ayant sa propre entrée),CHAR,1,,IGNORE
-VOIT,Nombre de voitures du ménage,0,Aucune voiture,CHAR,1,,IGNORE
-VOIT,Nombre de voitures du ménage,1,Une seule voiture,CHAR,1,,IGNORE
-VOIT,Nombre de voitures du ménage,2,Deux voitures,CHAR,1,,IGNORE
-VOIT,Nombre de voitures du ménage,3,Trois voitures ou plus,CHAR,1,,IGNORE
+TYPL,Type de logement,1,Maison,CHAR,1,logement_type_maison,habitat
+TYPL,Type de logement,2,Appartement,CHAR,1,logement_type_appartement,habitat
+TYPL,Type de logement,3,Logement-foyer,CHAR,1,logement_type_appartement_foyer,habitat
+TYPL,Type de logement,4,Chambre d'hôtel,CHAR,1,logement_type_chambre_hotel,habitat
+TYPL,Type de logement,5,Habitation de fortune,CHAR,1,logement_type_habitation_fortune,habitat
+TYPL,Type de logement,6,Pièce indépendante (ayant sa propre entrée),CHAR,1,logement_type_piece_independante,habitat
+VOIT,Nombre de voitures du ménage,0,Aucune voiture,CHAR,1,menages_0_voiture,mobilite
+VOIT,Nombre de voitures du ménage,1,Une seule voiture,CHAR,1,menages_1_voiture,mobilite
+VOIT,Nombre de voitures du ménage,2,Deux voitures,CHAR,1,menages_2_voitures,mobilite
+VOIT,Nombre de voitures du ménage,3,Trois voitures ou plus,CHAR,1,menages_3_et_plus_voitures,mobilite
 VOIT,Nombre de voitures du ménage,X,Logement ordinaire inoccupé,CHAR,1,,IGNORE
-WC,Présence de W.-C. à l'intérieur du logement (DOM),1,Avec W.-C. à l'intérieur du logement,CHAR,1,,IGNORE
-WC,Présence de W.-C. à l'intérieur du logement (DOM),2,Sans W.-C. à l'intérieur du logement,CHAR,1,,IGNORE
+WC,Présence de W.-C. à l'intérieur du logement (DOM),1,Avec W.-C. à l'intérieur du logement,CHAR,1,dom__logements_avec_wc_interieurs,habitat
+WC,Présence de W.-C. à l'intérieur du logement (DOM),2,Sans W.-C. à l'intérieur du logement,CHAR,1,dom__logements_sans_wc_interieurs,habitat
 WC,Présence de W.-C. à l'intérieur du logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
 WC,Présence de W.-C. à l'intérieur du logement (DOM),Z,Logement ordinaire France métropolitaine,CHAR,1,,IGNORE
