@@ -520,3 +520,9 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: vision_profession_territoire	
             data_type: text
             description: "?"
+
+      - name: logement_2020_dev
+        description: "Echantillon (Région Occitanie pour garder la cohérence des analyses) de logement_2020 pour faciliter les tests"
+
+      - name: dvf_2023_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"

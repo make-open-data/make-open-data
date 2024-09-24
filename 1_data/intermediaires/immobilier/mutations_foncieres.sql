@@ -25,7 +25,11 @@
 }}
 
 WITH source_dvf AS (
-    select * from {{ source('sources', 'dvf_2023')}} as dvf_2023
+    {% if target.name == 'production' %}
+        select * from {{ source('sources', 'dvf_2023') }}
+    {% else %}
+        select * from {{ source('sources', 'dvf_2023_dev') }}
+    {% endif %}
 ),
 filtrer_dvf AS (
     {{ filtrer_dvf(source_dvf) }}
