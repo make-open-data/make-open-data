@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 
-from extract.loaders import read_from_source, upload_dataframe_to_table
+from extract.loaders import read_csv_from_source, read_pg_dump_from_source, upload_csv_to_table, upload_pg_dump_to_table
 
 SOURCES_PATH = "sources.yml"
 
@@ -17,7 +17,13 @@ if __name__ == "__main__":
         sources = yaml.safe_load(ymlfile)
 
     for source_label, source_infos in sources.items():
-        with NamedTemporaryFile(suffix='.csv', delete=True) as tmpfile:
-            tmpfile_csv_path = tmpfile.name
-            read_from_source(tmpfile_csv_path, source_infos)
-            upload_dataframe_to_table(tmpfile_csv_path, source_label, source_infos)
+        if source_infos["source_type"] == "flat_file":
+            with NamedTemporaryFile(suffix='.csv', delete=True) as tmpfile:
+                tmpfile_csv_path = tmpfile.name
+                read_csv_from_source(tmpfile_csv_path, source_infos)
+                upload_csv_to_table(tmpfile_csv_path, source_label, source_infos)
+        elif source_infos["source_type"] == "pg_dump":
+            with NamedTemporaryFile(suffix='.sql', delete=True) as tmpfile:
+                tmpfile_sql_path = tmpfile.name
+                read_pg_dump_from_source(tmpfile_sql_path, source_infos)
+                upload_pg_dump_to_table(tmpfile_sql_path)
