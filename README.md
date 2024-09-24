@@ -86,7 +86,8 @@ dbt deps
 
 ```
 dbt seed
-dbt run
+dbt run --target dev #Table logement sur région Occitanie et dvf sur Hérault. Utile pour tester rapidement. 
+dbt run --target production
 dbt test
 ``` 
 
