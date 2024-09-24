@@ -65,7 +65,7 @@ CREATE EXTENSION unaccent;
 - Extraire les données sources dans le schema `sources`:
 
 ```
-python -m extract
+python -m load
 ```
 
 Etape temporaire : 
@@ -86,7 +86,8 @@ dbt deps
 
 ```
 dbt seed
-dbt run
+dbt run --target dev #Table logement sur région Occitanie et dvf sur Hérault. Utile pour tester rapidement. 
+dbt run --target production
 dbt test
 ``` 
 

@@ -1,7 +1,6 @@
 """
-This module contains the extract data logic for the project.
-It aims to extract data, host some simple files/format transformations, from the source and store it in the database.
+L'extraction (source to storage) est faite manuellement:
+- Trop complexe à automatiser (zip, fichiers dans dossiers, etc)
+- Pas fréquente (fichiers ne changement pas)
+- Est emmené avec l'approche Lake House 
 """
-
-
-
