@@ -1,4 +1,4 @@
-name: Generate docs and save as artifact
+name: Deploy in make-open-data production data, Generate docs and save as artifact
 
 on:
   workflow_run:
