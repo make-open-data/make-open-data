@@ -7,7 +7,7 @@
 {{ config(materialized='table') }}
 
 with aggregated as (
-  {{ aggreger_colonnes_theme_geo('activite', "IRIS", 'code_iris')}}
+  {{ aggreger_colonnes_theme_geo('activite', 'activite_renomee', 'code_iris')}}
 )
 
 SELECT 

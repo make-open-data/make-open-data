@@ -7,7 +7,7 @@
 {{ config(materialized='table') }}
 
 with aggregated as (
-  {{ aggreger_colonnes_theme_geo('demographie', "IRIS", 'code_iris')}}
+  {{ aggreger_colonnes_theme_geo('demographie', 'demographie_renomee', 'code_iris')}}
 )
 
 SELECT 

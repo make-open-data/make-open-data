@@ -21,7 +21,7 @@
                 {% endfor %}
             END AS "{{ colonne_codee }}",
         {% endfor %}
-        "IPONDL" AS poids_du_logement
+        CAST(CAST("IPONDL" AS NUMERIC) AS INT) AS poids_du_logement
     
     FROM 
         logement

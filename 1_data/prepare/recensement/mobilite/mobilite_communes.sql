@@ -8,7 +8,7 @@
 
 
 with aggregated as (
-  {{ aggreger_colonnes_theme_geo('mobilite', "COMMUNE", 'code_commune_insee')}}
+  {{ aggreger_colonnes_theme_geo('mobilite', 'mobilite_renomee', 'code_commune_insee')}}
 ),
 aggregated_with_infos_communes as (
     SELECT

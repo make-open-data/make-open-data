@@ -1,4 +1,5 @@
 --- depends_on: {{ ref('logement_2020_valeurs') }}
+  -- depends_on: {{ ref('habitat_renomee') }}
 
 --- Agrège les données de la base logement par commune
 --- Colonne par colonne pour ne pas saturer la mémoire
@@ -7,7 +8,7 @@
 {{ config(materialized='table') }}
 
 with aggregated as (
-  {{ aggreger_colonnes_theme_geo('habitat', "COMMUNE", 'code_commune_insee')}}
+  {{ aggreger_colonnes_theme_geo('habitat', 'habitat_renomee', 'code_commune_insee')}}
 ),
   aggregated_with_infos_communes as (
     SELECT

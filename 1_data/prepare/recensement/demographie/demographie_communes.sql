@@ -8,7 +8,7 @@
 
 
 with aggregated as (
-  {{ aggreger_colonnes_theme_geo('demographie', "COMMUNE", 'code_commune_insee')}}
+  {{ aggreger_colonnes_theme_geo('demographie', 'demographie_renomee', 'code_commune_insee')}}
 ),
 
 aggregated_with_infos_communes as (

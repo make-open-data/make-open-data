@@ -14,7 +14,7 @@ WITH logement AS (
     {% endif %}
 ),
 logement_renomee AS (
-    ( {{ renommer_colonnes_values_logement(logement, 'habitat') }} )
+    ( {{ renommer_colonnes_values_logement(logement, 'activite') }} )
 )
 
 SELECT 

@@ -283,17 +283,17 @@ ANEM,Ancienneté d'emménagement dans le logement (détaillée),117,Depuis 117 a
 ANEM,Ancienneté d'emménagement dans le logement (détaillée),118,Depuis 118 ans,CHAR,3,,IGNORE
 ANEM,Ancienneté d'emménagement dans le logement (détaillée),120,Depuis 120 ans,CHAR,3,,IGNORE
 ANEM,Ancienneté d'emménagement dans le logement (détaillée),999,Logement ordinaire inoccupé,CHAR,3,,IGNORE
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),0,Moins de 2 ans,CHAR,2,emmenagement_moins_2_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),1,De 2 à 4 ans,CHAR,2,emmenagement_2_4_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),2,De 5 à 9 ans,CHAR,2,emmenagement_5_9_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),3,De 10 à 19 ans,CHAR,2,emmenagement_10_19_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),4,De 20 à 29 ans,CHAR,2,emmenagement_20_29_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),5,De 30 à 39 ans,CHAR,2,emmenagement_30_39_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),6,De 40 à 49 ans,CHAR,2,emmenagement_40_49_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),7,De 50 à 59 ans,CHAR,2,emmenagement_50_59_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),8,De 60 à 69 ans,CHAR,2,emmenagement_60_69_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),9,70 ans ou plus,CHAR,2,emmenagement_plus_70_ans,habitat
-ANEMR,Ancienneté d'emménagement dans le logement (regroupée),99,Logement ordinaire inoccupé,CHAR,2,,IGNORE
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""00""",Moins de 2 ans,CHAR,2,emmenagement_moins_2_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""01""",De 2 à 4 ans,CHAR,2,emmenagement_2_4_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""02""",De 5 à 9 ans,CHAR,2,emmenagement_5_9_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""03""",De 10 à 19 ans,CHAR,2,emmenagement_10_19_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""04""",De 20 à 29 ans,CHAR,2,emmenagement_20_29_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""05""",De 30 à 39 ans,CHAR,2,emmenagement_30_39_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""06""",De 40 à 49 ans,CHAR,2,emmenagement_40_49_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""07""",De 50 à 59 ans,CHAR,2,emmenagement_50_59_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""08""",De 60 à 69 ans,CHAR,2,emmenagement_60_69_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""09""",70 ans ou plus,CHAR,2,emmenagement_plus_70_ans,habitat
+ANEMR,Ancienneté d'emménagement dans le logement (regroupée),"""99""",Logement ordinaire inoccupé,CHAR,2,,IGNORE
 ASCEN,Desserte par un ascenseur,1,Avec ascenseur,CHAR,1,avec_ascensseur,habitat
 ASCEN,Desserte par un ascenseur,2,Sans ascenseur,CHAR,1,sans_ascensseur,habitat
 ASCEN,Desserte par un ascenseur,Y,Hors résidence principale,CHAR,1,,IGNORE
