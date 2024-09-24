@@ -1,0 +1,60 @@
+# This file contains the list of sources to be used by the application
+
+cog_poste :
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_poste/base-officielle-codes-postaux.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+cog_communes :
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_communes/communes.json"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+
+cog_arrondissements : 
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_arrondissements/arrondissements.json"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+
+cog_departements: 
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+cog_regions : 
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+dvf_2023:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+logement_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020/FD_LOGEMT_2020.csv"
+  csv_delimiter : ";"
+  db_schema : "sources"
+
+professionels_sante: 
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/professionels_sante/demographie-effectifs-et-les-densites.csv"
+  csv_delimiter : ";"
+  db_schema : "sources"
+  
+effectif_pathologie:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/effectif_pathologie/effectifs.csv"
+  csv_delimiter : ";"
+  db_schema : "sources"
+
+
+logement_2020_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020_dev/logement_2020_dev.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+
+
+dvf_2023_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023_dev/dvf_2023_dev.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
