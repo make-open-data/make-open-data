@@ -10,13 +10,22 @@
     {% endif %}
   {% endfor %}
 
+        {% if target.name == 'production' %}
+          {{ dbt_utils.unpivot(
+             relation=source("sources", "logement_2020"),
+             exclude=colonnes_cles_liste,
+             remove=colonnes_a_ignorer,
+             field_name='champs',
+             value_name='valeur',
+             quote_identifiers=True) }}
+        {% else %}
+          {{ dbt_utils.unpivot(
+             relation=source("sources", "logement_2020_dev"),
+             exclude=colonnes_cles_liste,
+             remove=colonnes_a_ignorer,
+             field_name='champs',
+             value_name='valeur',
+             quote_identifiers=True) }}
+        {% endif %}
 
-    {{ dbt_utils.unpivot(
-        relation=source("sources", "logement_2020"),
-        exclude=colonnes_cles_liste,
-        remove=colonnes_a_ignorer,
-        field_name='champs',
-        value_name='valeur',
-        quote_identifiers=True
-    ) }}
 {% endmacro %}
