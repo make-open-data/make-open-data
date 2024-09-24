@@ -1,4 +1,5 @@
 makeopendata:
+  target: dev # Default target
   outputs:
     dev:
       type: postgres
@@ -9,4 +10,12 @@ makeopendata:
       dbname: "{{ env_var('POSTGRES_DB') }}"
       schema: prepare
       threads: 1
-  target: dev
+    production:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST') }}"
+      user: "{{ env_var('POSTGRES_USER') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
+      port: "{{ env_var('POSTGRES_PORT') | as_number }}"
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: prepare
+      threads: 1

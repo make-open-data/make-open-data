@@ -1,4 +1,4 @@
-{% macro pivoter_logement(renommee, libelle_liste, champs_geo_arrivee) %}    
+{% macro pivoter_logement(unpivot_filtree, libelle_liste, champs_geo_arrivee) %}    
 
     {% set libelle_uniques_liste = [] %}
     {% for libelle in libelle_liste %}
@@ -11,13 +11,13 @@
 
     {{ champs_geo_arrivee }},
     {{ dbt_utils.pivot(
-        'champs_valeur_renomme',
+        'valeur',
         libelle_uniques_liste,
         agg='sum',
-        then_value='population_par_champs_valeur',
+        then_value='poids_du_logement',
     ) }}
     from 
-        renommee
+        unpivot_filtree
     group by
         {{ champs_geo_arrivee }}
 

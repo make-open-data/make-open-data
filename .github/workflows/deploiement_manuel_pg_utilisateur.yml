@@ -1,27 +1,11 @@
-name: Generate docs and save as artifact
+name: Manually Deploy Data in a Postgres Database
 
 on:
-  workflow_run:
-    workflows: ["Integration Test"]
-    branches: [main]
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   dbt:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
-    services:
-      postgres:
-        image: postgis/postgis:12-3.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: make_open_data
-        ports:
-          - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
     - name: Check out repository code
@@ -64,7 +48,7 @@ jobs:
       run: |
         source dbt-env/bin/activate
         psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
-    
+     
     - name: delete "prepare" schemas if exists
       run: |
         source dbt-env/bin/activate
@@ -75,6 +59,7 @@ jobs:
         source dbt-env/bin/activate
         psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS intermediaires CASCADE;"
       
+        
     - name: Set DBT_PROFILES_DIR
       run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
 
@@ -88,7 +73,6 @@ jobs:
         source dbt-env/bin/activate
         dbt deps
 
-  
     - name: Run dbt seed
       run: |
         source dbt-env/bin/activate
@@ -97,39 +81,9 @@ jobs:
     - name: Run dbt run
       run: |
         source dbt-env/bin/activate
-        dbt run
-      
-    - name: Generate dbt Documentation
+        dbt run --target production
+
+    - name: Run dbt test
       run: |
         source dbt-env/bin/activate
-        dbt docs generate
-
-    - name: Save Documentation as Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: dbt-docs
-        path: target/*
-
-    - name: Checkout new repository
-      uses: actions/checkout@v2
-      with:
-        repository: make-open-data/make-open-data-docs
-        token: ${{ secrets.PAT }} 
-        path: ./new-repo
-
-    - name: Copy dbt docs to new repository
-      run: |
-        cp -r target/* new-repo/
-
-    - name: Create timestamp file
-      run: |
-        echo "Documentation generated on: $(date)" > new-repo/timestamp.txt
-
-    - name: Commit and push changes
-      run: |
-        cd new-repo
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Update dbt docs and timestamp"
-        git push --force origin main
+        dbt test
