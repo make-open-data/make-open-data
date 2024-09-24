@@ -65,7 +65,7 @@ CREATE EXTENSION unaccent;
 - Extraire les données sources dans le schema `sources`:
 
 ```
-python -m extract
+python -m load
 ```
 
 Etape temporaire : 
