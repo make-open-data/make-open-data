@@ -82,6 +82,11 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt debug
+
+    - name: Load data from storage to tables in DB
+      run: |
+        source dbt-env/bin/activate
+        python -m load
         
     - name: Run dbt deps
       run: |
