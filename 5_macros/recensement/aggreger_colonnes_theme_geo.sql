@@ -21,7 +21,7 @@ with poids_par_geo as (
 
     {% for colonne_a_aggreger in colonnes_a_aggreger_liste %}
 
-      LEFT JOIN ( {{ aggreger_logement_par_colonne(table_renomee, colonnes_a_aggreger_liste, colonne_a_aggreger, colonnes_cles_liste, champs_geo_arrivee) }}  )
+      LEFT JOIN ( {{ aggreger_logement_par_colonne(table_renomee, colonnes_a_aggreger_liste, colonne_a_aggreger, colonnes_cles_liste, champs_geo_arrivee) }}  ) as alias_{{ colonne_a_aggreger }}_par_geo
       USING ({{ champs_geo_arrivee }})
 
     {% endfor %}
