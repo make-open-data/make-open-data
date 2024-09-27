@@ -526,3 +526,10 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: dvf_2023_dev
         description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"
+
+      - name: filosofi_commune_2021
+        description: ""
+
+      - name: filosofi_iris_2021
+        description: ""
+
