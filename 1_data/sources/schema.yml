@@ -529,7 +529,91 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: filosofi_commune_2021
         description: ""
+        columns:
+          - name: NBMENFISC21
+            description: "Nombre de ménages fiscaux"
+            data_type: text
+          - name: NBPERSMENFISC21
+            description: "Nombre de personnes dans les ménages fiscaux"
+            data_type: text
+          - name: MED21
+            description: "Médiane du niveau de vie (€)"
+            data_type: text
+          - name: PIMP21
+            description: "Part des ménages fiscaux imposés (%)"
+            data_type: text
+          - name: TP6021
+            description: "Taux de pauvreté-Ensemble (%)"
+            data_type: text
+          - name: TP60AGE121
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a moins de 30 ans (%)"
+            data_type: text
+          - name: TP60AGE221
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 30 à 39 ans (%)"
+            data_type: text
+          - name: TP60AGE321
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 40 à 49 ans (%)"
+            data_type: text
+          - name: TP60AGE421
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 50 à 59 ans (%)"
+            data_type: text
+          - name: TP60AGE521
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 60 à 74 ans (%)"
+            data_type: text
+          - name: TP60AGE621
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a 75 ans ou plus (%)"
+            data_type: text
+          - name: TP60TOL121
+            description: "Taux de pauvreté des personnes dans les ménages propriétaires de leur logement (%)"
+            data_type: text
+          - name: TP60TOL221
+            description: "Taux de pauvreté des personnes dans les ménages locataires de leur logement (%)"
+            data_type: text
+          - name: PACT21
+            description: "Part des revenus d'activité (%)"
+            data_type: text
+          - name: PTSA21
+            description: "dont part des salaires et traitements (%)"
+            data_type: text
+          - name: PCHO21
+            description: "dont part des indemnités de chômage (%)"
+            data_type: text
+          - name: PBEN21
+            description: "dont part des revenus des activités non salariées (%)"
+            data_type: text
+          - name: PPEN21
+            description: "retraites et rentes (%)"
+            data_type: text
+          - name: PPAT21
+            description: "Part des revenus du patrimoine et des autres revenus (%)"
+            data_type: text
+          - name: PPSOC21
+            description: "Part de l'ensemble des prestations sociales (%)"
+            data_type: text
+          - name: PPFAM21
+            description: "dont part des prestations familiales (%)"
+            data_type: text
+          - name: PPMINI21
+            description: "dont part des minima sociaux (%)"
+            data_type: text
+          - name: PPLOGT21
+            description: "dont part des prestations logement (%)"
+            data_type: text
+          - name: PIMPOT21
+            description: "Part des impôts (%)"
+            data_type: text
+          - name: D121
+            description: "1er décile du niveau de vie (€)"
+            data_type: text
+          - name: D921
+            description: "9e décile du niveau de vie (€)"
+            data_type: text
+          - name: RD21
+            description: "Rapport interdécile 9e décile/1er décile"
+            data_type: text
+          - name: CODGEO
+            description: "Code géographique"
+            data_type: text
 
       - name: filosofi_iris_2021
         description: ""
-
