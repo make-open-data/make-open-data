@@ -58,3 +58,14 @@ dvf_2023_dev:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023_dev/dvf_2023_dev.csv"
   csv_delimiter : ","
   db_schema : "sources"
+
+filosofi_iris_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/BASE_TD_FILO_IRIS_2021_DEC.csv"
+  csv_delimiter: ";"
+  db_schema: "sources"
+
+filosofi_commune_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/cc_filosofi_2021_COM.csv"
+  csv_delimiter: ";"
+  db_schema: "sources"
+
