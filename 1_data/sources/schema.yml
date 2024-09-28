@@ -614,6 +614,9 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: CODGEO
             description: "Code géographique"
             data_type: text
+            tests:
+              - unique
+              - not_null
 
       - name: filosofi_iris_2021
         description: ""
@@ -621,6 +624,9 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: IRIS
             description: "IRIS"
             data_type: text
+            tests:
+              - unique
+              - not_null
           - name: DEC_PIMP21
             description: "Part des ménages fiscaux imposés (%)"
             data_type: text
@@ -693,6 +699,4 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: DEC_PAUT21
             description: "Part des autres revenus (%)"
             data_type: text
-          - name: DEC_NOTE21
-            description: "Note de précaution (voir onglet seuils)"
-            data_type: text
+
