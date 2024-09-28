@@ -611,7 +611,8 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: RD21
             description: "Rapport interdécile 9e décile/1er décile"
             data_type: text
-          - name: CODGEO
+          - name: "CODGEO"
+            quote: true
             description: "Code géographique"
             data_type: text
             tests:
@@ -621,7 +622,8 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
       - name: filosofi_iris_2021
         description: ""
         columns:
-          - name: IRIS
+          - name: "IRIS"
+            quote: true
             description: "IRIS"
             data_type: text
             tests:
