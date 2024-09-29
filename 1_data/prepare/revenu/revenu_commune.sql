@@ -7,7 +7,7 @@ with filosofi_commune as (
 ),
 renamed_columns as (
     select
-        "CODGEO" as code_commune_2022,
+        "CODGEO" as code_commune_2024,
         nullif("NBMENFISC21", 's') as nombre_menages_fiscaux,
         nullif("NBPERSMENFISC21", 's') as nombre_personnes,
         nullif("MED21", 's') as mediane_niveau_vie_euro,

@@ -624,7 +624,7 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
         columns:
           - name: "IRIS"
             quote: true
-            description: "IRIS"
+            description: "Code IRIS géographie 2024"
             data_type: text
             tests:
               - unique

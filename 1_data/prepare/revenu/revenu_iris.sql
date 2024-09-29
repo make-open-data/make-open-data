@@ -7,10 +7,10 @@ with filosofi_iris as (
 ),
 remaned_columns as (
     select
-        "IRIS" as code_iris_2022,
+        "IRIS" as code_iris_2024,
         nullif("DEC_PIMP21", 's') as part_menages_fiscaux_imposes_pourcentage,
-        nullif("DEC_TP6021", 's') as taux_bas_revenus_declarés_60_pourcentage,
-        nullif("DEC_INCERT21", 's') as incertitude_pimp_tp60,
+        nullif("DEC_TP6021", 's') as taux_bas_revenus_declares_pourcentage,
+        nullif("DEC_INCERT21", 's') as incertitude,
         nullif("DEC_Q121", 's') as quartile_1_euro,
         nullif("DEC_MED21", 's') as mediane_euro,
         nullif("DEC_Q321", 's') as quartile_3_euro,
@@ -27,9 +27,9 @@ remaned_columns as (
         nullif("DEC_S80S2021", 's') as s80_s20,
         nullif("DEC_GI21", 's') as indice_gini,
         nullif("DEC_PACT21", 's') as part_revenus_activite_pourcentage,
-        nullif("DEC_PTSA21", 's') as dont_part_salaires_traitements_pourcentage,
-        nullif("DEC_PCHO21", 's') as dont_part_indemnites_chômage_pourcentage,
-        nullif("DEC_PBEN21", 's') as dont_part_revenus_activites_non_salariees_pourcentage,
+        nullif("DEC_PTSA21", 's') as part_salaires_traitements_pourcentage,
+        nullif("DEC_PCHO21", 's') as part_indemnites_chomage_pourcentage,
+        nullif("DEC_PBEN21", 's') as part_revenus_activites_non_salariees_pourcentage,
         nullif("DEC_PPEN21", 's') as part_pensions_retraites_rentes_pourcentage,
         nullif("DEC_PAUT21", 's') as part_autres_revenus_pourcentage
     from filosofi_iris
