@@ -43,14 +43,14 @@ def list_tables_in_pg(storage_to_pg):
 
     
 
-def load_from_storage(tmpfile_csv_path, data_infos ):
+def load_from_storage(tmpfile_csv_path, data_infos):
 
     storage_path = data_infos["storage_path"]
     
-    if storage_path.endswith('.csv') or storage_path.endswith('/csv'):
+    if data_infos['file_format'] == 'csv':
         subprocess.run(['curl', '-o', tmpfile_csv_path, storage_path], check=True)
 
-    elif storage_path.endswith('.json'):
+    elif data_infos['file_format'] == 'json':
         with NamedTemporaryFile(suffix='.json', delete=True) as json_tmpfile:
             subprocess.run(['curl', '-o', json_tmpfile.name, storage_path], check=True)
             data = pd.read_json(json_tmpfile.name)
