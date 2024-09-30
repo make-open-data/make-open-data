@@ -36,6 +36,16 @@ renamed_columns as (
         nullif("D921", 's') as decile_9_niveau_vie_euro,
         nullif("RD21", 's') as rapport_interdecile_9_1
     from filosofi_commune
-)
+),
+aggregated_with_infos_communes as (
+    SELECT
+      *
+    FROM
+      renamed_columns
+    JOIN
+	    {{ ref('infos_communes') }} as infos_communes
+    ON
+      renamed_columns.code_commune_2024 = infos_communes.code_commune
+  )
 
-select * from renamed_columns
+select * from aggregated_with_infos_communes
