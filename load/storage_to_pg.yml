@@ -78,7 +78,37 @@ filosofi_commune_2021:
   db_schema: "sources"
   file_format: 'csv'
 
+shape_iris_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/IRIS_GE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+  
 shape_commune_2024:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/COMMUNE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_municipal_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_departement_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/DEPARTEMENT.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_region_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/REGION.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_epci_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/EPCI.zip"
   db_schema: "sources"
   file_format: 'shape'
