@@ -702,3 +702,8 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
             description: "Part des autres revenus (%)"
             data_type: text
 
+      - name: shape_commune_2024
+        description: ""
+
+      - name: shape_arrondissement_municipal_2024
+        description: ""
