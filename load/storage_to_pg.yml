@@ -1,71 +1,114 @@
 # This file contains the list of sources to be used by the application
 
-cog_poste :
+cog_poste:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_poste/base-officielle-codes-postaux.csv"
-  csv_delimiter : ","
-  db_schema : "sources"
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'csv'
 
-cog_communes :
+cog_communes:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_communes/communes.json"
-  csv_delimiter : ","
-  db_schema : "sources"
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'json'
 
-
-cog_arrondissements : 
+cog_arrondissements: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_arrondissements/arrondissements.json"
-  csv_delimiter : ","
-  db_schema : "sources"
-
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'json'
 
 cog_departements: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json"
-  csv_delimiter : ","
-  db_schema : "sources"
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'json'
 
-cog_regions : 
+cog_regions: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json"
-  csv_delimiter : ","
-  db_schema : "sources"
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'json'
 
 dvf_2023:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.csv"
-  csv_delimiter : ","
-  db_schema : "sources"
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'csv'
 
 logement_2020:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020/FD_LOGEMT_2020.csv"
-  csv_delimiter : ";"
-  db_schema : "sources"
+  csv_delimiter: ";"
+  db_schema: "sources"
+  file_format: 'csv'
 
 professionels_sante: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/professionels_sante/demographie-effectifs-et-les-densites.csv"
-  csv_delimiter : ";"
-  db_schema : "sources"
-  
+  csv_delimiter: ";"
+  db_schema: "sources"
+  file_format: 'csv'
+
 effectif_pathologie:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/effectif_pathologie/effectifs.csv"
-  csv_delimiter : ";"
-  db_schema : "sources"
-
+  csv_delimiter: ";"
+  db_schema: "sources"
+  file_format: 'csv'
 
 logement_2020_dev:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020_dev/logement_2020_dev.csv"
-  csv_delimiter : ","
-  db_schema : "sources"
-
+  csv_delimiter: ","
+  db_schema: "sources"
+  file_format: 'csv'
 
 dvf_2023_dev:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023_dev/dvf_2023_dev.csv"
   csv_delimiter : ","
-  db_schema : "sources"
+  db_schema: "sources"
+  file_format: 'csv'
 
 filosofi_iris_2021:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/BASE_TD_FILO_IRIS_2021_DEC.csv"
   csv_delimiter: ";"
   db_schema: "sources"
+  file_format: 'csv'
 
 filosofi_commune_2021:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/cc_filosofi_2021_COM.csv"
   csv_delimiter: ";"
   db_schema: "sources"
+  file_format: 'csv'
 
+shape_iris_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/IRIS_GE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+  
+shape_commune_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/COMMUNE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_municipal_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_departement_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/DEPARTEMENT.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_region_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/REGION.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_epci_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/EPCI.zip"
+  db_schema: "sources"
+  file_format: 'shape'
