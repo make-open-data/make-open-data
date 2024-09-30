@@ -1,8 +1,11 @@
 import os
 import subprocess
 from tempfile import NamedTemporaryFile
+import shutil
 
 import pandas as pd
+import geopandas as gpd
+from sqlalchemy import create_engine
 import psycopg
 
 
@@ -43,7 +46,7 @@ def list_tables_in_pg(storage_to_pg):
 
     
 
-def load_from_storage(tmpfile_csv_path, data_infos):
+def load_file_from_storage(tmpfile_csv_path, data_infos):
 
     storage_path = data_infos["storage_path"]
     
@@ -68,7 +71,7 @@ def get_columns_from_csv(file_path, delimiter):
     return df.columns.tolist()
 
 
-def load_to_pg(tmpfile_csv_path, pg_table, data_infos):
+def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
 
     db_schema = data_infos["db_schema"]
     delimiter = data_infos["csv_delimiter"]
@@ -113,3 +116,35 @@ def load_to_pg(tmpfile_csv_path, pg_table, data_infos):
     
     CURSOR.close()
     CONNECTION.close()
+
+
+def load_shapefile_from_storage(tmpfolder_name, tmpzip_name, data_infos):
+    
+    storage_path = data_infos["storage_path"]
+    
+    subprocess.run(['curl', '-o', tmpzip_name, storage_path], check=True)
+    shutil.unpack_archive(tmpzip_name, tmpfolder_name)
+
+
+
+def load_shapefile_to_pg(tmpfolder_name, pg_table, data_infos):
+    shp_file_name = [file_name for file_name in os.listdir(tmpfolder_name) if file_name.endswith('.shp')][0]
+    shp_file_path = f'{tmpfolder_name}/{shp_file_name}'
+
+    db_schema = data_infos["db_schema"]
+
+    engine = create_engine(f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}')
+
+
+    shape_file = gpd.read_file(shp_file_path)
+    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace')
+
+
+
+
+    # TODO: Eviter geopandas, GeoAlchemy2 et sqlalchemy et loader les fichiers avec shp2pgsql
+    # Point de bloquage avec shp2pgsql : 
+    # - avec shp2pgsql, les fichiers shape (shp, cpg, dbf, etc) doivent être dans le dossier courant, rendant l'utilisation de TemporaryDirectory impoosible
+    # - le psql bloque sur ANALYZE
+    #subprocess.Popen('shp2pgsql -c -D -I COMMUNE.shp sources.shape_communes > temp.sql', shell=True)
+    #subprocess.Popen('psql -f temp.sql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB', shell=True)

@@ -24,7 +24,6 @@ cog_departements:
   db_schema: "sources"
   file_format: 'json'
 
-
 cog_regions: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json"
   csv_delimiter: ","
@@ -78,3 +77,8 @@ filosofi_commune_2021:
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
+
+shape_commune_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/COMMUNE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
