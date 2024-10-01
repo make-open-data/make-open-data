@@ -42,10 +42,16 @@ models:
     data_type: string
   - name: commune_latitude
     description: "latitude de la commune"
-    data_type: string
+    data_type: float
   - name: commune_longitude
     description: "longitude de la commune"
-    data_type: string
+    data_type: float
+  - name : commune_centre_geopoint
+    description: "geo point de la latitude longitude du commune"
+    data_type: geometry
+  - name: commune_contour
+    description: "contour géographique"
+    data_tupe: geometry
 
 - name: infos_postes
   description: 'Tables avec codes postaux uniques et leurs informations basiques.'

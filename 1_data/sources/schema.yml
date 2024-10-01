@@ -526,3 +526,184 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: dvf_2023_dev
         description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"
+
+      - name: filosofi_commune_2021
+        description: ""
+        columns:
+          - name: NBMENFISC21
+            description: "Nombre de ménages fiscaux"
+            data_type: text
+          - name: NBPERSMENFISC21
+            description: "Nombre de personnes dans les ménages fiscaux"
+            data_type: text
+          - name: MED21
+            description: "Médiane du niveau de vie (€)"
+            data_type: text
+          - name: PIMP21
+            description: "Part des ménages fiscaux imposés (%)"
+            data_type: text
+          - name: TP6021
+            description: "Taux de pauvreté-Ensemble (%)"
+            data_type: text
+          - name: TP60AGE121
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a moins de 30 ans (%)"
+            data_type: text
+          - name: TP60AGE221
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 30 à 39 ans (%)"
+            data_type: text
+          - name: TP60AGE321
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 40 à 49 ans (%)"
+            data_type: text
+          - name: TP60AGE421
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 50 à 59 ans (%)"
+            data_type: text
+          - name: TP60AGE521
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 60 à 74 ans (%)"
+            data_type: text
+          - name: TP60AGE621
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a 75 ans ou plus (%)"
+            data_type: text
+          - name: TP60TOL121
+            description: "Taux de pauvreté des personnes dans les ménages propriétaires de leur logement (%)"
+            data_type: text
+          - name: TP60TOL221
+            description: "Taux de pauvreté des personnes dans les ménages locataires de leur logement (%)"
+            data_type: text
+          - name: PACT21
+            description: "Part des revenus d'activité (%)"
+            data_type: text
+          - name: PTSA21
+            description: "dont part des salaires et traitements (%)"
+            data_type: text
+          - name: PCHO21
+            description: "dont part des indemnités de chômage (%)"
+            data_type: text
+          - name: PBEN21
+            description: "dont part des revenus des activités non salariées (%)"
+            data_type: text
+          - name: PPEN21
+            description: "retraites et rentes (%)"
+            data_type: text
+          - name: PPAT21
+            description: "Part des revenus du patrimoine et des autres revenus (%)"
+            data_type: text
+          - name: PPSOC21
+            description: "Part de l'ensemble des prestations sociales (%)"
+            data_type: text
+          - name: PPFAM21
+            description: "dont part des prestations familiales (%)"
+            data_type: text
+          - name: PPMINI21
+            description: "dont part des minima sociaux (%)"
+            data_type: text
+          - name: PPLOGT21
+            description: "dont part des prestations logement (%)"
+            data_type: text
+          - name: PIMPOT21
+            description: "Part des impôts (%)"
+            data_type: text
+          - name: D121
+            description: "1er décile du niveau de vie (€)"
+            data_type: text
+          - name: D921
+            description: "9e décile du niveau de vie (€)"
+            data_type: text
+          - name: RD21
+            description: "Rapport interdécile 9e décile/1er décile"
+            data_type: text
+          - name: "CODGEO"
+            quote: true
+            description: "Code géographique"
+            data_type: text
+            tests:
+              - unique
+              - not_null
+
+      - name: filosofi_iris_2021
+        description: ""
+        columns:
+          - name: "IRIS"
+            quote: true
+            description: "Code IRIS géographie 2024"
+            data_type: text
+            tests:
+              - unique
+              - not_null
+          - name: DEC_PIMP21
+            description: "Part des ménages fiscaux imposés (%)"
+            data_type: text
+          - name: DEC_TP6021
+            description: "Taux de bas revenus déclarés au seuil de 60 % (%)"
+            data_type: text
+          - name: DEC_INCERT21
+            description: "Incertitude sur DEC_PIMP21 et DEC_TP6021 (voir onglet Seuils)"
+            data_type: text
+          - name: DEC_Q121
+            description: "1er quartile (€)"
+            data_type: text
+          - name: DEC_MED21
+            description: "Médiane (€)"
+            data_type: text
+          - name: DEC_Q321
+            description: "3e quartile (€)"
+            data_type: text
+          - name: DEC_EQ21
+            description: "Écart inter-quartile rapporté à la médiane"
+            data_type: text
+          - name: DEC_D121
+            description: "1er décile (€)"
+            data_type: text
+          - name: DEC_D221
+            description: "2e décile (€)"
+            data_type: text
+          - name: DEC_D321
+            description: "3e décile (€)"
+            data_type: text
+          - name: DEC_D421
+            description: "4e décile (€)"
+            data_type: text
+          - name: DEC_D621
+            description: "6e décile (€)"
+            data_type: text
+          - name: DEC_D721
+            description: "7e décile (€)"
+            data_type: text
+          - name: DEC_D821
+            description: "8e décile (€)"
+            data_type: text
+          - name: DEC_D921
+            description: "9e décile (€)"
+            data_type: text
+          - name: DEC_RD21
+            description: "Rapport interdécile D9/D1"
+            data_type: text
+          - name: DEC_S80S2021
+            description: "S80/S20"
+            data_type: text
+          - name: DEC_GI21
+            description: "Indice de Gini"
+            data_type: text
+          - name: DEC_PACT21
+            description: "Part des revenus d’activité (%)"
+            data_type: text
+          - name: DEC_PTSA21
+            description: "dont part des salaires et traitements (%)"
+            data_type: text
+          - name: DEC_PCHO21
+            description: "dont part des indemnités de chômage (%)"
+            data_type: text
+          - name: DEC_PBEN21
+            description: "dont part des revenus des activités non salariées (%)"
+            data_type: text
+          - name: DEC_PPEN21
+            description: "Part des pensions, retraites et rentes (%)"
+            data_type: text
+          - name: DEC_PAUT21
+            description: "Part des autres revenus (%)"
+            data_type: text
+
+      - name: shape_commune_2024
+        description: ""
+
+      - name: shape_arrondissement_municipal_2024
+        description: ""

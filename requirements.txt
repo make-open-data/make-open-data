@@ -1,4 +1,7 @@
 dbt-postgres==1.7.10
 pandas==2.2.1
+geopandas==1.0.1
+SQLAlchemy==2.0.35
+GeoAlchemy2==0.15.2
 psycopg==3.1.19
 psycopg[binary,pool]==3.1.19

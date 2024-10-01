@@ -26,18 +26,28 @@ with filtre_cog_communes as (
     left join {{ source('sources', 'cog_departements')}}  cog_departements on cog_departements.code = filtre_cog_communes.departement
     left join {{ source('sources', 'cog_regions')}}  cog_regions on cog_regions.code = filtre_cog_communes.region  
     
-), gps as (
+), laposte_gps as (
     select DISTINCT
         LPAD(CAST(cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
         CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
         CAST(SPLIT_PART(cog_poste._geopoint, ',', 2) AS FLOAT) as commune_longitude
     from {{ source('sources', 'cog_poste')}}  as cog_poste
+), ign_shapes as (
+    select "INSEE_COM" as code_commune,
+            geometry as commune_contour 
+    from {{ source('sources', 'shape_commune_2024')}}
+    union
+    select  "INSEE_ARM" as code_commune,
+            geometry as commune_contour
+    from {{ source('sources', 'shape_arrondissement_municipal_2024')}}
 )
 
 select
     denomalise_cog.*,
-    gps.commune_latitude,
-    gps.commune_longitude,
-    ST_SetSRID(ST_MakePoint(gps.commune_latitude, gps.commune_longitude), 4326) as commune_centre_geopoint
+    laposte_gps.commune_latitude,
+    laposte_gps.commune_longitude,
+    ST_SetSRID(ST_MakePoint(laposte_gps.commune_latitude, laposte_gps.commune_longitude), 4326) as commune_centre_geopoint,
+    ign_shapes.commune_contour
 from denomalise_cog
-left join gps on denomalise_cog.code_commune = gps.code_commune
+left join laposte_gps on denomalise_cog.code_commune = laposte_gps.code_commune
+left join ign_shapes on denomalise_cog.code_commune = ign_shapes.code_commune
