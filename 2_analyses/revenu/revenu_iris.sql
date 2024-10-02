@@ -1,13 +1,16 @@
-{{ config(materialized='table') }}
+-- L'insee ne fournit que les infos sur les iris des communes irisées
+-- Ajouter les autres communes est impossible car la table commune ne reporte pas les mêmes champs
+-- Aussi, revenu par isis utilise la géographie 2022 qu'il convient de transposer avec la géographie 2024
+-- {{ config(materialized='table') }}
 
 with filosofi_iris as (
     select * 
     from {{ source('sources', 'filosofi_iris_2021')}}
 
 ),
-remaned_columns as (
+renamed_columns as (
     select
-        "IRIS" as code_iris_2024,
+        "IRIS" as code_iris_2022_filosofi,
         {{ nettoyer_modalite_revenu("DEC_PIMP21") }} as part_menages_fiscaux_imposes_pourcentage,
         {{ nettoyer_modalite_revenu("DEC_TP6021") }} as taux_bas_revenus_declares_pourcentage,
         {{ nettoyer_modalite_revenu("DEC_INCERT21") }} as incertitude,
@@ -33,6 +36,16 @@ remaned_columns as (
         {{ nettoyer_modalite_revenu("DEC_PPEN21") }} as part_pensions_retraites_rentes_pourcentage,
         {{ nettoyer_modalite_revenu("DEC_PAUT21") }} as part_autres_revenus_pourcentage
     from filosofi_iris
-)
+), 
+aggregated_with_infos_iris as (
+    SELECT
+      *
+    FROM
+      renamed_columns
+    JOIN
+	    {{ ref('infos_iris') }} as infos_iris
+    ON
+      renamed_columns.code_iris_2024_filosofi = infos_iris.code_iris_2024
+  )
 
-select * from remaned_columns
+select * from aggregated_with_infos_iris
