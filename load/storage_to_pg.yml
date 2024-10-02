@@ -79,7 +79,7 @@ dvf_2021:
   file_format: 'csv'
 
 dvf_2022:
-  storage_path: "https://files.data.gouv.fr/geo-dvf/latest/csv/2022/full.csv.gz"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2022/full.csv"
   csv_delimiter : ","
   db_schema : "sources"
   file_format: 'csv'
