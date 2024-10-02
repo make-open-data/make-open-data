@@ -707,3 +707,6 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: shape_arrondissement_municipal_2024
         description: ""
+
+      - name: shape_iris_2024
+        description: ""
