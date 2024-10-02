@@ -10,6 +10,7 @@
     select 
 
         "COMMUNE" as code_commune_insee,
+        "CATL",
         CASE 
 		    WHEN "IRIS" = 'ZZZZZZZZZ' THEN CONCAT("COMMUNE", '0000')
 		    ELSE "IRIS"

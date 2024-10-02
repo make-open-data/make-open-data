@@ -311,10 +311,10 @@ CATIRIS,Catégorie de l'IRIS,A,Activité,CHAR,1,,IGNORE
 CATIRIS,Catégorie de l'IRIS,D,Divers,CHAR,1,,IGNORE
 CATIRIS,Catégorie de l'IRIS,H,Habitat,CHAR,1,,IGNORE
 CATIRIS,Catégorie de l'IRIS,Z,Commune non découpée en IRIS,CHAR,1,,IGNORE
-CATL,Catégorie de logement,1,Résidences principales,CHAR,1,residence_principale,habitat
-CATL,Catégorie de logement,2,Logements occasionnels,CHAR,1,logement_occasionnel,habitat
-CATL,Catégorie de logement,3,Résidences secondaires,CHAR,1,residence_secondaire,habitat
-CATL,Catégorie de logement,4,Logements vacants,CHAR,1,logement_vacant,habitat
+CATL,Catégorie de logement,1,Résidences principales,CHAR,1,residence_principale,IGNORE
+CATL,Catégorie de logement,2,Logements occasionnels,CHAR,1,logement_occasionnel,IGNORE
+CATL,Catégorie de logement,3,Résidences secondaires,CHAR,1,residence_secondaire,IGNORE
+CATL,Catégorie de logement,4,Logements vacants,CHAR,1,logement_vacant,IGNORE
 CHAU,Moyen de chauffage du logement (DOM),1,Présence de moyen de chauffage,CHAR,1,dom__presence_chauffage,habitat
 CHAU,Moyen de chauffage du logement (DOM),2,Absence de moyen de chauffage,CHAR,1,dom__abscence_chauffage,habitat
 CHAU,Moyen de chauffage du logement (DOM),Y,Hors résidence principale,CHAR,1,,IGNORE
