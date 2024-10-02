@@ -2,7 +2,9 @@
 
 
       {% set colonnes_modalite_libelle_query %}
-        SELECT DISTINCT "COD_VAR", "COD_MOD", libelle_a_afficher_apres_aggregation
+        SELECT DISTINCT "COD_VAR", 
+            LPAD(CAST("COD_MOD" AS TEXT), 3, '0'),
+            libelle_a_afficher_apres_aggregation
         FROM {{ ref('logement_2020_valeurs') }}
         WHERE (theme = '{{ theme }}')
       {% endset %}
