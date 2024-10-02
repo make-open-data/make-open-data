@@ -16,9 +16,9 @@
 		    ELSE "IRIS"
 	    END as code_iris,
         {% for colonne_codee, modalite_liste, libelle_liste in  zip(colonnes_liste, modalites_liste_de_liste, libelle_liste_de_liste) %}
-            CASE "{{ colonne_codee }}"
+            CASE
                 {% for modalite, libelle in zip(modalite_liste, libelle_liste) %}
-                    when '{{ modalite }}' then '{{ libelle }}'
+                    when LPAD(CAST("{{ colonne_codee }}" AS TEXT), 3, '0') = '{{ modalite }}' then '{{ libelle }}'
                 {% endfor %}
             END AS "{{ colonne_codee }}",
         {% endfor %}
