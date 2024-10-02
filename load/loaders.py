@@ -126,21 +126,44 @@ def load_shapefile_from_storage(tmpfolder_name, tmpzip_name, data_infos):
     shutil.unpack_archive(tmpzip_name, tmpfolder_name)
 
 
-
 def load_shapefile_to_pg(tmpfolder_name, pg_table, data_infos):
+    def ensure_multipolygon(geom):
+        if isinstance(geom, Polygon):
+            return MultiPolygon([geom])
+        return geom
+
     shp_file_name = [file_name for file_name in os.listdir(tmpfolder_name) if file_name.endswith('.shp')][0]
     shp_file_path = f'{tmpfolder_name}/{shp_file_name}'
 
     db_schema = data_infos["db_schema"]
+    engine = create_engine(
+        f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}')
 
-    engine = create_engine(f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}')
+    # Use Fiona to stream the shapefile
+    with fiona.open(shp_file_path) as shp:
+        batch_size = 1000
+        batch = []
 
+        for feature in shp:
+            geom = shape(feature['geometry'])
+            geom = ensure_multipolygon(geom)
+            wkt_geom = geom.wkt
 
-    shape_file = gpd.read_file(shp_file_path)
-    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace')
+            properties = feature['properties']
+            properties['geometry'] = wkt_geom
 
+            batch.append(properties)
 
+            if len(batch) >= batch_size:
+                df = pd.DataFrame(batch)
+                df.to_sql(pg_table, engine, schema=db_schema, if_exists='append', index=False,
+                          dtype={'geometry': Geometry('MULTIPOLYGON', srid=4326)})
+                batch.clear()
 
+        if batch:
+            df = pd.DataFrame(batch)
+            df.to_sql(pg_table, engine, schema=db_schema, if_exists='append', index=False,
+                      dtype={'geometry': Geometry('MULTIPOLYGON', srid=4326)})
 
     # TODO: Eviter geopandas, GeoAlchemy2 et sqlalchemy et loader les fichiers avec shp2pgsql
     # Point de bloquage avec shp2pgsql : 
