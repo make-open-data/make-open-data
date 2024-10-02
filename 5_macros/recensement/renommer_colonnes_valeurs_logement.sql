@@ -8,8 +8,10 @@
 
 
     select 
-
-        "COMMUNE" as code_commune_insee,
+        CASE
+            WHEN "ARM" != 'ZZZZZ' THEN "ARM"
+            ELSE "COMMUNE" 
+        END AS code_commune_insee,
         "CATL",
         CASE 
 		    WHEN "IRIS" = 'ZZZZZZZZZ' THEN CONCAT("COMMUNE", '0000')
