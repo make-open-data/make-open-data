@@ -14,167 +14,82 @@ models:
       - not_null
   - name: nombre_menages_fiscaux
     description: "Nombre de ménages fiscaux"
-    data_type: text
+    data_type: numeric
   - name: nombre_personnes
     description: "Nombre de personnes dans les ménages fiscaux"
-    data_type: text
+    data_type: numeric
   - name: mediane_niveau_vie_euro
     description: "Médiane du niveau de vie (€)"
-    data_type: text
+    data_type: numeric
   - name: part_menages_fiscaux_imposes_pourcentage
     description: "Part des ménages fiscaux imposés (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_ensemble_pourcentage
     description: "Taux de pauvreté-Ensemble (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_moins_30_ans_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a moins de 30 ans (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_30_39_ans_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 30 à 39 ans (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_40_49_ans_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 40 à 49 ans (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_50_59_ans_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 50 à 59 ans (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_60_74_ans_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 60 à 74 ans (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_75_ans_ou_plus_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a 75 ans ou plus (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_proprietaires_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages propriétaires de leur logement (%)"
-    data_type: text
+    data_type: numeric
   - name: taux_pauvrete_locataires_pourcentage
     description: "Taux de pauvreté des personnes dans les ménages locataires de leur logement (%)"
-    data_type: text
+    data_type: numeric
   - name: part_revenus_activite_pourcentage
     description: "Part des revenus d'activité (%)"
-    data_type: text
+    data_type: numeric
   - name: part_salaires_traitements_pourcentage
     description: "dont part des salaires et traitements (%)"
-    data_type: text
+    data_type: numeric
   - name: part_indemnites_chomage_pourcentage
     description: "dont part des indemnités de chômage (%)"
-    data_type: text
+    data_type: numeric
   - name: part_revenus_activites_non_salariees_pourcentage
     description: "dont part des revenus des activités non salariées (%)"
-    data_type: text
+    data_type: numeric
   - name: part_pensions
     description: "retraites et rentes (%)"
-    data_type: text
+    data_type: numeric
   - name: part_revenus_patrimoine_autres_revenus_pourcentage
     description: "Part des revenus du patrimoine et des autres revenus (%)"
-    data_type: text
+    data_type: numeric
   - name: part_ensemble_prestations_sociales_pourcentage
     description: "Part de l'ensemble des prestations sociales (%)"
-    data_type: text
+    data_type: numeric
   - name: part_prestations_familiales_pourcentage
     description: "dont part des prestations familiales (%)"
-    data_type: text
+    data_type: numeric
   - name: part_minima_sociaux_pourcentage
     description: "dont part des minima sociaux (%)"
-    data_type: text
+    data_type: numeric
   - name: part_prestations_logement_pourcentage
     description: "dont part des prestations logement (%)"
-    data_type: text
+    data_type: numeric
   - name: part_des_impots_pourcentage
     description: "Part des impôts (%)"
-    data_type: text
+    data_type: numeric
   - name: decile_1_niveau_vie_euro
     description: "1er décile du niveau de vie (€)"
-    data_type: text
+    data_type: numeric
   - name: decile_9_niveau_vie_euro
     description: "9e décile du niveau de vie (€)"
-    data_type: text
+    data_type: numeric
   - name: rapport_interdecile_9_1
     description: "Rapport interdécile 9e décile/1er décile"
-    data_type: text
-
-
-- name: revenu_iris
-  description: ""
-  columns:
-  - name: "code_iris_2024"
-    quote: true
-    description: "Code IRIS Géographie de 2024"
-    data_type: text
-    tests:
-      - unique
-      - not_null
-  - name: part_menages_fiscaux_imposes_pourcentage
-    description: "Part des ménages fiscaux imposés (%)"
-    data_type: text
-  - name: taux_bas_revenus_declares_pourcentage
-    description: "Taux de bas revenus déclarés au seuil de 60 % (%)"
-    data_type: text
-  - name: incertitude
-    description: "Incertitude sur part_menages_fiscaux_imposes_pourcentage et taux_bas_revenus_declarés_60_pourcentage (voir onglet Seuils)"
-    data_type: text
-  - name: quartile_1_euro
-    description: "1er quartile (€)"
-    data_type: text
-  - name: mediane_euro
-    description: "Médiane (€)"
-    data_type: text
-  - name: quartile_3_euro
-    description: "3e quartile (€)"
-    data_type: text
-  - name: ecart_interquartile_rapporte_mediane
-    description: "Écart inter-quartile rapporté à la médiane"
-    data_type: text
-  - name: decile_1_euro
-    description: "1er décile (€)"
-    data_type: text
-  - name: decile_2_euro
-    description: "2e décile (€)"
-    data_type: text
-  - name: decile_3_euro
-    description: "3e décile (€)"
-    data_type: text
-  - name: decile_4_euro
-    description: "4e décile (€)"
-    data_type: text
-  - name: decile_6_euro
-    description: "6e décile (€)"
-    data_type: text
-  - name: decile_7_euro
-    description: "7e décile (€)"
-    data_type: text
-  - name: decile_8_euro
-    description: "8e décile (€)"
-    data_type: text
-  - name: decile_9_euro
-    description: "9e décile (€)"
-    data_type: text
-  - name: rapport_interdecile_d9_d1
-    description: "Rapport interdécile D9/D1"
-    data_type: text
-  - name: s80_s20
-    description: "Rapport entre la masse des niveaux de vie détenue par les 20 % de personnes les plus aisées et celle détenue par les 20 % les plus modestes"
-    data_type: text
-  - name: indice_gini
-    description: "Indice de Gini"
-    data_type: text
-  - name: part_revenus_activite_pourcentage
-    description: "Part des revenus d’activité (%)"
-    data_type: text
-  - name: part_salaires_traitements_pourcentage
-    description: "dont part des salaires et traitements (%)"
-    data_type: text
-  - name: part_indemnites_chomage_pourcentage
-    description: "dont part des indemnités de chômage (%)"
-    data_type: text
-  - name: part_revenus_activites_non_salariees_pourcentage
-    description: "dont part des revenus des activités non salariées (%)"
-    data_type: text
-  - name: part_pensions_retraites_rentes_pourcentage
-    description: "Part des pensions, retraites et rentes (%)"
-    data_type: text
-  - name: part_autres_revenus_pourcentage
-    description: "Part des autres revenus (%)"
-    data_type: text
-
+    data_type: numeric
