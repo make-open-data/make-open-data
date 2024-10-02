@@ -9,9 +9,19 @@
 
 with aggregated as (
   {{ aggreger_colonnes_theme_geo('mobilite', 'mobilite_renomee', 'code_iris')}}
-)
+), 
+aggregated_with_infos_iris as (
+    SELECT
+      *
+    FROM
+      aggregated
+    LEFT JOIN
+	    {{ ref('infos_iris') }} as infos_iris
+    ON
+      aggregated.code_iris = infos_iris.code_iris_2024
+  )
 
 SELECT 
     *  
 FROM
-    aggregated
+    aggregated_with_infos_iris
