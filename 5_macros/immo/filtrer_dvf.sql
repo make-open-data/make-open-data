@@ -6,20 +6,14 @@
         CAST(latitude AS FLOAT) as latitude,
         CAST(nombre_pieces_principales AS NUMERIC) as nombre_pieces_principales,
         CAST(surface_reelle_bati AS NUMERIC) as surface_reelle_bati,
-        type_local,
+        COALESCE(type_local, CASE WHEN nature_culture IS NOT NULL THEN 'Terrain' ELSE NULL END) AS type_local,
         LPAD(CAST(code_postal AS TEXT), 5, '0') as code_postal,
-        code_commune
-    FROM 
-        source_dvf 
-     WHERE 
-        EXISTS (
-            SELECT 1
-            FROM source_dvf d1
-            WHERE d1.id_mutation = source_dvf.id_mutation AND d1.type_local IN ('Appartement', 'Maison')
-        ) AND
-        NOT EXISTS (
-            SELECT 1
-            FROM source_dvf d2
-            WHERE d2.id_mutation = source_dvf.id_mutation AND d2.nature_mutation != 'Vente'
-        )
+        code_commune,
+        id_parcelle,
+        nature_culture,
+        surface_terrain,
+        nature_mutation
+    FROM
+        source_dvf
+    WHERE COALESCE(type_local, CASE WHEN nature_culture IS NOT NULL THEN 'Terrain' ELSE NULL END) is not null
 {% endmacro %}

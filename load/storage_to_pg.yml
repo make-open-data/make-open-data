@@ -18,7 +18,7 @@ cog_arrondissements:
   db_schema: "sources"
   file_format: 'json'
 
-cog_departements: 
+cog_departements:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json"
   csv_delimiter: ","
   db_schema: "sources"
@@ -30,10 +30,124 @@ cog_regions:
   db_schema: "sources"
   file_format: 'json'
 
+dvf_2014:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2014/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2015:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2015/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2016/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2017/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2018/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2019/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2020/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2021/full.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2022:
+  storage_path: "https://files.data.gouv.fr/geo-dvf/latest/csv/2022/full.csv.gz"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
 dvf_2023:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023/full.csv"
   csv_delimiter: ","
   db_schema: "sources"
+  file_format: 'csv'
+
+dvf_2014_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2014_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2015_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2015_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2016_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2016_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2017_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2017_dev/31.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2018_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2018_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2019_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2019_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2020_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2020_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2021_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2021_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2022_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2022_dev/34.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
+  file_format: 'csv'
+
+dvf_2023_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023_dev/dvf_2023_dev.csv"
+  csv_delimiter : ","
+  db_schema : "sources"
   file_format: 'csv'
 
 logement_2020:
@@ -57,12 +171,6 @@ effectif_pathologie:
 logement_2020_dev:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/logement_2020_dev/logement_2020_dev.csv"
   csv_delimiter: ","
-  db_schema: "sources"
-  file_format: 'csv'
-
-dvf_2023_dev:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2023_dev/dvf_2023_dev.csv"
-  csv_delimiter : ","
   db_schema: "sources"
   file_format: 'csv'
 

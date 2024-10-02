@@ -14,22 +14,32 @@
 -- Une mutation peut concerner plusieurs biens
 -- Le prix est le prix total de la mutation, il apparait sur les biens concernés
 
-{{ 
+{% if target.name == 'production' %}
+    {% set millesimes = get_millesimes_dvf_from_sources('prod') %}
+{% else %}
+    {% set millesimes = get_millesimes_dvf_from_sources('dev') %}
+{% endif %}
+
+{{
     config(
         materialized='table',
         schema='intermediaires',
         post_hook=[
             "CREATE INDEX IF NOT EXISTS geopoint_index ON {{ this }} USING GIST(geopoint);",
         ]
-    ) 
+    )
 }}
 
+{% do log(millesimes, info=True) %}
+
 WITH source_dvf AS (
-    {% if target.name == 'production' %}
-        select * from {{ source('sources', 'dvf_2023') }}
-    {% else %}
-        select * from {{ source('sources', 'dvf_2023_dev') }}
-    {% endif %}
+    {% for millesime in millesimes %}
+        {% do log("Processing millesime: " ~ millesime, info=True) %}
+        SELECT * FROM {{ source('sources', millesime) }}
+        {% if not loop.last %}
+            UNION ALL
+        {% endif %}
+    {% endfor %}
 ),
 filtrer_dvf AS (
     {{ filtrer_dvf(source_dvf) }}
@@ -39,19 +49,24 @@ aggreger_dvf AS (
 ),
 bien_principal_dvf AS (
     {{ selectionner_bien_principal_dvf(filtrer_dvf) }}
-) 
-SELECT 
+)
+SELECT
     bien_principal_dvf.id_mutation,
     bien_principal_dvf.valeur_fonciere,
+    bien_principal_dvf.nature_mutation,
     bien_principal_dvf.longitude,
     bien_principal_dvf.latitude,
     aggreger_dvf.total_pieces,
-    aggreger_dvf.total_surface,
-    bien_principal_dvf.type_local,
+    aggreger_dvf.total_surface_bati,
+    aggreger_dvf.total_surface_terrain,
+    aggreger_dvf.type_locaux,
+    aggreger_dvf.id_parcelles,
+    coalesce(bien_principal_dvf.type_local, 'Inconnu') as type_local,
+    bien_principal_dvf.valeur_fonciere / aggreger_dvf.total_surface_bati as prix_m2,
+    bien_principal_dvf.valeur_fonciere / bien_principal_dvf.surface_reelle_bati as prix_m2_bien_principal,
+    ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint,
     bien_principal_dvf.code_postal,
     bien_principal_dvf.code_commune,
-    ST_SetSRID(ST_MakePoint(bien_principal_dvf.latitude, bien_principal_dvf.longitude), 4326) as geopoint,
-    bien_principal_dvf.valeur_fonciere / aggreger_dvf.total_surface as prix_m2,
     infos_communes.nom_commune,
     infos_communes.code_arrondissement,
     infos_communes.code_departement,
@@ -59,9 +74,9 @@ SELECT
     infos_communes.nom_arrondissement,
     infos_communes.nom_departement,
     infos_communes.nom_region
-FROM 
+FROM
     bien_principal_dvf
-JOIN 
+JOIN
     aggreger_dvf ON aggreger_dvf.id_mutation = bien_principal_dvf.id_mutation
 LEFT JOIN
     {{ ref('infos_communes') }} as infos_communes on infos_communes.code_commune = bien_principal_dvf.code_commune
