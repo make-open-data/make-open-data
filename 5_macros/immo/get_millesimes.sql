@@ -1,6 +1,6 @@
 {% macro get_millesimes_dvf_from_sources(env) %}
     {% set suffix = '' if env == 'prod' else '_dev' %}
-    {% set exclude_dev = 'AND table_name NOT ILIKE \'%_dev%\'' if env == 'prod' else '' %}
+    {% set exclude_dev = 'AND table_name NOT ILIKE \'%_dev%\'' if env == 'prod' else 'AND table_name ILIKE \'%_dev%\'' %}
 
     {% set query %}
         SELECT table_name
