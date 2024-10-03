@@ -66,20 +66,3 @@ models:
   - name: geopoint
     data_type: GEOMETRY
     description: Champ de type geometry contenant les coordonnées GPS du bien
-
-- name: dvf_2015
-  columns: *shared_columns_dvf_default
-- name: dvf_2016
-  columns: *shared_columns_dvf_default
-- name: dvf_2017
-  columns: *shared_columns_dvf_default
-- name: dvf_2018
-  columns: *shared_columns_dvf_default
-- name: dvf_2019
-  columns: *shared_columns_dvf_default
-- name: dvf_2020
-  columns: *shared_columns_dvf_default
-- name: dvf_2022
-  columns: *shared_columns_dvf_default
-- name: dvf_2023
-  columns: *shared_columns_dvf_default

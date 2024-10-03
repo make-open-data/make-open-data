@@ -68,24 +68,3 @@ models:
   - name: geopoint
     data_type: GEOMETRY
     description: Champ de type geometry contenant les coordonnées GPS du bien
-
-- name: mutations_foncieres_enrichies_dvf_2014
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2015
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2016
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2017
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2018
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2019
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2020
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2021
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2022
-  columns: *shared_columns_prepared_dvf_default
-- name: mutations_foncieres_enrichies_dvf_2023
-  columns: *shared_columns_prepared_dvf_default
