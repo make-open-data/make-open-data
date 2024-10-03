@@ -2,22 +2,20 @@ version: 2
 
 models:
 
-- name: mutations_foncieres
-  description: Fournit les informations sur les transactions immobilières (Maison ou appartement) groupées par mutation. En cas de mutation mutltivente, la localisation (GPS, code postal, code commune) sera celui du bien principal. Maison si Maison et appartement. Si même type, on retiendra le plus grand des deux. Toujours en cas de mutivente, le tableau reporte la suface totale et le nombre de pièce total des ventes. 
-  columns:
-
-  - name: id_mutation	
+- name: dvf_2014
+  columns: &shared_columns_dvf_default
+  - name: id_mutation
     data_type: text
     description: Identifiant de la mutation
     tests:
           - unique
           - not_null
 
-  - name: valeur_fonciere	
+  - name: valeur_fonciere
     data_type: numeric
     description: Valeur foncière, en euros, de la mutation
 
-  - name: longitude	
+  - name: longitude
     data_type: numeric
     description: Cordonnées gps, Longitude, ou du bien principal (voir description) en cas de mutation multivente
 
@@ -65,6 +63,23 @@ models:
     data_type: text
     description: Code commune du bien, ou du bien principal (voir description) en cas de mutation multivente
 
-  - name: geopoint	
+  - name: geopoint
     data_type: GEOMETRY
     description: Champ de type geometry contenant les coordonnées GPS du bien
+
+- name: dvf_2015
+  columns: *shared_columns_dvf_default
+- name: dvf_2016
+  columns: *shared_columns_dvf_default
+- name: dvf_2017
+  columns: *shared_columns_dvf_default
+- name: dvf_2018
+  columns: *shared_columns_dvf_default
+- name: dvf_2019
+  columns: *shared_columns_dvf_default
+- name: dvf_2020
+  columns: *shared_columns_dvf_default
+- name: dvf_2022
+  columns: *shared_columns_dvf_default
+- name: dvf_2023
+  columns: *shared_columns_dvf_default

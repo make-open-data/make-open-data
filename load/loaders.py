@@ -137,7 +137,7 @@ def load_shapefile_to_pg(tmpfolder_name, pg_table, data_infos):
 
 
     shape_file = gpd.read_file(shp_file_path)
-    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace')
+    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace', chunksize=1000)
 
 
 

@@ -11,6 +11,9 @@ from load.loaders import load_file_from_storage, load_file_to_pg,\
       load_shapefile_from_storage, load_shapefile_to_pg,\
       list_tables_in_pg
 
+from load.generate_dvf_millesimes_tables import generate_intermediate_tables, generate_prepared_enriched_mutations, \
+    generate_prepared_enriched_mutations_union_of_millesimes
+
 STORAGE_TO_PG = "storage_to_pg.yml"
 
 if __name__ == "__main__":
@@ -47,3 +50,15 @@ if __name__ == "__main__":
 
                     print(f"Loading to PG: {pg_table}")
                     load_shapefile_to_pg(tmpfolder_name, pg_table, data_infos)
+
+    millesimes = []
+    for pg_table, data_infos in storage_to_pg.items():
+        if 'dvf_' in pg_table and '_dev' not in pg_table:
+            millesime = int(pg_table.split('_')[-1])
+            millesimes.append(millesime)
+            print(f"Creating intermediate tables for {pg_table}")
+            generate_intermediate_tables(millesime)
+            print(f"Creating enriched mutations for {pg_table}")
+            generate_prepared_enriched_mutations(millesime)
+            print(f"Tables for {pg_table} created successfully")
+    generate_prepared_enriched_mutations_union_of_millesimes(millesimes)
