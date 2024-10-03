@@ -1,1 +1,0 @@
--- Autogénée apres le load des tables de référence dans SOURCES (/load/generate_dvf_millesimes_tables.py)
