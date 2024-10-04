@@ -7,7 +7,7 @@ import pandas as pd
 import geopandas as gpd
 from sqlalchemy import create_engine
 import psycopg
-
+from io import StringIO
 
 
 
@@ -108,11 +108,14 @@ def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
     """)
     CONNECTION.commit()
 
-    for chunk in pd.read_csv(tmpfile_csv_path, delimiter=delimiter, chunksize=5000):
-        chunk_csv = chunk.to_csv(index=False, header=False)
-        with CURSOR.copy(
+    for chunk in pd.read_csv(tmpfile_csv_path, delimiter=delimiter, chunksize=5000, dtype=str):
+        chunk_io = StringIO()
+        chunk.to_csv(chunk_io, index=False, header=False, sep=delimiter)
+        chunk_io.seek(0)
+
+        with cursor.copy(
                 f"COPY {db_schema}.{pg_table}({file_columns_str}) FROM STDIN CSV DELIMITER '{delimiter}'") as copy:
-            copy.write(chunk_csv)
+            copy.write(chunk_io.getvalue())
     CONNECTION.commit()
     
     CURSOR.close()
