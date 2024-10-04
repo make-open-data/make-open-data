@@ -7,6 +7,9 @@ dbt-env/
 .user.yml
 **.pyc
 
+1_data/intermediaires/immobilier/dvf_*.sql
+1_data/prepare/immobilier/mutations_foncieres_enrichies_dvf_*.sql
+
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,python,dbt,visualstudiocode,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux,python,dbt,visualstudiocode,pycharm
 
