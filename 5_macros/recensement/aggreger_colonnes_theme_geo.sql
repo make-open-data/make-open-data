@@ -23,7 +23,8 @@ with poids_par_geo as (
       CAST(COALESCE(nombre_de_menage_base_ou_logements_occupee, 0) AS INT) as nombre_de_menage_base_ou_logements_occupee,
       CAST(COALESCE(nombre_de_logements_occasionnels, 0) AS INT) as nombre_de_logements_occasionnels,
       CAST(COALESCE(nombre_de_logements_residences_secondaires, 0) AS INT) as nombre_de_logements_residences_secondaires,
-      CAST(COALESCE(nombre_de_logements_vacants, 0) AS INT) as nombre_de_logements_vacants
+      CAST(COALESCE(nombre_de_logements_vacants, 0) AS INT) as nombre_de_logements_vacants,
+      CAST(COALESCE(nombre_de_logements_total_tous_status_occupation, 0) AS INT) as nombre_de_logements_total_tous_status_occupation
     FROM
       poids_par_geo
 
