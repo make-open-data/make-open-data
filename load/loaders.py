@@ -110,7 +110,7 @@ def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
 
     for chunk in pd.read_csv(tmpfile_csv_path, delimiter=delimiter, chunksize=5000):
         chunk_csv = chunk.to_csv(index=False, header=False)
-        with cursor.copy(
+        with CURSOR.copy(
                 f"COPY {db_schema}.{pg_table}({file_columns_str}) FROM STDIN CSV DELIMITER '{delimiter}'") as copy:
             copy.write(chunk_csv)
     CONNECTION.commit()
