@@ -1,8 +1,14 @@
 {% docs __overview__ %}
-# Bienvenue sur le catalogue des données préparées par Make Open Data
+# Make Open Data 
+
+### Des données publiques exploitables déployées sur une BDD Postgres/PostGIS accessibles depuis l'outil de votre choix.
+
+- Son déploiement, son utilisation ou prendre contact : https://make-open-data.fr/ 
+- Un ticket, une contribution ou une étoile pour nous soutenir : https://github.com/make-open-data/make-open-data/  
+
 ---
 
-Liste non exhaustive et non définitive des tables préparées par Make Open Data : 
+### Liste non exhaustive et non définitive des tables préparées par Make Open Data : 
 
 
 - [commune_centroid_poste](/#!/model/model.makeopendata.commune_centroid_poste): table de correspondance une commune pour chaque code postal : si N communes pour un code postal, on prend la commune la plus centrale (centroîd)
@@ -35,12 +41,6 @@ Liste non exhaustive et non définitive des tables préparées par Make Open Dat
 
 - [mutations_foncieres_enrichies](/#!/model/model.makeopendata.mutations_foncieres_enrichies) : Liste des transactions immobilières à l'échelle de la transaction (une ligne par transaction) avec leurs prix, surfaces, type de bien, le prix moyen des plus proches voisins, etc. Pour l'années 2023.
 NB: Sauf mention contraire, toutes les données sont millésimées au Code Officiel Géographique de 2024.
-
-
-
-Plus d'infos sur Make Open Data :   
-- Son déploiement, son utilisation ou prendre contact : https://make-open-data.fr/ 
-- Un bug, une données particulière ou une étoile pour nous soutenir : https://github.com/make-open-data/make-open-data/  
 
 
 {% enddocs %}
