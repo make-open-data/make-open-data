@@ -1,18 +1,41 @@
 # Bienvenue sur Make Open Data.
 
-Ici pour la [documentation complète](https://make-open-data.fr/).
 
-## Intégrez les données libres en France à votre Base De Données.
+### Des données publiques exploitables déployées sur une BDD Postgres/PostGIS accessibles depuis l'outil de votre choix.
+
+- Présentation du projet ou contactez nous pour une démo : https://make-open-data.fr/ 
+- Catalogue des données : https://data.make-open-data.fr/
+
 
 Make Open Data est un repo de code ouvert qui :
+
 - *Extrait* les fichiers sources (data.gouv, INSEE, Etalab, etc.) les plus adaptés et les récents ; 
 - *Transforme* ces données selon des règles transparentes et le moins irréversibles possibles ;
 - *Stocke* ces données dans une base de données PostgreSQL (avec PostGIS) ;
 - *Teste* des présupposés sur ces données. Un prix par transaction immobilière sur DVF par exemple.
 
 
+![alt text](assets/make-open-data-flow.png)
+
+
+
+
+
+
+
+
+## Déploiement managé par Make Open Data
+
+Nous fournissons les accès à une Postgres dans le cloud avec des données à jour.
+
+Contactez-nous https://make-open-data.fr/ 
+
 
 ## Déploiement avec GitHub Actions
+
+
+**_Prérequis:_** : Instance Postgres > 15, **cloud uniquement**, avec 40 Go de disque et 4 Go de mémoire.
+
 
 - Foucher (*fork*) le projet dans un nouveau Repo [ici](https://github.com/make-open-data/make-open-data/fork)  
 
@@ -25,7 +48,10 @@ Make Open Data est un repo de code ouvert qui :
 
 ## Déploiement sur une machine
 
-Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébérgée dans le cloud.
+**_Prérequis:_** : Instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
+
+
+Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébergée dans le cloud.
 
 - Cloner le repo
 
@@ -44,7 +70,7 @@ pip install -r requirements.txt
 
 
 
-- Exporter les clés d'une instance PostgreSQL avec l'extention PostGIS de 10 GB min
+- Exporter les clés d'une instance PostgreSQL avec l’extension PostGIS de 10 GB min
 
 ```
 export POSTGRES_USER=<YOUR_POSTGRES_USER>  
@@ -54,12 +80,11 @@ export POSTGRES_PORT=<YOUR_POSTGRES_PORT>
 export POSTGRES_DB=<YOUR_POSTGRES_DB>
 ``` 
 
-- A faire une fois : installer les extensions PostGis et unaccent et vérifier
+- Installer PostGis :
 
 ```
 psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
 CREATE EXTENSION postgis;  
-CREATE EXTENSION unaccent;
 ```
 
 - Extraire les données sources dans le schema `sources`:
