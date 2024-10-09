@@ -7,7 +7,6 @@
 - Un ticket, une contribution ou une étoile pour nous soutenir : https://github.com/make-open-data/make-open-data/  
 
 ---
-
 ### Liste non exhaustive et non définitive des tables préparées par Make Open Data : 
 
 
@@ -40,7 +39,11 @@
 
 
 - [mutations_foncieres_enrichies](/#!/model/model.makeopendata.mutations_foncieres_enrichies) : Liste des transactions immobilières à l'échelle de la transaction (une ligne par transaction) avec leurs prix, surfaces, type de bien, le prix moyen des plus proches voisins, etc. Pour l'années 2023.
-NB: Sauf mention contraire, toutes les données sont millésimées au Code Officiel Géographique de 2024.
+
+
+## Notes 
+
+Sauf mention contraire, toutes les données sont millésimées au Code Officiel Géographique de 2024.
 
 
 {% enddocs %}
