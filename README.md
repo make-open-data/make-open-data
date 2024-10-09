@@ -7,17 +7,20 @@
 - Catalogue des données : https://data.make-open-data.fr/
 
 
-Make Open Data est un repo de code ouvert qui :
+Make Open Data est ELT Open Source pour données publiques :
 
 - *Extrait* les fichiers sources (data.gouv, INSEE, Etalab, etc.) les plus adaptés et les récents ; 
 - *Transforme* ces données selon des règles transparentes et le moins irréversibles possibles ;
 - *Stocke* ces données dans une base de données PostgreSQL (avec PostGIS) ;
 - *Teste* des présupposés sur ces données. Un prix par transaction immobilière sur DVF par exemple.
 
+<img src="assets/make-open-data-flow.png" width="600">
 
-![alt text](assets/make-open-data-flow.png)
 
 
+Données spatiales intégrables dans QGIS et autres SIG.
+
+<img src="assets/demo-qgis.png" width="600">
 
 
 
