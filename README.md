@@ -65,7 +65,15 @@ export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD>
 export POSTGRES_HOST=<YOUR_POSTGRES_HOST> 
 export POSTGRES_PORT=<YOUR_POSTGRES_PORT>  
 export POSTGRES_DB=<YOUR_POSTGRES_DB>
-``` 
+```
+
+OR
+
+```
+mv .env.sample .env
+# Fill in the .env file with your credentials then export them
+export $(grep -v '^#' .env | xargs)
+```
 
 - Installer PostGis :
 

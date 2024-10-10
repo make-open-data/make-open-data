@@ -7,7 +7,7 @@ import pandas as pd
 import geopandas as gpd
 from sqlalchemy import create_engine
 import psycopg
-
+from io import StringIO
 
 
 
@@ -108,10 +108,14 @@ def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
     """)
     CONNECTION.commit()
 
-    
-    with open(tmpfile_csv_path, 'r') as f:
-        with CURSOR.copy(f"COPY {db_schema}.{pg_table}({file_columns_str}) FROM STDIN CSV HEADER DELIMITER '{delimiter}' ") as copy:
-            copy.write(f.read())
+    for chunk in pd.read_csv(tmpfile_csv_path, delimiter=delimiter, chunksize=5000, dtype=str):
+        chunk_io = StringIO()
+        chunk.to_csv(chunk_io, index=False, header=False, sep=delimiter)
+        chunk_io.seek(0)
+
+        with CURSOR.copy(
+                f"COPY {db_schema}.{pg_table}({file_columns_str}) FROM STDIN CSV DELIMITER '{delimiter}'") as copy:
+            copy.write(chunk_io.getvalue())
     CONNECTION.commit()
     
     CURSOR.close()
@@ -137,7 +141,7 @@ def load_shapefile_to_pg(tmpfolder_name, pg_table, data_infos):
 
 
     shape_file = gpd.read_file(shp_file_path)
-    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace')
+    shape_file.to_postgis(pg_table, engine, schema=db_schema, if_exists='replace', chunksize=5000)
 
 
 

@@ -1,18 +1,34 @@
--- Enrichie la base dvf groupée par mutation
--- Ajoute le knn des prix au m2
+-- Auto-generated model for union of millesimes (depends_on block cannot be generated dynamically in a model interation)
 
-{{ 
+
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2014') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2015') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2016') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2017') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2018') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2019') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2020') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2021') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2022') }}
+-- depends_on: {{ ref('mutations_foncieres_enrichies_dvf_2023') }}
+{%- set millesimes = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'] -%}
+
+{{ log("Millesimes retrieved: " ~ millesimes, info=True) }}
+
+{{
     config(
-        materialized='table',
+        materialized='table'
     ) 
 }}
 
-WITH dvf_knn_5 as(
-    {{ calculate_geo_knn('mutations_foncieres', 'id_mutation', 'geopoint', 'prix_m2' , 5) }}
-)
+{% for millesime in millesimes %}
+    {{ log("Millesimes retrieved: " ~ millesime, info=True) }}
 
-select mutations_foncieres.*, 
-       dvf_knn_5.prix_m2_knn_5 
-from {{ ref('mutations_foncieres') }} mutations_foncieres
-left join dvf_knn_5 on dvf_knn_5.id = mutations_foncieres.id_mutation
+    SELECT *
+    FROM {{ ref('mutations_foncieres_enrichies_dvf_' ~ millesime) }}
 
+    {% if not loop.last %}
+    UNION ALL
+    {% endif %}
+{% endfor %}
+    
