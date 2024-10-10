@@ -34,27 +34,11 @@ Nous fournissons les accès à une Postgres dans le cloud avec des données à j
 Contactez-nous https://make-open-data.fr/ 
 
 
-## Déploiement avec GitHub Actions
 
+## Déploiement manuel
 
-**_Prérequis:_** : Instance Postgres > 15, **cloud uniquement**, avec 40 Go de disque et 4 Go de mémoire.
+**_Prérequis:_** : Accès à une instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
 
-
-- Foucher (*fork*) le projet dans un nouveau Repo [ici](https://github.com/make-open-data/make-open-data/fork)  
-
-- Renseigner les clés d'une BDD Postgres dans le Cloud 
-
-- Exécuter le workflow "Manually Deploy Data in a Postgres Database" 
-
-- Les tables sources et préparées sont disponibles dans la BDD
-
-
-## Déploiement sur une machine
-
-**_Prérequis:_** : Instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
-
-
-Idéal pour déployer les nouvelles tables de données publiques sans tracas une BDD Postgres hébergée dans le cloud.
 
 - Cloner le repo
 
@@ -93,12 +77,8 @@ CREATE EXTENSION postgis;
 - Extraire les données sources dans le schema `sources`:
 
 ```
-python -m load
+python -m load # -> environ 20 min
 ```
-
-Etape temporaire : 
-    - Une extraction automatique ne vaut pas le coup étant donné la diversité des fichiers sources (zip, csv, json, 7z, etc) et la mise à jour non fréquente des sources ;
-    - Une solution du type Lakehouse est en cours d'analyse (`SELECT * FROM "red_parquet(<URL>.parquet)"`)
 
 
 - Connecter DBT à la base de données
@@ -114,9 +94,9 @@ dbt deps
 
 ```
 dbt seed
-dbt run --target dev #Table logement sur région Occitanie et dvf sur Hérault. Utile pour tester rapidement. 
-dbt run --target production
+dbt run --target dev # environ 15 minutes -> tables logement sur région Occitanie et dvf sur Hérault. Utile pour tester rapidement. 
+dbt run --target production # environ 1 heure
 dbt test
 ``` 
 
-- Les tables sources et préparées sont disponibles dans la BDD
+- Les tables sources et préparées sont disponibles dans la BDD.
