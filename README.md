@@ -35,7 +35,7 @@ Contactez-nous https://make-open-data.fr/
 
 
 
-## Déploiement sur une machine
+## Déploiement manuel
 
 **_Prérequis:_** : Accès à une instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
 
