@@ -24,4 +24,11 @@
     ) 
 }}
 
-select * from ({{ preparer_dvf_mutation('2023') }})
+{% set liste_des_millesimes = ['2014', '2015', '2016', '2017', '2018', '2019', 
+                               '2020', '2021', '2022', '2023', '2024',] %}
+
+{% for millesime in liste_des_millesimes %}
+    select *
+    from ({{ preparer_dvf_mutation(millesime) }})
+    {% if not loop.last %} union {% endif %}
+{% endfor %}
