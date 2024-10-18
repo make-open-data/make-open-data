@@ -144,131 +144,6 @@ sources:
             description: "Zone de la région"
             data_type: text
 
-      - name: dvf_2023
-        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
-        columns:
-          - name: id_mutation
-            description: "Identifiant de la mutation"
-            data_type: text
-          - name: date_mutation
-            description: "Date de la mutation"
-            data_type: text
-          - name: numero_disposition
-            description: "Numéro de disposition"
-            data_type: text
-          - name: nature_mutation
-            description: "Nature de la mutation"
-            data_type: text
-          - name: valeur_fonciere
-            description: "Valeur foncière"
-            data_type: text
-          - name: adresse_numero
-            description: "Numéro de l'adresse"
-            data_type: text
-          - name: adresse_suffixe
-            description: "Suffixe de l'adresse"
-            data_type: text
-          - name: adresse_nom_voie
-            description: "Nom de la voie"
-            data_type: text
-          - name: adresse_code_voie
-            description: "Code de la voie"
-            data_type: text
-          - name: code_postal
-            description: "Code postal"
-            data_type: text
-          - name: code_commune
-            description: "Code de la commune"
-            data_type: text
-          - name: nom_commune
-            description: "Nom de la commune"
-            data_type: text
-          - name: code_departement
-            description: "Code du département"
-            data_type: text
-          - name: ancien_code_commune
-            description: "Ancien code de la commune"
-            data_type: text
-          - name: ancien_nom_commune
-            description: "Ancien nom de la commune"
-            data_type: text
-          - name: id_parcelle
-            description: "Identifiant de la parcelle"
-            data_type: text
-          - name: ancien_id_parcelle
-            description: "Ancien identifiant de la parcelle"
-            data_type: text
-          - name: numero_volume
-            description: "Numéro de volume"
-            data_type: text
-          - name: lot1_numero
-            description: "Numéro du lot 1"
-            data_type: text
-          - name: lot1_surface_carrez
-            description: "Surface Carrez du lot 1"
-            data_type: text
-          - name: lot2_numero
-            description: "Numéro du lot 2"
-            data_type: text
-          - name: lot2_surface_carrez
-            description: "Surface Carrez du lot 2"
-            data_type: text
-          - name: lot3_numero
-            description: "Numéro du lot 3"
-            data_type: text
-          - name: lot3_surface_carrez
-            description: "Surface Carrez du lot 3"
-            data_type: text
-          - name: lot4_numero
-            description: "Numéro du lot 4"
-            data_type: text
-          - name: lot4_surface_carrez
-            description: "Surface Carrez du lot 4"
-            data_type: text
-          - name: lot5_numero
-            description: "Numéro du lot 5"
-            data_type: text
-          - name: lot5_surface_carrez
-            description: "Surface Carrez du lot 5"
-            data_type: text
-          - name: nombre_lots
-            description: "Nombre de lots"
-            data_type: text
-          - name: code_type_local
-            description: "Code du type de local"
-            data_type: text
-          - name: type_local
-            description: "Type de local"
-            data_type: text
-          - name: surface_reelle_bati
-            description: "Surface réelle du bâti"
-            data_type: text
-          - name: nombre_pieces_principales
-            description: "Nombre de pièces principales"
-            data_type: text
-          - name: code_nature_culture
-            description: "Code de la nature de la culture"
-            data_type: text
-          - name: nature_culture
-            description: "Nature de la culture"
-            data_type: text
-          - name: code_nature_culture_speciale
-            description: "Code de la nature de la culture spéciale"
-            data_type: text
-          - name: nature_culture_speciale
-            description: "Nature de la culture spéciale"
-            data_type: text
-          - name: surface_terrain
-            description: "Surface du terrain"
-            data_type: text
-          - name: longitude
-            description: "Longitude"
-            data_type: text
-          - name: latitude
-            description: "Latitude"
-            data_type: text
-
-
       - name: logement_2020
         description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
 Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
@@ -524,9 +399,6 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
       - name: logement_2020_dev
         description: "Echantillon (Région Occitanie pour garder la cohérence des analyses) de logement_2020 pour faciliter les tests"
 
-      - name: dvf_2023_dev
-        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"
-
       - name: filosofi_commune_2021
         description: ""
         columns:
@@ -710,3 +582,196 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: shape_iris_2024
         description: ""
+
+
+      - name: dvf_default
+        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
+        columns: &shared_columns_dvf_default
+          - name: id_mutation
+            description: "Identifiant de la mutation"
+            data_type: text
+          - name: date_mutation
+            description: "Date de la mutation"
+            data_type: text
+          - name: numero_disposition
+            description: "Numéro de disposition"
+            data_type: text
+          - name: nature_mutation
+            description: "Nature de la mutation"
+            data_type: text
+          - name: valeur_fonciere
+            description: "Valeur foncière"
+            data_type: text
+          - name: adresse_numero
+            description: "Numéro de l'adresse"
+            data_type: text
+          - name: adresse_suffixe
+            description: "Suffixe de l'adresse"
+            data_type: text
+          - name: adresse_nom_voie
+            description: "Nom de la voie"
+            data_type: text
+          - name: adresse_code_voie
+            description: "Code de la voie"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: code_commune
+            description: "Code de la commune"
+            data_type: text
+          - name: nom_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_departement
+            description: "Code du département"
+            data_type: text
+          - name: ancien_code_commune
+            description: "Ancien code de la commune"
+            data_type: text
+          - name: ancien_nom_commune
+            description: "Ancien nom de la commune"
+            data_type: text
+          - name: id_parcelle
+            description: "Identifiant de la parcelle"
+            data_type: text
+          - name: ancien_id_parcelle
+            description: "Ancien identifiant de la parcelle"
+            data_type: text
+          - name: numero_volume
+            description: "Numéro de volume"
+            data_type: text
+          - name: lot1_numero
+            description: "Numéro du lot 1"
+            data_type: text
+          - name: lot1_surface_carrez
+            description: "Surface Carrez du lot 1"
+            data_type: text
+          - name: lot2_numero
+            description: "Numéro du lot 2"
+            data_type: text
+          - name: lot2_surface_carrez
+            description: "Surface Carrez du lot 2"
+            data_type: text
+          - name: lot3_numero
+            description: "Numéro du lot 3"
+            data_type: text
+          - name: lot3_surface_carrez
+            description: "Surface Carrez du lot 3"
+            data_type: text
+          - name: lot4_numero
+            description: "Numéro du lot 4"
+            data_type: text
+          - name: lot4_surface_carrez
+            description: "Surface Carrez du lot 4"
+            data_type: text
+          - name: lot5_numero
+            description: "Numéro du lot 5"
+            data_type: text
+          - name: lot5_surface_carrez
+            description: "Surface Carrez du lot 5"
+            data_type: text
+          - name: nombre_lots
+            description: "Nombre de lots"
+            data_type: text
+          - name: code_type_local
+            description: "Code du type de local"
+            data_type: text
+          - name: type_local
+            description: "Type de local"
+            data_type: text
+          - name: surface_reelle_bati
+            description: "Surface réelle du bâti"
+            data_type: text
+          - name: nombre_pieces_principales
+            description: "Nombre de pièces principales"
+            data_type: text
+          - name: code_nature_culture
+            description: "Code de la nature de la culture"
+            data_type: text
+          - name: nature_culture
+            description: "Nature de la culture"
+            data_type: text
+          - name: code_nature_culture_speciale
+            description: "Code de la nature de la culture spéciale"
+            data_type: text
+          - name: nature_culture_speciale
+            description: "Nature de la culture spéciale"
+            data_type: text
+          - name: surface_terrain
+            description: "Surface du terrain"
+            data_type: text
+          - name: longitude
+            description: "Longitude"
+            data_type: text
+          - name: latitude
+            description: "Latitude"
+            data_type: text
+
+      - name: dvf_2014_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2014 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2015_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2015 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2016_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2016 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2017_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2017 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2018_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2018 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2019_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2019 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2020_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2020 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2021_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2021 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2022_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2022 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2023_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2024_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2024 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+
+      - name: dvf_2014
+        description: "Demande de Valeurs Foncières 2014 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2015
+        description: "Demande de Valeurs Foncières 2015 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2016
+        description: "Demande de Valeurs Foncières 2016 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2017
+        description: "Demande de Valeurs Foncières 2017 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2018
+        description: "Demande de Valeurs Foncières 2018 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2019
+        description: "Demande de Valeurs Foncières 2019 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2020
+        description: "Demande de Valeurs Foncières 2020 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2021
+        description: "Demande de Valeurs Foncières 2021 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2022
+        description: "Demande de Valeurs Foncières 2022 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2023
+        description: "Demande de Valeurs Foncières 2023 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2024
+        description: "Demande de Valeurs Foncières 2024 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
