@@ -34,7 +34,8 @@ SELECT
     infos_communes.code_region,
     infos_communes.nom_arrondissement,
     infos_communes.nom_departement,
-    infos_communes.nom_region
+    infos_communes.nom_region,
+    {{ millesime }} as millesime
 FROM 
     bien_principal_dvf
 JOIN 
