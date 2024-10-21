@@ -43,7 +43,7 @@ Contactez-nous https://make-open-data.fr/
 - Fourcher et cloner le repo (url dans l'onglet code SSH)
 
 ```
-git clone git@github.com:<utilisateur_orga>/<nom_repo_fourché>.git
+git clone git@github.com:<utilisateur_orga_destination>/<nom_repo_destination>.git
 ``` 
 - Installer et activer un environnement virtuel
 
