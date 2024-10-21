@@ -1,4 +1,4 @@
-{% macro filtrer_dvf(source_dvf) %}
+{% macro filtrer_ventes_immobilieres(source_dvf) %}
     SELECT 
         id_mutation,
         CAST(valeur_fonciere AS FLOAT) as valeur_fonciere,
