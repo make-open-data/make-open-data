@@ -11,7 +11,7 @@ WITH knn AS (
         JOIN LATERAL (
             SELECT {{ value_column }}
             FROM {{ ref(source_table) }}
-            WHERE ({{ id_column }} != a.{{ id_column }})
+            WHERE ({{ id_column }} != a.{{ id_column }}) AND (millesime = a.millesime)
             ORDER BY a.{{ geopoint_column }} <-> {{ geopoint_column }}
             LIMIT {{ k }}
         ) b ON TRUE
