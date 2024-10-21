@@ -40,10 +40,10 @@ Contactez-nous https://make-open-data.fr/
 **_Prérequis:_** : Accès à une instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
 
 
-- Cloner le repo
+- Fourcher et cloner le repo (url dans l'onglet code SSH)
 
 ```
-git clone git@github.com:make-open-data/make-open-data.git
+git clone git@github.com:<utilisateur_orga>/<nom_repo_fourché>.git
 ``` 
 - Installer et activer un environnement virtuel
 
