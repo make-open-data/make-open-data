@@ -29,6 +29,6 @@
 
 {% for millesime in liste_des_millesimes %}
     select *
-    from ({{ preparer_dvf_mutation(millesime) }})
+    from ({{ preparer_dvf_biens_immobilier(millesime) }})
     {% if not loop.last %} union {% endif %}
 {% endfor %}

@@ -1,4 +1,4 @@
-{% macro selectionner_bien_principal_dvf(filtrer_dvf) %}
+{% macro selectionner_bien_principal(ventes_immobiliers_filtrees) %}
     SELECT *
     FROM (
         SELECT 
@@ -13,7 +13,7 @@
                     surface_reelle_bati DESC
             ) AS rang
         FROM 
-            filtrer_dvf
+            ventes_immobiliers_filtrees
     ) subquery
     WHERE
         rang = 1
