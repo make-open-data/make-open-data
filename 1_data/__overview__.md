@@ -38,7 +38,7 @@
 - [professionnels_sante_departement](/#!/model/model.makeopendata.professionnels_sante_departement) : Nombre de professionnels de santés médecins (chirurgiens, dermatologues, dentistes, etc) et para-médical (infirmiers, kiné, etc) par département en 2022.
 
 
-- [mutations_foncieres_enrichies](/#!/model/model.makeopendata.mutations_foncieres_enrichies) : Liste des transactions immobilières à l'échelle de la transaction (une ligne par transaction) avec leurs prix, surfaces, type de bien, le prix moyen des plus proches voisins, etc. Pour l'années 2023.
+- [ventes_immobilieres_enrichies](/#!/model/model.makeopendata.ventes_immobilieres_enrichies) : Liste des transactions immobilières à l'échelle de la transaction (une ligne par transaction) avec leurs prix, surfaces, type de bien, le prix moyen des plus proches voisins, etc. Pour l'années 2023.
 
 
 ## Notes 
