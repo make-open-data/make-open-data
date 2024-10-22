@@ -26,7 +26,7 @@ SELECT
     bien_principal_de_la_vente.type_local,
     bien_principal_de_la_vente.code_postal,
     bien_principal_de_la_vente.code_commune,
-    ST_SetSRID(ST_MakePoint(bien_principal_de_la_vente.latitude, bien_principal_de_la_vente.longitude), 4326) as geopoint,
+    ST_SetSRID(ST_MakePoint(bien_principal_de_la_vente.longitude, bien_principal_de_la_vente.latitude), 4326) as geopoint,
     bien_principal_de_la_vente.valeur_fonciere / ventes_immobiliers_aggregees_au_bien.total_surface as prix_m2,
     infos_communes.nom_commune,
     infos_communes.code_arrondissement,
