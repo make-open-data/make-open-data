@@ -60,7 +60,7 @@ models:
     data_type: numeric
     description: Prix au mètre carré, soit prix total de la mutation (tous les biens en cas de multivente) sur la surface totale (tous les biens en cas de multivente)
 
-  - name: prix_m2_knn_5
-    data_type: numeric
-    description: Prix au mètre carré moyen des 5 biens les plus proches (même millésime et même arrondissement)
+  #- name: prix_m2_knn_5
+  #  data_type: numeric
+  #  description: Prix au mètre carré moyen des 5 biens les plus proches (même millésime et même arrondissement)
 
