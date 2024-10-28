@@ -32,7 +32,7 @@
 - [mobilite_iris](/#!/model/model.makeopendata.mobilite_iris) : Nombre de ménages par nature de mobilité (lieu domicile année précédente, lieu de travail vs domicile, nombre de véhicules, mode transport, etc) par iris
 
 
-- [revenu_communes](/#!/model/model.makeopendata.revenu_communes) : Indicateur de revenus (médiane niveau de vie, déciles, pauvreté par tranche d'âge) et nature de revenu (part revenu activité, indemnités chômage, patrimoine, etc) par commune
+- [revenu_commune](/#!/model/model.makeopendata.revenu_commune) : Indicateur de revenus (médiane niveau de vie, déciles, pauvreté par tranche d'âge) et nature de revenu (part revenu activité, indemnités chômage, patrimoine, etc) par commune
 
 
 - [professionnels_sante_departement](/#!/model/model.makeopendata.professionnels_sante_departement) : Nombre de professionnels de santés médecins (chirurgiens, dermatologues, dentistes, etc) et para-médical (infirmiers, kiné, etc) par département en 2022.
