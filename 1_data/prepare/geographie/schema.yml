@@ -78,7 +78,7 @@ models:
 - name: commune_centroid_poste
   description: 'Table de passage pour avoir une relation unique entre les codes postaux et les codes communes insee. Un code postal peut appartenir à plusieurs communes et une code commune insee peut appartenir plusieurs codes postaux.'
 
-- name: infos_departements.sql
+- name: infos_departements
   description: 'Tables avec les informations géographiques et administratifs des départements.'
   columns:
     - name: code_departement
