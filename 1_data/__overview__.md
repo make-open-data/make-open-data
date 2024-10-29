@@ -16,18 +16,22 @@
 - [infos_poste](/#!/model/model.makeopendata.infos_poste) : informations sur les codes postaux
 
 
+- [demographie_departements](/#!/model/model.makeopendata.demographie_departements) : Nombre de ménages par structure démographique (âge, enfants, status matrimonial, etc) par département
 - [demographie_communes](/#!/model/model.makeopendata.demographie_communes) : Nombre de ménages par structure démographique (âge, enfants, status matrimonial, etc) par commune
 - [demographie_iris](/#!/model/model.makeopendata.demographie_iris) : Nombre de ménages par structure démographie (âge, enfants, status matrimonial, etc) par iris
 
 
+- [activite_departements](/#!/model/model.makeopendata.activite_departements) : Nombre de ménages par nature d'activité (scolarisation, travail, type de contrat, etc) par département
 - [activite_communes](/#!/model/model.makeopendata.activite_communes) : Nombre de ménages par nature d'activité (scolarisation, travail, type de contrat, etc) par commune
 - [activite_iris](/#!/model/model.makeopendata.activite_iris) : Nombre de ménages par nature d'activité (scolarisation, travail, type de contrat, etc) par iris
 
 
+- [habitat_departements](/#!/model/model.makeopendata.habitat_departements) : Nombre de ménages par caractéristique de l'habitat (emménagement, statut d'occupation, combustible, etc) par département
 - [habitat_communes](/#!/model/model.makeopendata.habitat_communes) : Nombre de ménages par caractéristique de l'habitat (emménagement, statut d'occupation, combustible, etc) par commune
 - [habitat_iris](/#!/model/model.makeopendata.habitat_iris) : Nombre de ménages par caractéristique de l'habitat (emménagement, statut d'occupation, combustible, etc) par iris
 
 
+- [mobilite_departements](/#!/model/model.makeopendata.mobilite_departements) : Nombre de ménages par nature de mobilité (lieu de travail vs domicile, nombre de véhicules, mode transport, etc) par département
 - [mobilite_communes](/#!/model/model.makeopendata.mobilite_communes) : Nombre de ménages par nature de mobilité (lieu de travail vs domicile, nombre de véhicules, mode transport, etc) par commune
 - [mobilite_iris](/#!/model/model.makeopendata.mobilite_iris) : Nombre de ménages par nature de mobilité (lieu domicile année précédente, lieu de travail vs domicile, nombre de véhicules, mode transport, etc) par iris
 

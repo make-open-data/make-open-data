@@ -132,39 +132,7 @@ models:
   - name: emmenagement_apres_1999
     data_type: CHAR
     description: "Nombre de ménages dans la commune qui ont répondu 'Emménagement après 1999' (valeur: 9 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
-   
-  - name: pr_moins_15
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu 'Moins de 15 ans' (valeur: 0 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_15_19
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '15 à 19 ans' (valeur: 15 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_20_24
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '20 à 24 ans' (valeur: 20 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_25_39
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '25 à 39 ans' (valeur: 25 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_40_54
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '40 à 54 ans' (valeur: 40 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_55_64
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '55 à 64 ans' (valeur: 55 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_64_79
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '65 à 79 ans' (valeur: 65 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_plus_80
-    data_type: CHAR
-    description: "Nombre de ménages dans la commune qui ont répondu '80 ans ou plus' (valeur: 80 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
+
   - name: emmenagement_moins_2_ans
     data_type: CHAR
     description: "Nombre de ménages dans la commune qui ont répondu 'Moins de 2 ans' (valeur: 0 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
@@ -542,7 +510,7 @@ models:
   - name: commune_centre_geopoint
     description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
 - name: habitat_iris
-  description: Rapporte les réponses sur la démographie du recensement agrégées à l'échelle de l'IRIS.
+  description: Rapporte les réponses sur l'habitat du recensement agrégées à l'échelle de l'IRIS.
   columns:
 
   - name: code_iris
@@ -671,39 +639,7 @@ models:
   - name: emmenagement_apres_1999
     data_type: CHAR
     description: "Nombre de ménages dans l'IRIS qui ont répondu 'Emménagement après 1999' (valeur: 9 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
-   
-  - name: pr_moins_15
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Moins de 15 ans' (valeur: 0 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_15_19
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '15 à 19 ans' (valeur: 15 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_20_24
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '20 à 24 ans' (valeur: 20 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_25_39
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '25 à 39 ans' (valeur: 25 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_40_54
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '40 à 54 ans' (valeur: 40 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_55_64
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '55 à 64 ans' (valeur: 55 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_64_79
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '65 à 79 ans' (valeur: 65 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
-  - name: pr_plus_80
-    data_type: CHAR
-    description: "Nombre de ménages dans l'IRIS qui ont répondu '80 ans ou plus' (valeur: 80 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
-   
+     
   - name: emmenagement_moins_2_ans
     data_type: CHAR
     description: "Nombre de ménages dans l'IRIS qui ont répondu 'Moins de 2 ans' (valeur: 0 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
@@ -1051,3 +987,483 @@ models:
   - name: dom__logements_sans_wc_interieurs
     data_type: CHAR
     description: "Nombre de ménages dans l'IRIS qui ont répondu 'Sans W.-C. à l'intérieur du logement' (valeur: 2 ) à la question 'Présence de W.-C. à l'intérieur du logement (DOM)' (code: WC)"
+
+- name: habitat_departements
+  description: Rapporte les réponses sur l'habitat du recensement agrégées à l'échelle du département.
+  columns:
+
+  - name: code_departement
+    data_type: text
+    description: Code INSEE du département
+    tests:
+          - unique
+          - not_null
+
+
+  - name: construction_avant_1919
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avant 1919' (valeur: A11 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_1919_1945
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 1919 à 1945' (valeur: A12 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_1916_1970
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 1946 à 1970' (valeur: B11 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_1971_1990
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 1971 à 1990' (valeur: B12 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_1991_2025
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 1991 à 2005' (valeur: C100 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2006
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2006' (valeur: C106 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2007
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2007' (valeur: C107 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2008
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2008' (valeur: C108 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2009
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2009' (valeur: C109 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2010
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2010' (valeur: C110 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2011
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2011' (valeur: C111 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2012
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2012' (valeur: C112 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2013
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2013' (valeur: C113 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2014
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2014' (valeur: C114 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2015
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2015' (valeur: C115 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2016
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2016' (valeur: C116 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2017
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2017' (valeur: C117 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2018
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2018 (partiel)' (valeur: C2018 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2019
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2019 (partiel)' (valeur: C2019 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2020
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2020 (partiel)' (valeur: C2020 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2021
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2021(partiel)' (valeur: C2021 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: construction_2022
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En 2022(partiel)' (valeur: C2022 ) à la question 'Période d'achèvement de la construction de la maison ou de l'immeuble' (code: ACHL)"
+   
+  - name: emmenagement_1900_1919
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1900 et 1919' (valeur: 2 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1920_1939
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1920 et 1939' (valeur: 3 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1940_1959
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1940 et 1959' (valeur: 4 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1940_1969
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1960 et 1969' (valeur: 5 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1970_1979
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1970 et 1979' (valeur: 6 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1980_1989
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1980 et 1989' (valeur: 7 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_1990_1999
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement entre 1990 et 1999' (valeur: 8 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_apres_1999
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Emménagement après 1999' (valeur: 9 ) à la question 'Année d'emménagement dans le logement (regroupée)' (code: AEMMR)"
+   
+  - name: emmenagement_moins_2_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Moins de 2 ans' (valeur: 0 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_2_4_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 2 à 4 ans' (valeur: 1 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_5_9_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 5 à 9 ans' (valeur: 2 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_10_19_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 10 à 19 ans' (valeur: 3 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_20_29_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 20 à 29 ans' (valeur: 4 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_30_39_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 30 à 39 ans' (valeur: 5 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_40_49_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 40 à 49 ans' (valeur: 6 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_50_59_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 50 à 59 ans' (valeur: 7 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_60_69_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 60 à 69 ans' (valeur: 8 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: emmenagement_plus_70_ans
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '70 ans ou plus' (valeur: 9 ) à la question 'Ancienneté d'emménagement dans le logement (regroupée)' (code: ANEMR)"
+   
+  - name: avec_ascensseur
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec ascenseur' (valeur: 1 ) à la question 'Desserte par un ascenseur' (code: ASCEN)"
+   
+  - name: sans_ascensseur
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans ascenseur' (valeur: 2 ) à la question 'Desserte par un ascenseur' (code: ASCEN)"
+   
+  - name: dom__beignoire_ou_douche
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec baignoire ou douche' (valeur: 1 ) à la question 'Baignoire ou douche (DOM)' (code: BAIN)"
+   
+  - name: dom__ni_beignoire_ni_douche
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans baignoire ni douche' (valeur: 2 ) à la question 'Baignoire ou douche (DOM)' (code: BAIN)"
+   
+  - name: dom__habitation_de_fortune
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Habitations de fortune' (valeur: 1 ) à la question 'Aspect du bâti (DOM)' (code: BATI)"
+   
+  - name: dom__cases_traditionnelles
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Cases traditionnelles' (valeur: 2 ) à la question 'Aspect du bâti (DOM)' (code: BATI)"
+   
+  - name: dom__habitation_en_bois
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Maisons ou immeubles en bois' (valeur: 3 ) à la question 'Aspect du bâti (DOM)' (code: BATI)"
+   
+  - name: dom__habitation_en_dur
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Maisons ou immeubles en dur' (valeur: 4 ) à la question 'Aspect du bâti (DOM)' (code: BATI)"
+   
+  - name: residence_principale
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Résidences principales' (valeur: 1 ) à la question 'Catégorie de logement' (code: CATL)"
+   
+  - name: logement_occasionnel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logements occasionnels' (valeur: 2 ) à la question 'Catégorie de logement' (code: CATL)"
+   
+  - name: residence_secondaire
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Résidences secondaires' (valeur: 3 ) à la question 'Catégorie de logement' (code: CATL)"
+   
+  - name: logement_vacant
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logements vacants' (valeur: 4 ) à la question 'Catégorie de logement' (code: CATL)"
+   
+  - name: dom__presence_chauffage
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Présence de moyen de chauffage' (valeur: 1 ) à la question 'Moyen de chauffage du logement (DOM)' (code: CHAU)"
+   
+  - name: dom__abscence_chauffage
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Absence de moyen de chauffage' (valeur: 2 ) à la question 'Moyen de chauffage du logement (DOM)' (code: CHAU)"
+   
+  - name: dom__presence_chauffe_eau_solaire
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Présence de chauffe-eau solaire' (valeur: 1 ) à la question 'Chauffe-eau solaire (DOM)' (code: CHOS)"
+   
+  - name: dom__abscence_chauffe_eau_solaire
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Absence de chauffe-eau solaire' (valeur: 2 ) à la question 'Chauffe-eau solaire (DOM)' (code: CHOS)"
+   
+  - name: dom__avec_piece_climatisee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec pièce climatisée' (valeur: 1 ) à la question 'Existence d'au moins une pièce climatisée (DOM)' (code: CLIM)"
+   
+  - name: dom__sans_piece_climatisee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans pièce climatisée' (valeur: 2 ) à la question 'Existence d'au moins une pièce climatisée (DOM)' (code: CLIM)"
+   
+  - name: metro__combustible_chauffage_urbain
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Chauffage urbain' (valeur: 1 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: metro__combustible_gaz_de_ville_ou_reseau
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Gaz de ville ou de réseau' (valeur: 2 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: metro__combustible_fioul
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Fioul (mazout)' (valeur: 3 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: metro__combustible_electricte
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Électricité' (valeur: 4 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: metro__combustible_gaz_bouteille_ou_citerne
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Gaz en bouteilles ou en citerne' (valeur: 5 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: metro__combustible_autre
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Autre' (valeur: 6 ) à la question 'Combustible principal du logement (France métropolitaine)' (code: CMBL)"
+   
+  - name: dom__avec_cuisine_interieure_evier
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Présence de cuisine intérieure avec évier' (valeur: 1 ) à la question 'Cuisine intérieure avec évier (DOM)' (code: CUIS)"
+   
+  - name: dom__sans_cuisine_interieure_evier
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Absence de cuisine intérieure avec évier' (valeur: 2 ) à la question 'Cuisine intérieure avec évier (DOM)' (code: CUIS)"
+   
+  - name: dom__eau_froide_seulement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Eau froide seulement' (valeur: 1 ) à la question 'Point d'eau potable à l'intérieur du logement (DOM)' (code: EAU)"
+   
+  - name: dom__eau_froide_et_chaude
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Eau froide et chaude' (valeur: 2 ) à la question 'Point d'eau potable à l'intérieur du logement (DOM)' (code: EAU)"
+   
+  - name: dom__aucun_point_eau
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Aucun point d'eau à l'intérieur du logement' (valeur: 3 ) à la question 'Point d'eau potable à l'intérieur du logement (DOM)' (code: EAU)"
+   
+  - name: dom__raccordement_egouts
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Raccordement au réseau d'égouts' (valeur: 1 ) à la question 'Mode d'évacuation des eaux usées (DOM)' (code: EGOUL)"
+   
+  - name: dom__raccordement_fosse_septique
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Raccordement à une fosse septique' (valeur: 2 ) à la question 'Mode d'évacuation des eaux usées (DOM)' (code: EGOUL)"
+   
+  - name: dom__raccordement_puisard
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Raccordement à un puisard' (valeur: 3 ) à la question 'Mode d'évacuation des eaux usées (DOM)' (code: EGOUL)"
+   
+  - name: dom__evacuation_sol
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Évacuation des eaux usées à même le sol' (valeur: 4 ) à la question 'Mode d'évacuation des eaux usées (DOM)' (code: EGOUL)"
+   
+  - name: dom__avec_electricite
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec électricité' (valeur: 1 ) à la question 'Électricité dans le logement (DOM)' (code: ELEC)"
+   
+  - name: dom__sans_electricite
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans électricité' (valeur: 2 ) à la question 'Électricité dans le logement (DOM)' (code: ELEC)"
+   
+  - name: avec_emplacement_stationnement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec emplacement(s) de stationnement' (valeur: 1 ) à la question 'Emplacement réservé de stationnement' (code: GARL)"
+   
+  - name: sans_emplacement_stationnement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans emplacement de stationnement' (valeur: 2 ) à la question 'Emplacement réservé de stationnement' (code: GARL)"
+   
+  - name: appartient_hlm
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logement appartenant à un organisme HLM' (valeur: 1 ) à la question 'Appartenance du logement à un organisme HLM' (code: HLML)"
+   
+  - name: appartient_pas_hlm
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logement n'appartenant pas à un organisme HLM' (valeur: 2 ) à la question 'Appartenance du logement à un organisme HLM' (code: HLML)"
+   
+  - name: logements_avec_1_piece
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 pièce' (valeur: 1 ) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: logements_avec_2_pieces
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '2 pièces' (valeur: 2 ) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: logements_avec_3_pieces
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '3 pièces' (valeur: 3 ) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: logements_avec_4_pieces
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '4 pièces' (valeur: 4 ) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: logements_avec_5_pieces
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '5 pièces' (valeur: 5 ) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: logements_avec_6_et_plus_pieces
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '6 pièces' et plus (valeur: 6  et plus) à la question 'Nombre de pièces du logement' (code: NBPI)"
+   
+  - name: metro__logement_ni_baignoire_ni_douche
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Ni baignoire' (valeur: 0 ) à la question 'Installations sanitaires (France métropolitaine)' (code: SANI)"
+   
+  - name: metro__logement_avec_baignoire_ou_douche_hors_piece_reservee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Baignoire ou douche hors pièce réservée' (valeur: 1 ) à la question 'Installations sanitaires (France métropolitaine)' (code: SANI)"
+   
+  - name: metro__logement_salle_de_bain
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Salle(s) de bains (avec douche ou baignoire)' (valeur: 2 ) à la question 'Installations sanitaires (France métropolitaine)' (code: SANI)"
+   
+  - name: dom__logement_avec_baignoire_ou_douche_avec_toilettes_interieures
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec baignoire ou douche et avec WC à l'intérieur' (valeur: 11 ) à la question 'Installations sanitaires (DOM)' (code: SANIDOM)"
+   
+  - name: dom__logement_avec_baignoire_ou_douche_sans_toilettes_interieures
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec baignoire ou douche mais sans WC à l'intérieur' (valeur: 12 ) à la question 'Installations sanitaires (DOM)' (code: SANIDOM)"
+   
+  - name: dom__logement_ni_baignoire_ni_douche_avec_toilettes_interieures
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans baignoire ni douche mais avec WC à l'intérieur' (valeur: 21 ) à la question 'Installations sanitaires (DOM)' (code: SANIDOM)"
+   
+  - name: dom__logement_ni_baignoire_ni_douche
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans baignoire ni douche' (valeur: 22 ) à la question 'Installations sanitaires (DOM)' (code: SANIDOM)"
+   
+  - name: logements_occupes_par_proprietaires
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Propriétaire' (valeur: 10 ) à la question 'Statut d'occupation détaillé du logement' (code: STOCD)"
+   
+  - name: logements_occupes_par_locataire_sous_locataire_vide_non_hlm
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Locataire ou sous-locataire d'un logement loué vide non HLM' (valeur: 21 ) à la question 'Statut d'occupation détaillé du logement' (code: STOCD)"
+   
+  - name: logements_occupes_par_locataire_sous_locataire_vide_hlm
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Locataire ou sous-locataire d'un logement loué vide HLM' (valeur: 22 ) à la question 'Statut d'occupation détaillé du logement' (code: STOCD)"
+   
+  - name: logements_occupes_par_locataire_meuble_hotel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel' (valeur: 23 ) à la question 'Statut d'occupation détaillé du logement' (code: STOCD)"
+   
+  - name: logements_occupes_par_loge_gratuitemenent
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logé gratuitement' (valeur: 30 ) à la question 'Statut d'occupation détaillé du logement' (code: STOCD)"
+   
+  - name: logements_moins_30_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Moins de 30 m²' (valeur: 1 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_30_40_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 30 à moins de 40 m²' (valeur: 2 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_40_60_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 40 à moins de 60 m²' (valeur: 3 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_60_80_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 60 à moins de 80 m²' (valeur: 4 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_80_100_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 80 à moins de 100 m²' (valeur: 5 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_100_120_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'De 100 à moins de 120 m²' (valeur: 6 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logements_plus_120_mc
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '120 m² ou plus' (valeur: 7 ) à la question 'Superficie du logement' (code: SURF)"
+   
+  - name: logement_type_contruction_un_logement_isole
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Bâtiment d'habitation d'un seul logement isolé' (valeur: 1 ) à la question 'Type de construction' (code: TYPC)"
+   
+  - name: logement_type_contruction_un_logement_groupe
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Bâtiment d'habitation d'un seul logement jumelé ou groupé de toute autre façon' (valeur: 2 ) à la question 'Type de construction' (code: TYPC)"
+   
+  - name: logement_type_contruction_plusieurs_logements
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Bâtiment d'habitation de 2 logements ou plus' (valeur: 3 ) à la question 'Type de construction' (code: TYPC)"
+   
+  - name: logement_type_contruction_autre_logement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Bâtiment à usage autre qu'habitation' (valeur: 4 ) à la question 'Type de construction' (code: TYPC)"
+   
+  - name: logement_type_construction_provisoire
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Construction provisoire' (valeur: 5 ) à la question 'Type de construction' (code: TYPC)"
+   
+  - name: logement_type_maison
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Maison' (valeur: 1 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: logement_type_appartement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Appartement' (valeur: 2 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: logement_type_appartement_foyer
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Logement-foyer' (valeur: 3 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: logement_type_chambre_hotel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Chambre d'hôtel' (valeur: 4 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: logement_type_habitation_fortune
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Habitation de fortune' (valeur: 5 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: logement_type_piece_independante
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Pièce indépendante (ayant sa propre entrée)' (valeur: 6 ) à la question 'Type de logement' (code: TYPL)"
+   
+  - name: dom__logements_avec_wc_interieurs
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Avec W.-C. à l'intérieur du logement' (valeur: 1 ) à la question 'Présence de W.-C. à l'intérieur du logement (DOM)' (code: WC)"
+   
+  - name: dom__logements_sans_wc_interieurs
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans W.-C. à l'intérieur du logement' (valeur: 2 ) à la question 'Présence de W.-C. à l'intérieur du logement (DOM)' (code: WC)"
