@@ -35,7 +35,7 @@ SELECT
     infos_communes.nom_arrondissement,
     infos_communes.nom_departement,
     infos_communes.nom_region,
-    {{ millesime }} as millesime
+    TO_DATE(CAST({{ millesime }} as TEXT), 'YYYY') as millesime
 FROM 
     bien_principal_de_la_vente
 JOIN 
