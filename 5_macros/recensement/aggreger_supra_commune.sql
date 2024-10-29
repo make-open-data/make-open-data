@@ -11,7 +11,9 @@
 {% set libelle_logement_resultats = run_query(libelle_logement_query) %}
 
 
-{% set libelle_logement_liste = [] %}
+{% set libelle_logement_liste = ['nombre_de_menage_base_ou_logements_occupee', 'nombre_de_logements_occasionnels',
+                                 'nombre_de_logements_residences_secondaires', 'nombre_de_logements_vacants',
+                                 'nombre_de_logements_total_tous_status_occupation'] %}
 {% for row in libelle_logement_resultats %}
     {% do libelle_logement_liste.append(row[0]) %}
 {% endfor %}
