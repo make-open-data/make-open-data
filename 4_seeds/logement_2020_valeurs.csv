@@ -158,14 +158,14 @@ AEMMR,Année d'emménagement dans le logement (regroupée),6,Emménagement entre
 AEMMR,Année d'emménagement dans le logement (regroupée),7,Emménagement entre 1980 et 1989,CHAR,1,emmenagement_1980_1989,habitat
 AEMMR,Année d'emménagement dans le logement (regroupée),8,Emménagement entre 1990 et 1999,CHAR,1,emmenagement_1990_1999,habitat
 AEMMR,Année d'emménagement dans le logement (regroupée),9,Emménagement après 1999,CHAR,1,emmenagement_apres_1999,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,0,Moins de 15 ans,CHAR,2,pr_moins_15,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,15,15 à 19 ans,CHAR,2,pr_15_19,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,20,20 à 24 ans,CHAR,2,pr_20_24,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,25,25 à 39 ans,CHAR,2,pr_25_39,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,40,40 à 54 ans,CHAR,2,pr_40_54,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,55,55 à 64 ans,CHAR,2,pr_55_64,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,65,65 à 79 ans,CHAR,2,pr_64_79,habitat
-AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,80,80 ans ou plus,CHAR,2,pr_plus_80,habitat
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,0,Moins de 15 ans,CHAR,2,pr_age_moins_15,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,15,15 à 19 ans,CHAR,2,pr_age_15_19,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,20,20 à 24 ans,CHAR,2,pr_age_20_24,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,25,25 à 39 ans,CHAR,2,pr_age_25_39,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,40,40 à 54 ans,CHAR,2,pr_age_40_54,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,55,55 à 64 ans,CHAR,2,pr_age_55_64,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,65,65 à 79 ans,CHAR,2,pr_age_64_79,demographie
+AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,80,80 ans ou plus,CHAR,2,pr_age_plus_80,demographie
 AGEMEN8,Âge regroupé de la personne de référence du ménage en 8 classes d'âge,YY,Hors résidence principale,CHAR,2,,IGNORE
 ANEM,Ancienneté d'emménagement dans le logement (détaillée),0,Depuis 0 an,CHAR,3,,IGNORE
 ANEM,Ancienneté d'emménagement dans le logement (détaillée),1,Depuis 1 an,CHAR,3,,IGNORE
