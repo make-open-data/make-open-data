@@ -419,3 +419,198 @@ models:
   - name: menages_3_et_plus_voitures
     data_type: CHAR
     description: "Nombre de ménages dans l'IRIS qui ont répondu 'Trois voitures ou plus' et plus (valeur: 3  et plus) à la question 'Nombre de voitures du ménage' (code: VOIT)"
+
+- name: mobilite_departements
+  description: Rapporte les réponses sur la mobilité du recensement agrégées à l'échelle du département.
+  columns:
+
+  - name: code_departement
+    data_type: text
+    description: Code INSEE du département
+    tests:
+          - unique
+          - not_null
+
+  - name: dom__aucun_deux_roues
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Aucun deux-roues à moteur' (valeur: 0 ) à la question 'Nombre de deux-roues à moteur du ménage (DOM)' (code: DEROU)"
+   
+  - name: dom__un_deux_roues
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Un seul deux-roues à moteur' (valeur: 1 ) à la question 'Nombre de deux-roues à moteur du ménage (DOM)' (code: DEROU)"
+   
+  - name: dom__deux_deux_roues
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Deux deux-roues à moteur' (valeur: 2 ) à la question 'Nombre de deux-roues à moteur du ménage (DOM)' (code: DEROU)"
+   
+  - name: dom__trois_ou_plus_deux_roues
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Trois deux-roues à moteur ou plus' (valeur: 3 ) à la question 'Nombre de deux-roues à moteur du ménage (DOM)' (code: DEROU)"
+   
+  - name: pr_etudes_commune_actuelle
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans la commune de résidence actuelle' (valeur: 1 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_commune_departement_actuel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans une autre commune du département de résidence' (valeur: 2 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_department_region_actuel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans un autre département de la région de résidence' (valeur: 3 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_hors_region_actuelle_metropole
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : en métropole' (valeur: 4 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_hors_region_actuelle_dom
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un DOM' (valeur: 5 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_hors_region_actuelle_com
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans une COM' (valeur: 6 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_etranger
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'À l'étranger' (valeur: 7 ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_etudes_sans_objet_non_inscrit
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans objet (pas d'inscription dans un établissement d'enseignement)' (valeur: Z ) à la question 'Indicateur du lieu d'études (personne de référence du ménage)' (code: ILETUDM)"
+   
+  - name: pr_travail_commune_actuelle
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans la commune de résidence actuelle' (valeur: 1 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_commune_departement_actuel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans une autre commune du département de résidence' (valeur: 2 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_department_region_actuel
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans un autre département de la région de résidence' (valeur: 3 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_hors_region_actuelle_metropole
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : en métropole' (valeur: 4 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_hors_region_actuelle_dom
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un DOM' (valeur: 5 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_hors_region_actuelle_com
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans une COM' (valeur: 6 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_etranger
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'À l'étranger' (valeur: 7 ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_travail_sans_objet_sans_emploi
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Sans objet (sans emploi)' (valeur: Z ) à la question 'Indicateur de lieu de travail (personne de référence du ménage)' (code: ILTM)"
+   
+  - name: pr_immigration_immigre
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Immigrés' (valeur: 1 ) à la question 'Situation quant à l'immigration (personne de référence du ménage)' (code: IMMIM)"
+   
+  - name: pr_immigration_non_immigre
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Non immigrés' (valeur: 2 ) à la question 'Situation quant à l'immigration (personne de référence du ménage)' (code: IMMIM)"
+   
+  - name: pr_naissance_department_actuelle
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans le département de résidence actuelle' (valeur: 1 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: pr_naissance_department_region_actuelle
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans un autre département de la région de résidence actuelle' (valeur: 2 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: pr_naissance_hors_region_actuelle_metropole
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : en métropole' (valeur: 3 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: pr_naissance_hors_region_actuelle_dom
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un DOM' (valeur: 4 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: pr_naissance_hors_region_actuelle_com
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un TOM-COM' (valeur: 5 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: pr_naissance_etranger
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'À l'étranger' (valeur: 6 ) à la question 'Indicateur du lieu de naissance (personne de référence du ménage)' (code: INAIM)"
+   
+  - name: menages_avec_pr_annee_avant_meme_logement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans le même logement' (valeur: 1 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_meme_commune
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans un autre logement de la même commune' (valeur: 2 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_meme_departement
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans une autre commune du département' (valeur: 3 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_meme_region
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Dans un autre département de la région' (valeur: 4 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_autre_region_metro
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : en métropole' (valeur: 5 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_autre_region_dom
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un DOM' (valeur: 6 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_autre_region_com
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hors de la région de résidence actuelle : dans un TOM-COM' (valeur: 7 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_union_europeenne
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'À l'étranger dans l'Union Européenne (28 pays membres)' (valeur: 8 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_avec_pr_annee_avant_etranger
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'À l'étranger hors Union Européenne' (valeur: 9 ) à la question 'Indicateur du lieu de résidence antérieure au 1er janvier de l'annéee précédente de la personne de référence du ménage' (code: IRANM)"
+   
+  - name: menages_pr_transport_travail_pieds
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Marche à pied (ou rollers, patinette)' (valeur: 2 ) à la question 'Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage)' (code: TRANSM)"
+   
+  - name: menages_pr_transport_travail_velo
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Vélo (y compris à assistance électrique)' (valeur: 3 ) à la question 'Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage)' (code: TRANSM)"
+   
+  - name: menages_pr_transport_travail_deux_roues
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Deux-roues motorisé' (valeur: 4 ) à la question 'Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage)' (code: TRANSM)"
+   
+  - name: menages_pr_transport_travail_voiture
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Voiture, camion, fourgonnette' (valeur: 5 ) à la question 'Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage)' (code: TRANSM)"
+   
+  - name: menages_pr_transport_travail_transport_commune
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Transports en commun' (valeur: 6 ) à la question 'Mode de transport principal le plus souvent utilisé pour aller travailler (personne de référence du ménage)' (code: TRANSM)"
+   
+  - name: menages_0_voiture
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Aucune voiture' (valeur: 0 ) à la question 'Nombre de voitures du ménage' (code: VOIT)"
+   
+  - name: menages_1_voiture
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Une seule voiture' (valeur: 1 ) à la question 'Nombre de voitures du ménage' (code: VOIT)"
+   
+  - name: menages_2_voitures
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Deux voitures' (valeur: 2 ) à la question 'Nombre de voitures du ménage' (code: VOIT)"
+   
+  - name: menages_3_et_plus_voitures
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Trois voitures ou plus' et plus (valeur: 3  et plus) à la question 'Nombre de voitures du ménage' (code: VOIT)"
