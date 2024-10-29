@@ -25,6 +25,7 @@ select {{ nouveau_niveau_geo }},
     {% if not loop.last %} , {% endif %}
 {% endfor %}
 from {{ ref(theme+'_communes')}}
+where {{ nouveau_niveau_geo }} is not null --- A enlever après avoir bien milesimé les données recensement (i.e. pas de commune manquante)
 group by {{ nouveau_niveau_geo }}
 
 {% endmacro %}
