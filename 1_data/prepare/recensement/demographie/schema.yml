@@ -168,6 +168,39 @@ models:
   - name: menages_pr_celibataire
     data_type: CHAR
     description: "Nombre de ménages dans la commune qui ont répondu 'Célibataire' (valeur: 6 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+  
+  - name: pr_age_moins_15
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu 'Moins de 15 ans' (valeur: 0 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_15_19
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '15 à 19 ans' (valeur: 15 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_20_24
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '20 à 24 ans' (valeur: 20 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_25_39
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '25 à 39 ans' (valeur: 25 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_40_54
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '40 à 54 ans' (valeur: 40 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_55_64
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '55 à 64 ans' (valeur: 55 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_64_79
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '65 à 79 ans' (valeur: 65 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_plus_80
+    data_type: CHAR
+    description: "Nombre de ménages dans la commune qui ont répondu '80 ans ou plus' (valeur: 80 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+
   - name: code_commune
     description: "Provient de [infos_communes](/#!/model/model.makeopendata.infos_communes)"
   - name: nom_commune
@@ -363,3 +396,234 @@ models:
   - name: menages_pr_celibataire
     data_type: CHAR
     description: "Nombre de ménages dans l'IRIS qui ont répondu 'Célibataire' (valeur: 6 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+  
+  - name: pr_age_moins_15
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu 'Moins de 15 ans' (valeur: 0 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_15_19
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '15 à 19 ans' (valeur: 15 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_20_24
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '20 à 24 ans' (valeur: 20 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_25_39
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '25 à 39 ans' (valeur: 25 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_40_54
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '40 à 54 ans' (valeur: 40 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_55_64
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '55 à 64 ans' (valeur: 55 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_64_79
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '65 à 79 ans' (valeur: 65 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_plus_80
+    data_type: CHAR
+    description: "Nombre de ménages dans l'IRIS qui ont répondu '80 ans ou plus' (valeur: 80 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+
+- name: demographie_departements
+  description: Rapporte les réponses sur la démographie du recensement agrégées à l'échelle du département.
+  columns:
+
+  - name: code_departement
+    data_type: text
+    description: Code INSEE du département
+    tests:
+          - unique
+          - not_null
+
+  - name: menages_avec_0_personne_11_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 11 ans ou moins du ménage' (code: INP11M)"
+   
+  - name: menages_avec_1_et_plus_personnes_11_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 11 ans ou moins du ménage' (code: INP11M)"
+   
+  - name: menages_avec_0_personne_15_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 15 ans ou moins du ménage' (code: INP15M)"
+   
+  - name: menages_avec_1_et_plus_personnes_15_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 15 ans ou moins du ménage' (code: INP15M)"
+   
+  - name: menages_avec_0_personne_17_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 17 ans ou moins du ménage' (code: INP17M)"
+   
+  - name: menages_avec_1_et_plus_personnes_17_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 17 ans ou moins du ménage' (code: INP17M)"
+   
+  - name: menages_avec_0_personne_19_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 19 ans ou moins du ménage' (code: INP19M)"
+   
+  - name: menages_avec_1_et_plus_personnes_19_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 19 ans ou moins du ménage' (code: INP19M)"
+   
+  - name: menages_avec_0_personne_24_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 24 ans ou moins du ménage' (code: INP24M)"
+   
+  - name: menages_avec_1_et_plus_personnes_24_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 24 ans ou moins du ménage' (code: INP24M)"
+   
+  - name: menages_avec_0_personne_3_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 3 ans ou moins du ménage' (code: INP3M)"
+   
+  - name: menages_avec_1_et_plus_personnes_3_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 3 ans ou moins du ménage' (code: INP3M)"
+   
+  - name: menages_avec_0_personne_5_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes âgées de 5 ans ou moins du ménage' (code: INP5M)"
+   
+  - name: menages_avec_1_et_plus_personnes_5_ans_et_moins
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 5 ans ou moins du ménage' (code: INP5M)"
+   
+  - name: menages_avec_0_personne_60_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' et plus (valeur: 0  et plus) à la question 'Nombre de personnes âgées de 60 ans ou plus du ménage' (code: INP60M)"
+   
+  - name: menages_avec_1_et_plus_personnes_60_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 60 ans ou plus du ménage' (code: INP60M)"
+   
+  - name: menages_avec_0_personne_65_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' et plus (valeur: 0  et plus) à la question 'Nombre de personnes âgées de 65 ans ou plus du ménage' (code: INP65M)"
+   
+  - name: menages_avec_1_et_plus_personnes_65_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 65 ans ou plus du ménage' (code: INP65M)"
+   
+  - name: menages_avec_0_personne_75_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' et plus (valeur: 0  et plus) à la question 'Nombre de personnes âgées de 75 ans ou plus du ménage' (code: INP75M)"
+   
+  - name: menages_avec_1_et_plus_personnes_75_ans_et_plus
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' et plus (valeur: 1  et plus) à la question 'Nombre de personnes âgées de 75 ans ou plus du ménage' (code: INP75M)"
+   
+  - name: menages_avec_1_personne
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_6_et_plus_personnes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_2_personnes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '2 personnes' (valeur: 2 ) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_3_personnes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '3 personnes' (valeur: 3 ) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_4_personnes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '4 personnes' (valeur: 4 ) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_5_personnes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '5 personnes' (valeur: 5 ) à la question 'Nombre de personnes du ménage' (code: INPER)"
+   
+  - name: menages_avec_0_personne_masculin
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes du ménage, de sexe masculin' (code: INPER1)"
+   
+  - name: menages_avec_1_personne_masculin
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes du ménage, de sexe masculin' (code: INPER1)"
+   
+  - name: menages_avec_2_et_plus_personnes_masculin
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '10 personnes' et plus (valeur: 10  et plus) à la question 'Nombre de personnes du ménage, de sexe masculin' (code: INPER1)"
+   
+  - name: menages_avec_0_personne_feminin
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '0 personne' (valeur: 0 ) à la question 'Nombre de personnes du ménage, de sexe féminin' (code: INPER2)"
+   
+  - name: menages_avec_1_personne_feminin
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '1 personne' (valeur: 1 ) à la question 'Nombre de personnes du ménage, de sexe féminin' (code: INPER2)"
+   
+  - name: menages_pr_homme
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Hommes' (valeur: 1 ) à la question 'Sexe de la personne de référence du ménage' (code: SEXEM)"
+   
+  - name: menages_pr_femmes
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Femmes' (valeur: 2 ) à la question 'Sexe de la personne de référence du ménage' (code: SEXEM)"
+   
+  - name: menages_pr_mariee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Marié(e)' (valeur: 1 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+   
+  - name: menages_pr_pacsee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Pacsé(e)' (valeur: 2 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+   
+  - name: menages_pr_concubinage_union_libre
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'En concubinage ou union libre' (valeur: 3 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+   
+  - name: menages_pr_veuve
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Veuf, veuve' (valeur: 4 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+   
+  - name: menages_pr_divorcee
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Divorcé(e)' (valeur: 5 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+   
+  - name: menages_pr_celibataire
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Célibataire' (valeur: 6 ) à la question 'Statut conjugal de la personne de référence du ménage' (code: STAT_CONJM)"
+  
+  - name: pr_age_moins_15
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu 'Moins de 15 ans' (valeur: 0 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_15_19
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '15 à 19 ans' (valeur: 15 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_20_24
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '20 à 24 ans' (valeur: 20 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_25_39
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '25 à 39 ans' (valeur: 25 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_40_54
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '40 à 54 ans' (valeur: 40 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_55_64
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '55 à 64 ans' (valeur: 55 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_64_79
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '65 à 79 ans' (valeur: 65 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"
+   
+  - name: pr_age_plus_80
+    data_type: CHAR
+    description: "Nombre de ménages dans le département qui ont répondu '80 ans ou plus' (valeur: 80 ) à la question 'Âge regroupé de la personne de référence du ménage en 8 classes d'âge' (code: AGEMEN8)"

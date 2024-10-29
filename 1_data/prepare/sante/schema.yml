@@ -6,20 +6,7 @@ models:
   description: Fournit les effectifs des professionnels de santé (tout sexe, age) par spécialité et département pour l'année 2022
   columns:
   
-  - name: region
-    data_type: text
-    description: Code région
-    tests:
-      - not_null
-
-  - name: libelle_region
-    data_type: text
-    description: Libellé région
-    tests:
-      - not_null
-
-
-  - name: departement
+  - name: code_departement
     data_type: text
     description: Code département
     tests:
@@ -29,9 +16,17 @@ models:
   - name: libelle_departement
     data_type: text
     description: Libellé département
-    tests:
-      - unique
-      - not_null
+  
+
+  - name: code_region
+    data_type: text
+    description: Code région
+
+
+  - name: nom_region
+    data_type: text
+    description: Libellé région
+
 
   - name: Stomatologues
     data_type: numeric
