@@ -109,7 +109,7 @@ jobs:
     - name: Run dbt run
       run: |
         source dbt-env/bin/activate
-        dbt run
+        dbt run --threads 4
 
     - name: Run dbt test
       run: |
