@@ -43,6 +43,41 @@ SCENARIOS = [
             "_geopoint": "45.770104,4.826373",
         }
     ),
+    Scenario(
+        csv_filename="cc_filosofi_2021_COM",
+        delimiter=";",
+        expected_row_count=8,
+        expected_first_row_data={
+            "CODGEO": "01004",
+            "NBMENFISC21": "6855",
+            "NBPERSMENFISC21": "15092",
+            "MED21": "21660",
+            "PIMP21": "50,0",
+            "TP6021": "17,0",
+            "TP60AGE121": "17,0",
+            "TP60AGE221": "22,0",
+            "TP60AGE321": "19,0",
+            "TP60AGE421": "16,0",
+            "TP60AGE521": "11,0",
+            "TP60AGE621": "s",
+            "TP60TOL121": "5,0",
+            "TP60TOL221": "27,0",
+            "PACT21": "72,3",
+            "PTSA21": "65,7",
+            "PCHO21": "3,2",
+            "PBEN21": "3,4",
+            "PPEN21": "25,3",
+            "PPAT21": "10,2",
+            "PPSOC21": "7,0",
+            "PPFAM21": "2,6",
+            "PPMINI21": "3,0",
+            "PPLOGT21": "1,4",
+            "PIMPOT21": "-14,8",
+            "D121": "11890",
+            "D921": "36450",
+            "RD21": "3,1",
+        }
+    ),
 ]
 
 
