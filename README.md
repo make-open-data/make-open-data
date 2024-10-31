@@ -77,7 +77,8 @@ CREATE EXTENSION postgis;
 - Extraire les données sources dans le schema `sources`:
 
 ```
-python -m load # -> environ 20 min
+python -m load # -> environ 5 min, uniquement un échantillon de données
+python -m load --production # -> environ 20 min, toutes les données
 ```
 
 
