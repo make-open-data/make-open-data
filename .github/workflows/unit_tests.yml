@@ -1,0 +1,56 @@
+name: UnitTests
+
+on: [push, pull_request]
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+
+    permissions:
+      checks: write # Nécessaire pour écrire un status check sur le résultat des tests.
+      pull-requests: write # Nécessaire pour publier un commentaire sur la couverture de code
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        python -m pip install -r requirements.txt --upgrade pip
+
+    - name: Run tests
+      run: bash -x scripts/run_tests.sh
+
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v4
+      # GitHub n'autorise pas la publication des checks sur une PR créée à partir d'une fork.
+      # Ici, nous n'autorisons cette étape que si le dépôt source de la PR est le dépôt cible.
+      # Voir: https://github.com/mikepenz/action-junit-report/issues/97
+      if: >
+        (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+        (github.event_name == 'push' && github.repository == github.event.repository.full_name)
+      with:
+        report_paths: 'reports/junit.xml'
+    - name: Post coverage report
+      uses: 5monkeys/cobertura-action@v14
+      # GitHub n'autorise pas la publication des commentaires sur une PR créée à partir d'une fork.
+      # Ici, nous n'autorisons cette étape que si le dépôt source de la PR est le dépôt cible.
+      if: >
+        (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+        (github.event_name == 'push' && github.repository == github.event.repository.full_name)
+      with:
+        path: reports/coverage.xml
+        # augmenter ce seuil quand on ajoute des tests.
+        minimum_coverage: 35
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-reports
+        path: reports
+
