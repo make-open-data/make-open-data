@@ -10,8 +10,12 @@ WITH mutation_values AS (
         latitude,
         longitude,
         valeur_fonciere
-    FROM 
+    FROM
+    {% if target.name == 'production' %}
         {{ source('sources', 'dvf_2023')}} as dvf_2023
+    {% else %}
+        {{ source('sources', 'dvf_2023_dev')}} as dvf_2023
+    {% endif %}
 ),
 
 mutation_value_counts AS (
