@@ -101,17 +101,7 @@ jobs:
         source dbt-env/bin/activate
         dbt deps
 
-    - name: Run dbt seed
+    - name: Run dbt build
       run: |
         source dbt-env/bin/activate
-        dbt seed
-
-    - name: Run dbt run
-      run: |
-        source dbt-env/bin/activate
-        dbt run --threads 4
-
-    - name: Run dbt test
-      run: |
-        source dbt-env/bin/activate
-        dbt test
+        dbt build --threads 4
