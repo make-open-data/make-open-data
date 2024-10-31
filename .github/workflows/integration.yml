@@ -115,9 +115,3 @@ jobs:
       run: |
         source dbt-env/bin/activate
         dbt test
-
-
-    - name: delete "prep" schemas if exists
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://${{  secrets.CI_POSTGRES_USER  }}:${{  secrets.CI_POSTGRES_PASSWORD  }}@${{  secrets.CI_POSTGRES_HOST  }}:${{  secrets.CI_POSTGRES_PORT  }}/${{  secrets.CI_POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
