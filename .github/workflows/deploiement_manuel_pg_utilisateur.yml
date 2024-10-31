@@ -9,12 +9,13 @@ jobs:
 
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11.5
+        cache: 'pip'
 
     - name: Create Python virtual environment
       run: python3 -m venv dbt-env
