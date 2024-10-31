@@ -8,4 +8,5 @@ psycopg[binary,pool]==3.1.19
 
 # dependences de test:
 pytest==8.3.3
+pytest-cov==6.0.0
 pytest-docker==3.1.1
