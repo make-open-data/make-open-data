@@ -13,6 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: integration_test
 
+    services:
+      postgres:
+        image: postgis/postgis:16-3.5-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
@@ -32,19 +45,13 @@ jobs:
         pip install -r requirements.txt
 
     - name: Set environment variables
-      env: 
-        POSTGRES_DB: ${{ secrets.CI_POSTGRES_DB }}
-        POSTGRES_HOST: ${{ secrets.CI_POSTGRES_HOST }}
-        POSTGRES_PASSWORD: ${{ secrets.CI_POSTGRES_PASSWORD }}
-        POSTGRES_PORT: ${{ secrets.CI_POSTGRES_PORT }}
-        POSTGRES_USER: ${{ secrets.CI_POSTGRES_USER }}
       run: |
         source dbt-env/bin/activate
-        echo "POSTGRES_DB=$POSTGRES_DB" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=$POSTGRES_HOST" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=$POSTGRES_PORT" >> $GITHUB_ENV
-        echo "POSTGRES_USER=$POSTGRES_USER" >> $GITHUB_ENV
+        echo "POSTGRES_DB=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
+        echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
 
     - name: Install PostGIS extensions
     
