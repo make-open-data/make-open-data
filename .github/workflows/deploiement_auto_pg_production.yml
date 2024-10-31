@@ -81,7 +81,7 @@ jobs:
     - name: Load data from storage to tables in DB
       run: |
         source dbt-env/bin/activate
-        python -m load
+        python -m load --production
 
   
     - name: Run dbt seed
