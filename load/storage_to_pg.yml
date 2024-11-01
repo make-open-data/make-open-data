@@ -250,3 +250,9 @@ conso_energie_departement:
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
+
+table_passage:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/passage_communes/table_passage_annuelle_2024.csv"
+  csv_delimiter: ";"
+  db_schema: "sources"
+  file_format: "csv"
