@@ -71,10 +71,18 @@ def get_columns_from_csv(file_path, delimiter):
     return df.columns.tolist()
 
 
-def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
+def load_file_to_pg(tmpfile_csv_path:str, pg_table:str, data_infos):
+    """
+    Load a temporary csv file and feed it to the DB as a new table.
+
+    arguments:
+    tmpfile_csv_path -- path to the temporary file created by load_file_from_storage
+    pg_table -- name of the table to create
+    data_infos -- dict of metadata, loaded from storage_to_pg.yml
+    """
 
     db_schema = data_infos["db_schema"]
-    delimiter = data_infos["csv_delimiter"]
+    delimiter = data_infos["csv_delimiter"] if data_infos["file_format"] == 'csv' else ','
 
     file_columns = get_columns_from_csv(tmpfile_csv_path, delimiter)
     file_columns_str = ', '.join(f'"{col}"' for col in file_columns)
