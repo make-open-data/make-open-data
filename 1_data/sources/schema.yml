@@ -775,3 +775,6 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
       - name: dvf_2024
         description: "Demande de Valeurs Foncières 2024 Géolocalisée par Etalab"
         columns: *shared_columns_dvf_default
+
+      - name: datatourisme_place
+        description: "List datourisme POI"

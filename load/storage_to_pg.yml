@@ -232,3 +232,9 @@ shape_epci_2024:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/EPCI.zip"
   db_schema: "sources"
   file_format: 'shape'
+
+datatourisme_place:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/datatourisme_place/datatourisme-place.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ","

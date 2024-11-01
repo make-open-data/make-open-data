@@ -61,3 +61,6 @@ filosofi_commune_2021:
   source_url: https://www.insee.fr/fr/statistiques/fichier/7756729/base-cc-filosofi-2021-geo2024_csv.zip
   source_reference : https://www.insee.fr/fr/statistiques/7756729?sommaire=7756859
 
+datatourisme_place:
+  source_url: https://www.data.gouv.fr/fr/datasets/r/cf247ad9-5bcd-4c8a-8f4d-f49f0803bca1
+  source_reference : https://www.data.gouv.fr/fr/datasets/datatourisme-la-base-nationale-des-donnees-publiques-dinformation-touristique-en-open-data
