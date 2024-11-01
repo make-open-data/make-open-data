@@ -36,17 +36,18 @@ jobs:
         cache: 'pip'
 
     - name: Create Python virtual environment
-      run: python3 -m venv dbt-env
-
-    - name: Activate virtual environment and install dependencies
       run: |
+        python3 -m venv dbt-env
         source dbt-env/bin/activate
+        echo "export PATH=$PATH" >> $GITHUB_ENV
+
+    - name: Install dependencies
+      run: |
         pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Set environment variables
       run: |
-        source dbt-env/bin/activate
         echo "POSTGRES_DB=postgres" >> $GITHUB_ENV
         echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
         echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
@@ -56,17 +57,14 @@ jobs:
 
     - name: Install PostGIS extensions
       run: |
-        source dbt-env/bin/activate
         psql $POSTGRES_URL -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
     - name: Install unnaccent extensions
       run: |
-        source dbt-env/bin/activate
         psql $POSTGRES_URL -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
 
-    - name: check dbt project
+    - name: Check dbt project
       run: |
-        source dbt-env/bin/activate
         dbt debug
 
     - name: Cache Load step
@@ -92,7 +90,6 @@ jobs:
 
     - name: Load data from storage to tables in DB
       run: |
-        source dbt-env/bin/activate
         python -m load
 
     - name: Create Load cache dump
@@ -103,10 +100,8 @@ jobs:
 
     - name: Run dbt deps
       run: |
-        source dbt-env/bin/activate
         dbt deps
 
     - name: Run dbt build
       run: |
-        source dbt-env/bin/activate
         dbt build --threads 4
