@@ -145,8 +145,9 @@ sources:
             data_type: text
 
       - name: logement_2020
-        description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
-Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
+        description: >
+          Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
+          Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
         columns:
           - name: COMMUNE
             description: "Commune"
@@ -775,3 +776,82 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
       - name: dvf_2024
         description: "Demande de Valeurs Foncières 2024 Géolocalisée par Etalab"
         columns: *shared_columns_dvf_default
+
+      - name: bpe_2023
+        description: Base permanente des équipements (BPE) 2023
+        columns:
+          - name: COMMUNE
+            description: "Commune"
+            data_type: text
+          - name: ARM
+            description: "Année de référence des matériaux"
+            data_type: text
+          - name: IRIS
+            description: "Identifiant d'un IRIS (Ilots Regroupés pour l'Information Statistique)"
+            data_type: text
+
+          - name: Nom_du_POI
+            description: "Nom du Point D'Interet"
+            data_type: text
+          - name: Categories_de_POI
+            description: "Liste Catégories Ontologiques du Point D'Interet"
+            data_type: text
+          - name: Latitude
+            description: "Latitude"
+            data_type: text
+          - name: Longitude
+            description: "Longitude"
+            data_type: text
+          - name: Adresse_postale
+            description: "Adresse postale"
+            data_type: text
+          - name: Code_postal_et_commune
+            description: "Code postal et commune séparés par #"
+            data_type: text
+          - name: Covid19_mesures_specifiques
+            description: "Covid19 mesures spécifiques"
+            data_type: text
+          - name: Createur_de_la_donnee
+            description: "Créateur de la donnée"
+            data_type: text
+          - name: SIT_diffuseur
+            description: "Diffuseur"
+            data_type: text
+          - name: Date_de_mise_a_jour
+            description: "Date de mise à jour"
+            data_type: text
+          - name: Contacts_du_POI
+            description: "Contacts du POI séparés par #"
+            data_type: text
+          - name: Classements_du_POI
+            description: "Classements du POI séparés par #"
+            data_type: text
+          - name: Description
+            description: "Description"
+            data_type: text
+          - name: URI_ID_du_POI
+            description: "URI Identifiante du POI"
+            data_type: text
+
+      - name: bpe_metadata
+        description: Table de passage domaine - sous-domaine - type d'équipement
+        columns:
+          - name: TYPEQU
+            description: "Clef Type Equipement"
+            data_type: text
+          - name: Libelle_TYPEQU
+            description: "Libellé Type Equipement"
+            data_type: text
+          - name: SDOM
+            description: "Clef Sous-Domaine"
+            data_type: text
+          - name: Libelle_SDOM
+            description: "Libellé Sous-Domaine"
+            data_type: text
+          - name: DOM
+            description: "Clef Domaine"
+            data_type: text
+          - name: Libelle_DOM
+            description: "Libellé Domaine"
+            data_type: text            
+

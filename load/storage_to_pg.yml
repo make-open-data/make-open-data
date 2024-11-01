@@ -232,3 +232,17 @@ shape_epci_2024:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/EPCI.zip"
   db_schema: "sources"
   file_format: 'shape'
+
+
+bpe_2023:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_equipements/BPE23.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ","
+
+bpe_metadata:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_equipements/BPE23_table_passage.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
