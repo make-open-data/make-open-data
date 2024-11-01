@@ -65,16 +65,20 @@ Pour soumettre une PR:
 git checkout -b my-fix-branch main
 ```
 
+3. Lancer les tests unitaires:
+```shell
+./scripts/run_tests.sh
+```
 
-3. Faites un Commit de vos changements en ajoutant une description dans le message du commit (ex: correction de typo, amélioration du SQL, ajout d'une colonne qui calcule xyz.. )
+4. Faites un Commit de vos changements en ajoutant une description dans le message du commit (ex: correction de typo, amélioration du SQL, ajout d'une colonne qui calcule xyz.. )
 ```shell
 git commit --all
 ```
-4. Pousser votre branche sur GitHub:
+5. Pousser votre branche sur GitHub:
 ```shell
 git push origin my-fix-branch
 ```
-5. Creer une pull request a make-open-data:staging.
+6. Creer une pull request a make-open-data:staging.
 
 
 Après revue de la PR, il est possible que nous vous demandions des modifications avant de fusionner la branche.
