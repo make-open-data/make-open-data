@@ -61,3 +61,17 @@ filosofi_commune_2021:
   source_url: https://www.insee.fr/fr/statistiques/fichier/7756729/base-cc-filosofi-2021-geo2024_csv.zip
   source_reference : https://www.insee.fr/fr/statistiques/7756729?sommaire=7756859
 
+
+seveso_sites_2024:
+  source_url: https://mapsref.brgm.fr/wxs/georisques/seveso?&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+  source_reference: https://www.data.gouv.fr/fr/datasets/etablissements-seveso-france-metropolitaine-3/
+  description: |
+    The data is exported as [WFS](https://www.ogc.org/publications/standard/wfs/),
+    a XML containing data as Layers.
+    To export it into a csv, it was loaded in QGIS 
+    (Layer>Add Layer>Add WFS Layer ; click New, enter URL, click connect, select layers),
+    then exported into a CSV
+    (select, right click, Export>Save features as ; select csv, all fields, 
+    select 'Geometry'.'Geometry type'='Point', select 'Layer Options'.'GEOMETRY'.'AS_XY').
+    Rename the 'X' column to 'longitude' and 'Y' to 'latitude'.
+    You now have a CSV file with for each Seveso site in France, their identifier, their location and their severity type.
