@@ -4,15 +4,18 @@ config-version: 2
 
 profile: 'makeopendata'
 
-model-paths: ["1_data"]
+model-paths: ["0_load", "1_data"]
 analysis-paths: ["2_analyses"]
 test-paths: ["3_tests"]
 seed-paths: ["4_seeds"]
 macro-paths: ["5_macros"]
 snapshot-paths: ["6_snapshots"]
 
-clean-targets:         
+clean-targets:
   - "target"
   - "dbt_packages"
 
 models:
+  +pre-hook:
+    # dirty trick to avoid using transactions, as they're not compatible with pg_duckdb
+    sql: "commit"

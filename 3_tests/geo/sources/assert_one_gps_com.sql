@@ -6,7 +6,7 @@
 
 with source as (
     SELECT code_commune_insee, COUNT(DISTINCT _geopoint) as geopoint_count
-    FROM {{ source('sources', 'cog_poste')}} as cog_poste
+    FROM {{ ref('cog_poste')}} as cog_poste
     GROUP BY code_commune_insee
 )
 

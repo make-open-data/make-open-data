@@ -2,8 +2,8 @@
 
 with filtre_cog_communes as (
     -- Filter out non-commune rows here to avoid confusion of filtering in the main query
-    select * 
-    from {{ source('sources', 'cog_communes')}} as cog_communes     
+    select *
+    from {{ source('sources', 'cog_communes')}} as cog_communes
     where cog_communes.type in ('commune-actuelle', 'arrondissement-municipal')
 
 ),denomalise_cog as (
@@ -16,7 +16,7 @@ with filtre_cog_communes as (
         "codesPostaux" as codes_postaux,
         filtre_cog_communes.population as population,
         filtre_cog_communes.zone as code_zone,
-        
+
         cog_arrondissements.nom as nom_arrondissement,
         cog_departements.nom as nom_departement,
         cog_regions.nom as nom_region
@@ -24,17 +24,17 @@ with filtre_cog_communes as (
     from filtre_cog_communes
     left join {{ source('sources', 'cog_arrondissements')}}  cog_arrondissements on cog_arrondissements.code = filtre_cog_communes.arrondissement
     left join {{ source('sources', 'cog_departements')}}  cog_departements on cog_departements.code = filtre_cog_communes.departement
-    left join {{ source('sources', 'cog_regions')}}  cog_regions on cog_regions.code = filtre_cog_communes.region  
-    
+    left join {{ source('sources', 'cog_regions')}}  cog_regions on cog_regions.code = filtre_cog_communes.region
+
 ), laposte_gps as (
     select DISTINCT
         LPAD(CAST(cog_poste.code_commune_insee AS TEXT), 5, '0') as code_commune,
         CAST(SPLIT_PART(cog_poste._geopoint, ',', 1) AS FLOAT) as commune_latitude,
         CAST(SPLIT_PART(cog_poste._geopoint, ',', 2) AS FLOAT) as commune_longitude
-    from {{ source('sources', 'cog_poste')}}  as cog_poste
+    from {{ ref('cog_poste')}}  as cog_poste
 ), ign_shapes as (
     select "INSEE_COM" as code_commune,
-            geometry as commune_contour 
+            geometry as commune_contour
     from {{ source('sources', 'shape_commune_2024')}}
     union
     select  "INSEE_ARM" as code_commune,
