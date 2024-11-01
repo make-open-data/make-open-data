@@ -9,12 +9,13 @@ jobs:
 
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11.5
+        cache: 'pip'
 
     - name: Create Python virtual environment
       run: python3 -m venv dbt-env
@@ -71,24 +72,14 @@ jobs:
     - name: Load data from storage to tables in DB
       run: |
         source dbt-env/bin/activate
-        python -m load
+        python -m load --production
 
     - name: Run dbt deps
       run: |
         source dbt-env/bin/activate
         dbt deps
 
-    - name: Run dbt seed
+    - name: Run dbt build
       run: |
         source dbt-env/bin/activate
-        dbt seed
-
-    - name: Run dbt run
-      run: |
-        source dbt-env/bin/activate
-        dbt run --target production
-
-    - name: Run dbt test
-      run: |
-        source dbt-env/bin/activate
-        dbt test
+        dbt build --target production
