@@ -24,6 +24,11 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v4
 
+    - name: Setup PostgreSQL
+      uses: tj-actions/install-postgresql@v3
+      with:
+        postgresql-version: 16
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -47,49 +52,55 @@ jobs:
         echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
         echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
         echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
+        echo "POSTGRES_URL=postgresql://postgres:postgres@localhost:5432/postgres" >> $GITHUB_ENV
 
     - name: Install PostGIS extensions
-    
       run: |
         source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+        psql $POSTGRES_URL -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
     - name: Install unnaccent extensions
       run: |
         source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
-
-    - name: delete "prep" schemas if exists
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS prep CASCADE;"
-
-
-    - name: delete "prepare" schemas if exists
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS prepare CASCADE;"
-
-    
-    - name: delete "intermediaires" schemas if exists
-      run: |
-        source dbt-env/bin/activate
-        psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB -c "DROP SCHEMA IF EXISTS intermediaires CASCADE;"
-
-
-    - name: Set DBT_PROFILES_DIR
-      run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
+        psql $POSTGRES_URL -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
 
     - name: check dbt project
       run: |
         source dbt-env/bin/activate
         dbt debug
 
+    - name: Cache Load step
+      id: cache-load
+      uses: actions/cache@v4
+      with:
+        path: load-cache.dump
+        key: load-v3-${{ hashFiles('load/storage_to_pg.yml') }}
+        restore-keys: |
+          load-v3-
+
+    - name: Restore Load cache
+      if: ${{ hashFiles('load-cache.dump') != '' }}
+      # steps.cache-load.outputs.cache-hit is true only on exact match, we want to restore also a non-exact match (match on restore-keys), hoping it's just a new source added
+      # If a complete cache refresh is needed, increment the version in the key above
+      run: |
+        pg_restore \
+          --clean \
+          --if-exists \
+          --no-acl \
+          --no-owner \
+          -d $POSTGRES_URL < load-cache.dump
+
     - name: Load data from storage to tables in DB
       run: |
         source dbt-env/bin/activate
         python -m load
-        
+
+    - name: Create Load cache dump
+      if: steps.cache-load.outputs.cache-hit != 'true'
+      run: |
+        pg_dump --no-acl --no-owner -Fc -d $POSTGRES_URL > load-cache.dump
+        du -h load-cache.dump
+
     - name: Run dbt deps
       run: |
         source dbt-env/bin/activate
