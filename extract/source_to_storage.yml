@@ -61,3 +61,14 @@ filosofi_commune_2021:
   source_url: https://www.insee.fr/fr/statistiques/fichier/7756729/base-cc-filosofi-2021-geo2024_csv.zip
   source_reference : https://www.insee.fr/fr/statistiques/7756729?sommaire=7756859
 
+
+bpe_2023:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/8217525/BPE23.zip
+  source_reference: https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537#documentation
+  description: Base permanente des équipements (BPE) 2023
+
+bpe_metadata:
+  source_url: https://www.insee.fr/fr/metadonnees/source/fichier/BPE23_table_passage.csv
+  source_reference: https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537#documentation
+  description: Table de passage domaine - sous-domaine - type d'équipement
+
