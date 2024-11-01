@@ -776,4 +776,4 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
         description: "Demande de Valeurs Foncières 2024 Géolocalisée par Etalab"
         columns: *shared_columns_dvf_default
       - name: seveso_2024
-        description: todo
+        description: "Localisation et dangerosité des sites SEVESO en France métropolitaine."
