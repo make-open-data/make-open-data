@@ -81,6 +81,8 @@ Temporary Items
 # Generated files
 .idea/**/contentModel.xml
 
+
+.idea/**
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -89,6 +91,7 @@ Temporary Items
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
 
 # Gradle
 .idea/**/gradle.xml
@@ -299,7 +302,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+.envrc
 .venv
 env/
 venv/
