@@ -74,7 +74,7 @@ def get_columns_from_csv(file_path, delimiter):
 def load_file_to_pg(tmpfile_csv_path, pg_table, data_infos):
 
     db_schema = data_infos["db_schema"]
-    delimiter = data_infos["csv_delimiter"]
+    delimiter = data_infos["csv_delimiter"] if data_infos["file_format"] == 'csv' else ','
 
     file_columns = get_columns_from_csv(tmpfile_csv_path, delimiter)
     file_columns_str = ', '.join(f'"{col}"' for col in file_columns)
