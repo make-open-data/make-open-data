@@ -15,25 +15,21 @@ cog_poste:
 
 cog_communes:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_communes/communes.json"
-  csv_delimiter: ","
   db_schema: "sources"
   file_format: 'json'
 
 cog_arrondissements: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_arrondissements/arrondissements.json"
-  csv_delimiter: ","
   db_schema: "sources"
   file_format: 'json'
 
 cog_departements:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json"
-  csv_delimiter: ","
   db_schema: "sources"
   file_format: 'json'
 
 cog_regions: 
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json"
-  csv_delimiter: ","
   db_schema: "sources"
   file_format: 'json'
 
