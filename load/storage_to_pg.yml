@@ -1,4 +1,11 @@
 # This file contains the list of sources to be used by the application
+# Format for each table
+# table_name:  # The table's identifier
+#   storage_path:str  # The url to the raw file
+#   db_schema:str  # The name of the schema in the database
+#   file_format:str  # ['csv' | 'json' | 'shape'] The format of the file 
+#   csv_delimiter:str  # Only if file_format is 'csv': the delimiter used in the csv
+#   production:bool  # Optional: Whether the file should only be loaded when loading the full base (production mode)
 
 cog_poste:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_poste/base-officielle-codes-postaux.csv"
