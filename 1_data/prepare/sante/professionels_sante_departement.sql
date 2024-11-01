@@ -7,6 +7,7 @@ with aggreger_effectif_sante_unpivot as (
      aggreger_effectif_sante_departements as (
          select
              departement,
+             annee,
              {{ dbt_utils.pivot(
                  'profession_sante',
                  dbt_utils.get_column_values(source('sources', 'professionels_sante') , 'profession_sante'),
@@ -14,7 +15,7 @@ with aggreger_effectif_sante_unpivot as (
                  then_value='effectif'
              ) }}
          FROM aggreger_effectif_sante_unpivot
-         group by departement
+         group by departement, annee
      )
 
 
