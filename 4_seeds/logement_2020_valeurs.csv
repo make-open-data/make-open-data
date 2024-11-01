@@ -1,4 +1,4 @@
-venvCOD_VAR,LIB_VAR,COD_MOD,LIB_MOD,TYPE_VAR,LONG_VAR,libelle_a_afficher_apres_aggregation,theme
+COD_VAR,LIB_VAR,COD_MOD,LIB_MOD,TYPE_VAR,LONG_VAR,libelle_a_afficher_apres_aggregation,theme
 COMMUNE,Département et commune du lieu de résidence,1001,L'Abergement-Clémenciat (01001),CHAR,5,code_commune,CLE
 COMMUNE,Département et commune du lieu de résidence,...,...,CHAR,5,,CLE
 ARM,"Arrondissement municipal de résidence (Paris,Lyon et Marseille)",13201,Marseille 1er Arrondissement (13201),CHAR,5,code_arrondissement_municipal,IGNORE
