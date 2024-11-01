@@ -1,0 +1,61 @@
+version: 2
+
+models:
+- name: sites_seveso
+  description: |
+    Sites classés SEVESO distingués selon deux types d'établissements, selon la quantité totale de matières dangereuses sur site : 
+    les établissements SEVESO seuil haut et les établissements SEVESO seuil bas. 
+    Données seulement France Métropolitaine.
+  columns:
+  - name: "longitude"
+    description: "Longitude du point"
+    data_type: numeric
+    tests:
+      - not_null
+  - name: "latitude"
+    description: "Latitude du point"
+    data_type: numeric
+    tests:
+      - not_null
+  - name: "point"
+    description: "Point centre de l'établissement SEVESO"
+    data_type: geometry
+    tests:
+      - not_null
+  - name: "id_site"
+    description: "Identifiant unique du site"
+    data_type: string
+    tests:
+      - not_null
+      - unique
+  - name: "nom_site"
+    description: "Nom de l'établissement"
+    data_type: string
+  - name: "id_national_incremental"
+    description: "Numéro serial attribué en France pour chaque site"
+    data_type: string
+  - name: "nom_de_rue"
+    description: "Nom de la rue"
+    data_type: string
+  - name: "code_postal"
+    description: "Code postal"
+    data_type: string
+  - name: "ville"
+    description: "Ville"
+    data_type: string
+  - name: "statut_exploitation"
+    description: |
+      Si le site est en exploitation ou fini. 
+      Un site peut être en cours d'exploitation sans titre SEVESO (changement d'activité). 
+    data_type: string
+  - name: "type_activite"
+    description: "Activité industrielle du site"
+    data_type: string
+  - name: "id_seuil"
+    description: |
+      Niveau de dangerosité du site.
+      1 : haut ; 2 : bas
+    data_type: integer
+  - name: "nom_seuil"
+    description: "Nom de la dangerosité du seuil"
+    data_type: string
