@@ -3,15 +3,17 @@ version: 2
 models:
 
 - name: professionels_sante_departement
-  description: Fournit les effectifs des professionnels de santé (tout sexe, age) par spécialité et département pour l'année 2022
+  description: Fournit les effectifs des professionnels de santé (tout sexe, age) par spécialité et département par année
   columns:
   
   - name: code_departement
     data_type: text
     description: Code département
-    tests:
-      - unique
-      - not_null
+
+  - name: annee
+    data_type: text
+    description: Année
+
 
   - name: libelle_departement
     data_type: text
