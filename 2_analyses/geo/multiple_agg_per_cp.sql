@@ -8,15 +8,15 @@ with merged_data as (
         -- cc."ARR" as code_arrondissement,
         cc.departement as code_departement,
         cc.region as code_region
-    from {{ source('sources', 'cog_poste')}} cp
+    from {{ ref('cog_poste')}} cp
     inner join {{ source('sources', 'cog_communes')}} cc on cp.code_commune_insee = cc."COM" and cc."TYPECOM" = 'COM'
-    -- Remplacer par left join à l'inclusions des territoire d'outre mer TOM 
+    -- Remplacer par left join à l'inclusions des territoire d'outre mer TOM
     -- Puisque les codes communes ne sont pas renseignés pour ces territoires dans codes_geographiques_communes
     -- La Réunion est une region d'outre, mais pas un territoire d'outre mer, dès lors elle est incluse dans les codes_geographiques_communes
 ),
 
 counts as (
-    select 
+    select
         code_postal,
         --count(distinct code_arrondissement) as num_arr,
         count(distinct code_departement) as num_dep,

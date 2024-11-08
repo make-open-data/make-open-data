@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: cog_poste
+    description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
+    columns:
+      - name: code_commune_insee
+        description: "Code INSEE de la commune"
+        data_type: text
+      - name: nom_de_la_commune
+        description: "Nom de la commune"
+        data_type: text
+      - name: code_postal
+        description: "Code postal"
+        data_type: text
+      - name: libelle_d_acheminement
+        description: "Libellé d'acheminement"
+        data_type: text
+      - name: ligne_5
+        description: "Ligne 5"
+        data_type: text
+      - name: _geopoint
+        description: "Point géographique"
+        data_type: text

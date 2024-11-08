@@ -4,34 +4,6 @@ sources:
   - name: sources
     description: "Source tables for various datasets"
     tables:
-      - name: cog_poste
-        description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
-        columns:
-          - name: code_postal
-            description: "Postal code"
-            data_type: string
-          - name: commune
-            description: "Commune name"
-            data_type: string
-          - name: code_commune_insee
-            description: "Code INSEE de la commune"
-            data_type: text
-          - name: nom_de_la_commune
-            description: "Nom de la commune"
-            data_type: text
-          - name: code_postal
-            description: "Code postal"
-            data_type: text
-          - name: libelle_d_acheminement
-            description: "Libellé d'acheminement"
-            data_type: text
-          - name: ligne_5
-            description: "Ligne 5"
-            data_type: text
-          - name: _geopoint
-            description: "Point géographique"
-            data_type: text
-
       - name: cog_communes
         description: "List of communes. Producteur des donnees: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
         columns:
@@ -145,7 +117,7 @@ sources:
             data_type: text
 
       - name: logement_2020
-        description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
+        description: "Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020
 Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
         columns:
           - name: COMMUNE
@@ -362,10 +334,10 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: region
             data_type: text
             description: "Code région"
-          - name: libelle_region	
+          - name: libelle_region
             data_type: text
             description: "Libellé de la région"
-          - name: departement	
+          - name: departement
             data_type: text
             description: "Code département"
           - name: libelle_departement
@@ -380,19 +352,19 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
           - name: libelle_sexe
             data_type: text
             description: "Sexe des professionnels"
-          - name: effectif	
+          - name: effectif
             data_type: text
             description: "Nombre de professionnels"
-          - name: densite	
+          - name: densite
             data_type: text
             description: "?"
-          - name: vision_generale_all	
+          - name: vision_generale_all
             data_type: text
             description: "?"
-          - name: vision_generale_prescriptions	
+          - name: vision_generale_prescriptions
             data_type: text
             description: "?"
-          - name: vision_profession_territoire	
+          - name: vision_profession_territoire
             data_type: text
             description: "?"
 
