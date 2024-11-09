@@ -272,3 +272,8 @@ bpe_metadata:
   file_format: 'csv'
   csv_delimiter: ";"
 
+bmo_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/besoin_main_oeuvre/bmo_2024.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ","
