@@ -64,3 +64,92 @@ filosofi_commune_2021:
 datatourisme_place:
   source_url: https://www.data.gouv.fr/fr/datasets/r/cf247ad9-5bcd-4c8a-8f4d-f49f0803bca1
   source_reference : https://www.data.gouv.fr/fr/datasets/datatourisme-la-base-nationale-des-donnees-publiques-dinformation-touristique-en-open-data
+=======
+# This file contains the list of sources to be used by the application
+
+cog_poste :
+  source_url :  https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/metadata-attachments/base-officielle-codes-postaux.csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/#/resources
+
+
+cog_communes :
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/communes.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
+
+
+
+cog_arrondissements : 
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/arrondissements.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
+
+
+
+cog_departements: 
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/departements.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
+
+
+cog_regions : 
+  source_url: https://unpkg.com/@etalab/decoupage-administratif@4.0.0/data/regions.json
+  source_reference : https://github.com/datagouv/decoupage-administratif
+
+
+dvf_2023:
+  source_url: https://files.data.gouv.fr/geo-dvf/latest/csv/2023/full.csv.gz
+  source_reference: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
+
+
+logement_2020:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/RP2020_LOGEMT_csv.zip
+  source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
+
+
+logement_2020_variables:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/7705908/Dictionnaire%20variables_logemt_2020.csv
+  source_reference : https://www.insee.fr/fr/statistiques/7705908?sommaire=7637890
+
+
+professionels_sante:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/demographie-effectifs-et-les-densites/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources
+
+  
+effectif_pathologie:
+  source_url: https://data.ameli.fr/api/explore/v2.1/catalog/datasets/effectifs/exports/csv
+  source_reference : https://www.data.gouv.fr/fr/datasets/pathologies-effectif-de-patients-par-pathologie-sexe-classe-dage-et-territoire-departement-region/
+
+
+filosofi_iris_2021:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/8229323/BASE_TD_FILO_IRIS_2021_DEC_CSV.zip
+  source_reference : https://www.insee.fr/fr/statistiques/8229323
+
+
+filosofi_commune_2021:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/7756729/base-cc-filosofi-2021-geo2024_csv.zip
+  source_reference : https://www.insee.fr/fr/statistiques/7756729?sommaire=7756859
+
+
+seveso_sites_2024:
+  source_url: https://mapsref.brgm.fr/wxs/georisques/seveso?&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+  source_reference: https://www.data.gouv.fr/fr/datasets/etablissements-seveso-france-metropolitaine-3/
+  description: |
+    The data is exported as [WFS](https://www.ogc.org/publications/standard/wfs/),
+    a XML containing data as Layers.
+    To export it into a csv, it was loaded in QGIS 
+    (Layer>Add Layer>Add WFS Layer ; click New, enter URL, click connect, select layers),
+    then exported into a CSV
+    (select, right click, Export>Save features as ; select csv, all fields, 
+    select 'Geometry'.'Geometry type'='Point', select 'Layer Options'.'GEOMETRY'.'AS_XY').
+    Rename the 'X' column to 'longitude' and 'Y' to 'latitude'.
+    You now have a CSV file with for each Seveso site in France, their identifier, their location and their severity type.
+
+
+bpe_2023:
+  source_url: https://www.insee.fr/fr/statistiques/fichier/8217525/BPE23.zip
+  source_reference: https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537#documentation
+  description: Base permanente des équipements (BPE) 2023
+
+bpe_metadata:
+  source_url: https://www.insee.fr/fr/metadonnees/source/fichier/BPE23_table_passage.csv
+  source_reference: https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537#documentation
+  description: Table de passage domaine - sous-domaine - type d'équipement

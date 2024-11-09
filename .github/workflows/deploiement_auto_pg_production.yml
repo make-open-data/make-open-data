@@ -12,25 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
-    services:
-      postgres:
-        image: postgis/postgis:12-3.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: make_open_data
-        ports:
-          - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11.5
+        cache: 'pip'
 
     - name: Create Python virtual environment
       run: python3 -m venv dbt-env
@@ -91,19 +81,13 @@ jobs:
     - name: Load data from storage to tables in DB
       run: |
         source dbt-env/bin/activate
-        python -m load
+        python -m load --production
 
-  
-    - name: Run dbt seed
+    - name: Run dbt build
       run: |
         source dbt-env/bin/activate
-        dbt seed
+        dbt build --target production
 
-    - name: Run dbt run
-      run: |
-        source dbt-env/bin/activate
-        dbt run --target production
-      
     - name: Generate dbt Documentation
       run: |
         source dbt-env/bin/activate
@@ -116,7 +100,7 @@ jobs:
         path: target/*
 
     - name: Checkout new repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: make-open-data/make-open-data-docs
         token: ${{ secrets.PAT }} 

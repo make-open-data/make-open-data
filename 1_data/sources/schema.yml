@@ -1,3 +1,4 @@
+
 version: 2
 
 sources:
@@ -778,3 +779,856 @@ Recensement de la population - Fichier détail. Producteur des données: INSEE. 
 
       - name: datatourisme_place
         description: "List datourisme POI"
+=======
+version: 2
+
+sources:
+  - name: sources
+    description: "Source tables for various datasets"
+    tables:
+      - name: cog_poste
+        description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
+        columns:
+          - name: code_postal
+            description: "Postal code"
+            data_type: string
+          - name: commune
+            description: "Commune name"
+            data_type: string
+          - name: code_commune_insee
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: nom_de_la_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: libelle_d_acheminement
+            description: "Libellé d'acheminement"
+            data_type: text
+          - name: ligne_5
+            description: "Ligne 5"
+            data_type: text
+          - name: _geopoint
+            description: "Point géographique"
+            data_type: text
+
+      - name: cog_communes
+        description: "List of communes. Producteur des donnees: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code unique de la commune"
+            data_type: text
+          - name: nom
+            description: "Nom de la commune"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la commune"
+            data_type: text
+          - name: arrondissement
+            description: "Arrondissement de la commune"
+            data_type: text
+          - name: departement
+            description: "Département de la commune"
+            data_type: text
+          - name: region
+            description: "Région de la commune"
+            data_type: text
+          - name: type
+            description: "Type de commune"
+            data_type: text
+          - name: rangChefLieu
+            description: "Rang du chef-lieu"
+            data_type: text
+          - name: siren
+            description: "Code SIREN"
+            data_type: text
+          - name: codesPostaux
+            description: "Codes postaux associés à la commune"
+            data_type: text
+          - name: population
+            description: "Population de la commune"
+            data_type: text
+          - name: anciensCodes
+            description: "Anciens codes de la commune"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la commune"
+            data_type: text
+          - name: commune
+            description: "Commune"
+            data_type: text
+
+      - name: cog_arrondissements
+        description: "Informations sur les arrondissements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code de l'arrondissement"
+            data_type: text
+          - name: departement
+            description: "Département de l'arrondissement"
+            data_type: text
+          - name: region
+            description: "Région de l'arrondissement"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de l'arrondissement"
+            data_type: text
+          - name: nom
+            description: "Nom de l'arrondissement"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+
+      - name: cog_departements
+        description: "Informations sur les départements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code du département"
+            data_type: text
+          - name: region
+            description: "Région du département"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu du département"
+            data_type: text
+          - name: nom
+            description: "Nom du département"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone du département"
+            data_type: text
+
+      - name: cog_regions
+        description: "Informations sur les régions.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code de la région"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la région"
+            data_type: text
+          - name: nom
+            description: "Nom de la région"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la région"
+            data_type: text
+
+      - name: logement_2020
+        description: >
+          Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020 
+          Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
+        columns:
+          - name: COMMUNE
+            description: "Commune"
+            data_type: text
+          - name: ARM
+            description: "Année de référence des matériaux"
+            data_type: text
+          - name: IRIS
+            description: "Identifiant d'un IRIS (Ilots Regroupés pour l'Information Statistique)"
+            data_type: text
+          - name: ACHL
+            description: "Année de construction de l'habitation légère"
+            data_type: text
+          - name: AEMM
+            description: "Année d'entrée dans le ménage"
+            data_type: text
+          - name: AEMMR
+            description: "Année d'entrée du ménage dans la résidence"
+            data_type: text
+          - name: AGEMEN8
+            description: "Âge du ménage (tranche)"
+            data_type: text
+          - name: ANEM
+            description: "Année de naissance de l'enquêté majeur"
+            data_type: text
+          - name: ANEMR
+            description: "Année de naissance du répondant majeur"
+            data_type: text
+          - name: ASCEN
+            description: "Ascendance"
+            data_type: text
+          - name: BAIN
+            description: "Salle de bain"
+            data_type: text
+          - name: BATI
+            description: "Type de bâtiment"
+            data_type: text
+          - name: CATIRIS
+            description: "Catégorie IRIS"
+            data_type: text
+          - name: CATL
+            description: "Catégorie de logement"
+            data_type: text
+          - name: CHAU
+            description: "Chauffage"
+            data_type: text
+          - name: CHFL
+            description: "Chauffage au sol"
+            data_type: text
+          - name: CHOS
+            description: "Choix"
+            data_type: text
+          - name: CLIM
+            description: "Climatisation"
+            data_type: text
+          - name: CMBL
+            description: "Combles"
+            data_type: text
+          - name: CUIS
+            description: "Cuisine"
+            data_type: text
+          - name: DEROU
+            description: "Dernier ouvrage"
+            data_type: text
+          - name: DIPLM
+            description: "Diplôme le plus élevé"
+            data_type: text
+          - name: EAU
+            description: "Eau"
+            data_type: text
+          - name: EGOUL
+            description: "Égout"
+            data_type: text
+          - name: ELEC
+            description: "Électricité"
+            data_type: text
+          - name: EMPLM
+            description: "Emploi"
+            data_type: text
+          - name: GARL
+            description: "Garage"
+            data_type: text
+          - name: HLML
+            description: "Habitation légère de loisirs"
+            data_type: text
+          - name: ILETUDM
+            description: "Illettrisme"
+            data_type: text
+          - name: ILTM
+            description: "Immigration"
+            data_type: text
+          - name: IMMIM
+            description: "Immigration"
+            data_type: text
+          - name: INAIM
+            description: "Inactivité"
+            data_type: text
+          - name: INEEM
+            description: "Inégalité"
+            data_type: text
+          - name: INP11M
+            description: "Inscription pôle emploi 1 à 1 mois"
+            data_type: text
+          - name: INP15M
+            description: "Inscription pôle emploi 1 à 5 mois"
+            data_type: text
+          - name: INP17M
+            description: "Inscription pôle emploi 1 à 7 mois"
+            data_type: text
+          - name: INP19M
+            description: "Inscription pôle emploi 1 à 9 mois"
+            data_type: text
+          - name: INP24M
+            description: "Inscription pôle emploi 2 à 4 mois"
+            data_type: text
+          - name: INP3M
+            description: "Inscription pôle emploi 3 mois"
+            data_type: text
+          - name: INP60M
+            description: "Inscription pôle emploi 6 à 0 mois"
+            data_type: text
+          - name: INP65M
+            description: "Inscription pôle emploi 6 à 5 mois"
+            data_type: text
+          - name: INP5M
+            description: "Inscription pôle emploi 5 mois"
+            data_type: text
+          - name: INP75M
+            description: "Inscription pôle emploi 7 à 5 mois"
+            data_type: text
+          - name: INPAM
+            description: "Inscription pôle emploi Année Mois"
+            data_type: text
+          - name: INPER
+            description: "Inscription pôle emploi Erreur"
+            data_type: text
+          - name: INPER1
+            description: "Inscription pôle emploi Erreur 1"
+            data_type: text
+          - name: INPER2
+            description: "Inscription pôle emploi Erreur 2"
+            data_type: text
+          - name: INPOM
+            description: "Inscription pôle emploi Outre-Mer"
+            data_type: text
+          - name: INPSM
+            description: "Inscription pôle emploi Sans Mois"
+            data_type: text
+          - name: IPONDL
+            description: "Pondération"
+            data_type: text
+          - name: IRANM
+            description: "Iranien"
+            data_type: text
+          - name: METRODOM
+            description: "Métropole/DOM"
+            data_type: text
+          - name: NBPI
+            description: "Nombre de pièces"
+            data_type: text
+          - name: RECHM
+            description: "Recherche d'emploi"
+            data_type: text
+          - name: REGION
+            description: "Région"
+            data_type: text
+          - name: SANI
+            description: "Sanitaire"
+            data_type: text
+          - name: SANIDOM
+            description: "Sanitaire DOM"
+            data_type: text
+          - name: SEXEM
+            description: "Sexe"
+            data_type: text
+          - name: STAT_CONJM
+            description: "Statut conjugal"
+            data_type: text
+          - name: STOCD
+            description: "Stockage"
+            data_type: text
+          - name: SURF
+            description: "Surface"
+            data_type: text
+          - name: TACTM
+            description: "Activité"
+            data_type: text
+          - name: TPM
+            description: "Temps partiel"
+            data_type: text
+          - name: TRANSM
+            description: "Transport"
+            data_type: text
+          - name: TRIRIS
+            description: "Tri IRIS"
+            data_type: text
+          - name: TYPC
+            description: "Type de chauffage central"
+            data_type: text
+          - name: TYPL
+            description: "Type de logement"
+            data_type: text
+
+      - name: professionels_sante
+        description: "Ce jeu de données fournit des informations sur les effectifs des professionnels de santé libéraux par département/région, âge, sexe et spécialité. Origine: https://www.data.gouv.fr/fr/datasets/professionnels-de-sante-liberaux-effectif-et-densite-par-tranche-dage-sexe-et-territoire-departement-region/#/resources"
+        columns:
+          - name: annee
+            data_type: text
+            description: "Année"
+          - name: profession_sante
+            data_type: text
+            description: "32 professions de santé"
+          - name: region
+            data_type: text
+            description: "Code région"
+          - name: libelle_region	
+            data_type: text
+            description: "Libellé de la région"
+          - name: departement	
+            data_type: text
+            description: "Code département"
+          - name: libelle_departement
+            data_type: text
+            description: "Libellé département"
+          - name: classe_age
+            data_type: text
+            description: "Code classe d'âge"
+          - name: libelle_classe_age
+            data_type: text
+            description: "Libellé classe d'âge"
+          - name: libelle_sexe
+            data_type: text
+            description: "Sexe des professionnels"
+          - name: effectif	
+            data_type: text
+            description: "Nombre de professionnels"
+          - name: densite	
+            data_type: text
+            description: "?"
+          - name: vision_generale_all	
+            data_type: text
+            description: "?"
+          - name: vision_generale_prescriptions	
+            data_type: text
+            description: "?"
+          - name: vision_profession_territoire	
+            data_type: text
+            description: "?"
+
+      - name: logement_2020_dev
+        description: "Echantillon (Région Occitanie pour garder la cohérence des analyses) de logement_2020 pour faciliter les tests"
+
+      - name: filosofi_commune_2021
+        description: ""
+        columns:
+          - name: NBMENFISC21
+            description: "Nombre de ménages fiscaux"
+            data_type: text
+          - name: NBPERSMENFISC21
+            description: "Nombre de personnes dans les ménages fiscaux"
+            data_type: text
+          - name: MED21
+            description: "Médiane du niveau de vie (€)"
+            data_type: text
+          - name: PIMP21
+            description: "Part des ménages fiscaux imposés (%)"
+            data_type: text
+          - name: TP6021
+            description: "Taux de pauvreté-Ensemble (%)"
+            data_type: text
+          - name: TP60AGE121
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a moins de 30 ans (%)"
+            data_type: text
+          - name: TP60AGE221
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 30 à 39 ans (%)"
+            data_type: text
+          - name: TP60AGE321
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 40 à 49 ans (%)"
+            data_type: text
+          - name: TP60AGE421
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 50 à 59 ans (%)"
+            data_type: text
+          - name: TP60AGE521
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a de 60 à 74 ans (%)"
+            data_type: text
+          - name: TP60AGE621
+            description: "Taux de pauvreté des personnes dans les ménages dont le référent fiscal a 75 ans ou plus (%)"
+            data_type: text
+          - name: TP60TOL121
+            description: "Taux de pauvreté des personnes dans les ménages propriétaires de leur logement (%)"
+            data_type: text
+          - name: TP60TOL221
+            description: "Taux de pauvreté des personnes dans les ménages locataires de leur logement (%)"
+            data_type: text
+          - name: PACT21
+            description: "Part des revenus d'activité (%)"
+            data_type: text
+          - name: PTSA21
+            description: "dont part des salaires et traitements (%)"
+            data_type: text
+          - name: PCHO21
+            description: "dont part des indemnités de chômage (%)"
+            data_type: text
+          - name: PBEN21
+            description: "dont part des revenus des activités non salariées (%)"
+            data_type: text
+          - name: PPEN21
+            description: "retraites et rentes (%)"
+            data_type: text
+          - name: PPAT21
+            description: "Part des revenus du patrimoine et des autres revenus (%)"
+            data_type: text
+          - name: PPSOC21
+            description: "Part de l'ensemble des prestations sociales (%)"
+            data_type: text
+          - name: PPFAM21
+            description: "dont part des prestations familiales (%)"
+            data_type: text
+          - name: PPMINI21
+            description: "dont part des minima sociaux (%)"
+            data_type: text
+          - name: PPLOGT21
+            description: "dont part des prestations logement (%)"
+            data_type: text
+          - name: PIMPOT21
+            description: "Part des impôts (%)"
+            data_type: text
+          - name: D121
+            description: "1er décile du niveau de vie (€)"
+            data_type: text
+          - name: D921
+            description: "9e décile du niveau de vie (€)"
+            data_type: text
+          - name: RD21
+            description: "Rapport interdécile 9e décile/1er décile"
+            data_type: text
+          - name: "CODGEO"
+            quote: true
+            description: "Code géographique"
+            data_type: text
+            tests:
+              - unique
+              - not_null
+
+      - name: filosofi_iris_2021
+        description: ""
+        columns:
+          - name: "IRIS"
+            quote: true
+            description: "Code IRIS géographie 2024"
+            data_type: text
+            tests:
+              - unique
+              - not_null
+          - name: DEC_PIMP21
+            description: "Part des ménages fiscaux imposés (%)"
+            data_type: text
+          - name: DEC_TP6021
+            description: "Taux de bas revenus déclarés au seuil de 60 % (%)"
+            data_type: text
+          - name: DEC_INCERT21
+            description: "Incertitude sur DEC_PIMP21 et DEC_TP6021 (voir onglet Seuils)"
+            data_type: text
+          - name: DEC_Q121
+            description: "1er quartile (€)"
+            data_type: text
+          - name: DEC_MED21
+            description: "Médiane (€)"
+            data_type: text
+          - name: DEC_Q321
+            description: "3e quartile (€)"
+            data_type: text
+          - name: DEC_EQ21
+            description: "Écart inter-quartile rapporté à la médiane"
+            data_type: text
+          - name: DEC_D121
+            description: "1er décile (€)"
+            data_type: text
+          - name: DEC_D221
+            description: "2e décile (€)"
+            data_type: text
+          - name: DEC_D321
+            description: "3e décile (€)"
+            data_type: text
+          - name: DEC_D421
+            description: "4e décile (€)"
+            data_type: text
+          - name: DEC_D621
+            description: "6e décile (€)"
+            data_type: text
+          - name: DEC_D721
+            description: "7e décile (€)"
+            data_type: text
+          - name: DEC_D821
+            description: "8e décile (€)"
+            data_type: text
+          - name: DEC_D921
+            description: "9e décile (€)"
+            data_type: text
+          - name: DEC_RD21
+            description: "Rapport interdécile D9/D1"
+            data_type: text
+          - name: DEC_S80S2021
+            description: "S80/S20"
+            data_type: text
+          - name: DEC_GI21
+            description: "Indice de Gini"
+            data_type: text
+          - name: DEC_PACT21
+            description: "Part des revenus d’activité (%)"
+            data_type: text
+          - name: DEC_PTSA21
+            description: "dont part des salaires et traitements (%)"
+            data_type: text
+          - name: DEC_PCHO21
+            description: "dont part des indemnités de chômage (%)"
+            data_type: text
+          - name: DEC_PBEN21
+            description: "dont part des revenus des activités non salariées (%)"
+            data_type: text
+          - name: DEC_PPEN21
+            description: "Part des pensions, retraites et rentes (%)"
+            data_type: text
+          - name: DEC_PAUT21
+            description: "Part des autres revenus (%)"
+            data_type: text
+
+      - name: shape_commune_2024
+        description: ""
+
+      - name: shape_arrondissement_municipal_2024
+        description: ""
+
+      - name: shape_iris_2024
+        description: ""
+
+
+      - name: dvf_default
+        description: "Demandes de valeurs foncières géolocalisées pour 2023. Producteur des données: dat.gouv.fr. Origine: https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/"
+        columns: &shared_columns_dvf_default
+          - name: id_mutation
+            description: "Identifiant de la mutation"
+            data_type: text
+          - name: date_mutation
+            description: "Date de la mutation"
+            data_type: text
+          - name: numero_disposition
+            description: "Numéro de disposition"
+            data_type: text
+          - name: nature_mutation
+            description: "Nature de la mutation"
+            data_type: text
+          - name: valeur_fonciere
+            description: "Valeur foncière"
+            data_type: text
+          - name: adresse_numero
+            description: "Numéro de l'adresse"
+            data_type: text
+          - name: adresse_suffixe
+            description: "Suffixe de l'adresse"
+            data_type: text
+          - name: adresse_nom_voie
+            description: "Nom de la voie"
+            data_type: text
+          - name: adresse_code_voie
+            description: "Code de la voie"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: code_commune
+            description: "Code de la commune"
+            data_type: text
+          - name: nom_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_departement
+            description: "Code du département"
+            data_type: text
+          - name: ancien_code_commune
+            description: "Ancien code de la commune"
+            data_type: text
+          - name: ancien_nom_commune
+            description: "Ancien nom de la commune"
+            data_type: text
+          - name: id_parcelle
+            description: "Identifiant de la parcelle"
+            data_type: text
+          - name: ancien_id_parcelle
+            description: "Ancien identifiant de la parcelle"
+            data_type: text
+          - name: numero_volume
+            description: "Numéro de volume"
+            data_type: text
+          - name: lot1_numero
+            description: "Numéro du lot 1"
+            data_type: text
+          - name: lot1_surface_carrez
+            description: "Surface Carrez du lot 1"
+            data_type: text
+          - name: lot2_numero
+            description: "Numéro du lot 2"
+            data_type: text
+          - name: lot2_surface_carrez
+            description: "Surface Carrez du lot 2"
+            data_type: text
+          - name: lot3_numero
+            description: "Numéro du lot 3"
+            data_type: text
+          - name: lot3_surface_carrez
+            description: "Surface Carrez du lot 3"
+            data_type: text
+          - name: lot4_numero
+            description: "Numéro du lot 4"
+            data_type: text
+          - name: lot4_surface_carrez
+            description: "Surface Carrez du lot 4"
+            data_type: text
+          - name: lot5_numero
+            description: "Numéro du lot 5"
+            data_type: text
+          - name: lot5_surface_carrez
+            description: "Surface Carrez du lot 5"
+            data_type: text
+          - name: nombre_lots
+            description: "Nombre de lots"
+            data_type: text
+          - name: code_type_local
+            description: "Code du type de local"
+            data_type: text
+          - name: type_local
+            description: "Type de local"
+            data_type: text
+          - name: surface_reelle_bati
+            description: "Surface réelle du bâti"
+            data_type: text
+          - name: nombre_pieces_principales
+            description: "Nombre de pièces principales"
+            data_type: text
+          - name: code_nature_culture
+            description: "Code de la nature de la culture"
+            data_type: text
+          - name: nature_culture
+            description: "Nature de la culture"
+            data_type: text
+          - name: code_nature_culture_speciale
+            description: "Code de la nature de la culture spéciale"
+            data_type: text
+          - name: nature_culture_speciale
+            description: "Nature de la culture spéciale"
+            data_type: text
+          - name: surface_terrain
+            description: "Surface du terrain"
+            data_type: text
+          - name: longitude
+            description: "Longitude"
+            data_type: text
+          - name: latitude
+            description: "Latitude"
+            data_type: text
+
+      - name: dvf_2014_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2014 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2015_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2015 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2016_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2016 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2017_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2017 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2018_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2018 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2019_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2019 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2020_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2020 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2021_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2021 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2022_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2022 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2023_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2023 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2024_dev
+        description: "Echantillon (Département Hérault pour garder la cohérence des analyses) de dvf_2024 pour faciliter les tests"
+        columns: *shared_columns_dvf_default
+
+      - name: dvf_2014
+        description: "Demande de Valeurs Foncières 2014 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2015
+        description: "Demande de Valeurs Foncières 2015 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2016
+        description: "Demande de Valeurs Foncières 2016 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2017
+        description: "Demande de Valeurs Foncières 2017 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2018
+        description: "Demande de Valeurs Foncières 2018 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2019
+        description: "Demande de Valeurs Foncières 2019 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2020
+        description: "Demande de Valeurs Foncières 2020 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2021
+        description: "Demande de Valeurs Foncières 2021 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2022
+        description: "Demande de Valeurs Foncières 2022 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2023
+        description: "Demande de Valeurs Foncières 2023 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+      - name: dvf_2024
+        description: "Demande de Valeurs Foncières 2024 Géolocalisée par Etalab"
+        columns: *shared_columns_dvf_default
+
+      - name: seveso_2024
+        description: "Localisation et dangerosité des sites SEVESO en France métropolitaine."
+
+      - name: bpe_2023
+        description: Base permanente des équipements (BPE) 2023
+        columns:
+          - name: Nom_du_POI
+            description: "Nom du Point D'Interet"
+            data_type: text
+          - name: Categories_de_POI
+            description: "Liste Catégories Ontologiques du Point D'Interet"
+            data_type: text
+          - name: Latitude
+            description: "Latitude"
+            data_type: text
+          - name: Longitude
+            description: "Longitude"
+            data_type: text
+          - name: Adresse_postale
+            description: "Adresse postale"
+            data_type: text
+          - name: Code_postal_et_commune
+            description: "Code postal et commune séparés par #"
+            data_type: text
+          - name: Covid19_mesures_specifiques
+            description: "Covid19 mesures spécifiques"
+            data_type: text
+          - name: Createur_de_la_donnee
+            description: "Créateur de la donnée"
+            data_type: text
+          - name: SIT_diffuseur
+            description: "Diffuseur"
+            data_type: text
+          - name: Date_de_mise_a_jour
+            description: "Date de mise à jour"
+            data_type: text
+          - name: Contacts_du_POI
+            description: "Contacts du POI séparés par #"
+            data_type: text
+          - name: Classements_du_POI
+            description: "Classements du POI séparés par #"
+            data_type: text
+          - name: Description
+            description: "Description"
+            data_type: text
+          - name: URI_ID_du_POI
+            description: "URI Identifiante du POI"
+            data_type: text
+
+      - name: bpe_metadata
+        description: Table de passage domaine - sous-domaine - type d'équipement
+        columns:
+          - name: TYPEQU
+            description: "Clef Type Equipement"
+            data_type: text
+          - name: Libelle_TYPEQU
+            description: "Libellé Type Equipement"
+            data_type: text
+          - name: SDOM
+            description: "Clef Sous-Domaine"
+            data_type: text
+          - name: Libelle_SDOM
+            description: "Libellé Sous-Domaine"
+            data_type: text
+          - name: DOM
+            description: "Clef Domaine"
+            data_type: text
+          - name: Libelle_DOM
+            description: "Libellé Domaine"
+            data_type: text            
+
+      - name: bmo_2024
+        description: Table besoin de main d'oeuvre

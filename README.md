@@ -37,9 +37,6 @@ Contactez-nous https://make-open-data.fr/
 
 ## Déploiement manuel
 
-**_Prérequis:_** : Accès à une instance Postgres > 15, cloud ou local, avec 40 Go de disque et 4 Go de mémoire.
-
-
 - Fourcher et cloner le repo (url dans l'onglet code SSH)
 
 ```
@@ -55,17 +52,39 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ``` 
 
+### PostgreSQL
 
+Vous pouvez installer une instance PostgreSQL en local ou utiliser une instance existante.
 
-- Exporter les clés d'une instance PostgreSQL avec l’extension PostGIS de 10 GB min
+Dans les deux cas, il est nécessaire d'exporter les clés de connexion pour accéder à l'instance PostgreSQL :
 
 ```
-export POSTGRES_USER=<YOUR_POSTGRES_USER>  
-export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD> 
-export POSTGRES_HOST=<YOUR_POSTGRES_HOST> 
-export POSTGRES_PORT=<YOUR_POSTGRES_PORT>  
-export POSTGRES_DB=<YOUR_POSTGRES_DB>
-``` 
+export POSTGRES_USER=<YOUR_POSTGRES_USER> # ex: postgres
+export POSTGRES_PASSWORD=<YOUR_POSTGRES_PASSWORD>
+export POSTGRES_HOST=<YOUR_POSTGRES_HOST> # ex: localhost
+export POSTGRES_PORT=<YOUR_POSTGRES_PORT> # ex: 5432
+export POSTGRES_DB=<YOUR_POSTGRES_DB> # ex: postgres
+```
+
+Optionnel : pour faciliter l'export de ces variables d'environnement plus tard :
+
+* Créer un fichier `env.sh`
+* Copier/coller ces commandes `export` dans le fichier
+* Charger les variables d'environnement avec `. env.sh`
+
+#### Option 1 - Installation d'une instance PostgreSQL en local
+
+Prévoir 40 Go de disque et 4 Go de mémoire pour l'instance PostgreSQL.
+
+Créer l'instance avec Docker Compose :
+
+`docker-compose -f docker/docker-compose.yml up`
+
+Accéder à l'interface d'administration via http://localhost:8080/.
+
+
+#### Option 2 - Configuration d'instance PostgreSQL existante
+
 
 - Installer PostGis :
 
@@ -74,10 +93,13 @@ psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_POR
 CREATE EXTENSION postgis;  
 ```
 
+### Chargement des données
+
 - Extraire les données sources dans le schema `sources`:
 
 ```
-python -m load # -> environ 20 min
+python -m load # -> environ 5 min, uniquement un échantillon de données
+python -m load --production # -> environ 20 min, toutes les données
 ```
 
 

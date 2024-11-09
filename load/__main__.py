@@ -3,6 +3,7 @@ This module runs extraction of data from the sources defined in the sources.yml 
 """
 import yaml
 import os
+import sys
 from pathlib import Path
 from tempfile import NamedTemporaryFile, TemporaryDirectory
 
@@ -14,6 +15,7 @@ from loaders import load_file_from_storage, load_file_to_pg,\
 STORAGE_TO_PG = "storage_to_pg.yml"
 
 if __name__ == "__main__":
+    production = '--production' in sys.argv
 
     with open(Path(os.path.dirname(__file__)) / STORAGE_TO_PG, "r") as ymlfile:
         storage_to_pg = yaml.safe_load(ymlfile)
@@ -24,8 +26,12 @@ if __name__ == "__main__":
         
         if pg_table in tables_in_pg_list:
             print(f"Table already exist: {pg_table}")
-        
+
+        elif not production and data_infos.get('production', False):
+            print(f"Skipping {pg_table} in non-production mode")
+
         else:
+            print(f"Processing {pg_table}")
             if data_infos['file_format'] in ['csv', 'json']:
                 with NamedTemporaryFile(suffix='.csv', delete=True) as tmpfile:
                     tmpfile_csv_path = tmpfile.name

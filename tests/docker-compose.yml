@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgis/postgis
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - 9432:5432
+    volumes:
+      - /opt/make-open-data-db-test/mount:/var/lib/postgresql/data
