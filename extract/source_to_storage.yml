@@ -84,3 +84,7 @@ bpe_metadata:
   source_url: https://www.insee.fr/fr/metadonnees/source/fichier/BPE23_table_passage.csv
   source_reference: https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537#documentation
   description: Table de passage domaine - sous-domaine - type d'équipement
+
+datatourisme_place:
+  source_url: https://www.data.gouv.fr/fr/datasets/r/cf247ad9-5bcd-4c8a-8f4d-f49f0803bca1
+  source_reference : https://www.data.gouv.fr/fr/datasets/datatourisme-la-base-nationale-des-donnees-publiques-dinformation-touristique-en-open-data
