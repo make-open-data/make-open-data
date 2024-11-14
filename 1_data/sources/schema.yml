@@ -850,3 +850,6 @@ sources:
 
       - name: bmo_2024
         description: Table besoin de main d'oeuvre
+
+      - name: datatourisme_place
+        description: "List datourisme POI"
