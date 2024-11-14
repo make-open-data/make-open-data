@@ -8,7 +8,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile, TemporaryDirectory
 
 
-from load.loaders import load_file_from_storage, load_file_to_pg,\
+from loaders import load_file_from_storage, load_file_to_pg,\
       load_shapefile_from_storage, load_shapefile_to_pg,\
       list_tables_in_pg
 

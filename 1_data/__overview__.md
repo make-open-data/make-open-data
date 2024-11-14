@@ -44,6 +44,8 @@
 
 - [ventes_immobilieres_enrichies](/#!/model/model.makeopendata.ventes_immobilieres_enrichies) : Liste des transactions immobilières à l'échelle de la transaction (une ligne par transaction) avec leurs prix, surfaces, type de bien, le prix moyen des plus proches voisins, etc. Pour l'années 2023.
 
+- [datatourisme_place]() : Liste des sites touristiques https://www.data.gouv.fr/fr/datasets/r/cf247ad9-5bcd-4c8a-8f4d-f49f0803bca1
+  https://www.data.gouv.fr/fr/datasets/datatourisme-la-base-nationale-des-donnees-publiques-dinformation-touristique-en-open-data/#/resources
 
 ## Notes 
 
