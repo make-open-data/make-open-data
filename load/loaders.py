@@ -55,9 +55,10 @@ def load_file_from_storage(tmpfile_csv_path, data_infos):
 
     elif data_infos['file_format'] == 'json':
         with NamedTemporaryFile(suffix='.json', delete=True) as json_tmpfile:
-            subprocess.run(['curl', '-o', json_tmpfile.name, storage_path], check=True)
-            data = pd.read_json(json_tmpfile.name)
-            data.to_csv(tmpfile_csv_path, index=False)
+            json_tmpfilename = json_tmpfile.name
+        subprocess.run(['curl', '-o', json_tmpfilename, storage_path], check=True)
+        data = pd.read_json(json_tmpfilename)
+        data.to_csv(tmpfile_csv_path, index=False)
     else:
         raise ValueError(f"Unsupported file extension in path: {storage_path}")
 

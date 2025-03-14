@@ -283,3 +283,9 @@ datatourisme_place:
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ","
+
+communes_to_scot:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/communes_to_scot/communes_to_scot.csv" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"

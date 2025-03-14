@@ -853,3 +853,6 @@ sources:
 
       - name: datatourisme_place
         description: "List datourisme POI"
+
+      - name: communes_to_scot
+        description: "File mapping top what Scot blongs each commune"

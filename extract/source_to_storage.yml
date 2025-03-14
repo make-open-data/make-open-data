@@ -88,3 +88,7 @@ bpe_metadata:
 datatourisme_place:
   source_url: https://www.data.gouv.fr/fr/datasets/r/cf247ad9-5bcd-4c8a-8f4d-f49f0803bca1
   source_reference : https://www.data.gouv.fr/fr/datasets/datatourisme-la-base-nationale-des-donnees-publiques-dinformation-touristique-en-open-data
+
+communes_to_scot:
+  source_url: https://www.data.gouv.fr/en/datasets/schema-de-coherence-territoriale-scot-donnees-sudocuh-dernier-etat-des-lieux-annuel-au-31-decembre-2023/
+  source_reference: https://www.data.gouv.fr/en/datasets/schema-de-coherence-territoriale-scot-donnees-sudocuh-dernier-etat-des-lieux-annuel-au-31-decembre-2023/
