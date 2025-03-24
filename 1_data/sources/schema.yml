@@ -849,7 +849,50 @@ sources:
             data_type: text            
 
       - name: bmo_2024
-        description: Table besoin de main d'oeuvre
+        description: Table des besoins en main d'œuvre pour 2024, regroupant des informations sur les métiers, régions, départements et bassins d'emploi.
+        columns:
+          - name: annee
+            description: "Année des données"
+            data_type: text
+          - name: Code_métier_BMO
+            description: "Code du métier"
+            data_type: text
+          - name: Nom_métier_BMO
+            description: "Nom du métier"
+            data_type: text
+          - name: Famille_met
+            description: "Code de la famille de métier"
+            data_type: text
+          - name: Lbl_fam_met
+            description: "Libellé de la famille de métier"
+            data_type: text
+          - name: REG
+            description: "Code de la région"
+            data_type: text
+          - name: NOM_REG
+            description: "Nom de la région"
+            data_type: text
+          - name: Dept
+            description: "Code du département"
+            data_type: text
+          - name: NomDept
+            description: "Nom du département"
+            data_type: text
+          - name: BE24
+            description: "Code du bassin d'emploi 2024"
+            data_type: text
+          - name: NOMBE24
+            description: "Nom du bassin d'emploi 2024"
+            data_type: text
+          - name: met
+            description: "Besoin en main d'œuvre pour le bassin"
+            data_type: text
+          - name: xmet
+            description: "Variation du besoin en main d'œuvre"
+            data_type: text
+          - name: smet
+            description: "Besoin en main d'œuvre pour le sous-bassin"
+            data_type: text
 
       - name: datatourisme_place
         description: "List datourisme POI"
