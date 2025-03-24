@@ -849,7 +849,7 @@ sources:
             data_type: text            
 
       - name: bmo_2024
-        description: Table des besoins en main d'œuvre pour 2024, regroupant des informations sur les métiers, régions, départements et bassins d'emploi.
+        description: Table des besoins en main d'œuvre
         columns:
           - name: annee
             description: "Année des données"
