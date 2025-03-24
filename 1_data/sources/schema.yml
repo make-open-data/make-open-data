@@ -849,7 +849,7 @@ sources:
             data_type: text            
 
       - name: bmo_2024
-        description: Table des besoins en main d'œuvre
+        description: Table besoin de main d'oeuvre
         columns:
           - name: annee
             description: "Année des données"
