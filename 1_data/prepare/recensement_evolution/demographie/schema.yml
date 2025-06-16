@@ -1,0 +1,97 @@
+version: 2
+
+sources:
+  - name: sources
+    schema: sources
+    tables:
+
+      - name: champs_categorises
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/champs_disponibles/champs_categorises.csv"
+            file_format: csv
+            csv_delimiter: ","
+
+      - name: base_cc_evol_struct_pop_2016
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2016.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_evol_struct_pop_2017
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2017.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_evol_struct_pop_2018
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2018.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_evol_struct_pop_2019
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2019.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_evol_struct_pop_2020
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2020.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_evol_struct_pop_2021
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2021.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2016
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2016.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2017
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2017.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2018
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2018.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2019
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2019.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2020
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2020.CSV"
+            file_format: csv
+            csv_delimiter: ";"
+
+      - name: base_cc_coupl_fam_men_2021
+        meta:
+          external:
+            location: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2021.CSV"
+            file_format: csv
+            csv_delimiter: ";"
