@@ -289,3 +289,478 @@ communes_to_scot:
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ";"
+
+base_cc_carac_emploi_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2016.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_carac_emploi_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2017.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_carac_emploi_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2018.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_carac_emploi_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2019.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_carac_emploi_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2020.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_carac_emploi_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-carac-emploi/base-cc-carac-emploi-2021.CSV" 
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+
+base_cc_coupl_fam_men_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2016.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_coupl_fam_men_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2017.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_coupl_fam_men_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2018.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_coupl_fam_men_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2019.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_coupl_fam_men_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2020.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_coupl_fam_men_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-coupl-fam-men/base-cc-coupl-fam-men-2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2016.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2017.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2018.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2019.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2020.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_diplomes_formation_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-diplomes-formation/base-cc-diplomes-formation-2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2016.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2017.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2018.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2019.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2020.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_emploi_pop_active_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-emploi-pop-active/base-cc-emploi-pop-active-2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2016.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2017.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2018.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2019.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2020.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_evol_struct_pop_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base-cc-evol-struct-pop/base-cc-evol-struct-pop-2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2016:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2016.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2017:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2017.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2018:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2018.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2019:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2019.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2020.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+base_cc_logement_2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_cc_logement/base-cc-logement-2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_bdfdom_2017_dep:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_bdfdom/cc_bdfdom_2017_DEP.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_bdfdom_2017_reg:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_bdfdom/cc_bdfdom_2017_REG.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_arr:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_ARR.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_au2010:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_AU2010.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_com:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_COM.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_dep:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_DEP.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_epci:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_EPCI.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_metro:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_METRO.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_reg:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_REG.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_uu2010:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_UU2010.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2017_ze2010:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2017_ZE2010.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_aav2020_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_AAV2020-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_arr_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_ARR-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_com_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_COM-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_dep_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_DEP-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_epci_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_EPCI-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_metro_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_METRO-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_reg_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_REG-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_uu2020_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_UU2020-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2018_ze2020_geo2021:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2018_ZE2020-geo2021.CSV"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+#cc_filosofi_2019_aav2020:
+#  storage_path: "https://make_open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_AAV2020.csv"
+#  db_schema: "sources"
+#  file_format: 'csv'
+#  csv_delimiter: ";"
+
+cc_filosofi_2019_arr:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_ARR.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_com:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_COM.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_ctcd:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_CTCD.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_dep:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_DEP.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+  
+cc_filosofi_2019_epci:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_EPCI.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_ept:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_EPT.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_metro:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_METRO.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_reg:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_REG.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_uu2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_UU2020.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2019_ze2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2019_ZE2020.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+  
+cc_filosofi_2020_aav2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_AAV2020.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_arr:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_ARR.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_bv2022:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_BV2022.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_com:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_COM.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_ctcd:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_CTCD.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_dep:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_DEP.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_epci:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_EPCI.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_ept:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_EPT.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_metro:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_METRO.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_reg:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_REG.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_uu2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_UU2020.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
+
+cc_filosofi_2020_ze2020:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cc_filosofi/cc_filosofi_2020_ZE2020.csv"
+  db_schema: "sources"
+  file_format: 'csv'
+  csv_delimiter: ";"
