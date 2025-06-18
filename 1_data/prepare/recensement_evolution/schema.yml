@@ -1,0 +1,211 @@
+version: 2
+
+sources:
+  - name: sources
+    schema: sources
+    tables:
+      - name: base_cc_evol_struct_pop_2016
+      - name: base_cc_evol_struct_pop_2017
+      - name: base_cc_evol_struct_pop_2018      
+      - name: base_cc_evol_struct_pop_2019
+      - name: base_cc_evol_struct_pop_2020
+      - name: base_cc_evol_struct_pop_2021
+      - name: champs_disponibles_sources
+      - name: base_cc_caract_emp_2016
+      - name: base_cc_caract_emp_2017
+      - name: base_cc_caract_emp_2018
+      - name: base_cc_caract_emp_2019
+      - name: base_cc_caract_emp_2020
+      - name: base_cc_caract_emp_2021
+      - name: base_cc_coupl_fam_men_2016
+      - name: base_cc_coupl_fam_men_2017
+      - name: base_cc_coupl_fam_men_2018
+      - name: base_cc_coupl_fam_men_2019
+      - name: base_cc_coupl_fam_men_2020
+      - name: base_cc_coupl_fam_men_2021
+      - name: base_cc_diplomes_formation_2016
+      - name: base_cc_diplomes_formation_2017
+      - name: base_cc_diplomes_formation_2018
+      - name: base_cc_diplomes_formation_2019
+      - name: base_cc_diplomes_formation_2020
+      - name: base_cc_diplomes_formation_2021
+      - name: base_cc_emploi_pop_active_2016
+      - name: base_cc_emploi_pop_active_2017
+      - name: base_cc_emploi_pop_active_2018
+      - name: base_cc_emploi_pop_active_2019
+      - name: base_cc_emploi_pop_active_2020
+      - name: base_cc_emploi_pop_active_2021
+      - name: base_cc_logement_2016
+      - name: base_cc_logement_2017
+      - name: base_cc_logement_2018
+      - name: base_cc_logement_2019
+      - name: base_cc_logement_2020
+      - name: base_cc_logement_2021
+      - name: cc_bdfdom_2017_dep
+      - name: cc_bdfdom_2017_reg
+      - name: cc_filosofi_2017_arr
+      - name: cc_filosofi_2017_au2010
+      - name: cc_filosofi_2017_com
+      - name: cc_filosofi_2017_dep
+      - name: cc_filosofi_2017_epci
+      - name: cc_filosofi_2017_metro
+      - name: cc_filosofi_2017_reg
+      - name: cc_filosofi_2017_uu2010
+      - name: cc_filosofi_2017_ze2010
+      - name: cc_filosofi_2018_aav2020_geo2021
+      - name: cc_filosofi_2018_arr_geo2021
+      - name: cc_filosofi_2018_com_geo2021
+      - name: cc_filosofi_2018_dep_geo2021
+      - name: cc_filosofi_2018_epci_geo2021
+      - name: cc_filosofi_2018_metro_geo2021
+      - name: cc_filosofi_2018_reg_geo2021
+      - name: cc_filosofi_2018_uu2020_geo2021
+      - name: cc_filosofi_2018_ze2020_geo2021
+      - name: cc_filosofi_2019_arr
+      - name: cc_filosofi_2019_com
+      - name: cc_filosofi_2019_ctcd
+      - name: cc_filosofi_2019_dep
+      - name: cc_filosofi_2019_epci
+      - name: cc_filosofi_2019_ept
+      - name: cc_filosofi_2019_metro
+      - name: cc_filosofi_2019_reg
+      - name: cc_filosofi_2019_uu2020
+      - name: cc_filosofi_2019_ze2020
+      - name: cc_filosofi_2020_aav2020
+      - name: cc_filosofi_2020_arr
+      - name: cc_filosofi_2020_bv2022
+      - name: cc_filosofi_2020_com
+      - name: cc_filosofi_2020_ctcd
+      - name: cc_filosofi_2020_dep
+      - name: cc_filosofi_2020_epci
+      - name: cc_filosofi_2020_ept
+      - name: cc_filosofi_2020_metro
+      - name: cc_filosofi_2020_reg
+      - name: cc_filosofi_2020_uu2020
+      - name: cc_filosofi_2020_ze2020
+
+  - name: prepare
+    schema: prepare
+    tables:
+      - name: infos_communes
+
+models:
+  # Categories Socioprofessionnelles
+  - name: Categories_Socioprofessionnelles_communes_evolution
+    description: "Evolution des catégories socioprofessionnelles par commune"
+  - name: Categories_Socioprofessionnelles_departements_evolution
+    description: "Evolution des catégories socioprofessionnelles par département"
+  - name: Categories_Socioprofessionnelles_EPCI_evolution
+    description: "Evolution des catégories socioprofessionnelles par EPCI"
+  - name: Categories_Socioprofessionnelles_SCoT_evolution
+    description: "Evolution des catégories socioprofessionnelles par SCoT"
+
+  # Chomage
+  - name: Chomage_communes_evolution
+    description: "Evolution du chômage par commune"
+  - name: Chomage_departements_evolution
+    description: "Evolution du chômage par département"
+  - name: Chomage_EPCI_evolution
+    description: "Evolution du chômage par EPCI"
+  - name: Chomage_SCoT_evolution
+    description: "Evolution du chômage par SCoT"
+
+  # Education Formation
+  - name: Education_Formation_communes_evolution
+    description: "Evolution de l'éducation et formation par commune"
+  - name: Education_Formation_departements_evolution
+    description: "Evolution de l'éducation et formation par département"
+  - name: Education_Formation_EPCI_evolution
+    description: "Evolution de l'éducation et formation par EPCI"
+  - name: Education_Formation_SCoT_evolution
+    description: "Evolution de l'éducation et formation par SCoT"
+
+  # Emplois
+  - name: Emplois_communes_evolution
+    description: "Evolution des emplois par commune"
+  - name: Emplois_departements_evolution
+    description: "Evolution des emplois par département"
+  - name: Emplois_EPCI_evolution
+    description: "Evolution des emplois par EPCI"
+  - name: Emplois_SCoT_evolution
+    description: "Evolution des emplois par SCoT"
+
+  # Emploi Complement
+  - name: Emploi_Complement_communes_evolution
+    description: "Evolution des compléments d'emploi par commune"
+  - name: Emploi_Complement_departements_evolution
+    description: "Evolution des compléments d'emploi par département"
+  - name: Emploi_Complement_EPCI_evolution
+    description: "Evolution des compléments d'emploi par EPCI"
+  - name: Emploi_Complement_SCoT_evolution
+    description: "Evolution des compléments d'emploi par SCoT"
+
+  # Logement Caracteristiques
+  - name: Logement_Caracteristiques_communes_evolution
+    description: "Evolution des caractéristiques des logements par commune"
+  - name: Logement_Caracteristiques_departements_evolution
+    description: "Evolution des caractéristiques des logements par département"
+  - name: Logement_Caracteristiques_EPCI_evolution
+    description: "Evolution des caractéristiques des logements par EPCI"
+  - name: Logement_Caracteristiques_SCoT_evolution
+    description: "Evolution des caractéristiques des logements par SCoT"
+
+  # Logement Parc
+  - name: Logement_Parc_communes_evolution
+    description: "Evolution du parc de logements par commune"
+  - name: Logement_Parc_departements_evolution
+    description: "Evolution du parc de logements par département"
+  - name: Logement_Parc_EPCI_evolution
+    description: "Evolution du parc de logements par EPCI"
+  - name: Logement_Parc_SCoT_evolution
+    description: "Evolution du parc de logements par SCoT"
+
+  # Menage Famille
+  - name: Menage_Famille_communes_evolution
+    description: "Evolution des ménages et familles par commune"
+  - name: Menage_Famille_departements_evolution
+    description: "Evolution des ménages et familles par département"
+  - name: Menage_Famille_EPCI_evolution
+    description: "Evolution des ménages et familles par EPCI"
+  - name: Menage_Famille_SCoT_evolution
+    description: "Evolution des ménages et familles par SCoT"
+
+  # Population Active
+  - name: Population_Active_communes_evolution
+    description: "Evolution de la population active par commune"
+  - name: Population_Active_departements_evolution
+    description: "Evolution de la population active par département"
+  - name: Population_Active_EPCI_evolution
+    description: "Evolution de la population active par EPCI"
+  - name: Population_Active_SCoT_evolution
+    description: "Evolution de la population active par SCoT"
+
+  # Population Age
+  - name: Population_Age_communes_evolution
+    description: "Evolution de la population par âge par commune"
+  - name: Population_Age_departements_evolution
+    description: "Evolution de la population par âge par département"
+  - name: Population_Age_EPCI_evolution
+    description: "Evolution de la population par âge par EPCI"
+  - name: Population_Age_SCoT_evolution
+    description: "Evolution de la population par âge par SCoT"
+
+  # Population Sexe
+  - name: Population_Sexe_communes_evolution
+    description: "Evolution de la population par sexe par commune"
+  - name: Population_Sexe_departements_evolution
+    description: "Evolution de la population par sexe par département"
+  - name: Population_Sexe_EPCI_evolution
+    description: "Evolution de la population par sexe par EPCI"
+  - name: Population_Sexe_SCoT_evolution
+    description: "Evolution de la population par sexe par SCoT"
+
+  # Revenus
+  - name: Revenus_communes_evolution
+    description: "Evolution des revenus par commune"
+  - name: Revenus_departements_evolution
+    description: "Evolution des revenus par département"
+  - name: Revenus_EPCI_evolution
+    description: "Evolution des revenus par EPCI"
+  - name: Revenus_SCoT_evolution
+    description: "Evolution des revenus par SCoT"
