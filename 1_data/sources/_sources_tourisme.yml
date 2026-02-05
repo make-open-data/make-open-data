@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: sources
+    description: "Sources tourisme (DATAtourisme)"
+    tables:
+      - name: datatourisme_place
+        description: "List datourisme POI"

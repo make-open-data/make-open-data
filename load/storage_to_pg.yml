@@ -8,28 +8,28 @@
 #   production:bool  # Optional: Whether the file should only be loaded when loading the full base (production mode)
 
 cog_poste:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_poste/base-officielle-codes-postaux.csv"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_poste/base-officielle-codes-postaux.csv"
   csv_delimiter: ","
   db_schema: "sources"
   file_format: 'csv'
 
 cog_communes:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_communes/communes.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_communes/communes.json"
   db_schema: "sources"
   file_format: 'json'
 
 cog_arrondissements: 
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_arrondissements/arrondissements.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_arrondissements/arrondissements.json"
   db_schema: "sources"
   file_format: 'json'
 
 cog_departements:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_departements/departements.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_departements/departements.json"
   db_schema: "sources"
   file_format: 'json'
 
 cog_regions: 
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_regions/regions.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_regions/regions.json"
   db_schema: "sources"
   file_format: 'json'
 
@@ -213,40 +213,18 @@ filosofi_commune_2021:
   db_schema: "sources"
   file_format: 'csv'
 
-shape_iris_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/IRIS_GE.zip"
-  db_schema: "sources"
-  file_format: 'shape'
-  
-shape_commune_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/COMMUNE.zip"
+bd_topo_forets_2025_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/bd_topo_2025/FORET_PUBLIQUE.zip"
   db_schema: "sources"
   file_format: 'shape'
 
-shape_arrondissement_municipal_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
+bd_topo_parcs_2025_dev:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/bd_topo_2025/PARC_OU_RESERVE.zip"
   db_schema: "sources"
   file_format: 'shape'
 
-shape_arrondissement_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/ARRONDISSEMENT_MUNICIPAL.zip"
-  db_schema: "sources"
-  file_format: 'shape'
 
-shape_departement_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/DEPARTEMENT.zip"
-  db_schema: "sources"
-  file_format: 'shape'
 
-shape_region_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/REGION.zip"
-  db_schema: "sources"
-  file_format: 'shape'
-
-shape_epci_2024:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files/EPCI.zip"
-  db_schema: "sources"
-  file_format: 'shape'
 
 conso_energie_departement:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/conso_energie_departement/conso_energie_departement_annuelle.csv"

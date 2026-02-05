@@ -1,0 +1,423 @@
+version: 2
+
+sources:
+  - name: sources
+    description: "Sources recensement et logement"
+    tables:
+      - name: logement_2020
+        description: >
+          Logements, individus, activité, mobilités scolaires et professionnelles, migrations résidentielles en 2020
+          Recensement de la population - Fichier détail. Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/recensement-de-la-population-fichiers-detail-logements-ordinaires-en-2020-1/"
+        columns:
+          - name: COMMUNE
+            description: "Commune"
+            data_type: text
+          - name: ARM
+            description: "Année de référence des matériaux"
+            data_type: text
+          - name: IRIS
+            description: "Identifiant d'un IRIS (Ilots Regroupés pour l'Information Statistique)"
+            data_type: text
+          - name: ACHL
+            description: "Année de construction de l'habitation légère"
+            data_type: text
+          - name: AEMM
+            description: "Année d'entrée dans le ménage"
+            data_type: text
+          - name: AEMMR
+            description: "Année d'entrée du ménage dans la résidence"
+            data_type: text
+          - name: AGEMEN8
+            description: "Âge du ménage (tranche)"
+            data_type: text
+          - name: ANEM
+            description: "Année de naissance de l'enquêté majeur"
+            data_type: text
+          - name: ANEMR
+            description: "Année de naissance du répondant majeur"
+            data_type: text
+          - name: ASCEN
+            description: "Ascendance"
+            data_type: text
+          - name: BAIN
+            description: "Salle de bain"
+            data_type: text
+          - name: BATI
+            description: "Type de bâtiment"
+            data_type: text
+          - name: CATIRIS
+            description: "Catégorie IRIS"
+            data_type: text
+          - name: CATL
+            description: "Catégorie de logement"
+            data_type: text
+          - name: CHAU
+            description: "Chauffage"
+            data_type: text
+          - name: CHFL
+            description: "Chauffage au sol"
+            data_type: text
+          - name: CHOS
+            description: "Choix"
+            data_type: text
+          - name: CLIM
+            description: "Climatisation"
+            data_type: text
+          - name: CMBL
+            description: "Combles"
+            data_type: text
+          - name: CUIS
+            description: "Cuisine"
+            data_type: text
+          - name: DEROU
+            description: "Dernier ouvrage"
+            data_type: text
+          - name: DIPLM
+            description: "Diplôme le plus élevé"
+            data_type: text
+          - name: EAU
+            description: "Eau"
+            data_type: text
+          - name: EGOUL
+            description: "Égout"
+            data_type: text
+          - name: ELEC
+            description: "Électricité"
+            data_type: text
+          - name: EMPLM
+            description: "Emploi"
+            data_type: text
+          - name: GARL
+            description: "Garage"
+            data_type: text
+          - name: HLML
+            description: "Habitation légère de loisirs"
+            data_type: text
+          - name: ILETUDM
+            description: "Illettrisme"
+            data_type: text
+          - name: ILTM
+            description: "Immigration"
+            data_type: text
+          - name: IMMIM
+            description: "Immigration"
+            data_type: text
+          - name: INAIM
+            description: "Inactivité"
+            data_type: text
+          - name: INEEM
+            description: "Inégalité"
+            data_type: text
+          - name: INP11M
+            description: "Inscription pôle emploi 1 à 1 mois"
+            data_type: text
+          - name: INP15M
+            description: "Inscription pôle emploi 1 à 5 mois"
+            data_type: text
+          - name: INP17M
+            description: "Inscription pôle emploi 1 à 7 mois"
+            data_type: text
+          - name: INP19M
+            description: "Inscription pôle emploi 1 à 9 mois"
+            data_type: text
+          - name: INP24M
+            description: "Inscription pôle emploi 2 à 4 mois"
+            data_type: text
+          - name: INP3M
+            description: "Inscription pôle emploi 3 mois"
+            data_type: text
+          - name: INP60M
+            description: "Inscription pôle emploi 6 à 0 mois"
+            data_type: text
+          - name: INP65M
+            description: "Inscription pôle emploi 6 à 5 mois"
+            data_type: text
+          - name: INP5M
+            description: "Inscription pôle emploi 5 mois"
+            data_type: text
+          - name: INP75M
+            description: "Inscription pôle emploi 7 à 5 mois"
+            data_type: text
+          - name: INPAM
+            description: "Inscription pôle emploi Année Mois"
+            data_type: text
+          - name: INPER
+            description: "Inscription pôle emploi Erreur"
+            data_type: text
+          - name: INPER1
+            description: "Inscription pôle emploi Erreur 1"
+            data_type: text
+          - name: INPER2
+            description: "Inscription pôle emploi Erreur 2"
+            data_type: text
+          - name: INPOM
+            description: "Inscription pôle emploi Outre-Mer"
+            data_type: text
+          - name: INPSM
+            description: "Inscription pôle emploi Sans Mois"
+            data_type: text
+          - name: IPONDL
+            description: "Pondération"
+            data_type: text
+          - name: IRANM
+            description: "Iranien"
+            data_type: text
+          - name: METRODOM
+            description: "Métropole/DOM"
+            data_type: text
+          - name: NBPI
+            description: "Nombre de pièces"
+            data_type: text
+          - name: RECHM
+            description: "Recherche d'emploi"
+            data_type: text
+          - name: REGION
+            description: "Région"
+            data_type: text
+          - name: SANI
+            description: "Sanitaire"
+            data_type: text
+          - name: SANIDOM
+            description: "Sanitaire DOM"
+            data_type: text
+          - name: SEXEM
+            description: "Sexe"
+            data_type: text
+          - name: STAT_CONJM
+            description: "Statut conjugal"
+            data_type: text
+          - name: STOCD
+            description: "Stockage"
+            data_type: text
+          - name: SURF
+            description: "Surface"
+            data_type: text
+          - name: TACTM
+            description: "Activité"
+            data_type: text
+          - name: TPM
+            description: "Temps partiel"
+            data_type: text
+          - name: TRANSM
+            description: "Transport"
+            data_type: text
+          - name: TRIRIS
+            description: "Tri IRIS"
+            data_type: text
+          - name: TYPC
+            description: "Type de chauffage central"
+            data_type: text
+          - name: TYPL
+            description: "Type de logement"
+            data_type: text
+
+      - name: logement_2020_dev
+        description: "Echantillon (Région Occitanie pour garder la cohérence des analyses) de logement_2020 pour faciliter les tests"
+        columns:
+          - name: COMMUNE
+            description: "Nom de la commune"
+            data_type: text
+          - name: ARM
+            description: "Code de l'arrondissement"
+            data_type: text
+          - name: IRIS
+            description: "Code IRIS de la zone géographique"
+            data_type: text
+          - name: ACHL
+            description: "Type de logement"
+            data_type: text
+          - name: AEMM
+            description: "Accès au logement en milieu marginal"
+            data_type: text
+          - name: AEMMR
+            description: "Accès au logement en milieu marginal - Répartition"
+            data_type: text
+          - name: AGEMEN8
+            description: "Âge moyen des ménages"
+            data_type: text
+          - name: ANEM
+            description: "Indicateur d'accès aux logements dans le cadre des nouvelles exigences"
+            data_type: text
+          - name: ANEMR
+            description: "Répartition par type d'accès aux logements"
+            data_type: text
+          - name: ASCEN
+            description: "Accessibilité aux logements pour personnes en situation de handicap"
+            data_type: text
+          - name: BAIN
+            description: "Indicateur d'accès aux logements avec baignoire"
+            data_type: text
+          - name: BATI
+            description: "Type de bâtiment"
+            data_type: text
+          - name: CATIRIS
+            description: "Catégorie IRIS pour le type de logement"
+            data_type: text
+          - name: CATL
+            description: "Catégorie des logements"
+            data_type: text
+          - name: CHAU
+            description: "Type de chauffage"
+            data_type: text
+          - name: CHFL
+            description: "Type de chauffage pour les logements"
+            data_type: text
+          - name: CHOS
+            description: "Conditions de chauffage pour les logements"
+            data_type: text
+          - name: CLIM
+            description: "Indicateur de présence de climatiseur"
+            data_type: text
+          - name: CMBL
+            description: "Présence de combles"
+            data_type: text
+          - name: CUIS
+            description: "Indicateur de présence de cuisine équipée"
+            data_type: text
+          - name: DEROU
+            description: "Indicateur de déroulement de l'enquête"
+            data_type: text
+          - name: DIPLM
+            description: "Indicateur de diplôme des résidents"
+            data_type: text
+          - name: EAU
+            description: "Présence d'eau dans le logement"
+            data_type: text
+          - name: EGOUL
+            description: "Indicateur d'accès à l'égout"
+            data_type: text
+          - name: ELEC
+            description: "Présence d'électricité dans le logement"
+            data_type: text
+          - name: EMPLM
+            description: "Emplacement du logement"
+            data_type: text
+          - name: GARL
+            description: "Présence d'un garage"
+            data_type: text
+          - name: HLML
+            description: "Indicateur de l'élévation de niveau"
+            data_type: text
+          - name: ILETUDM
+            description: "Indicateur de l'accès aux logements étudiants"
+            data_type: text
+          - name: ILTM
+            description: "Indicateur de l'accès aux logements temporaires"
+            data_type: text
+          - name: IMMIM
+            description: "Indicateur d'immobilier immobilier"
+            data_type: text
+          - name: INAIM
+            description: "Indicateur d'immobilier d'immeuble"
+            data_type: text
+          - name: INEEM
+            description: "Indicateur d'élément économique du logement"
+            data_type: text
+          - name: INP11M
+            description: "Indicateur de logement en zone d'inondation"
+            data_type: text
+          - name: INP15M
+            description: "Indicateur de logement en zone non réglementée"
+            data_type: text
+          - name: INP17M
+            description: "Indicateur de logement en zone montagneuse"
+            data_type: text
+          - name: INP19M
+            description: "Indicateur de logement en zone urbaine"
+            data_type: text
+          - name: INP24M
+            description: "Indicateur de logement en zone périurbaine"
+            data_type: text
+          - name: INP3M
+            description: "Indicateur de logement en zone mixte"
+            data_type: text
+          - name: INP60M
+            description: "Indicateur d'immobilier à faible coût"
+            data_type: text
+          - name: INP65M
+            description: "Indicateur d'immobilier à prix abordable"
+            data_type: text
+          - name: INP5M
+            description: "Indicateur de logements à faible coût"
+            data_type: text
+          - name: INP75M
+            description: "Indicateur de logements à prix moyen"
+            data_type: text
+          - name: INPAM
+            description: "Indicateur d'accès au logement"
+            data_type: text
+          - name: INPER
+            description: "Indicateur de permanence de l'accès au logement"
+            data_type: text
+          - name: INPER1
+            description: "Indicateur de permanence 1"
+            data_type: text
+          - name: INPER2
+            description: "Indicateur de permanence 2"
+            data_type: text
+          - name: INPOM
+            description: "Indicateur d'immobilier dans l'outre-mer"
+            data_type: text
+          - name: INPSM
+            description: "Indicateur de logement en milieu semi-rural"
+            data_type: text
+          - name: IPONDL
+            description: "Indicateur d'occupation dans les logements de la zone"
+            data_type: text
+          - name: IRANM
+            description: "Indicateur de logement en zone urbaine marginale"
+            data_type: text
+          - name: METRODOM
+            description: "Indicateur métropolitain et DOM"
+            data_type: text
+          - name: NBPI
+            description: "Nombre de personnes dans les logements"
+            data_type: text
+          - name: RECHM
+            description: "Indicateur de recherche de logement"
+            data_type: text
+          - name: REGION
+            description: "Région géographique"
+            data_type: text
+          - name: SANI
+            description: "Indicateur de sanitaire"
+            data_type: text
+          - name: SANIDOM
+            description: "Indicateur de sanitaire en DOM"
+            data_type: text
+          - name: SEXEM
+            description: "Indicateur de sexe"
+            data_type: text
+          - name: STAT_CONJM
+            description: "Statut de la personne"
+            data_type: text
+          - name: STOCD
+            description: "Indicateur de stockage des données"
+            data_type: text
+          - name: SURF
+            description: "Surface du logement"
+            data_type: text
+          - name: TACTM
+            description: "Type d'action de maintien du logement"
+            data_type: text
+          - name: TPM
+            description: "Type de mesure"
+            data_type: text
+          - name: TRANSM
+            description: "Type de transmission des données"
+            data_type: text
+          - name: TRIRIS
+            description: "Type de logement IRIS"
+            data_type: text
+          - name: TYPC
+            description: "Type de propriétaire"
+            data_type: text
+          - name: TYPL
+            description: "Type de logement"
+            data_type: text
+          - name: VOIT
+            description: "Présence de voiture"
+            data_type: text
+          - name: WC
+            description: "Présence de WC"
+            data_type: text

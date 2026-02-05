@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: sources
+    description: "Sources risques (Seveso)"
+    tables:
+      - name: seveso_2024
+        description: "Localisation et dangerosité des sites SEVESO en France métropolitaine."
+        columns:
+          - name: longitude
+            description: "Coordonnée géographique en longitude"
+            data_type: text
+          - name: latitude
+            description: "Coordonnée géographique en latitude"
+            data_type: text
+          - name: identifier
+            description: "Identifiant unique du site"
+            data_type: text
+          - name: name
+            description: "Nom du site"
+            data_type: text
+          - name: localid
+            description: "Identifiant local du site"
+            data_type: text
+          - name: identifierscheme
+            description: "Schéma d'identification du site"
+            data_type: text
+          - name: streetname
+            description: "Nom de la rue où se trouve le site"
+            data_type: text
+          - name: postalcode
+            description: "Code postal du site"
+            data_type: text
+          - name: city
+            description: "Ville où se trouve le site"
+            data_type: text
+          - name: status
+            description: "Statut du site SEVESO"
+            data_type: text
+          - name: activity
+            description: "Activité principale du site"
+            data_type: text
+          - name: id_lex_aiot_seveso
+            description: "Identifiant unique dans le système LEX AIOT SEVESO"
+            data_type: text
+          - name: type
+            description: "Type du site SEVESO"
+            data_type: text

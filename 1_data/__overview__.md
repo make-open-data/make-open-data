@@ -49,7 +49,7 @@
 
 ## Notes 
 
-Sauf mention contraire, toutes les données sont millésimées au Code Officiel Géographique de 2024.
+Sauf mention contraire, toutes les données sont millésimées au Code Officiel Géographique de 2025.
 
 
 {% enddocs %}
