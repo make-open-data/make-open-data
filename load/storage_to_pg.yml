@@ -224,8 +224,6 @@ bd_topo_parcs_2025_dev:
   file_format: 'shape'
 
 
-
-
 conso_energie_departement:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/conso_energie_departement/conso_energie_departement_annuelle.csv"
   csv_delimiter: ";"
