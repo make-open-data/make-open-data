@@ -192,8 +192,5 @@
         {% endif %}
 
     {% endif %}
-        {% endif %}
-
-    {% endif %}
 
 {% endmacro %}
