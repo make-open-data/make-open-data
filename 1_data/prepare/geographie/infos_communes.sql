@@ -35,7 +35,7 @@ with filtre_cog_communes as (
 ), ign_shapes as (
     select "INSEE_COM" as code_commune,
             geometry as commune_contour 
-    from {{ source('sources', 'shape_commune_2024')}}
+    from {{ source('sources', 'shape_commune_2025')}}
     union
     select  "INSEE_ARM" as code_commune,
             geometry as commune_contour

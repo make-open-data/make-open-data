@@ -1,0 +1,241 @@
+version: 2
+
+sources:
+  - name: sources
+    description: "Sources géographiques (COG, shapes, SCoT)"
+    tables:
+      - name: cog_poste
+        description: "Base officielle des codes postaux. Producteur des données: La Poste. Origine: https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/"
+        columns:
+          - name: code_postal
+            description: "Postal code"
+            data_type: string
+          - name: commune
+            description: "Commune name"
+            data_type: string
+          - name: code_commune_insee
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: nom_de_la_commune
+            description: "Nom de la commune"
+            data_type: text
+          - name: code_postal
+            description: "Code postal"
+            data_type: text
+          - name: libelle_d_acheminement
+            description: "Libellé d'acheminement"
+            data_type: text
+          - name: ligne_5
+            description: "Ligne 5"
+            data_type: text
+          - name: _geopoint
+            description: "Point géographique"
+            data_type: text
+
+      - name: cog_communes
+        description: "List of communes. Producteur des donnees: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code unique de la commune"
+            data_type: text
+          - name: nom
+            description: "Nom de la commune"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la commune"
+            data_type: text
+          - name: arrondissement
+            description: "Arrondissement de la commune"
+            data_type: text
+          - name: departement
+            description: "Département de la commune"
+            data_type: text
+          - name: region
+            description: "Région de la commune"
+            data_type: text
+          - name: type
+            description: "Type de commune"
+            data_type: text
+          - name: rangChefLieu
+            description: "Rang du chef-lieu"
+            data_type: text
+          - name: siren
+            description: "Code SIREN"
+            data_type: text
+          - name: codesPostaux
+            description: "Codes postaux associés à la commune"
+            data_type: text
+          - name: population
+            description: "Population de la commune"
+            data_type: text
+          - name: anciensCodes
+            description: "Anciens codes de la commune"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la commune"
+            data_type: text
+          - name: commune
+            description: "Commune"
+            data_type: text
+
+      - name: cog_arrondissements
+        description: "Informations sur les arrondissements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code de l'arrondissement"
+            data_type: text
+          - name: departement
+            description: "Département de l'arrondissement"
+            data_type: text
+          - name: region
+            description: "Région de l'arrondissement"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de l'arrondissement"
+            data_type: text
+          - name: nom
+            description: "Nom de l'arrondissement"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+
+      - name: cog_departements
+        description: "Informations sur les départements.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code du département"
+            data_type: text
+          - name: region
+            description: "Région du département"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu du département"
+            data_type: text
+          - name: nom
+            description: "Nom du département"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone du département"
+            data_type: text
+
+      - name: cog_regions
+        description: "Informations sur les régions.Producteur des données: INSEE. Origine: https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/"
+        columns:
+          - name: code
+            description: "Code de la région"
+            data_type: text
+          - name: chefLieu
+            description: "Chef-lieu de la région"
+            data_type: text
+          - name: nom
+            description: "Nom de la région"
+            data_type: text
+          - name: typeLiaison
+            description: "Type de liaison"
+            data_type: text
+          - name: zone
+            description: "Zone de la région"
+            data_type: text
+
+      - name: shape_commune_2025
+        description: ""
+        columns:
+          - name: ID
+            description: "Identifiant unique de la commune"
+            data_type: text
+          - name: NOM
+            description: "Nom de la commune"
+            data_type: text
+          - name: NOM_M
+            description: "Nom de la commune en version modifiée"
+            data_type: text
+          - name: INSEE_COM
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: STATUT
+            description: "Statut administratif de la commune"
+            data_type: text
+          - name: POPULATION
+            description: "Nombre d'habitants de la commune"
+            data_type: integer
+          - name: INSEE_CAN
+            description: "Code de la canton de la commune"
+            data_type: text
+          - name: INSEE_ARR
+            description: "Code de l'arrondissement de la commune"
+            data_type: text
+          - name: INSEE_DEP
+            description: "Code du département de la commune"
+            data_type: text
+          - name: INSEE_REG
+            description: "Code de la région de la commune"
+            data_type: text
+          - name: SIREN_EPCI
+            description: "Code SIREN de l'EPCI (Établissement Public de Coopération Intercommunale)"
+            data_type: text
+          - name: geometry
+            description: "Données géométriques représentant la commune"
+            data_type: geometry
+
+      - name: shape_arrondissement_municipal_2024
+        description: ""
+        columns:
+          - name: ID
+            description: "Identifiant unique de l'arrondissement municipal"
+            data_type: text
+          - name: NOM
+            description: "Nom de l'arrondissement municipal"
+            data_type: text
+          - name: NOM_M
+            description: "Nom du quartier ou de la section municipale"
+            data_type: text
+          - name: INSEE_ARR
+            description: "Code INSEE de l'arrondissement municipal"
+            data_type: text
+          - name: INSEE_COM
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: POPULATION
+            description: "Population de l'arrondissement municipal"
+            data_type: integer
+          - name: geometry
+            description: "Géométrie représentant l'arrondissement municipal"
+            data_type: geometry
+
+      - name: shape_iris_2024
+        description: ""
+        columns:
+          - name: ID
+            description: "Identifiant unique de l'entrée"
+            data_type: text
+          - name: INSEE_COM
+            description: "Code INSEE de la commune"
+            data_type: text
+          - name: NOM_COM
+            description: "Nom de la commune"
+            data_type: text
+          - name: IRIS
+            description: "Code IRIS"
+            data_type: text
+          - name: CODE_IRIS
+            description: "Code unique de l'IRIS"
+            data_type: text
+          - name: NOM_IRIS
+            description: "Nom de l'IRIS"
+            data_type: text
+          - name: TYP_IRIS
+            description: "Type d'IRIS"
+            data_type: text
+          - name: geometry
+            description: "Géométrie associée à l'IRIS"
+            data_type: geometry
+
+      - name: communes_to_scot
+        description: "File mapping top what Scot blongs each commune"

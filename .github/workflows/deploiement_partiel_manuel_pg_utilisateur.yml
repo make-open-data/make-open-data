@@ -1,0 +1,85 @@
+name: Manually Deploy Partial Data in a Postgres Database
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11.5
+        cache: 'pip'
+
+    - name: Create Python virtual environment
+      run: python3 -m venv dbt-env
+
+    - name: Activate virtual environment and install dependencies
+      run: |
+        source dbt-env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Set environment variables
+      run: |
+        source dbt-env/bin/activate
+        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+
+    - name: Install PostGIS extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+
+    - name: Install unaccent extensions
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "CREATE EXTENSION IF NOT EXISTS unaccent;"
+    
+    - name: delete "prep" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prep CASCADE;"
+     
+    - name: delete "prepare" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS prepare CASCADE;"
+    
+    - name: delete "intermediaires" schemas if exists
+      run: |
+        source dbt-env/bin/activate
+        psql postgresql://${{  secrets.POSTGRES_USER  }}:${{  secrets.POSTGRES_PASSWORD  }}@${{  secrets.POSTGRES_HOST  }}:${{  secrets.POSTGRES_PORT  }}/${{  secrets.POSTGRES_DB  }} -c "DROP SCHEMA IF EXISTS intermediaires CASCADE;"
+      
+        
+    - name: Set DBT_PROFILES_DIR
+      run: echo "DBT_PROFILES_DIR=." >> $GITHUB_ENV
+
+    - name: check dbt project
+      run: |
+        source dbt-env/bin/activate
+        dbt debug
+
+    - name: Load data from storage to tables in DB
+      run: |
+        source dbt-env/bin/activate
+        python -m load --production
+
+    - name: Run dbt deps
+      run: |
+        source dbt-env/bin/activate
+        dbt deps
+
+    - name: Run dbt build
+      run: |
+        source dbt-env/bin/activate
+        dbt build
