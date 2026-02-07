@@ -8,38 +8,49 @@
 #   production:bool  # Optional: Whether the file should only be loaded when loading the full base (production mode)
 
 cog_poste:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_poste/base-officielle-codes-postaux.csv"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/base-officielle-codes-postaux.csv"
   csv_delimiter: ","
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 cog_communes:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_communes/communes.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/communes.json"
   db_schema: "sources"
   file_format: 'json'
-  production: true
 
 
 cog_arrondissements: 
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_arrondissements/arrondissements.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/arrondissements.json"
   db_schema: "sources"
   file_format: 'json'
-  production: true
 
 
 cog_departements:
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_departements/departements.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/departements.json"
   db_schema: "sources"
   file_format: 'json'
-  production: true
-
 
 cog_regions: 
-  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/cog_regions/regions.json"
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/cog_2025/regions.json"
   db_schema: "sources"
   file_format: 'json'
-  production: true
+
+
+
+shape_commune_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files_2024/COMMUNE.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_municipal_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files_2024/ARRONDISSEMENT_MUNICIPAL.zip"
+  db_schema: "sources"
+  file_format: 'shape'
+
+shape_arrondissement_2024:
+  storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/shape_files_2024/ARRONDISSEMENT.zip"
+  db_schema: "sources"
+  file_format: 'shape'
 
 dvf_2014:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/dvf_2014/full.csv"
@@ -202,28 +213,24 @@ professionels_sante:
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 effectif_pathologie:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/effectif_pathologie/effectifs.csv"
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 filosofi_iris_2021:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/BASE_TD_FILO_IRIS_2021_DEC.csv"
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 filosofi_commune_2021:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/filosofi/cc_filosofi_2021_COM.csv"
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 bd_topo_forets_2025_dev:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/bd_topo_2025/FORET_PUBLIQUE.zip"
@@ -241,46 +248,39 @@ conso_energie_departement:
   csv_delimiter: ";"
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 seveso_2024:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/georisques_seveso_france_metropolitaine_2024/georisques-seveso-france-metropolitaine-2024.csv"
   csv_delimiter: ","
   db_schema: "sources"
   file_format: 'csv'
-  production: true
 
 bpe_2023:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_equipements/BPE23.csv"
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ","
-  production: true
 
 bpe_metadata:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/base_equipements/BPE23_table_passage.csv"
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ";"
-  production: true
 
 bmo_2024:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/besoin_main_oeuvre/bmo_2024.csv"
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ","
-  production: true
 
 datatourisme_place:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/datatourisme_place/datatourisme-place.csv"
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ","
-  production: true
 
 communes_to_scot:
   storage_path: "https://make-open-data-s3.fra1.digitaloceanspaces.com/communes_to_scot/communes_to_scot.csv" 
   db_schema: "sources"
   file_format: 'csv'
   csv_delimiter: ";"
-  production: true

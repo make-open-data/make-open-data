@@ -144,7 +144,7 @@ sources:
             description: "Zone de la région"
             data_type: text
 
-      - name: shape_commune_2024
+      - name: shape_commune_2025
         description: ""
         columns:
           - name: ID
